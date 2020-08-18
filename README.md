@@ -1,6 +1,6 @@
-# quantecon-mini-example
+# Intro to Machine Learning Applications
 
-A short example showing how to write a lecture series using Jupyter Book 2.0.
+This is the website for intro to machine learning.
 
 ## Creating an Conda Environment
 
@@ -14,21 +14,21 @@ The conda environment is provided as `environment.yml`. This environment is used
 Run the following command in your terminal:
 
 ```bash
-jb build mini_book/
+jb build introml/
 ```
 
 If you would like to work with a clean build, you can empty the build folder by running:
 
 ```bash
-jb clean mini_book/
+jb clean introml/
 ```
 
-If jupyter execution is cached, this command will not delete the cached folder. 
+If jupyter execution is cached, this command will not delete the cached folder.
 
 To remove the build folder (including `cached` executables), you can run:
 
 ```bash
-jb clean --all mini_book/
+jb clean --all introml/
 ```
 
 ## Publishing this Jupyter Book
@@ -37,5 +37,5 @@ This repository is published automatically to `gh-pages` upon `push` to the `mas
 
 ## Notes
 
-This repository is used as a test case for [jupyter-book](https://github.com/executablebooks/jupyter-book) and 
+This repository is used as a test case for [jupyter-book](https://github.com/executablebooks/jupyter-book) and
 a `requirements.txt` file is provided to support this `CI` application.

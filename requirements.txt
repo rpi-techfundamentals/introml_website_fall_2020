@@ -3,4 +3,3 @@ pandas
 matplotlib
 quantecon
 jupyter-book
-ghp-import
