@@ -1,12 +1,5 @@
-# Requirements for the demo notebooks
-# Useful for MyBinder configuration
+sphinx
 pandas
-numpy
-datascience
-folium
 matplotlib
-nbinteract
-scipy
+quantecon
 jupyter-book
-ruamel.yaml
-xlrd
