@@ -30,7 +30,7 @@ jobs:
 
       - name: Build QuantEcon Mini Example
         shell: bash -l {0}
-        run: jb build mini_book/
+        run: jb build introml/
 
       - name: Install SSH Client 🔑
         uses: webfactory/ssh-agent@v0.2.0
@@ -42,4 +42,4 @@ jobs:
         with:
           SSH: true
           BRANCH: gh-pages
-          FOLDER: mini_book/_build/html
+          FOLDER: introml/_build/html

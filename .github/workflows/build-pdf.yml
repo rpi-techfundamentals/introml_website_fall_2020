@@ -46,14 +46,14 @@ jobs:
         shell: bash -l {0}
         run: pip install git+https://github.com/ExecutableBookProject/jupyter-book.git@master
 
-      - name: Build QuantEcon Mini Example
+      - name: Build Introml
         shell: bash -l {0}
         run: |
           echo 'export PATH=/tmp/texlive/bin/x86_64-linux:$PATH' >> ~/.bash_profile
           source ~/.bash_profile
-          jb build mini_book/ --builder pdflatex
+          jb build introml/ --builder pdflatex
 
       - uses: actions/upload-artifact@v2
         with:
           name: pdf
-          path: mini_book/_build/latex/book.pdf
+          path: introml/_build/latex/book.pdf
