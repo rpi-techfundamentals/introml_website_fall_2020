@@ -1,14 +1,14 @@
-Welcome to Quantitative Methods for Business
+Welcome to Introduction to Machine Learning Applications
 ============================
 ```{tableofcontents}
 ```
 IMPORTANT LINKS
 - [RPI LMS](https://lms.rpi.edu/)
-- [WEBEX TEAMS Discussion Space](https://eurl.io/#YnuX1CwNt)
+- [WEBEX TEAMS Discussion Space](https://eurl.io/#KijTiY1Sa)
 - [WEBEX Meetings Classroom Link](https://rensselaer.webex.com/meet/kuruzj)
 
 
-This is the website for the Rensselaer class *Quantitative Methods for Business*.
+This is the website for the Rensselaer class *Introduction to Machine Learning Applications*.
 
 Hi, I'm professor Jason Kuruzovich (you can use professor Jason or just Jason is fine). During these challenging times I'm going to do my best to provide an engaging learning experience. We will be useing a combination of tools for the class and I wanted to provide that overview here.
 
@@ -22,7 +22,7 @@ We will be using Webex Meetings to stream all classes.  The course recordings be
 
 ## Webex Teams: Classroom and Asyncronous Discussions and Questions
 I want to be very responsive to your questions and concerns as we go through the class.  Webex Teams *(NOT EMAIL)* is the best way to reach me.  I would suggest downloading the Webex Teams application for your phone and desktop.  Because Webex meeting chats do not persist, we are going to use the webex teams space for text discussions even when streaming from Webex meetings.
-[WEBEX TEAMS Discussion Space](https://eurl.io/#YnuX1CwNt)
+[WEBEX TEAMS Discussion Space](https://eurl.io/#KijTiY1Sa)
 
 ## This Website: Course Content
 This website will be the primary source of content for the class. This includes readings, videos, Excel files, Jupyter notebooks, etc.

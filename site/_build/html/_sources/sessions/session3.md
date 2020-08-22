@@ -5,7 +5,7 @@ TBD [Link](../../sessions/session3)
 
 ## Before Class
 
-|   Session | Content       |
-|----------:|:--------------|
-|         3 | IMS Chapter 2 |
+|   Session |   Content |
+|----------:|----------:|
+|         3 |       nan |
 
