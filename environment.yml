@@ -1,4 +1,4 @@
-name: qe-mini-example
+name: jupyter-class-example
 channels:
   - default
   - conda-forge
@@ -9,5 +9,4 @@ dependencies:
   - pandas
   - matplotlib
   - pip:
-    - quantecon
     - jupyter-book>=0.7.0b

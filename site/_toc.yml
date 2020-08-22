@@ -1,0 +1,21 @@
+- file: intro
+- chapters:
+  - file: content/schedule
+  - file: content/syllabus
+  - file: content/preparation
+  - file: content/in_class
+  - file: content/assignments
+  part: OVERVIEW
+- chapters:
+  - file: sessions/session1
+  - file: sessions/session2
+  - file: sessions/session3
+  - file: sessions/session4
+  numbered: true
+  part: SESSIONS
+- part: NOTEBOOKS
+  numbered: true
+  chapters:
+  - file: notebooks/python-overview
+  - file: notebooks/datastructures
+  - file: assignments/02starter

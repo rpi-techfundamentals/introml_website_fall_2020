@@ -1,26 +1,21 @@
-# Intro to Machine Learning Applications
+# Jupyter Class
 
-This is the website for intro to machine learning.
+This is a project to easily build a course website from Jupyter Book.  
 
-## Creating an Conda Environment
-
-The conda environment is provided as `environment.yml`. This environment is used for all testing by Github Actions and can be setup by:
-
-1. `conda env create -f environment.yml`
-2. `conda activate qe-mini-example`
+Set the configuration in the config folder.
 
 ## Building a Jupyter Book
 
 Run the following command in your terminal:
 
 ```bash
-jb build introml/
+jb build site/
 ```
 
 If you would like to work with a clean build, you can empty the build folder by running:
 
 ```bash
-jb clean introml/
+jb clean site/
 ```
 
 If jupyter execution is cached, this command will not delete the cached folder.
@@ -28,7 +23,7 @@ If jupyter execution is cached, this command will not delete the cached folder.
 To remove the build folder (including `cached` executables), you can run:
 
 ```bash
-jb clean --all introml/
+jb clean --all site/
 ```
 
 ## Publishing this Jupyter Book

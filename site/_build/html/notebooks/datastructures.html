@@ -1,0 +1,1185 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets) &#8212; MGMT 4100 Quantitative Methods for Business @Rensselaer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Assignment 2 Starter" href="../assignments/02starter.html" />
+    <link rel="prev" title="1. Overview of Python Features" href="python-overview.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MGMT 4100 Quantitative Methods for Business @Rensselaer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Quantitative Methods for Business
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  OVERVIEW
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/preparation.html">
+   Before Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/in_class.html">
+   In Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/assignments.html">
+   Assignments
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SESSIONS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session1.html">
+   1. Welcome and class overview  (08/31)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session2.html">
+   2. Intro to Management Science  (09/03)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session3.html">
+   3. Linear Programming 1 (09/08)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session4.html">
+   4. Linear Programming 2  (09/10)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NOTEBOOKS
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python-overview.html">
+   1. Overview of Python Features
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/02starter.html">
+   3. Assignment 2 Starter
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/datastructures.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rpi-techfundamentals/ms-website-fall-2020/blob/master/quant/notebooks/datastructures.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   2.1. Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variable-type-continued">
+   2.2. Variable Type (continued)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   2.3. Variable Type (continued)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-type-function">
+   2.4. The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     type
+    </span>
+   </code>
+   Function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#converting-values-between-types">
+   2.5. Converting Values Between Types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#converting-values-between-types-continued">
+   2.6. Converting Values Between Types (Continued)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#null-values">
+   2.7. Null Values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations-on-numeric-variables">
+   2.8. Operations on Numeric Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations-on-string-variables">
+   2.9. Operations on String Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calling-functions-on-variables">
+   2.10. Calling Functions on Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-operations-on-variables">
+   2.11. Exercise - Operations on Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lists">
+   2.12. Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   2.13. Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   2.14. Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list">
+   2.15. List
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-lists">
+   2.16. Exercise-Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sets">
+   2.17. Sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sets-are-mutable">
+   2.18. Sets are Mutable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sets-are-unordered">
+   2.19. Sets are Unordered
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations-on-sets">
+   2.20. Operations on Sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   2.21. Operations on Sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   2.22. Operations on Sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries">
+   2.23. Dictionaries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-sets-dictionary">
+   2.24. Exercise-Sets/Dictionary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#credits">
+   2.25. CREDITS
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a class="reference external" href="http://rpi.analyticsdojo.com"><img alt="AnalyticsDojo" src="https://github.com/rpi-techfundamentals/spring2019-materials/blob/master/fig/final-logo.png?raw=1" /></a></p>
+<center><h1>Introduction to Python - Datastructures</h1></center>
+<center><h3><a href = 'http://introml.analyticsdojo.com'>rpi.analyticsdojo.com</a></h3></center>
+<div class="section" id="introduction-datastructures-varibles-lists-dictionaries-and-sets">
+<h1><span class="section-number">2. </span>Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)<a class="headerlink" href="#introduction-datastructures-varibles-lists-dictionaries-and-sets" title="Permalink to this headline">¶</a></h1>
+<p>Common to R and Python</p>
+<ul class="simple">
+<li><p>Variables</p></li>
+<li><p>Opearations on Numeric and String Variables</p></li>
+<li><p>Lists</p></li>
+</ul>
+<p>Python Only</p>
+<ul class="simple">
+<li><p>Dictionaries</p></li>
+<li><p>Sets</p></li>
+</ul>
+<div class="section" id="variables">
+<h2><span class="section-number">2.1. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Single value</p></li>
+<li><p>Strings, Integer, Floats and boolean are the most common types of variables.</p></li>
+<li><p>Remember, under the covers they are all objects.</p></li>
+<li><p>Multiple variables can be output with the <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\t</span></code> can be used to add a tab while <code class="docutils literal notranslate"><span class="pre">\n</span></code> can input a new line.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;#pythonrules&#39;</span> <span class="c1"># string</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">30</span>              <span class="c1"># integer</span>
+<span class="n">c</span> <span class="o">=</span> <span class="kc">True</span>            <span class="c1"># boolean</span>
+
+<span class="c1">#This prints (1) only the variables, (2) with labels, (3) including tabs, and (4) with new lines.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span>  <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2:&#39;</span><span class="p">,</span><span class="s1">&#39;String:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;Integer:&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;Boolean:&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3:&#39;</span><span class="p">,</span><span class="s1">&#39;String:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">Integer:&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">Boolean:&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;4a:&#39;</span><span class="p">,</span><span class="s1">&#39;String:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">4b: Integer:&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">4c: Boolean:&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1: #pythonrules 30 True
+2: String: #pythonrules Integer: 30 Boolean: True
+3: String: #pythonrules 	Integer: 30 	Boolean: True
+4a: String: #pythonrules 
+4b: Integer: 30 
+4c: Boolean: True
+#pythonrules30
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="variable-type-continued">
+<h2><span class="section-number">2.2. </span>Variable Type (continued)<a class="headerlink" href="#variable-type-continued" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>In Python when we write <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">30</span></code> this means the value of <code class="docutils literal notranslate"><span class="pre">30</span></code> is assigned to the <code class="docutils literal notranslate"><span class="pre">b</span></code> object.</p></li>
+<li><p>Python is a <a class="reference external" href="https://pythonconquerstheuniverse.wordpress.com/2009/10/03/static-vs-dynamic-typing-of-programming-languages/">dynamically typed</a>.</p></li>
+<li><p>Unlike some languages, we don’t have to declare the type of a variable before using it.</p></li>
+<li><p>Variable type can also change with the reassignment of a variable.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;The value of a is &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span>  <span class="s1">&#39;and type &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Now the value of a is &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span>  <span class="s1">&#39;and type &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;hello there&#39;</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Now the value of a is &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span>  <span class="s1">&#39;and of type &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>The value of a is  1 and type  &lt;class &#39;int&#39;&gt;
+Now the value of a is  2.5 and type  &lt;class &#39;float&#39;&gt;
+Now the value of a is  hello there and of type  &lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2><span class="section-number">2.3. </span>Variable Type (continued)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><em>Variables</em> themselves do not have a fixed type.</p></li>
+<li><p>It is only the values that they refer to that have an associated <em>type</em>.</p></li>
+<li><p>This means that the type referred to by a variable can change as more statements are interpreted.</p></li>
+<li><p>If we combine types incorrectly we get an error.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#We can&#39;t add 5 to a </span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;string variable&#39;</span>
+<span class="n">c</span><span class="o">=</span><span class="n">b</span><span class="o">+</span><span class="mi">5</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;string variable5&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-type-function">
+<h2><span class="section-number">2.4. </span>The <code class="docutils literal notranslate"><span class="pre">type</span></code> Function<a class="headerlink" href="#the-type-function" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>We can query the type of a value using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function.</p></li>
+<li><p>Variables can be reassigned to a different type.</p></li>
+<li><p>There are integer, floating point, and complex number <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex">numeric types</a>.</p></li>
+<li><p>Boolean is a special type of integer.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mf">2.5</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="kc">True</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>bool
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="converting-values-between-types">
+<h2><span class="section-number">2.5. </span>Converting Values Between Types<a class="headerlink" href="#converting-values-between-types" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>We can convert values between different types.</p></li>
+<li><p>To convert to string use the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function.</p></li>
+<li><p>To convert to floating-point use the <code class="docutils literal notranslate"><span class="pre">float()</span></code> function.</p></li>
+<li><p>To convert to an integer use the <code class="docutils literal notranslate"><span class="pre">int()</span></code> function.</p></li>
+<li><p>To convert to a boolean use the <code class="docutils literal notranslate"><span class="pre">bool()</span></code> function.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1 &lt;class &#39;int&#39;&gt;
+1 &lt;class &#39;str&#39;&gt;
+1.0 &lt;class &#39;float&#39;&gt;
+1 &lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="converting-values-between-types-continued">
+<h2><span class="section-number">2.6. </span>Converting Values Between Types (Continued)<a class="headerlink" href="#converting-values-between-types-continued" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>To convert to a boolean use the <code class="docutils literal notranslate"><span class="pre">bool()</span></code> function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> can work with a String type that is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> can work with an integer type that is <code class="docutils literal notranslate"><span class="pre">1</span></code> for <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code> for <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">c</span><span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">d</span><span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>True &lt;class &#39;str&#39;&gt;
+True &lt;class &#39;bool&#39;&gt;
+True &lt;class &#39;bool&#39;&gt;
+False &lt;class &#39;bool&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="null-values">
+<h2><span class="section-number">2.7. </span>Null Values<a class="headerlink" href="#null-values" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Sometimes we represent “no data” or “not applicable”.</p></li>
+<li><p>In Python we use the special value <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p>This corresponds to <code class="docutils literal notranslate"><span class="pre">NA</span></code> in R of <code class="docutils literal notranslate"><span class="pre">Null</span></code> in Java/SQL.</p></li>
+<li><p>When we print the value <code class="docutils literal notranslate"><span class="pre">None</span></code> is printed.</p></li>
+<li><p>If we enter the variable, no result is printed out.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Notice nothing is printed.</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operations-on-numeric-variables">
+<h2><span class="section-number">2.8. </span>Operations on Numeric Variables<a class="headerlink" href="#operations-on-numeric-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Python can be used as a basic calculator.</p></li>
+<li><p>Check out this associated <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator">tutorial</a>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Addition:&#39;</span><span class="p">,</span> <span class="mi">53</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Multiplication:&#39;</span><span class="p">,</span> <span class="mi">53</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Subtraction:&#39;</span><span class="p">,</span> <span class="mi">53</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Division&#39;</span><span class="p">,</span> <span class="mi">53</span> <span class="o">/</span> <span class="mi">5</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Floor Division (discards the fractional part)&#39;</span><span class="p">,</span> <span class="mi">53</span> <span class="o">//</span> <span class="mi">5</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Floor Division (returns the remainder)&#39;</span><span class="p">,</span> <span class="mi">53</span> <span class="o">%</span> <span class="mi">5</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Exponents:&#39;</span><span class="p">,</span> <span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Addition: 58
+Multiplication: 265
+Subtraction: 48
+Division 10.6
+Floor Division (discards the fractional part) 10
+Floor Division (returns the remainder) 3
+Exponents: 25
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operations-on-string-variables">
+<h2><span class="section-number">2.9. </span>Operations on String Variables<a class="headerlink" href="#operations-on-string-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Just as we can do numeric operations, we can also do operations on strings.</p></li>
+<li><p>Concatentate Strings</p></li>
+<li><p>A <em>backslash</em> is used as an escape variable.</p></li>
+<li><p>More info on this <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator">tutorial</a>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;Start&#39;</span>
+<span class="n">b</span><span class="o">=</span><span class="s1">&#39;End&#39;</span>
+<span class="n">tab</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span>
+<span class="n">newline</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="n">c</span><span class="o">=</span><span class="s1">&#39;can</span><span class="se">\&#39;</span><span class="s1">t&#39;</span>  <span class="c1">#Note that we have to use the Escape character &#39;\&#39; to inclue a apostrophe &#39;  in the key.</span>
+<span class="n">cb</span><span class="o">=</span><span class="s2">&quot;can&#39;t&quot;</span>
+<span class="n">continueline</span> <span class="o">=</span> <span class="s1">&#39;This is the first line. </span><span class="se">\</span>
+<span class="s1">This is the second line, but we have included a line continuation character: </span><span class="se">\\</span><span class="s1">&#39;</span>
+<span class="c1">#Note that to print the continueline character we have to list 2 (\\)</span>
+<span class="c1">#Note that to print the continueline character we have to list 2 (\\)</span>
+
+<span class="n">contin2</span><span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">This is the second line, but we have included a line continuation character: </span>
+<span class="s2">#Note that to print the continueline character we have to list 2 </span>
+<span class="s2">#Note that to print the continueline character we have to list 2</span>
+
+
+<span class="s2">&quot;&quot;&quot;</span>
+
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Concatenation:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tab:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">tab</span><span class="o">+</span><span class="n">b</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Newline:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">newline</span><span class="o">+</span><span class="n">b</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Apostrophe:&#39;</span><span class="p">,</span> <span class="n">c</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Apostrophe:&#39;</span><span class="p">,</span> <span class="n">cb</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Continue line:&#39;</span><span class="p">,</span> <span class="n">continueline</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">contin2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Concatenation: StartEnd
+Tab: Start	End
+Newline: Start
+End
+Apostrophe: can&#39;t
+Apostrophe: can&#39;t
+Continue line: This is the first line. This is the second line, but we have included a line continuation character: \
+
+This is the second line, but we have included a line continuation character: 
+#Note that to print the continueline character we have to list 2 
+#Note that to print the continueline character we have to list 2
+
+
+
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calling-functions-on-variables">
+<h2><span class="section-number">2.10. </span>Calling Functions on Variables<a class="headerlink" href="#calling-functions-on-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>We can call functions in a conventional way using round brackets</p></li>
+<li><p>Python has a wide variety of <a class="reference external" href="https://docs.python.org/3/library/functions.html">built in functions</a>,</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mf">98.45</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;abs() takes the absolute value:&#39;</span><span class="p">,</span> <span class="n">a</span> <span class="p">)</span>
+<span class="n">a</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;round() rounds to nearest integer:&#39;</span><span class="p">,</span> <span class="n">a</span> <span class="p">)</span>
+<span class="n">character</span><span class="o">=</span><span class="nb">chr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chr(98) returns the string representing a character whose Unicode code point is associated with the integer:&#39;</span><span class="p">,</span><span class="n">character</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-operations-on-variables">
+<h2><span class="section-number">2.11. </span>Exercise - Operations on Variables<a class="headerlink" href="#exercise-operations-on-variables" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>What happens when you multiply a number times a boolean? What is the resulting type?</p></li>
+<li><p>What happens when you try to multiply an integer value times a null?</p></li>
+<li><p>Take 5 to the power of 4.</p></li>
+</ol>
+</div>
+<div class="section" id="lists">
+<h2><span class="section-number">2.12. </span>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Lists can be used to contain a sequence of values of any type.</p></li>
+<li><p>You can do operations on lists.</p></li>
+<li><p>The list values start at 0 and that the first value of a list can be printed using <code class="docutils literal notranslate"><span class="pre">a[0]</span></code></p></li>
+<li><p>Lists can be <em>sliced</em> or <em>indexed</em> using the start and end value <code class="docutils literal notranslate"><span class="pre">a[start:end]</span></code></p></li>
+<li><p>Lists are <em>mutable datastructures</em>, meaning that they can be changed (added to).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set the value of the list</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Print the entire array:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Print the first value:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Print the first three value:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Print from second value till end  of list:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Print the last value of a list:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Print up till the 2nd to last value:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> 
+<span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Print the entire array: [1, 2, &#39;three&#39;, &#39;four&#39;, 5.0]
+Print the first value: 1
+Print the first three value: [1, 2, &#39;three&#39;]
+Print from second value till end  of list: [&#39;three&#39;, &#39;four&#39;, 5.0]
+Print the last value of a list: 5.0
+Print up till the 2nd to last value: [1, 2, &#39;three&#39;]
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">2.13. </span>Lists<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Lists can be nested, where there are lists of lists.</p></li>
+<li><p>The elements of a nested list is specified after the first list when slicing <code class="docutils literal notranslate"><span class="pre">c[0][0]</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;seven&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;nine&#39;</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is a list with 2 lists in it:&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is the first list:&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is the first element of the second list:&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>This is a list with 2 lists in it: [[1, 2, &#39;three&#39;, &#39;four&#39;, 5.0], [6, &#39;seven&#39;, 8, &#39;nine&#39;]]
+This is the first list: [1, 2, &#39;three&#39;, &#39;four&#39;, 5.0]
+This is the first element of the second list: 6
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">2.14. </span>Lists<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Lists can added to with the <code class="docutils literal notranslate"><span class="pre">append</span></code> method or your can directly assign location in list.</p></li>
+<li><p>You can identify the length of a list with <code class="docutils literal notranslate"><span class="pre">len(a)</span></code></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html">More fuctions on lists</a> include <code class="docutils literal notranslate"><span class="pre">pop()</span></code> <code class="docutils literal notranslate"><span class="pre">insert()</span></code> etc.</p></li>
+<li><p>If you set a <code class="docutils literal notranslate"><span class="pre">lista</span> <span class="pre">=</span> <span class="pre">listb</span></code> this list will not be a copy but instead be the same list, where if you modify one it will modify both.</p></li>
+<li><p>To create a copy of a list, you can use <code class="docutils literal notranslate"><span class="pre">lista=listb[:]</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;seven&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;nine&#39;</span><span class="p">]</span>
+<span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We added 10 to b:&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the length of b is now:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+<span class="n">b</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">):]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Eleven&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We added 11 to b:&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>We added 10 to b: [6, &#39;seven&#39;, 8, &#39;nine&#39;, 10]
+the length of b is now: 5
+We added 11 to b: [6, &#39;seven&#39;, 8, &#39;nine&#39;, 10, &#39;Eleven&#39;, 12]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="list">
+<h2><span class="section-number">2.15. </span>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>If you set a lista = listb this list will not be a copy but instead be the same list, where if you modify one it will modify both.</p></li>
+<li><p>To create a copy of a list, you can use <code class="docutils literal notranslate"><span class="pre">lista=listb[:]</span></code> or <code class="docutils literal notranslate"><span class="pre">lista=listb.copy()</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">listb</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">listb1</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">listb2</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="c1">#This assigns one variable to another, linking them</span>
+<span class="n">lista</span><span class="o">=</span><span class="n">listb</span>
+<span class="c1">#This creates a copy</span>
+<span class="n">lista1</span><span class="o">=</span><span class="n">listb1</span><span class="p">[:]</span>
+<span class="n">lista2</span><span class="o">=</span><span class="n">listb2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># This does the same thing.</span>
+<span class="c1">#This deletes the third item in the array.</span>
+<span class="n">lista</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">lista1</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">lista2</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1">#Notice how when we pop lista, listb is also impacted.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">listb</span><span class="p">)</span>
+<span class="c1">#Notice how when we use a copy, listb1 is not impacted. </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista1</span><span class="p">,</span> <span class="n">listb1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista2</span><span class="p">,</span> <span class="n">listb2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[1, 2, 3] [1, 2, 3]
+[1, 2, 3] [1, 2, 3, 4]
+[1, 2, 3] [1, 2, 3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-lists">
+<h2><span class="section-number">2.16. </span>Exercise-Lists<a class="headerlink" href="#exercise-lists" title="Permalink to this headline">¶</a></h2>
+<p>Hint: <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html">This list of functions on lists is useful.</a></p>
+<ol class="simple">
+<li><p>Create a list <code class="docutils literal notranslate"><span class="pre">elists1</span></code> with the following values (1,2,3,4,5).</p></li>
+<li><p>Create a new list <code class="docutils literal notranslate"><span class="pre">elists2</span></code> by first creating a copy of <code class="docutils literal notranslate"><span class="pre">elist1</span></code> and then reversing the order.</p></li>
+<li><p>Create a new list <code class="docutils literal notranslate"><span class="pre">elists3</span></code> by first creating a copy of <code class="docutils literal notranslate"><span class="pre">elist1</span></code> and then adding 7 8 9 to the end. <em>(Hint: Search for a different function if appending doesn’t work.)</em></p></li>
+<li><p>Create a new list <code class="docutils literal notranslate"><span class="pre">elists4</span></code> by first creating a copy of <code class="docutils literal notranslate"><span class="pre">elist3</span></code> and then insert 6 between 5 and 7.</p></li>
+</ol>
+</div>
+<div class="section" id="sets">
+<h2><span class="section-number">2.17. </span>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Lists can contain duplicate values.</p></li>
+<li><p>A set, in contrast, contains no duplicates.</p></li>
+<li><p>Sets can be created from lists using the <code class="docutils literal notranslate"><span class="pre">set()</span></code> function.</p></li>
+<li><p>Alternatively we can write a set literal using the <code class="docutils literal notranslate"><span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}</span></code> brackets.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This creates a set from a list. </span>
+<span class="n">X</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4} &lt;class &#39;set&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4} &lt;class &#39;set&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sets-are-mutable">
+<h2><span class="section-number">2.18. </span>Sets are Mutable<a class="headerlink" href="#sets-are-mutable" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Sets are mutable like lists (meaning we can change them)</p></li>
+<li><p>Duplicates are automatically removed</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">X</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">X</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{0, 1, 2, 3, 4, 5}
+{0, 1, 2, 3, 4, 5}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sets-are-unordered">
+<h2><span class="section-number">2.19. </span>Sets are Unordered<a class="headerlink" href="#sets-are-unordered" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Sets do not have an order.</p></li>
+<li><p>Therefore we cannot index or slice them.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-30-19c40ecbd036&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="ne">TypeError</span>: &#39;set&#39; object does not support indexing
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operations-on-sets">
+<h2><span class="section-number">2.20. </span>Operations on Sets<a class="headerlink" href="#operations-on-sets" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Union: <span class="math notranslate nohighlight">\(X \cup Y\)</span> combines two sets</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
+<span class="n">X</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5, 6}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">2.21. </span>Operations on Sets<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Intersection: <span class="math notranslate nohighlight">\(X \cap Y\)</span>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="n">X</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{3, 4}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">2.22. </span>Operations on Sets<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Difference <span class="math notranslate nohighlight">\(X - Y\)</span>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="n">X</span> <span class="o">-</span> <span class="n">Y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{1, 2}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dictionaries">
+<h2><span class="section-number">2.23. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>You can think of dictionaries as arrays that help you assocaite a <code class="docutils literal notranslate"><span class="pre">key</span></code> with a <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p></li>
+<li><p>Dictionaries can be specified with <code class="docutils literal notranslate"><span class="pre">{key:</span> <span class="pre">value,</span> <span class="pre">key:</span> <span class="pre">value}</span></code></p></li>
+<li><p>Dictionaries can be specified with dict([(‘key’, value), (‘key’, value)])</p></li>
+<li><p>Key’s and values can be either string or numeric.</p></li>
+<li><p>Dictionaries are mutable, (can be changed) <code class="docutils literal notranslate"><span class="pre">adict['g']</span> <span class="pre">=</span> <span class="pre">41</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adict1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">adict2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">adict1</span><span class="p">,</span><span class="n">adict2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">adict1</span><span class="p">),</span><span class="nb">type</span><span class="p">(</span><span class="n">adict2</span><span class="p">),</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">adict1</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">],</span><span class="n">adict2</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;c&#39;: 2, &#39;b&#39;: 1, &#39;a&#39;: 0} {1: &#39;a&#39;, 2: &#39;b&#39;, 3: &#39;c&#39;} 
+ &lt;class &#39;dict&#39;&gt; &lt;class &#39;dict&#39;&gt; 
+ 1 b
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adict2</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">]</span><span class="o">=</span><span class="mi">1234</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adict2</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1234
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-sets-dictionary">
+<h2><span class="section-number">2.24. </span>Exercise-Sets/Dictionary<a class="headerlink" href="#exercise-sets-dictionary" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Create a set <code class="docutils literal notranslate"><span class="pre">eset1</span></code> with the following values (1,2,3,4,5).</p></li>
+<li><p>Create a new set <code class="docutils literal notranslate"><span class="pre">eset2</span></code> the following values (1,3,6).</p></li>
+<li><p>Create a new set <code class="docutils literal notranslate"><span class="pre">eset3</span></code> that is <code class="docutils literal notranslate"><span class="pre">eset1-eset2</span></code>.</p></li>
+<li><p>Create a new set <code class="docutils literal notranslate"><span class="pre">eset4</span></code> that is the union of <code class="docutils literal notranslate"><span class="pre">eset1+eset2</span></code>.</p></li>
+<li><p>Create a new set <code class="docutils literal notranslate"><span class="pre">eset5</span></code> that includes values that are in both <code class="docutils literal notranslate"><span class="pre">eset1</span></code> and <code class="docutils literal notranslate"><span class="pre">eset2</span></code> (intersection).</p></li>
+<li><p>Create a new dict <code class="docutils literal notranslate"><span class="pre">edict1</span></code> with the following keys and associated values: st1=45; st2=32; st3=40; st4=31.</p></li>
+<li><p>Create a new variable edict2 from edict 1 where the key is st3.</p></li>
+</ol>
+</div>
+<div class="section" id="credits">
+<h2><span class="section-number">2.25. </span>CREDITS<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
+<p>Copyright <a class="reference external" href="http://rpi.analyticsdojo.com">AnalyticsDojo</a> 2020
+This work is licensed under the <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a> license agreement.</p>
+<p>This work has been adopted from the <a class="reference external" href="https://github.com/phelps-sg/python-bigdata">origional version</a>:
+Copyright <a class="reference external" href="http://sphelps.net">Steve Phelps</a> 2014</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="python-overview.html" title="previous page"><span class="section-number">1. </span>Overview of Python Features</a>
+    <a class='right-next' id="next-link" href="../assignments/02starter.html" title="next page"><span class="section-number">3. </span>Assignment 2 Starter</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jason Kuruzovich<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
