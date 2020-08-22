@@ -9,7 +9,7 @@ In this class we will simply be providing a high level overview of the class.  W
 |----------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         1 | Please review the syllabus to ensure you have an understanding of expectations for the class.  [Link](https://github.com/rpi-techfundamentals/ms-website-fall-2020/raw/master/files/syllabus.pdf) |
 |         1 | Please take this short initial survey that will help me in delivering a good  class.  [Link](https://forms.gle/6T7UdT7dZWboufeS7)                                                                 |
-|         1 | Join this Webex Teams space.  [Link](https://eurl.io/#YnuX1CwNt)                                                                                                                                  |
+|         1 | Join this Webex Teams space.  [Link](https://eurl.io/#KijTiY1Sa)                                                                                                                                  |
 
 
 ## Assignment

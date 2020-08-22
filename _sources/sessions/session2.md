@@ -5,9 +5,9 @@ More detail on specific approches. [Link](../../sessions/session2)
 
 ## Before Class
 
-|   Session | Content       |
-|----------:|:--------------|
-|         2 | IMS Chapter 1 |
+|   Session |   Content |
+|----------:|----------:|
+|         2 |       nan |
 
 
 ## In Class
