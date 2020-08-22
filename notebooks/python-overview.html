@@ -1,0 +1,574 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>1. Overview of Python Features &#8212; MGMT 4100 Quantitative Methods for Business @Rensselaer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)" href="datastructures.html" />
+    <link rel="prev" title="4. Linear Programming 2 (09/10)" href="../sessions/session4.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MGMT 4100 Quantitative Methods for Business @Rensselaer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Quantitative Methods for Business
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  OVERVIEW
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/preparation.html">
+   Before Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/in_class.html">
+   In Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/assignments.html">
+   Assignments
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SESSIONS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session1.html">
+   1. Welcome and class overview  (08/31)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session2.html">
+   2. Intro to Management Science  (09/03)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session3.html">
+   3. Linear Programming 1 (09/08)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session4.html">
+   4. Linear Programming 2  (09/10)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NOTEBOOKS
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Overview of Python Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datastructures.html">
+   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/02starter.html">
+   3. Assignment 2 Starter
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/python-overview.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rpi-techfundamentals/ms-website-fall-2020/blob/master/quant/notebooks/python-overview.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-features">
+   1.1. Python Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-is-interpreted">
+   1.2. Python is Interpreted
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-and-jupyter">
+     1.2.1. Python and Jupyter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-and-markdown">
+     1.2.2. Jupyter and Markdown
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-2-vs-python-3">
+     1.2.3. Python 2 vs Python 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-and-packages">
+     1.2.4. Python and Packages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-and-installing-packages">
+     1.2.5. Python and Installing Packages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-and-using-packages">
+     1.2.6. Python and Using Packages
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a class="reference external" href="http://rpi.analyticsdojo.com"><img alt="AnalyticsDojo" src="https://github.com/rpi-techfundamentals/spring2019-materials/blob/master/fig/final-logo.png?raw=1" /></a></p>
+<center><h1>Introduction to Python - Overview and Packages</h1></center>
+<center><h3><a href = 'http://rpi.analyticsdojo.com'>rpi.analyticsdojo.com</a></h3></center>
+<div class="section" id="overview-of-python-features">
+<h1><span class="section-number">1. </span>Overview of Python Features<a class="headerlink" href="#overview-of-python-features" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Language Features</p></li>
+<li><p>Python and Jupyter</p></li>
+<li><p>Jupyter and Markdown</p></li>
+<li><p>Python 2 vs Python 3</p></li>
+<li><p>Python and Packages</p></li>
+</ul>
+<div class="section" id="python-features">
+<h2><span class="section-number">1.1. </span>Python Features<a class="headerlink" href="#python-features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Python has many of the same features of most programming languages.</p></li>
+<li><p>Python is object oriented.</p></li>
+<li><p>Python has buit in data types and functions that are included directly.</p></li>
+<li><p>Python has an extensive ecosystem of packages (including ones for data science) available to extend the language to include new data types and functions.</p></li>
+</ul>
+</div>
+<div class="section" id="python-is-interpreted">
+<h2><span class="section-number">1.2. </span>Python is Interpreted<a class="headerlink" href="#python-is-interpreted" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Python is an interpreted language, in contrast to Java and C which are compiled languages.</p></li>
+<li><p>This means we can type statements into the interpreter and they are executed immediately. This works well for data analytics because we can build things step by step.</p></li>
+</ul>
+<div class="section" id="python-and-jupyter">
+<h3><span class="section-number">1.2.1. </span>Python and Jupyter<a class="headerlink" href="#python-and-jupyter" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Python commands can be executed in a Jupyter Notebook just by play at the end of a cell.</p></li>
+<li><p>Blocks of cells or even the entire notebook can be executed by clicking on the <em>Cell</em> above.</p></li>
+<li><p>The Kernal is responsible for interpreting the code, and the current kernal is listed on the top right of the notebook.</p></li>
+<li><p>While Jupyter started as a Python project, there are now a variety of Kernals for different programming languages including R, Scala, and SAS.</p></li>
+<li><p>Read more about Jupyter in the documentation <a class="reference external" href="http://jupyter.readthedocs.io/en/latest/">here</a>.</p></li>
+<li><p>If a variable isn’t assigned it will be provided as output.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Sum provided as output. </span>
+<span class="mi">5</span><span class="o">+</span><span class="mi">5</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#No output is provided when assigning a variable.</span>
+<span class="n">g</span><span class="o">=</span><span class="mi">5</span><span class="o">+</span><span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Just listing a variable will cause it to be provided as output.</span>
+<span class="n">g</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="jupyter-and-markdown">
+<h3><span class="section-number">1.2.2. </span>Jupyter and Markdown<a class="headerlink" href="#jupyter-and-markdown" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Jupyter notebooks are a great way of documenting your analytics projects.</p></li>
+<li><p>Select <em>Cell-&gt;Cell Type-&gt;Markdown</em> to create a <em>Markdown</em> Cell.</p></li>
+<li><p>Check out this <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown Cheatsheet</a>.</p></li>
+<li><p>Within code cells, you can comment by starting lines with <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This is a Python Comment and won&#39;t generate output. </span>
+<span class="mi">5</span><span class="o">+</span><span class="mi">5</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="python-2-vs-python-3">
+<h3><span class="section-number">1.2.3. </span>Python 2 vs Python 3<a class="headerlink" href="#python-2-vs-python-3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Python went through some <em>breaking changes</em> when moving from Python 2 to Python 3, and it still causes difficulty in the community.</p></li>
+<li><p>While we were stuck in Python 2 for a long time, Python 3 is increasingly.</p></li>
+<li><p>We will be basing our learning on Python 3.X.</p></li>
+<li><p>You can easily select the Python 2 kernal if you have to use it for a particular project.</p></li>
+<li><p>You can view differences between Python 2 and Python 3 <a class="reference external" href="http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html">here</a>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This Works with Python 2 but not Python 3 kernal. Change the Kernal to confirm.</span>
+<span class="nb">print</span> <span class="s1">&#39;Hello, World!&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This Works with Python 2 and Python 3 kernal. </span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Hello, World!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="python-and-packages">
+<h3><span class="section-number">1.2.4. </span>Python and Packages<a class="headerlink" href="#python-and-packages" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>There are a tremendous number of packages available which extend the core capabilities of the Python language.</p></li>
+<li><p>Packages are critical for data science, as data typically structured via external package.</p></li>
+<li><p>The PyPI - the Python Package Index <a class="reference external" href="https://pypi.python.org">https://pypi.python.org</a> provides search listing of all packages.</p></li>
+<li><p>It is possible that packages could be avaialble for Python 2 but not Python 3 (or vice versa).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span></code> is an  the package management system used to install and manage Python packages.</p></li>
+<li><p>Anaconda (<code class="docutils literal notranslate"><span class="pre">conda</span></code>) is the package management system with enterprise packages available.</p></li>
+</ul>
+<p><img alt="" src="https://github.com/rpi-techfundamentals/spring2019-materials/blob/master/fig/anaconda.png?raw=1" /></p>
+</div>
+<div class="section" id="python-and-installing-packages">
+<h3><span class="section-number">1.2.5. </span>Python and Installing Packages<a class="headerlink" href="#python-and-installing-packages" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>When using Conda, the command <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code></p></li>
+<li><p>pip is the package management system used to install and manage Python packages.</p></li>
+<li><p>pip must be run on the terminal.</p></li>
+<li><p>Two options for accessing shell of Docker container</p></li>
+<li><p>(1) From a notebook:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">!conda</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">matplotlib</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span>&#160; <span class="pre">matplotlib</span></code></p>
+<ul class="simple">
+<li><p>(2) Select <em>New-&gt;Terminal</em> from main Jupyter screeen.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Conda will work if running locally, but not on colab. </span>
+<span class="c1">#!conda install -y matplotlib</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#This will install the package matplotlib (or really check that it is installed because it is by default.)
+!pip install  matplotlib
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib in /usr/local/lib/python3.6/dist-packages (2.1.2)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib) (2.3.0)
+Requirement already satisfied: python-dateutil&gt;=2.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib) (2.5.3)
+Requirement already satisfied: pytz in /usr/local/lib/python3.6/dist-packages (from matplotlib) (2018.9)
+Requirement already satisfied: six&gt;=1.10 in /usr/local/lib/python3.6/dist-packages (from matplotlib) (1.11.0)
+Requirement already satisfied: numpy&gt;=1.7.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib) (1.14.6)
+Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.6/dist-packages (from matplotlib) (0.10.0)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="python-and-using-packages">
+<h3><span class="section-number">1.2.6. </span>Python and Using Packages<a class="headerlink" href="#python-and-using-packages" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Python packages must be imported before using.</p></li>
+<li><p>Python packages are organized as modules, and you can import the entire package or just the submodule that you need.</p></li>
+<li><p>Packages only have to be imported once in a notebook (not in every cell).</p></li>
+<li><p>Multipled ways of importing all or specific modules (that impact how you call methods)</p></li>
+<li><p>(1) Import all of the package <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">matplotlib</span></code></p></li>
+<li><p>(2) Import a module <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">matplotlib.pyplot</span></code> or <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">matplotlib</span> <span class="pre">import</span> <span class="pre">pyplot</span></code></p></li>
+<li><p>(3) Import all of some of package with abbreviation  <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">matplotlib.pyplot</span> <span class="pre">as</span> <span class="pre">plt</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This is required to show plots. It just has to be run once.</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This will import the pyplot module of the matplotlab package. </span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">pyplot</span>
+<span class="c1">#Observe how we are calling the plot method within the pyplot module. </span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Sample numbers&#39;</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/python-overview_20_0.png" src="../_images/python-overview_20_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This will import just the pyplot module as plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1">#Observe how we are calling the plot method within the pyplot module. </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Sample numbers&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/python-overview_21_0.png" src="../_images/python-overview_21_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../sessions/session4.html" title="previous page"><span class="section-number">4. </span>Linear Programming 2  (09/10)</a>
+    <a class='right-next' id="next-link" href="datastructures.html" title="next page"><span class="section-number">2. </span>Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jason Kuruzovich<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
