@@ -1,4 +1,4 @@
-Linear Programming 1 (09/08)
+Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
 ============================
 
 TBD [Link](../../sessions/session3)

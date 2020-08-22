@@ -1,4 +1,4 @@
-Intro to Management Science  (09/03)
+Python Basics (09/03)
 ============================
 
 More detail on specific approches. [Link](../../sessions/session2)
