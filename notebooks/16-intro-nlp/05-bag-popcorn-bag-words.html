@@ -1,0 +1,1658 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Word2Vec &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Introduction to Machine Learning Applications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  OVERVIEW
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/preparation.html">
+   Before Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/in_class.html">
+   In Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/assignments.html">
+   Assignments
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SESSIONS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session1.html">
+   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session2.html">
+   2. Python Basics (09/03)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session3.html">
+   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session4.html">
+   4. Python conditionals, loops, functions, aggregating.  (09/10)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NOTEBOOKS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/01-python-overview.html">
+   1. Overview of Python Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/02-datastructures.html">
+   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/03-numpy.html">
+   3. Overview of Numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/04-pandas.html">
+   4. Large sections of this were adopted from Analyzing structured data with Pandas by Steve Phelps.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/04-pandas.html#introduction-to-pandas">
+   5. Introduction to Pandas
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/16-intro-nlp/05-bag-popcorn-bag-words.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020/issues/new?title=Issue%20on%20page%20%2Fnotebooks/16-intro-nlp/05-bag-popcorn-bag-words.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rpi-techfundamentals/introml_website_fall_2020/blob/master/site/notebooks/16-intro-nlp/05-bag-popcorn-bag-words.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a class="reference external" href="http://rpi.analyticsdojo.com"><img alt="AnalyticsDojo" src="https://github.com/rpi-techfundamentals/spring2019-materials/blob/master/fig/final-logo.png?raw=1" /></a></p>
+<center><h1> Bag of Words</h1></center>
+<center><h3><a href = 'http://rpi.analyticsdojo.com'>rpi.analyticsdojo.com</a></h3></center><p>This is adopted from: <a class="reference external" href="https://www.kaggle.com/c/word2vec-nlp-tutorial/details/part-1-for-beginners-bag-of-words">Bag of Words Meets Bags of Popcorn</a>
+<a class="reference external" href="https://github.com/wendykan/DeepLearningMovies">https://github.com/wendykan/DeepLearningMovies</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!wget https://github.com/rpi-techfundamentals/spring2019-materials/raw/master/input/labeledTrainData.tsv
+!wget https://github.com/rpi-techfundamentals/spring2019-materials/raw/master/input/unlabeledTrainData.tsv
+!wget https://github.com/rpi-techfundamentals/spring2019-materials/raw/master/input/testData.tsv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>--2019-03-14 00:57:13--  https://github.com/rpi-techfundamentals/spring2019-materials/raw/master/input/labeledTrainData.tsv
+Resolving github.com (github.com)... 192.30.253.113, 192.30.253.112
+Connecting to github.com (github.com)|192.30.253.113|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/input/labeledTrainData.tsv [following]
+--2019-03-14 00:57:13--  https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/input/labeledTrainData.tsv
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.0.133, 151.101.64.133, 151.101.128.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.0.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 33556378 (32M) [text/plain]
+Saving to: ‘labeledTrainData.tsv.1’
+
+labeledTrainData.ts 100%[===================&gt;]  32.00M   191MB/s    in 0.2s    
+
+2019-03-14 00:57:14 (191 MB/s) - ‘labeledTrainData.tsv.1’ saved [33556378/33556378]
+
+--2019-03-14 00:57:15--  https://github.com/rpi-techfundamentals/spring2019-materials/raw/master/input/unlabeledTrainData.tsv
+Resolving github.com (github.com)... 192.30.253.113, 192.30.253.112
+Connecting to github.com (github.com)|192.30.253.113|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/input/unlabeledTrainData.tsv [following]
+--2019-03-14 00:57:15--  https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/input/unlabeledTrainData.tsv
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.0.133, 151.101.64.133, 151.101.128.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.0.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 67281491 (64M) [text/plain]
+Saving to: ‘unlabeledTrainData.tsv.1’
+
+unlabeledTrainData. 100%[===================&gt;]  64.16M   234MB/s    in 0.3s    
+
+2019-03-14 00:57:15 (234 MB/s) - ‘unlabeledTrainData.tsv.1’ saved [67281491/67281491]
+
+--2019-03-14 00:57:16--  https://github.com/rpi-techfundamentals/spring2019-materials/raw/master/input/testData.tsv
+Resolving github.com (github.com)... 192.30.253.113, 192.30.253.112
+Connecting to github.com (github.com)|192.30.253.113|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/input/testData.tsv [following]
+--2019-03-14 00:57:17--  https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/input/testData.tsv
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.0.133, 151.101.64.133, 151.101.128.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.0.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 32724746 (31M) [text/plain]
+Saving to: ‘testData.tsv.1’
+
+testData.tsv.1      100%[===================&gt;]  31.21M   147MB/s    in 0.2s    
+
+2019-03-14 00:57:17 (147 MB/s) - ‘testData.tsv.1’ saved [32724746/32724746]
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;labeledTrainData.tsv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> \
+                    <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">unlabeled_train</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;unlabeledTrainData.tsv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> \
+                    <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;testData.tsv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> \
+                    <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">test</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;id&#39; &#39;sentiment&#39; &#39;review&#39;] [&#39;id&#39; &#39;review&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>sentiment</th>
+      <th>review</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>"5814_8"</td>
+      <td>1</td>
+      <td>"With all this stuff going down at the moment ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>"2381_9"</td>
+      <td>1</td>
+      <td>"\"The Classic War of the Worlds\" by Timothy ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>"7759_3"</td>
+      <td>0</td>
+      <td>"The film starts with a manager (Nicholas Bell...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>"3630_4"</td>
+      <td>0</td>
+      <td>"It must be assumed that those who praised thi...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>"9495_8"</td>
+      <td>1</td>
+      <td>"Superbly trashy and wondrously unpretentious ...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The train shape is: &#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The train shape is: &#39;</span><span class="p">,</span> <span class="n">test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>The train shape is:  (25000, 3)
+The train shape is:  (25000, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The first review is:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>The first review is:
+&quot;With all this stuff going down at the moment with MJ i&#39;ve started listening to his music, watching the odd documentary here and there, watched The Wiz and watched Moonwalker again. Maybe i just want to get a certain insight into this guy who i thought was really cool in the eighties just to maybe make up my mind whether he is guilty or innocent. Moonwalker is part biography, part feature film which i remember going to see at the cinema when it was originally released. Some of it has subtle messages about MJ&#39;s feeling towards the press and also the obvious message of drugs are bad m&#39;kay.&lt;br /&gt;&lt;br /&gt;Visually impressive but of course this is all about Michael Jackson so unless you remotely like MJ in anyway then you are going to hate this and find it boring. Some may call MJ an egotist for consenting to the making of this movie BUT MJ and most of his fans would say that he made it for the fans which if true is really nice of him.&lt;br /&gt;&lt;br /&gt;The actual feature film bit when it finally starts is only on for 20 minutes or so excluding the Smooth Criminal sequence and Joe Pesci is convincing as a psychopathic all powerful drug lord. Why he wants MJ dead so bad is beyond me. Because MJ overheard his plans? Nah, Joe Pesci&#39;s character ranted that he wanted people to know it is he who is supplying drugs etc so i dunno, maybe he just hates MJ&#39;s music.&lt;br /&gt;&lt;br /&gt;Lots of cool things in this like MJ turning into a car and a robot and the whole Speed Demon sequence. Also, the director must have had the patience of a saint when it came to filming the kiddy Bad sequence as usually directors hate working with one kid let alone a whole bunch of them performing a complex dance scene.&lt;br /&gt;&lt;br /&gt;Bottom line, this movie is for people who like MJ on one level or another (which i think is most people). If not, then stay away. It does try and give off a wholesome message and ironically MJ&#39;s bestest buddy in this movie is a girl! Michael Jackson is truly one of the most talented people ever to grace this planet but is he guilty? Well, with all the attention i&#39;ve gave this subject....hmmm well i don&#39;t know because people can be different behind closed doors, i know this for a fact. He is either an extremely nice but stupid guy or one of the most sickest liars. I hope he is not the latter.&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import BeautifulSoup into your workspace</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>             
+
+<span class="c1"># Initialize the BeautifulSoup object on a single movie review     </span>
+<span class="n">example1</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;html.parser&quot;</span> <span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">example1</span><span class="o">.</span><span class="n">get_text</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;With all this stuff going down at the moment with MJ i&#39;ve started listening to his music, watching the odd documentary here and there, watched The Wiz and watched Moonwalker again. Maybe i just want to get a certain insight into this guy who i thought was really cool in the eighties just to maybe make up my mind whether he is guilty or innocent. Moonwalker is part biography, part feature film which i remember going to see at the cinema when it was originally released. Some of it has subtle messages about MJ&#39;s feeling towards the press and also the obvious message of drugs are bad m&#39;kay.Visually impressive but of course this is all about Michael Jackson so unless you remotely like MJ in anyway then you are going to hate this and find it boring. Some may call MJ an egotist for consenting to the making of this movie BUT MJ and most of his fans would say that he made it for the fans which if true is really nice of him.The actual feature film bit when it finally starts is only on for 20 minutes or so excluding the Smooth Criminal sequence and Joe Pesci is convincing as a psychopathic all powerful drug lord. Why he wants MJ dead so bad is beyond me. Because MJ overheard his plans? Nah, Joe Pesci&#39;s character ranted that he wanted people to know it is he who is supplying drugs etc so i dunno, maybe he just hates MJ&#39;s music.Lots of cool things in this like MJ turning into a car and a robot and the whole Speed Demon sequence. Also, the director must have had the patience of a saint when it came to filming the kiddy Bad sequence as usually directors hate working with one kid let alone a whole bunch of them performing a complex dance scene.Bottom line, this movie is for people who like MJ on one level or another (which i think is most people). If not, then stay away. It does try and give off a wholesome message and ironically MJ&#39;s bestest buddy in this movie is a girl! Michael Jackson is truly one of the most talented people ever to grace this planet but is he guilty? Well, with all the attention i&#39;ve gave this subject....hmmm well i don&#39;t know because people can be different behind closed doors, i know this for a fact. He is either an extremely nice but stupid guy or one of the most sickest liars. I hope he is not the latter.&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="c1"># Use regular expressions to do a find-and-replace</span>
+<span class="n">letters_only</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;[^a-zA-Z]&quot;</span><span class="p">,</span>           <span class="c1"># The pattern to search for</span>
+                      <span class="s2">&quot; &quot;</span><span class="p">,</span>                   <span class="c1"># The pattern to replace it with</span>
+                      <span class="n">example1</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="p">)</span>  <span class="c1"># The text to search</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">letters_only</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span> With all this stuff going down at the moment with MJ i ve started listening to his music  watching the odd documentary here and there  watched The Wiz and watched Moonwalker again  Maybe i just want to get a certain insight into this guy who i thought was really cool in the eighties just to maybe make up my mind whether he is guilty or innocent  Moonwalker is part biography  part feature film which i remember going to see at the cinema when it was originally released  Some of it has subtle messages about MJ s feeling towards the press and also the obvious message of drugs are bad m kay Visually impressive but of course this is all about Michael Jackson so unless you remotely like MJ in anyway then you are going to hate this and find it boring  Some may call MJ an egotist for consenting to the making of this movie BUT MJ and most of his fans would say that he made it for the fans which if true is really nice of him The actual feature film bit when it finally starts is only on for    minutes or so excluding the Smooth Criminal sequence and Joe Pesci is convincing as a psychopathic all powerful drug lord  Why he wants MJ dead so bad is beyond me  Because MJ overheard his plans  Nah  Joe Pesci s character ranted that he wanted people to know it is he who is supplying drugs etc so i dunno  maybe he just hates MJ s music Lots of cool things in this like MJ turning into a car and a robot and the whole Speed Demon sequence  Also  the director must have had the patience of a saint when it came to filming the kiddy Bad sequence as usually directors hate working with one kid let alone a whole bunch of them performing a complex dance scene Bottom line  this movie is for people who like MJ on one level or another  which i think is most people   If not  then stay away  It does try and give off a wholesome message and ironically MJ s bestest buddy in this movie is a girl  Michael Jackson is truly one of the most talented people ever to grace this planet but is he guilty  Well  with all the attention i ve gave this subject    hmmm well i don t know because people can be different behind closed doors  i know this for a fact  He is either an extremely nice but stupid guy or one of the most sickest liars  I hope he is not the latter  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lower_case</span> <span class="o">=</span> <span class="n">letters_only</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>        <span class="c1"># Convert to lower case</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">lower_case</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>               <span class="c1"># Split into words</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter Download then stopwords.</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Unzipping corpora/stopwords.zip.
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s2">&quot;english&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;i&#39;, &#39;me&#39;, &#39;my&#39;, &#39;myself&#39;, &#39;we&#39;, &#39;our&#39;, &#39;ours&#39;, &#39;ourselves&#39;, &#39;you&#39;, &quot;you&#39;re&quot;, &quot;you&#39;ve&quot;, &quot;you&#39;ll&quot;, &quot;you&#39;d&quot;, &#39;your&#39;, &#39;yours&#39;, &#39;yourself&#39;, &#39;yourselves&#39;, &#39;he&#39;, &#39;him&#39;, &#39;his&#39;, &#39;himself&#39;, &#39;she&#39;, &quot;she&#39;s&quot;, &#39;her&#39;, &#39;hers&#39;, &#39;herself&#39;, &#39;it&#39;, &quot;it&#39;s&quot;, &#39;its&#39;, &#39;itself&#39;, &#39;they&#39;, &#39;them&#39;, &#39;their&#39;, &#39;theirs&#39;, &#39;themselves&#39;, &#39;what&#39;, &#39;which&#39;, &#39;who&#39;, &#39;whom&#39;, &#39;this&#39;, &#39;that&#39;, &quot;that&#39;ll&quot;, &#39;these&#39;, &#39;those&#39;, &#39;am&#39;, &#39;is&#39;, &#39;are&#39;, &#39;was&#39;, &#39;were&#39;, &#39;be&#39;, &#39;been&#39;, &#39;being&#39;, &#39;have&#39;, &#39;has&#39;, &#39;had&#39;, &#39;having&#39;, &#39;do&#39;, &#39;does&#39;, &#39;did&#39;, &#39;doing&#39;, &#39;a&#39;, &#39;an&#39;, &#39;the&#39;, &#39;and&#39;, &#39;but&#39;, &#39;if&#39;, &#39;or&#39;, &#39;because&#39;, &#39;as&#39;, &#39;until&#39;, &#39;while&#39;, &#39;of&#39;, &#39;at&#39;, &#39;by&#39;, &#39;for&#39;, &#39;with&#39;, &#39;about&#39;, &#39;against&#39;, &#39;between&#39;, &#39;into&#39;, &#39;through&#39;, &#39;during&#39;, &#39;before&#39;, &#39;after&#39;, &#39;above&#39;, &#39;below&#39;, &#39;to&#39;, &#39;from&#39;, &#39;up&#39;, &#39;down&#39;, &#39;in&#39;, &#39;out&#39;, &#39;on&#39;, &#39;off&#39;, &#39;over&#39;, &#39;under&#39;, &#39;again&#39;, &#39;further&#39;, &#39;then&#39;, &#39;once&#39;, &#39;here&#39;, &#39;there&#39;, &#39;when&#39;, &#39;where&#39;, &#39;why&#39;, &#39;how&#39;, &#39;all&#39;, &#39;any&#39;, &#39;both&#39;, &#39;each&#39;, &#39;few&#39;, &#39;more&#39;, &#39;most&#39;, &#39;other&#39;, &#39;some&#39;, &#39;such&#39;, &#39;no&#39;, &#39;nor&#39;, &#39;not&#39;, &#39;only&#39;, &#39;own&#39;, &#39;same&#39;, &#39;so&#39;, &#39;than&#39;, &#39;too&#39;, &#39;very&#39;, &#39;s&#39;, &#39;t&#39;, &#39;can&#39;, &#39;will&#39;, &#39;just&#39;, &#39;don&#39;, &quot;don&#39;t&quot;, &#39;should&#39;, &quot;should&#39;ve&quot;, &#39;now&#39;, &#39;d&#39;, &#39;ll&#39;, &#39;m&#39;, &#39;o&#39;, &#39;re&#39;, &#39;ve&#39;, &#39;y&#39;, &#39;ain&#39;, &#39;aren&#39;, &quot;aren&#39;t&quot;, &#39;couldn&#39;, &quot;couldn&#39;t&quot;, &#39;didn&#39;, &quot;didn&#39;t&quot;, &#39;doesn&#39;, &quot;doesn&#39;t&quot;, &#39;hadn&#39;, &quot;hadn&#39;t&quot;, &#39;hasn&#39;, &quot;hasn&#39;t&quot;, &#39;haven&#39;, &quot;haven&#39;t&quot;, &#39;isn&#39;, &quot;isn&#39;t&quot;, &#39;ma&#39;, &#39;mightn&#39;, &quot;mightn&#39;t&quot;, &#39;mustn&#39;, &quot;mustn&#39;t&quot;, &#39;needn&#39;, &quot;needn&#39;t&quot;, &#39;shan&#39;, &quot;shan&#39;t&quot;, &#39;shouldn&#39;, &quot;shouldn&#39;t&quot;, &#39;wasn&#39;, &quot;wasn&#39;t&quot;, &#39;weren&#39;, &quot;weren&#39;t&quot;, &#39;won&#39;, &quot;won&#39;t&quot;, &#39;wouldn&#39;, &quot;wouldn&#39;t&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove stop words from &quot;words&quot;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s2">&quot;english&quot;</span><span class="p">)]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;stuff&#39;, &#39;going&#39;, &#39;moment&#39;, &#39;mj&#39;, &#39;started&#39;, &#39;listening&#39;, &#39;music&#39;, &#39;watching&#39;, &#39;odd&#39;, &#39;documentary&#39;, &#39;watched&#39;, &#39;wiz&#39;, &#39;watched&#39;, &#39;moonwalker&#39;, &#39;maybe&#39;, &#39;want&#39;, &#39;get&#39;, &#39;certain&#39;, &#39;insight&#39;, &#39;guy&#39;, &#39;thought&#39;, &#39;really&#39;, &#39;cool&#39;, &#39;eighties&#39;, &#39;maybe&#39;, &#39;make&#39;, &#39;mind&#39;, &#39;whether&#39;, &#39;guilty&#39;, &#39;innocent&#39;, &#39;moonwalker&#39;, &#39;part&#39;, &#39;biography&#39;, &#39;part&#39;, &#39;feature&#39;, &#39;film&#39;, &#39;remember&#39;, &#39;going&#39;, &#39;see&#39;, &#39;cinema&#39;, &#39;originally&#39;, &#39;released&#39;, &#39;subtle&#39;, &#39;messages&#39;, &#39;mj&#39;, &#39;feeling&#39;, &#39;towards&#39;, &#39;press&#39;, &#39;also&#39;, &#39;obvious&#39;, &#39;message&#39;, &#39;drugs&#39;, &#39;bad&#39;, &#39;kay&#39;, &#39;visually&#39;, &#39;impressive&#39;, &#39;course&#39;, &#39;michael&#39;, &#39;jackson&#39;, &#39;unless&#39;, &#39;remotely&#39;, &#39;like&#39;, &#39;mj&#39;, &#39;anyway&#39;, &#39;going&#39;, &#39;hate&#39;, &#39;find&#39;, &#39;boring&#39;, &#39;may&#39;, &#39;call&#39;, &#39;mj&#39;, &#39;egotist&#39;, &#39;consenting&#39;, &#39;making&#39;, &#39;movie&#39;, &#39;mj&#39;, &#39;fans&#39;, &#39;would&#39;, &#39;say&#39;, &#39;made&#39;, &#39;fans&#39;, &#39;true&#39;, &#39;really&#39;, &#39;nice&#39;, &#39;actual&#39;, &#39;feature&#39;, &#39;film&#39;, &#39;bit&#39;, &#39;finally&#39;, &#39;starts&#39;, &#39;minutes&#39;, &#39;excluding&#39;, &#39;smooth&#39;, &#39;criminal&#39;, &#39;sequence&#39;, &#39;joe&#39;, &#39;pesci&#39;, &#39;convincing&#39;, &#39;psychopathic&#39;, &#39;powerful&#39;, &#39;drug&#39;, &#39;lord&#39;, &#39;wants&#39;, &#39;mj&#39;, &#39;dead&#39;, &#39;bad&#39;, &#39;beyond&#39;, &#39;mj&#39;, &#39;overheard&#39;, &#39;plans&#39;, &#39;nah&#39;, &#39;joe&#39;, &#39;pesci&#39;, &#39;character&#39;, &#39;ranted&#39;, &#39;wanted&#39;, &#39;people&#39;, &#39;know&#39;, &#39;supplying&#39;, &#39;drugs&#39;, &#39;etc&#39;, &#39;dunno&#39;, &#39;maybe&#39;, &#39;hates&#39;, &#39;mj&#39;, &#39;music&#39;, &#39;lots&#39;, &#39;cool&#39;, &#39;things&#39;, &#39;like&#39;, &#39;mj&#39;, &#39;turning&#39;, &#39;car&#39;, &#39;robot&#39;, &#39;whole&#39;, &#39;speed&#39;, &#39;demon&#39;, &#39;sequence&#39;, &#39;also&#39;, &#39;director&#39;, &#39;must&#39;, &#39;patience&#39;, &#39;saint&#39;, &#39;came&#39;, &#39;filming&#39;, &#39;kiddy&#39;, &#39;bad&#39;, &#39;sequence&#39;, &#39;usually&#39;, &#39;directors&#39;, &#39;hate&#39;, &#39;working&#39;, &#39;one&#39;, &#39;kid&#39;, &#39;let&#39;, &#39;alone&#39;, &#39;whole&#39;, &#39;bunch&#39;, &#39;performing&#39;, &#39;complex&#39;, &#39;dance&#39;, &#39;scene&#39;, &#39;bottom&#39;, &#39;line&#39;, &#39;movie&#39;, &#39;people&#39;, &#39;like&#39;, &#39;mj&#39;, &#39;one&#39;, &#39;level&#39;, &#39;another&#39;, &#39;think&#39;, &#39;people&#39;, &#39;stay&#39;, &#39;away&#39;, &#39;try&#39;, &#39;give&#39;, &#39;wholesome&#39;, &#39;message&#39;, &#39;ironically&#39;, &#39;mj&#39;, &#39;bestest&#39;, &#39;buddy&#39;, &#39;movie&#39;, &#39;girl&#39;, &#39;michael&#39;, &#39;jackson&#39;, &#39;truly&#39;, &#39;one&#39;, &#39;talented&#39;, &#39;people&#39;, &#39;ever&#39;, &#39;grace&#39;, &#39;planet&#39;, &#39;guilty&#39;, &#39;well&#39;, &#39;attention&#39;, &#39;gave&#39;, &#39;subject&#39;, &#39;hmmm&#39;, &#39;well&#39;, &#39;know&#39;, &#39;people&#39;, &#39;different&#39;, &#39;behind&#39;, &#39;closed&#39;, &#39;doors&#39;, &#39;know&#39;, &#39;fact&#39;, &#39;either&#39;, &#39;extremely&#39;, &#39;nice&#39;, &#39;stupid&#39;, &#39;guy&#39;, &#39;one&#39;, &#39;sickest&#39;, &#39;liars&#39;, &#39;hope&#39;, &#39;latter&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Now we are going to do our first class</span>
+<span class="k">class</span> <span class="nc">KaggleWord2VecUtility</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;KaggleWord2VecUtility is a utility class for processing raw HTML text into segments for further learning&quot;&quot;&quot;</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">review_to_wordlist</span><span class="p">(</span> <span class="n">review</span><span class="p">,</span> <span class="n">remove_stopwords</span><span class="o">=</span><span class="kc">False</span> <span class="p">):</span>
+        <span class="c1"># Function to convert a document to a sequence of words,</span>
+        <span class="c1"># optionally removing stop words.  Returns a list of words.</span>
+        <span class="c1">#</span>
+        <span class="c1"># 1. Remove HTML</span>
+        <span class="n">review_text</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">review</span><span class="p">,</span><span class="s2">&quot;html.parser&quot;</span>  <span class="p">)</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+        <span class="c1">#</span>
+        <span class="c1"># 2. Remove non-letters</span>
+        <span class="n">review_text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;[^a-zA-Z]&quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">review_text</span><span class="p">)</span>
+        <span class="c1">#</span>
+        <span class="c1"># 3. Convert words to lower case and split them</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">review_text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="c1">#</span>
+        <span class="c1"># 4. Optionally remove stop words (false by default)</span>
+        <span class="k">if</span> <span class="n">remove_stopwords</span><span class="p">:</span>
+            <span class="n">stops</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s2">&quot;english&quot;</span><span class="p">))</span>
+            <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">stops</span><span class="p">]</span>
+        <span class="c1">#</span>
+        <span class="c1"># 5. Return a list of words</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+
+    <span class="c1"># Define a function to split a review into parsed sentences</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">review_to_sentences</span><span class="p">(</span> <span class="n">review</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">,</span> <span class="n">remove_stopwords</span><span class="o">=</span><span class="kc">False</span> <span class="p">):</span>
+        <span class="c1"># Function to split a review into parsed sentences. Returns a</span>
+        <span class="c1"># list of sentences, where each sentence is a list of words</span>
+        <span class="c1">#</span>
+        <span class="c1"># 1. Use the NLTK tokenizer to split the paragraph into sentences</span>
+        <span class="n">raw_sentences</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">review</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+        <span class="c1">#</span>
+        <span class="c1"># 2. Loop over each sentence</span>
+        <span class="n">sentences</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">raw_sentence</span> <span class="ow">in</span> <span class="n">raw_sentences</span><span class="p">:</span>
+            <span class="c1"># If a sentence is empty, skip it</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_sentence</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># Otherwise, call review_to_wordlist to get a list of words</span>
+                <span class="n">sentences</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">KaggleWord2VecUtility</span><span class="o">.</span><span class="n">review_to_wordlist</span><span class="p">(</span> <span class="n">raw_sentence</span><span class="p">,</span> <span class="n">remove_stopwords</span> <span class="p">))</span>
+        <span class="c1">#</span>
+        <span class="c1"># Return the list of sentences (each sentence is a list of words,</span>
+        <span class="c1"># so this returns a list of lists</span>
+        <span class="k">return</span> <span class="n">sentences</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clean_review_word</span> <span class="o">=</span> <span class="n">KaggleWord2VecUtility</span><span class="o">.</span><span class="n">review_to_wordlist</span> \
+        <span class="p">(</span> <span class="n">train</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="kc">True</span> <span class="p">)</span>
+<span class="n">clean_review_sentence</span> <span class="o">=</span> <span class="n">KaggleWord2VecUtility</span><span class="o">.</span><span class="n">review_to_wordlist</span> \
+        <span class="p">(</span> <span class="n">train</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="kc">True</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the number of reviews based on the dataframe column size</span>
+<span class="n">num_reviews</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">size</span>
+
+
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Cleaning and parsing the training set movie reviews...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">clean_train_reviews</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">])):</span>
+    <span class="k">if</span><span class="p">(</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">):</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Review </span><span class="si">%d</span><span class="s2"> of </span><span class="si">%d</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_reviews</span> <span class="p">)</span>  <span class="p">)</span>  
+    <span class="n">clean_train_reviews</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">KaggleWord2VecUtility</span><span class="o">.</span><span class="n">review_to_wordlist</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="kc">True</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Cleaning and parsing the training set movie reviews...
+
+Review 1000 of 25000
+
+Review 2000 of 25000
+
+Review 3000 of 25000
+
+Review 4000 of 25000
+
+Review 5000 of 25000
+
+Review 6000 of 25000
+
+Review 7000 of 25000
+
+Review 8000 of 25000
+
+Review 9000 of 25000
+
+Review 10000 of 25000
+
+Review 11000 of 25000
+
+Review 12000 of 25000
+
+Review 13000 of 25000
+
+Review 14000 of 25000
+
+Review 15000 of 25000
+
+Review 16000 of 25000
+
+Review 17000 of 25000
+
+Review 18000 of 25000
+
+Review 19000 of 25000
+
+Review 20000 of 25000
+
+Review 21000 of 25000
+
+Review 22000 of 25000
+
+Review 23000 of 25000
+
+Review 24000 of 25000
+
+Review 25000 of 25000
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clean_train_reviews</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;stuff going moment mj started listening music watching odd documentary watched wiz watched moonwalker maybe want get certain insight guy thought really cool eighties maybe make mind whether guilty innocent moonwalker part biography part feature film remember going see cinema originally released subtle messages mj feeling towards press also obvious message drugs bad kay visually impressive course michael jackson unless remotely like mj anyway going hate find boring may call mj egotist consenting making movie mj fans would say made fans true really nice actual feature film bit finally starts minutes excluding smooth criminal sequence joe pesci convincing psychopathic powerful drug lord wants mj dead bad beyond mj overheard plans nah joe pesci character ranted wanted people know supplying drugs etc dunno maybe hates mj music lots cool things like mj turning car robot whole speed demon sequence also director must patience saint came filming kiddy bad sequence usually directors hate working one kid let alone whole bunch performing complex dance scene bottom line movie people like mj one level another think people stay away try give wholesome message ironically mj bestest buddy movie girl michael jackson truly one talented people ever grace planet guilty well attention gave subject hmmm well know people different behind closed doors know fact either extremely nice stupid guy one sickest liars hope latter&#39;,
+ &#39;classic war worlds timothy hines entertaining film obviously goes great effort lengths faithfully recreate h g wells classic book mr hines succeeds watched film appreciated fact standard predictable hollywood fare comes every year e g spielberg version tom cruise slightest resemblance book obviously everyone looks different things movie envision amateur critics look criticize everything others rate movie important bases like entertained people never agree critics enjoyed effort mr hines put faithful h g wells classic novel found entertaining made easy overlook critics perceive shortcomings&#39;,
+ &#39;film starts manager nicholas bell giving welcome investors robert carradine primal park secret project mutating primal animal using fossilized dna like jurassik park scientists resurrect one nature fearsome predators sabretooth tiger smilodon scientific ambition turns deadly however high voltage fence opened creature escape begins savagely stalking prey human visitors tourists scientific meanwhile youngsters enter restricted area security center attacked pack large pre historical animals deadlier bigger addition security agent stacy haiduk mate brian wimmer fight hardly carnivorous smilodons sabretooths course real star stars astounding terrifyingly though convincing giant animals savagely stalking prey group run afoul fight one nature fearsome predators furthermore third sabretooth dangerous slow stalks victims movie delivers goods lots blood gore beheading hair raising chills full scares sabretooths appear mediocre special effects story provides exciting stirring entertainment results quite boring giant animals majority made computer generator seem totally lousy middling performances though players reacting appropriately becoming food actors give vigorously physical performances dodging beasts running bound leaps dangling walls packs ridiculous final deadly scene small kids realistic gory violent attack scenes films sabretooths smilodon following sabretooth james r hickox vanessa angel david keith john rhys davies much better bc roland emmerich steven strait cliff curtis camilla belle motion picture filled bloody moments badly directed george miller originality takes many elements previous films miller australian director usually working television tidal wave journey center earth many others occasionally cinema man snowy river zeus roxanne robinson crusoe rating average bottom barrel&#39;,
+ &#39;must assumed praised film greatest filmed opera ever read somewhere either care opera care wagner care anything except desire appear cultured either representation wagner swan song movie strikes unmitigated disaster leaden reading score matched tricksy lugubrious realisation text questionable people ideas opera matter play especially one shakespeare allowed anywhere near theatre film studio syberberg fashionably without smallest justification wagner text decided parsifal bisexual integration title character latter stages transmutes kind beatnik babe though one continues sing high tenor actors film singers get double dose armin jordan conductor seen face heard voice amfortas also appears monstrously double exposure kind batonzilla conductor ate monsalvat playing good friday music way transcendant loveliness nature represented scattering shopworn flaccid crocuses stuck ill laid turf expedient baffles theatre sometimes piece imperfections thoughts think syberberg splice parsifal gurnemanz mountain pasture lush provided julie andrews sound music sound hard endure high voices trumpets particular possessing aural glare adds another sort fatigue impatience uninspired conducting paralytic unfolding ritual someone another review mentioned bayreuth recording knappertsbusch though tempi often slow jordan altogether lacks sense pulse feeling ebb flow music half century orchestral sound set modern pressings still superior film&#39;,
+ &#39;superbly trashy wondrously unpretentious exploitation hooray pre credits opening sequences somewhat give false impression dealing serious harrowing drama need fear barely ten minutes later necks nonsensical chainsaw battles rough fist fights lurid dialogs gratuitous nudity bo ingrid two orphaned siblings unusually close even slightly perverted relationship imagine playfully ripping towel covers sister naked body stare unshaven genitals several whole minutes well bo sister judging dubbed laughter mind sick dude anyway kids fled russia parents nasty soldiers brutally slaughtered mommy daddy friendly smuggler took custody however even raised trained bo ingrid expert smugglers actual plot lifts years later facing ultimate quest mythical incredibly valuable white fire diamond coincidentally found mine things life ever made little sense plot narrative structure white fire sure lot fun watch time clue beating cause bet actors understood even less whatever violence magnificently grotesque every single plot twist pleasingly retarded script goes totally bonkers beyond repair suddenly reveal reason bo needs replacement ingrid fred williamson enters scene big cigar mouth sleazy black fingers local prostitutes bo principal opponent italian chick big breasts hideous accent preposterous catchy theme song plays least dozen times throughout film obligatory falling love montage loads attractions god brilliant experience original french title translates life survive uniquely appropriate makes much sense rest movie none&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Creating the bag of words...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="c1"># Initialize the &quot;CountVectorizer&quot; object, which is scikit-learn&#39;s</span>
+<span class="c1"># bag of words tool.  </span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">analyzer</span> <span class="o">=</span> <span class="s2">&quot;word&quot;</span><span class="p">,</span>   \
+                             <span class="n">tokenizer</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>    \
+                             <span class="n">preprocessor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> \
+                             <span class="n">stop_words</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>   \
+                             <span class="n">max_features</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">)</span> 
+
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Creating the bag of words...
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">train_data_features</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">clean_train_reviews</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">train_data_features</span> <span class="o">=</span> <span class="n">train_data_features</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Training the random forest (this may take a while)...&quot;</span><span class="p">)</span>
+
+<span class="c1"># Initialize a Random Forest classifier with 100 trees</span>
+<span class="n">forest</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Training the random forest (this may take a while)...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit the forest to the training set, using the bag of words as</span>
+<span class="c1"># features and the sentiment labels as the response variable</span>
+<span class="c1">#</span>
+<span class="c1"># This may take a few minutes to run</span>
+<span class="n">forest</span> <span class="o">=</span> <span class="n">forest</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span> <span class="n">train_data_features</span><span class="p">,</span> <span class="n">train</span><span class="p">[</span><span class="s2">&quot;sentiment&quot;</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an empty list and append the clean reviews one by one</span>
+<span class="n">clean_test_reviews</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Cleaning and parsing the test set movie reviews...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">])):</span>
+    <span class="n">clean_test_reviews</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">KaggleWord2VecUtility</span><span class="o">.</span><span class="n">review_to_wordlist</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="kc">True</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Cleaning and parsing the test set movie reviews...
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># Get a bag of words for the test set, and convert to a numpy array</span>
+<span class="n">test_data_features</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">clean_test_reviews</span><span class="p">)</span>
+<span class="n">test_data_features</span> <span class="o">=</span> <span class="n">test_data_features</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the random forest to make sentiment label predictions</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Predicting test labels...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">forest</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_data_features</span><span class="p">)</span>
+
+<span class="c1"># Copy the results to a pandas dataframe with an &quot;id&quot; column and</span>
+<span class="c1"># a &quot;sentiment&quot; column</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="n">test</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="s2">&quot;sentiment&quot;</span><span class="p">:</span><span class="n">result</span><span class="p">}</span> <span class="p">)</span>
+
+<span class="c1"># Use pandas to write the comma-separated output file</span>
+<span class="n">output</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Bag_of_Words_model.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Wrote results to Bag_of_Words_model.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Predicting test labels...
+
+Wrote results to Bag_of_Words_model.csv
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="word2vec">
+<h1>Word2Vec<a class="headerlink" href="#word2vec" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install gensim</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">import</span> <span class="nn">nltk.data</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># Make sure that numpy is imported</span>
+<span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">Word2Vec</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>“In lexical analysis, tokenization is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens. The list of tokens becomes input for further processing such as parsing or text mining.” -[Wikipedia](https://en.wikipedia.org/wiki/Tokenization_(lexical_analysis)</p>
+<p>Punkt is a specific tokenizer.
+<a class="reference external" href="http://www.nltk.org/_modules/nltk/tokenize/punkt.html">http://www.nltk.org/_modules/nltk/tokenize/punkt.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># download punkt</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt.zip.
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#What is a tokenizer </span>
+<span class="c1"># http://www.nltk.org/_modules/nltk/tokenize/punkt.html </span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;tokenizers/punkt/english.pickle&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ****** Split the labeled and unlabeled training sets into clean sentences</span>
+<span class="c1"># Note this will take a while and produce some warnings. </span>
+<span class="n">sentences</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Initialize an empty list of sentences</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Parsing sentences from training set&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">train</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]:</span>
+    <span class="n">sentences</span> <span class="o">+=</span> <span class="n">KaggleWord2VecUtility</span><span class="o">.</span><span class="n">review_to_sentences</span><span class="p">(</span><span class="n">review</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Parsing sentences from training set
+</pre></div>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/local/lib/python3.6/dist-packages/bs4/__init__.py:273: UserWarning: &quot;b'.'&quot; looks like a filename, not markup. You should probably open this file and pass the filehandle into Beautiful Soup.
+  ' Beautiful Soup.' % markup)
+/usr/local/lib/python3.6/dist-packages/bs4/__init__.py:336: UserWarning: &quot;http://www.happierabroad.com&quot;&quot; looks like a URL. Beautiful Soup is not an HTTP client. You should probably use an HTTP client like requests to get the document behind the URL, and feed that document to Beautiful Soup.
+  ' that document to Beautiful Soup.' % decoded_markup
+</pre>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Parsing sentences from unlabeled set&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">unlabeled_train</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]:</span>
+        <span class="n">sentences</span> <span class="o">+=</span> <span class="n">KaggleWord2VecUtility</span><span class="o">.</span><span class="n">review_to_sentences</span><span class="p">(</span><span class="n">review</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Parsing sentences from unlabeled set
+</pre></div>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/local/lib/python3.6/dist-packages/bs4/__init__.py:273: UserWarning: &quot;b'.'&quot; looks like a filename, not markup. You should probably open this file and pass the filehandle into Beautiful Soup.
+  ' Beautiful Soup.' % markup)
+/usr/local/lib/python3.6/dist-packages/bs4/__init__.py:336: UserWarning: &quot;http://www.archive.org/details/LovefromaStranger&quot;&quot; looks like a URL. Beautiful Soup is not an HTTP client. You should probably use an HTTP client like requests to get the document behind the URL, and feed that document to Beautiful Soup.
+  ' that document to Beautiful Soup.' % decoded_markup
+/usr/local/lib/python3.6/dist-packages/bs4/__init__.py:336: UserWarning: &quot;http://www.loosechangeguide.com/LooseChangeGuide.html&quot;&quot; looks like a URL. Beautiful Soup is not an HTTP client. You should probably use an HTTP client like requests to get the document behind the URL, and feed that document to Beautiful Soup.
+  ' that document to Beautiful Soup.' % decoded_markup
+/usr/local/lib/python3.6/dist-packages/bs4/__init__.py:336: UserWarning: &quot;http://www.msnbc.msn.com/id/4972055/site/newsweek/&quot;&quot; looks like a URL. Beautiful Soup is not an HTTP client. You should probably use an HTTP client like requests to get the document behind the URL, and feed that document to Beautiful Soup.
+  ' that document to Beautiful Soup.' % decoded_markup
+/usr/local/lib/python3.6/dist-packages/bs4/__init__.py:273: UserWarning: &quot;b'..'&quot; looks like a filename, not markup. You should probably open this file and pass the filehandle into Beautiful Soup.
+  ' Beautiful Soup.' % markup)
+/usr/local/lib/python3.6/dist-packages/bs4/__init__.py:336: UserWarning: &quot;http://www.youtube.com/watch?v=a0KSqelmgN8&quot;&quot; looks like a URL. Beautiful Soup is not an HTTP client. You should probably use an HTTP client like requests to get the document behind the URL, and feed that document to Beautiful Soup.
+  ' that document to Beautiful Soup.' % decoded_markup
+/usr/local/lib/python3.6/dist-packages/bs4/__init__.py:336: UserWarning: &quot;http://jake-weird.blogspot.com/2007/08/beneath.html&quot;&quot; looks like a URL. Beautiful Soup is not an HTTP client. You should probably use an HTTP client like requests to get the document behind the URL, and feed that document to Beautiful Soup.
+  ' that document to Beautiful Soup.' % decoded_markup
+</pre>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ****** Define functions to create average word vectors</span>
+<span class="c1">#</span>
+
+<span class="k">def</span> <span class="nf">makeFeatureVec</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">num_features</span><span class="p">):</span>
+    <span class="c1"># Function to average all of the word vectors in a given</span>
+    <span class="c1"># paragraph</span>
+    <span class="c1">#</span>
+    <span class="c1"># Pre-initialize an empty numpy array (for speed)</span>
+    <span class="n">featureVec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_features</span><span class="p">,),</span><span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float32&quot;</span><span class="p">)</span>
+    <span class="c1">#</span>
+    <span class="n">nwords</span> <span class="o">=</span> <span class="mf">0.</span>
+    <span class="c1">#</span>
+    <span class="c1"># Index2word is a list that contains the names of the words in</span>
+    <span class="c1"># the model&#39;s vocabulary. Convert it to a set, for speed</span>
+    <span class="n">index2word_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">index2word</span><span class="p">)</span>
+    <span class="c1">#</span>
+    <span class="c1"># Loop over each word in the review and, if it is in the model&#39;s</span>
+    <span class="c1"># vocaublary, add its feature vector to the total</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">index2word_set</span><span class="p">:</span>
+            <span class="n">nwords</span> <span class="o">=</span> <span class="n">nwords</span> <span class="o">+</span> <span class="mf">1.</span>
+            <span class="n">featureVec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">featureVec</span><span class="p">,</span><span class="n">model</span><span class="p">[</span><span class="n">word</span><span class="p">])</span>
+    <span class="c1">#</span>
+    <span class="c1"># Divide the result by the number of words to get the average</span>
+    <span class="n">featureVec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">featureVec</span><span class="p">,</span><span class="n">nwords</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">featureVec</span>
+
+
+<span class="k">def</span> <span class="nf">getAvgFeatureVecs</span><span class="p">(</span><span class="n">reviews</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">num_features</span><span class="p">):</span>
+    <span class="c1"># Given a set of reviews (each one a list of words), calculate</span>
+    <span class="c1"># the average feature vector for each one and return a 2D numpy array</span>
+    <span class="c1">#</span>
+    <span class="c1"># Initialize a counter</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="mf">0.</span>
+    <span class="c1">#</span>
+    <span class="c1"># Preallocate a 2D numpy array, for speed</span>
+    <span class="n">reviewFeatureVecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">reviews</span><span class="p">),</span><span class="n">num_features</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float32&quot;</span><span class="p">)</span>
+    <span class="c1">#</span>
+    <span class="c1"># Loop through the reviews</span>
+    <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">reviews</span><span class="p">:</span>
+    <span class="c1"># Print a status message every 1000th review</span>
+       <span class="k">if</span> <span class="n">counter</span><span class="o">%</span><span class="mf">1000.</span> <span class="o">==</span> <span class="mf">0.</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Review </span><span class="si">%d</span><span class="s2"> of </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">reviews</span><span class="p">)))</span>
+               <span class="c1"># Call the function (defined above) that makes average feature vectors</span>
+            <span class="n">reviewFeatureVecs</span><span class="p">[</span><span class="n">counter</span><span class="p">]</span> <span class="o">=</span> <span class="n">makeFeatureVec</span><span class="p">(</span><span class="n">review</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">num_features</span><span class="p">)</span>
+            <span class="c1"># Increment the counter</span>
+            <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mf">1.</span>
+    <span class="k">return</span> <span class="n">reviewFeatureVecs</span>
+
+
+<span class="k">def</span> <span class="nf">getCleanReviews</span><span class="p">(</span><span class="n">reviews</span><span class="p">):</span>
+    <span class="n">clean_reviews</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">reviews</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]:</span>
+        <span class="n">clean_reviews</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">KaggleWord2VecUtility</span><span class="o">.</span><span class="n">review_to_wordlist</span><span class="p">(</span> <span class="n">review</span><span class="p">,</span> <span class="n">remove_stopwords</span><span class="o">=</span><span class="kc">True</span> <span class="p">))</span>
+    <span class="k">return</span> <span class="n">clean_reviews</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> : </span><span class="si">%(levelname)s</span><span class="s1"> : </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="c1"># Set values for various parameters</span>
+<span class="n">num_features</span> <span class="o">=</span> <span class="mi">300</span>    <span class="c1"># Word vector dimensionality</span>
+<span class="n">min_word_count</span> <span class="o">=</span> <span class="mi">40</span>   <span class="c1"># Minimum word count</span>
+<span class="n">num_workers</span> <span class="o">=</span> <span class="mi">4</span>       <span class="c1"># Number of threads to run in parallel</span>
+<span class="n">context</span> <span class="o">=</span> <span class="mi">10</span>          <span class="c1"># Context window size</span>
+<span class="n">downsampling</span> <span class="o">=</span> <span class="mf">1e-3</span>   <span class="c1"># Downsample setting for frequent words</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize and train the model (this will take some time)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Training Word2Vec model...&quot;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Word2Vec</span><span class="p">(</span><span class="n">sentences</span><span class="p">,</span> <span class="n">workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">,</span> \
+            <span class="n">size</span><span class="o">=</span><span class="n">num_features</span><span class="p">,</span> <span class="n">min_count</span> <span class="o">=</span> <span class="n">min_word_count</span><span class="p">,</span> \
+            <span class="n">window</span> <span class="o">=</span> <span class="n">context</span><span class="p">,</span> <span class="n">sample</span> <span class="o">=</span> <span class="n">downsampling</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2019-03-14 01:01:24,249 : INFO : collecting all words and their counts
+2019-03-14 01:01:24,250 : INFO : PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2019-03-14 01:01:24,318 : INFO : PROGRESS: at sentence #10000, processed 225803 words, keeping 17776 word types
+2019-03-14 01:01:24,382 : INFO : PROGRESS: at sentence #20000, processed 451892 words, keeping 24948 word types
+2019-03-14 01:01:24,446 : INFO : PROGRESS: at sentence #30000, processed 671314 words, keeping 30034 word types
+</pre>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Training Word2Vec model...
+</pre></div>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2019-03-14 01:01:24,522 : INFO : PROGRESS: at sentence #40000, processed 897814 words, keeping 34348 word types
+2019-03-14 01:01:24,587 : INFO : PROGRESS: at sentence #50000, processed 1116962 words, keeping 37761 word types
+2019-03-14 01:01:24,654 : INFO : PROGRESS: at sentence #60000, processed 1338403 words, keeping 40723 word types
+2019-03-14 01:01:24,725 : INFO : PROGRESS: at sentence #70000, processed 1561579 words, keeping 43333 word types
+2019-03-14 01:01:24,795 : INFO : PROGRESS: at sentence #80000, processed 1780886 words, keeping 45714 word types
+2019-03-14 01:01:24,865 : INFO : PROGRESS: at sentence #90000, processed 2004995 words, keeping 48135 word types
+2019-03-14 01:01:24,933 : INFO : PROGRESS: at sentence #100000, processed 2226966 words, keeping 50207 word types
+2019-03-14 01:01:25,005 : INFO : PROGRESS: at sentence #110000, processed 2446580 words, keeping 52081 word types
+2019-03-14 01:01:25,077 : INFO : PROGRESS: at sentence #120000, processed 2668775 words, keeping 54119 word types
+2019-03-14 01:01:25,145 : INFO : PROGRESS: at sentence #130000, processed 2894303 words, keeping 55847 word types
+2019-03-14 01:01:25,215 : INFO : PROGRESS: at sentence #140000, processed 3107005 words, keeping 57346 word types
+2019-03-14 01:01:25,288 : INFO : PROGRESS: at sentence #150000, processed 3332627 words, keeping 59055 word types
+2019-03-14 01:01:25,356 : INFO : PROGRESS: at sentence #160000, processed 3555315 words, keeping 60617 word types
+2019-03-14 01:01:25,425 : INFO : PROGRESS: at sentence #170000, processed 3778655 words, keeping 62077 word types
+2019-03-14 01:01:25,498 : INFO : PROGRESS: at sentence #180000, processed 3999236 words, keeping 63496 word types
+2019-03-14 01:01:25,570 : INFO : PROGRESS: at sentence #190000, processed 4224449 words, keeping 64794 word types
+2019-03-14 01:01:25,641 : INFO : PROGRESS: at sentence #200000, processed 4448603 words, keeping 66087 word types
+2019-03-14 01:01:25,710 : INFO : PROGRESS: at sentence #210000, processed 4669967 words, keeping 67390 word types
+2019-03-14 01:01:25,779 : INFO : PROGRESS: at sentence #220000, processed 4894968 words, keeping 68697 word types
+2019-03-14 01:01:25,845 : INFO : PROGRESS: at sentence #230000, processed 5117546 words, keeping 69958 word types
+2019-03-14 01:01:25,917 : INFO : PROGRESS: at sentence #240000, processed 5345051 words, keeping 71167 word types
+2019-03-14 01:01:25,985 : INFO : PROGRESS: at sentence #250000, processed 5559166 words, keeping 72351 word types
+2019-03-14 01:01:26,058 : INFO : PROGRESS: at sentence #260000, processed 5779147 words, keeping 73478 word types
+2019-03-14 01:01:26,125 : INFO : PROGRESS: at sentence #270000, processed 6000436 words, keeping 74767 word types
+2019-03-14 01:01:26,200 : INFO : PROGRESS: at sentence #280000, processed 6226315 words, keeping 76369 word types
+2019-03-14 01:01:26,272 : INFO : PROGRESS: at sentence #290000, processed 6449475 words, keeping 77839 word types
+2019-03-14 01:01:26,344 : INFO : PROGRESS: at sentence #300000, processed 6674078 words, keeping 79171 word types
+2019-03-14 01:01:26,417 : INFO : PROGRESS: at sentence #310000, processed 6899392 words, keeping 80480 word types
+2019-03-14 01:01:26,492 : INFO : PROGRESS: at sentence #320000, processed 7124279 words, keeping 81808 word types
+2019-03-14 01:01:26,564 : INFO : PROGRESS: at sentence #330000, processed 7346022 words, keeping 83030 word types
+2019-03-14 01:01:26,640 : INFO : PROGRESS: at sentence #340000, processed 7575534 words, keeping 84280 word types
+2019-03-14 01:01:26,710 : INFO : PROGRESS: at sentence #350000, processed 7798804 words, keeping 85425 word types
+2019-03-14 01:01:26,783 : INFO : PROGRESS: at sentence #360000, processed 8019467 words, keeping 86596 word types
+2019-03-14 01:01:26,859 : INFO : PROGRESS: at sentence #370000, processed 8246659 words, keeping 87708 word types
+2019-03-14 01:01:26,932 : INFO : PROGRESS: at sentence #380000, processed 8471806 words, keeping 88878 word types
+2019-03-14 01:01:27,006 : INFO : PROGRESS: at sentence #390000, processed 8701556 words, keeping 89907 word types
+2019-03-14 01:01:27,079 : INFO : PROGRESS: at sentence #400000, processed 8924505 words, keeping 90916 word types
+2019-03-14 01:01:27,151 : INFO : PROGRESS: at sentence #410000, processed 9145855 words, keeping 91880 word types
+2019-03-14 01:01:27,225 : INFO : PROGRESS: at sentence #420000, processed 9366935 words, keeping 92912 word types
+2019-03-14 01:01:27,298 : INFO : PROGRESS: at sentence #430000, processed 9594472 words, keeping 93932 word types
+2019-03-14 01:01:27,375 : INFO : PROGRESS: at sentence #440000, processed 9821225 words, keeping 94906 word types
+2019-03-14 01:01:27,447 : INFO : PROGRESS: at sentence #450000, processed 10044987 words, keeping 96036 word types
+2019-03-14 01:01:27,521 : INFO : PROGRESS: at sentence #460000, processed 10277747 words, keeping 97088 word types
+2019-03-14 01:01:27,592 : INFO : PROGRESS: at sentence #470000, processed 10505672 words, keeping 97933 word types
+2019-03-14 01:01:27,664 : INFO : PROGRESS: at sentence #480000, processed 10726056 words, keeping 98862 word types
+2019-03-14 01:01:27,736 : INFO : PROGRESS: at sentence #490000, processed 10952800 words, keeping 99871 word types
+2019-03-14 01:01:27,809 : INFO : PROGRESS: at sentence #500000, processed 11174456 words, keeping 100765 word types
+2019-03-14 01:01:27,883 : INFO : PROGRESS: at sentence #510000, processed 11399731 words, keeping 101699 word types
+2019-03-14 01:01:27,956 : INFO : PROGRESS: at sentence #520000, processed 11623082 words, keeping 102598 word types
+2019-03-14 01:01:28,029 : INFO : PROGRESS: at sentence #530000, processed 11847480 words, keeping 103400 word types
+2019-03-14 01:01:28,100 : INFO : PROGRESS: at sentence #540000, processed 12072095 words, keeping 104265 word types
+2019-03-14 01:01:28,171 : INFO : PROGRESS: at sentence #550000, processed 12297646 words, keeping 105133 word types
+2019-03-14 01:01:28,245 : INFO : PROGRESS: at sentence #560000, processed 12518936 words, keeping 105997 word types
+2019-03-14 01:01:28,318 : INFO : PROGRESS: at sentence #570000, processed 12748083 words, keeping 106787 word types
+2019-03-14 01:01:28,390 : INFO : PROGRESS: at sentence #580000, processed 12969579 words, keeping 107665 word types
+2019-03-14 01:01:28,463 : INFO : PROGRESS: at sentence #590000, processed 13195103 words, keeping 108502 word types
+2019-03-14 01:01:28,538 : INFO : PROGRESS: at sentence #600000, processed 13417301 words, keeping 109219 word types
+2019-03-14 01:01:28,611 : INFO : PROGRESS: at sentence #610000, processed 13638324 words, keeping 110093 word types
+2019-03-14 01:01:28,686 : INFO : PROGRESS: at sentence #620000, processed 13864649 words, keeping 110838 word types
+2019-03-14 01:01:28,758 : INFO : PROGRESS: at sentence #630000, processed 14088935 words, keeping 111611 word types
+2019-03-14 01:01:28,831 : INFO : PROGRESS: at sentence #640000, processed 14309718 words, keeping 112417 word types
+2019-03-14 01:01:28,904 : INFO : PROGRESS: at sentence #650000, processed 14535474 words, keeping 113197 word types
+2019-03-14 01:01:28,981 : INFO : PROGRESS: at sentence #660000, processed 14758264 words, keeping 113946 word types
+2019-03-14 01:01:29,054 : INFO : PROGRESS: at sentence #670000, processed 14981657 words, keeping 114644 word types
+2019-03-14 01:01:29,128 : INFO : PROGRESS: at sentence #680000, processed 15206489 words, keeping 115355 word types
+2019-03-14 01:01:29,203 : INFO : PROGRESS: at sentence #690000, processed 15428682 words, keeping 116132 word types
+2019-03-14 01:01:29,279 : INFO : PROGRESS: at sentence #700000, processed 15657388 words, keeping 116944 word types
+2019-03-14 01:01:29,353 : INFO : PROGRESS: at sentence #710000, processed 15880377 words, keeping 117597 word types
+2019-03-14 01:01:29,427 : INFO : PROGRESS: at sentence #720000, processed 16105664 words, keeping 118222 word types
+2019-03-14 01:01:29,501 : INFO : PROGRESS: at sentence #730000, processed 16332045 words, keeping 118955 word types
+2019-03-14 01:01:29,571 : INFO : PROGRESS: at sentence #740000, processed 16553078 words, keeping 119669 word types
+2019-03-14 01:01:29,641 : INFO : PROGRESS: at sentence #750000, processed 16771405 words, keeping 120296 word types
+2019-03-14 01:01:29,712 : INFO : PROGRESS: at sentence #760000, processed 16990809 words, keeping 120931 word types
+2019-03-14 01:01:29,788 : INFO : PROGRESS: at sentence #770000, processed 17217946 words, keeping 121704 word types
+2019-03-14 01:01:29,864 : INFO : PROGRESS: at sentence #780000, processed 17448092 words, keeping 122403 word types
+2019-03-14 01:01:29,940 : INFO : PROGRESS: at sentence #790000, processed 17675168 words, keeping 123067 word types
+2019-03-14 01:01:29,983 : INFO : collected 123505 word types from a corpus of 17798269 raw words and 795538 sentences
+2019-03-14 01:01:29,984 : INFO : Loading a fresh vocabulary
+2019-03-14 01:01:30,088 : INFO : effective_min_count=40 retains 16490 unique words (13% of original 123505, drops 107015)
+2019-03-14 01:01:30,089 : INFO : effective_min_count=40 leaves 17239123 word corpus (96% of original 17798269, drops 559146)
+2019-03-14 01:01:30,148 : INFO : deleting the raw counts dictionary of 123505 items
+2019-03-14 01:01:30,153 : INFO : sample=0.001 downsamples 48 most-common words
+2019-03-14 01:01:30,154 : INFO : downsampling leaves estimated 12749797 word corpus (74.0% of prior 17239123)
+2019-03-14 01:01:30,228 : INFO : estimated required memory for 16490 words and 300 dimensions: 47821000 bytes
+2019-03-14 01:01:30,229 : INFO : resetting layer weights
+2019-03-14 01:01:30,442 : INFO : training model with 4 workers on 16490 vocabulary and 300 features, using sg=0 hs=0 sample=0.001 negative=5 window=10
+2019-03-14 01:01:31,493 : INFO : EPOCH 1 - PROGRESS: at 2.39% examples, 295992 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:32,510 : INFO : EPOCH 1 - PROGRESS: at 4.92% examples, 306260 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:33,552 : INFO : EPOCH 1 - PROGRESS: at 7.54% examples, 309290 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:34,586 : INFO : EPOCH 1 - PROGRESS: at 10.15% examples, 311547 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:35,623 : INFO : EPOCH 1 - PROGRESS: at 12.63% examples, 310008 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:01:36,659 : INFO : EPOCH 1 - PROGRESS: at 15.17% examples, 310202 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:01:37,664 : INFO : EPOCH 1 - PROGRESS: at 17.74% examples, 311558 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:38,680 : INFO : EPOCH 1 - PROGRESS: at 20.27% examples, 312167 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:01:39,702 : INFO : EPOCH 1 - PROGRESS: at 22.82% examples, 312502 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:40,715 : INFO : EPOCH 1 - PROGRESS: at 25.28% examples, 312297 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:41,729 : INFO : EPOCH 1 - PROGRESS: at 27.85% examples, 313358 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:01:42,733 : INFO : EPOCH 1 - PROGRESS: at 30.38% examples, 313874 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:43,757 : INFO : EPOCH 1 - PROGRESS: at 33.03% examples, 314414 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:44,769 : INFO : EPOCH 1 - PROGRESS: at 35.61% examples, 315147 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:45,785 : INFO : EPOCH 1 - PROGRESS: at 38.12% examples, 315260 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:46,794 : INFO : EPOCH 1 - PROGRESS: at 40.63% examples, 315474 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:47,814 : INFO : EPOCH 1 - PROGRESS: at 43.19% examples, 315905 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:48,829 : INFO : EPOCH 1 - PROGRESS: at 45.71% examples, 315964 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:49,834 : INFO : EPOCH 1 - PROGRESS: at 48.22% examples, 316164 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:01:50,857 : INFO : EPOCH 1 - PROGRESS: at 50.79% examples, 316485 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:51,857 : INFO : EPOCH 1 - PROGRESS: at 53.32% examples, 316729 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:52,870 : INFO : EPOCH 1 - PROGRESS: at 55.77% examples, 316450 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:53,890 : INFO : EPOCH 1 - PROGRESS: at 58.35% examples, 316973 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:54,900 : INFO : EPOCH 1 - PROGRESS: at 60.85% examples, 317051 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:55,908 : INFO : EPOCH 1 - PROGRESS: at 63.45% examples, 317424 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:56,942 : INFO : EPOCH 1 - PROGRESS: at 65.95% examples, 317185 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:57,982 : INFO : EPOCH 1 - PROGRESS: at 68.55% examples, 317142 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:01:58,992 : INFO : EPOCH 1 - PROGRESS: at 71.05% examples, 317211 words/s, in_qsize 7, out_qsize 1
+2019-03-14 01:02:00,044 : INFO : EPOCH 1 - PROGRESS: at 73.62% examples, 317071 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:01,079 : INFO : EPOCH 1 - PROGRESS: at 76.10% examples, 316626 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:02:02,095 : INFO : EPOCH 1 - PROGRESS: at 78.67% examples, 316852 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:03,100 : INFO : EPOCH 1 - PROGRESS: at 81.21% examples, 316957 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:02:04,129 : INFO : EPOCH 1 - PROGRESS: at 83.78% examples, 317035 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:02:05,140 : INFO : EPOCH 1 - PROGRESS: at 86.36% examples, 317278 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:06,186 : INFO : EPOCH 1 - PROGRESS: at 88.98% examples, 317398 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:07,206 : INFO : EPOCH 1 - PROGRESS: at 91.49% examples, 317343 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:08,208 : INFO : EPOCH 1 - PROGRESS: at 93.97% examples, 317258 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:09,250 : INFO : EPOCH 1 - PROGRESS: at 96.58% examples, 317212 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:10,258 : INFO : EPOCH 1 - PROGRESS: at 99.05% examples, 317281 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:02:10,580 : INFO : worker thread finished; awaiting finish of 3 more threads
+2019-03-14 01:02:10,597 : INFO : worker thread finished; awaiting finish of 2 more threads
+2019-03-14 01:02:10,600 : INFO : worker thread finished; awaiting finish of 1 more threads
+2019-03-14 01:02:10,616 : INFO : worker thread finished; awaiting finish of 0 more threads
+2019-03-14 01:02:10,617 : INFO : EPOCH - 1 : training on 17798269 raw words (12750264 effective words) took 40.2s, 317459 effective words/s
+2019-03-14 01:02:11,647 : INFO : EPOCH 2 - PROGRESS: at 2.39% examples, 302096 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:12,655 : INFO : EPOCH 2 - PROGRESS: at 4.87% examples, 306989 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:13,693 : INFO : EPOCH 2 - PROGRESS: at 7.48% examples, 310070 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:14,731 : INFO : EPOCH 2 - PROGRESS: at 10.09% examples, 311948 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:15,746 : INFO : EPOCH 2 - PROGRESS: at 12.62% examples, 313023 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:16,764 : INFO : EPOCH 2 - PROGRESS: at 15.07% examples, 311171 words/s, in_qsize 8, out_qsize 1
+2019-03-14 01:02:17,771 : INFO : EPOCH 2 - PROGRESS: at 17.69% examples, 313406 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:18,793 : INFO : EPOCH 2 - PROGRESS: at 20.10% examples, 311737 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:19,805 : INFO : EPOCH 2 - PROGRESS: at 22.71% examples, 313223 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:20,811 : INFO : EPOCH 2 - PROGRESS: at 25.22% examples, 313893 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:21,835 : INFO : EPOCH 2 - PROGRESS: at 27.69% examples, 313243 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:02:22,841 : INFO : EPOCH 2 - PROGRESS: at 30.15% examples, 313188 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:23,870 : INFO : EPOCH 2 - PROGRESS: at 32.86% examples, 314192 words/s, in_qsize 8, out_qsize 2
+2019-03-14 01:02:24,896 : INFO : EPOCH 2 - PROGRESS: at 35.50% examples, 315159 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:02:25,917 : INFO : EPOCH 2 - PROGRESS: at 38.06% examples, 315647 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:26,933 : INFO : EPOCH 2 - PROGRESS: at 40.63% examples, 316174 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:27,933 : INFO : EPOCH 2 - PROGRESS: at 43.14% examples, 316494 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:28,957 : INFO : EPOCH 2 - PROGRESS: at 45.66% examples, 316362 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:29,966 : INFO : EPOCH 2 - PROGRESS: at 48.11% examples, 316104 words/s, in_qsize 5, out_qsize 2
+2019-03-14 01:02:30,976 : INFO : EPOCH 2 - PROGRESS: at 50.68% examples, 316605 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:31,982 : INFO : EPOCH 2 - PROGRESS: at 53.22% examples, 316748 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:32,986 : INFO : EPOCH 2 - PROGRESS: at 55.66% examples, 316613 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:02:34,020 : INFO : EPOCH 2 - PROGRESS: at 58.13% examples, 316341 words/s, in_qsize 7, out_qsize 1
+2019-03-14 01:02:35,059 : INFO : EPOCH 2 - PROGRESS: at 60.75% examples, 316648 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:36,091 : INFO : EPOCH 2 - PROGRESS: at 63.27% examples, 316447 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:37,106 : INFO : EPOCH 2 - PROGRESS: at 65.79% examples, 316469 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:38,121 : INFO : EPOCH 2 - PROGRESS: at 68.38% examples, 316762 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:39,150 : INFO : EPOCH 2 - PROGRESS: at 70.88% examples, 316630 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:40,152 : INFO : EPOCH 2 - PROGRESS: at 73.34% examples, 316537 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:41,178 : INFO : EPOCH 2 - PROGRESS: at 75.99% examples, 316917 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:42,232 : INFO : EPOCH 2 - PROGRESS: at 78.55% examples, 316766 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:43,247 : INFO : EPOCH 2 - PROGRESS: at 81.15% examples, 316987 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:02:44,248 : INFO : EPOCH 2 - PROGRESS: at 83.73% examples, 317331 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:45,260 : INFO : EPOCH 2 - PROGRESS: at 86.24% examples, 317358 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:46,261 : INFO : EPOCH 2 - PROGRESS: at 88.74% examples, 317480 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:47,291 : INFO : EPOCH 2 - PROGRESS: at 91.37% examples, 317718 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:48,311 : INFO : EPOCH 2 - PROGRESS: at 94.03% examples, 318043 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:49,316 : INFO : EPOCH 2 - PROGRESS: at 96.64% examples, 318282 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:50,351 : INFO : EPOCH 2 - PROGRESS: at 99.16% examples, 318275 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:50,572 : INFO : worker thread finished; awaiting finish of 3 more threads
+2019-03-14 01:02:50,593 : INFO : worker thread finished; awaiting finish of 2 more threads
+2019-03-14 01:02:50,623 : INFO : worker thread finished; awaiting finish of 1 more threads
+2019-03-14 01:02:50,633 : INFO : worker thread finished; awaiting finish of 0 more threads
+2019-03-14 01:02:50,634 : INFO : EPOCH - 2 : training on 17798269 raw words (12749055 effective words) took 40.0s, 318686 effective words/s
+2019-03-14 01:02:51,702 : INFO : EPOCH 3 - PROGRESS: at 2.56% examples, 311596 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:52,713 : INFO : EPOCH 3 - PROGRESS: at 5.14% examples, 318149 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:53,731 : INFO : EPOCH 3 - PROGRESS: at 7.71% examples, 317251 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:54,737 : INFO : EPOCH 3 - PROGRESS: at 10.32% examples, 319682 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:55,782 : INFO : EPOCH 3 - PROGRESS: at 13.03% examples, 321521 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:56,795 : INFO : EPOCH 3 - PROGRESS: at 15.62% examples, 322057 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:57,799 : INFO : EPOCH 3 - PROGRESS: at 18.25% examples, 322810 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:02:58,830 : INFO : EPOCH 3 - PROGRESS: at 20.84% examples, 322321 words/s, in_qsize 5, out_qsize 2
+2019-03-14 01:02:59,882 : INFO : EPOCH 3 - PROGRESS: at 23.53% examples, 322769 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:00,925 : INFO : EPOCH 3 - PROGRESS: at 26.18% examples, 322667 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:03:01,954 : INFO : EPOCH 3 - PROGRESS: at 28.82% examples, 322951 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:03:02,955 : INFO : EPOCH 3 - PROGRESS: at 31.37% examples, 322826 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:03,955 : INFO : EPOCH 3 - PROGRESS: at 33.93% examples, 322719 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:04,991 : INFO : EPOCH 3 - PROGRESS: at 36.56% examples, 322836 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:06,054 : INFO : EPOCH 3 - PROGRESS: at 39.19% examples, 322457 words/s, in_qsize 7, out_qsize 1
+2019-03-14 01:03:07,053 : INFO : EPOCH 3 - PROGRESS: at 41.81% examples, 323267 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:08,071 : INFO : EPOCH 3 - PROGRESS: at 44.32% examples, 322854 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:09,124 : INFO : EPOCH 3 - PROGRESS: at 46.94% examples, 322619 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:10,145 : INFO : EPOCH 3 - PROGRESS: at 49.55% examples, 322968 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:11,146 : INFO : EPOCH 3 - PROGRESS: at 52.16% examples, 323236 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:12,203 : INFO : EPOCH 3 - PROGRESS: at 54.70% examples, 322654 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:03:13,214 : INFO : EPOCH 3 - PROGRESS: at 57.26% examples, 322766 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:14,254 : INFO : EPOCH 3 - PROGRESS: at 59.78% examples, 322489 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:15,270 : INFO : EPOCH 3 - PROGRESS: at 62.43% examples, 322828 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:16,309 : INFO : EPOCH 3 - PROGRESS: at 65.06% examples, 322861 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:17,371 : INFO : EPOCH 3 - PROGRESS: at 67.69% examples, 322614 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:18,385 : INFO : EPOCH 3 - PROGRESS: at 70.33% examples, 322954 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:19,386 : INFO : EPOCH 3 - PROGRESS: at 72.78% examples, 322659 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:20,399 : INFO : EPOCH 3 - PROGRESS: at 75.36% examples, 322724 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:21,420 : INFO : EPOCH 3 - PROGRESS: at 77.94% examples, 322688 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:22,432 : INFO : EPOCH 3 - PROGRESS: at 80.53% examples, 322744 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:23,472 : INFO : EPOCH 3 - PROGRESS: at 83.11% examples, 322550 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:24,484 : INFO : EPOCH 3 - PROGRESS: at 85.74% examples, 322838 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:25,485 : INFO : EPOCH 3 - PROGRESS: at 88.23% examples, 322794 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:03:26,529 : INFO : EPOCH 3 - PROGRESS: at 90.82% examples, 322567 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:27,551 : INFO : EPOCH 3 - PROGRESS: at 93.40% examples, 322548 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:28,582 : INFO : EPOCH 3 - PROGRESS: at 96.14% examples, 322838 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:29,582 : INFO : EPOCH 3 - PROGRESS: at 98.56% examples, 322629 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:30,097 : INFO : worker thread finished; awaiting finish of 3 more threads
+2019-03-14 01:03:30,099 : INFO : worker thread finished; awaiting finish of 2 more threads
+2019-03-14 01:03:30,102 : INFO : worker thread finished; awaiting finish of 1 more threads
+2019-03-14 01:03:30,134 : INFO : worker thread finished; awaiting finish of 0 more threads
+2019-03-14 01:03:30,135 : INFO : EPOCH - 3 : training on 17798269 raw words (12747238 effective words) took 39.5s, 322804 effective words/s
+2019-03-14 01:03:31,160 : INFO : EPOCH 4 - PROGRESS: at 2.39% examples, 302355 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:32,162 : INFO : EPOCH 4 - PROGRESS: at 4.98% examples, 315043 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:33,178 : INFO : EPOCH 4 - PROGRESS: at 7.60% examples, 317918 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:34,212 : INFO : EPOCH 4 - PROGRESS: at 10.15% examples, 316341 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:35,257 : INFO : EPOCH 4 - PROGRESS: at 12.81% examples, 317520 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:03:36,313 : INFO : EPOCH 4 - PROGRESS: at 15.40% examples, 316492 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:37,328 : INFO : EPOCH 4 - PROGRESS: at 18.02% examples, 317526 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:38,365 : INFO : EPOCH 4 - PROGRESS: at 20.62% examples, 317469 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:39,365 : INFO : EPOCH 4 - PROGRESS: at 23.27% examples, 319510 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:40,381 : INFO : EPOCH 4 - PROGRESS: at 25.80% examples, 319231 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:41,402 : INFO : EPOCH 4 - PROGRESS: at 28.31% examples, 319191 words/s, in_qsize 7, out_qsize 1
+2019-03-14 01:03:42,398 : INFO : EPOCH 4 - PROGRESS: at 30.92% examples, 319713 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:43,429 : INFO : EPOCH 4 - PROGRESS: at 33.55% examples, 319605 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:03:44,455 : INFO : EPOCH 4 - PROGRESS: at 36.11% examples, 319683 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:45,503 : INFO : EPOCH 4 - PROGRESS: at 38.73% examples, 319780 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:03:46,507 : INFO : EPOCH 4 - PROGRESS: at 41.31% examples, 320235 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:47,510 : INFO : EPOCH 4 - PROGRESS: at 43.81% examples, 320302 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:48,512 : INFO : EPOCH 4 - PROGRESS: at 46.34% examples, 320329 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:49,531 : INFO : EPOCH 4 - PROGRESS: at 48.93% examples, 320837 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:50,540 : INFO : EPOCH 4 - PROGRESS: at 51.42% examples, 320399 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:51,562 : INFO : EPOCH 4 - PROGRESS: at 53.99% examples, 320452 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:52,582 : INFO : EPOCH 4 - PROGRESS: at 56.55% examples, 320537 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:53,582 : INFO : EPOCH 4 - PROGRESS: at 58.95% examples, 320295 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:54,594 : INFO : EPOCH 4 - PROGRESS: at 61.58% examples, 320778 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:55,595 : INFO : EPOCH 4 - PROGRESS: at 64.17% examples, 321071 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:56,620 : INFO : EPOCH 4 - PROGRESS: at 66.80% examples, 321346 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:57,659 : INFO : EPOCH 4 - PROGRESS: at 69.31% examples, 321114 words/s, in_qsize 7, out_qsize 1
+2019-03-14 01:03:58,652 : INFO : EPOCH 4 - PROGRESS: at 71.82% examples, 321039 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:03:59,657 : INFO : EPOCH 4 - PROGRESS: at 74.46% examples, 321498 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:00,678 : INFO : EPOCH 4 - PROGRESS: at 76.93% examples, 321047 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:01,688 : INFO : EPOCH 4 - PROGRESS: at 79.46% examples, 320972 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:02,718 : INFO : EPOCH 4 - PROGRESS: at 82.04% examples, 320923 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:04:03,745 : INFO : EPOCH 4 - PROGRESS: at 84.62% examples, 320905 words/s, in_qsize 6, out_qsize 2
+2019-03-14 01:04:04,767 : INFO : EPOCH 4 - PROGRESS: at 87.26% examples, 321151 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:05,779 : INFO : EPOCH 4 - PROGRESS: at 89.85% examples, 321475 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:04:06,798 : INFO : EPOCH 4 - PROGRESS: at 92.45% examples, 321522 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:07,823 : INFO : EPOCH 4 - PROGRESS: at 95.11% examples, 321694 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:08,832 : INFO : EPOCH 4 - PROGRESS: at 97.62% examples, 321613 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:09,697 : INFO : worker thread finished; awaiting finish of 3 more threads
+2019-03-14 01:04:09,713 : INFO : worker thread finished; awaiting finish of 2 more threads
+2019-03-14 01:04:09,744 : INFO : worker thread finished; awaiting finish of 1 more threads
+2019-03-14 01:04:09,746 : INFO : worker thread finished; awaiting finish of 0 more threads
+2019-03-14 01:04:09,746 : INFO : EPOCH - 4 : training on 17798269 raw words (12750455 effective words) took 39.6s, 321950 effective words/s
+2019-03-14 01:04:10,813 : INFO : EPOCH 5 - PROGRESS: at 2.50% examples, 306098 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:11,831 : INFO : EPOCH 5 - PROGRESS: at 5.14% examples, 317685 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:12,855 : INFO : EPOCH 5 - PROGRESS: at 7.77% examples, 318829 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:04:13,858 : INFO : EPOCH 5 - PROGRESS: at 10.37% examples, 321125 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:14,910 : INFO : EPOCH 5 - PROGRESS: at 13.09% examples, 322318 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:15,934 : INFO : EPOCH 5 - PROGRESS: at 15.73% examples, 323321 words/s, in_qsize 8, out_qsize 1
+2019-03-14 01:04:16,962 : INFO : EPOCH 5 - PROGRESS: at 18.41% examples, 323846 words/s, in_qsize 7, out_qsize 1
+2019-03-14 01:04:17,995 : INFO : EPOCH 5 - PROGRESS: at 21.12% examples, 324791 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:19,026 : INFO : EPOCH 5 - PROGRESS: at 23.82% examples, 325730 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:20,044 : INFO : EPOCH 5 - PROGRESS: at 26.41% examples, 325462 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:04:21,047 : INFO : EPOCH 5 - PROGRESS: at 28.98% examples, 325599 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:22,071 : INFO : EPOCH 5 - PROGRESS: at 31.67% examples, 325798 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:04:23,090 : INFO : EPOCH 5 - PROGRESS: at 34.27% examples, 325523 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:24,096 : INFO : EPOCH 5 - PROGRESS: at 36.85% examples, 325645 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:25,133 : INFO : EPOCH 5 - PROGRESS: at 39.36% examples, 324606 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:26,177 : INFO : EPOCH 5 - PROGRESS: at 42.02% examples, 324824 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:27,206 : INFO : EPOCH 5 - PROGRESS: at 44.56% examples, 324139 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:04:28,233 : INFO : EPOCH 5 - PROGRESS: at 47.22% examples, 324684 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:29,240 : INFO : EPOCH 5 - PROGRESS: at 49.71% examples, 324422 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:30,261 : INFO : EPOCH 5 - PROGRESS: at 52.32% examples, 324300 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:31,280 : INFO : EPOCH 5 - PROGRESS: at 54.81% examples, 323883 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:32,298 : INFO : EPOCH 5 - PROGRESS: at 57.31% examples, 323536 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:04:33,339 : INFO : EPOCH 5 - PROGRESS: at 59.78% examples, 322904 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:34,355 : INFO : EPOCH 5 - PROGRESS: at 62.30% examples, 322650 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:35,356 : INFO : EPOCH 5 - PROGRESS: at 64.89% examples, 322898 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:36,394 : INFO : EPOCH 5 - PROGRESS: at 67.51% examples, 322932 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:04:37,418 : INFO : EPOCH 5 - PROGRESS: at 70.10% examples, 322867 words/s, in_qsize 8, out_qsize 0
+2019-03-14 01:04:38,469 : INFO : EPOCH 5 - PROGRESS: at 72.78% examples, 323021 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:39,482 : INFO : EPOCH 5 - PROGRESS: at 75.42% examples, 323334 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:40,522 : INFO : EPOCH 5 - PROGRESS: at 78.00% examples, 323077 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:41,525 : INFO : EPOCH 5 - PROGRESS: at 80.64% examples, 323465 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:42,536 : INFO : EPOCH 5 - PROGRESS: at 83.11% examples, 323107 words/s, in_qsize 7, out_qsize 1
+2019-03-14 01:04:43,542 : INFO : EPOCH 5 - PROGRESS: at 85.68% examples, 323294 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:44,553 : INFO : EPOCH 5 - PROGRESS: at 88.29% examples, 323480 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:04:45,568 : INFO : EPOCH 5 - PROGRESS: at 90.87% examples, 323498 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:46,576 : INFO : EPOCH 5 - PROGRESS: at 93.46% examples, 323572 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:47,584 : INFO : EPOCH 5 - PROGRESS: at 96.03% examples, 323455 words/s, in_qsize 6, out_qsize 1
+2019-03-14 01:04:48,607 : INFO : EPOCH 5 - PROGRESS: at 98.56% examples, 323409 words/s, in_qsize 7, out_qsize 0
+2019-03-14 01:04:49,098 : INFO : worker thread finished; awaiting finish of 3 more threads
+2019-03-14 01:04:49,120 : INFO : worker thread finished; awaiting finish of 2 more threads
+2019-03-14 01:04:49,129 : INFO : worker thread finished; awaiting finish of 1 more threads
+2019-03-14 01:04:49,139 : INFO : worker thread finished; awaiting finish of 0 more threads
+2019-03-14 01:04:49,140 : INFO : EPOCH - 5 : training on 17798269 raw words (12748658 effective words) took 39.4s, 323747 effective words/s
+2019-03-14 01:04:49,141 : INFO : training on a 88991345 raw words (63745670 effective words) took 198.7s, 320817 effective words/s
+</pre>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you don&#39;t plan to train the model any further, calling</span>
+<span class="c1"># init_sims will make the model much more memory-efficient.</span>
+<span class="n">model</span><span class="o">.</span><span class="n">init_sims</span><span class="p">(</span><span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2019-03-14 01:04:49,148 : INFO : precomputing L2-norms of word weight vectors
+</pre>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># It can be helpful to create a meaningful model name and</span>
+<span class="c1"># save the model for later use. You can load it later using Word2Vec.load()</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;300features_40minwords_10context&quot;</span>
+<span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;man woman child kitchen&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2019-03-14 01:04:49,301 : INFO : saving Word2Vec object under 300features_40minwords_10context, separately None
+2019-03-14 01:04:49,305 : INFO : not storing attribute vectors_norm
+2019-03-14 01:04:49,308 : INFO : not storing attribute cum_table
+2019-03-14 01:04:49,800 : INFO : saved 300features_40minwords_10context
+/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:4: DeprecationWarning: Call to deprecated `doesnt_match` (Method will be removed in 4.0.0, use self.wv.doesnt_match() instead).
+  after removing the cwd from sys.path.
+/usr/local/lib/python3.6/dist-packages/gensim/matutils.py:737: FutureWarning: Conversion of the second argument of issubdtype from `int` to `np.signedinteger` is deprecated. In future, it will be treated as `np.int64 == np.dtype(int).type`.
+  if np.issubdtype(vec.dtype, np.int):
+</pre>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;kitchen&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;france england germany soccer&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:1: DeprecationWarning: Call to deprecated `doesnt_match` (Method will be removed in 4.0.0, use self.wv.doesnt_match() instead).
+  &quot;&quot;&quot;Entry point for launching an IPython kernel.
+/usr/local/lib/python3.6/dist-packages/gensim/matutils.py:737: FutureWarning: Conversion of the second argument of issubdtype from `int` to `np.signedinteger` is deprecated. In future, it will be treated as `np.int64 == np.dtype(int).type`.
+  if np.issubdtype(vec.dtype, np.int):
+</pre>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;soccer&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="s2">&quot;soccer&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:1: DeprecationWarning: Call to deprecated `most_similar` (Method will be removed in 4.0.0, use self.wv.most_similar() instead).
+  &quot;&quot;&quot;Entry point for launching an IPython kernel.
+/usr/local/lib/python3.6/dist-packages/gensim/matutils.py:737: FutureWarning: Conversion of the second argument of issubdtype from `int` to `np.signedinteger` is deprecated. In future, it will be treated as `np.int64 == np.dtype(int).type`.
+  if np.issubdtype(vec.dtype, np.int):
+</pre>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[(&#39;football&#39;, 0.8039368391036987),
+ (&#39;basketball&#39;, 0.6595849990844727),
+ (&#39;poker&#39;, 0.6242333054542542),
+ (&#39;baseball&#39;, 0.6185872554779053),
+ (&#39;coach&#39;, 0.6010462641716003),
+ (&#39;sports&#39;, 0.5769123435020447),
+ (&#39;hockey&#39;, 0.574334442615509),
+ (&#39;shaolin&#39;, 0.5512605905532837),
+ (&#39;champions&#39;, 0.5357030034065247),
+ (&#39;wrestling&#39;, 0.5321739912033081)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="s2">&quot;man&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:1: DeprecationWarning: Call to deprecated `most_similar` (Method will be removed in 4.0.0, use self.wv.most_similar() instead).
+  &quot;&quot;&quot;Entry point for launching an IPython kernel.
+/usr/local/lib/python3.6/dist-packages/gensim/matutils.py:737: FutureWarning: Conversion of the second argument of issubdtype from `int` to `np.signedinteger` is deprecated. In future, it will be treated as `np.int64 == np.dtype(int).type`.
+  if np.issubdtype(vec.dtype, np.int):
+</pre>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[(&#39;woman&#39;, 0.6294258832931519),
+ (&#39;lad&#39;, 0.6104426383972168),
+ (&#39;lady&#39;, 0.5893934965133667),
+ (&#39;monk&#39;, 0.5500040650367737),
+ (&#39;farmer&#39;, 0.5429803729057312),
+ (&#39;guy&#39;, 0.521837592124939),
+ (&#39;person&#39;, 0.5184544324874878),
+ (&#39;chap&#39;, 0.5139154195785522),
+ (&#39;millionaire&#39;, 0.5120488405227661),
+ (&#39;politician&#39;, 0.5048956871032715)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="p">[</span><span class="s2">&quot;computer&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:1: DeprecationWarning: Call to deprecated `__getitem__` (Method will be removed in 4.0.0, use self.wv.__getitem__() instead).
+  &quot;&quot;&quot;Entry point for launching an IPython kernel.
+</pre>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-4.79339510e-02, -2.53810696e-02, -9.83078852e-02,  7.23835602e-02,
+       -2.23066527e-02,  5.72536923e-02,  3.17422301e-02, -6.21821284e-02,
+       -3.82531472e-02, -2.85035223e-02,  6.96288198e-02, -8.61958042e-03,
+       -5.25614843e-02,  8.91598314e-02,  1.33388013e-01, -4.59663719e-02,
+        5.79963811e-02,  4.03241627e-02,  1.37066737e-01, -1.39122888e-01,
+        2.03789044e-02, -4.67378348e-02,  1.71173755e-02, -6.14754260e-02,
+       -8.26872066e-02,  4.17799037e-03, -6.88192695e-02, -4.71851118e-02,
+        5.73772416e-02, -5.46796173e-02, -3.86515111e-02,  9.65327471e-02,
+        2.05815546e-02,  2.76276264e-02, -4.25591022e-02,  2.51196809e-02,
+        3.82702723e-02,  4.93922504e-03,  1.12461247e-01, -1.01153374e-01,
+        3.35556641e-02,  5.55540156e-03, -3.79679240e-02, -2.24771872e-02,
+        8.73093233e-02, -5.04509695e-02, -4.05530483e-02,  6.14347458e-02,
+        8.23021308e-02,  5.65582402e-02,  2.69791781e-05,  4.77958284e-03,
+        7.75242895e-02,  1.00004807e-01,  5.92902536e-03, -1.05087563e-01,
+       -3.61691602e-02, -3.15997313e-04,  2.78723650e-02,  1.86387897e-02,
+       -1.70327332e-02,  7.38388335e-04, -5.49275465e-02, -5.79706319e-02,
+        5.06388247e-02,  1.26366448e-02, -7.05252960e-02,  1.17502294e-01,
+        9.84748304e-02, -1.39781563e-02, -3.13345194e-02, -6.53982442e-03,
+       -5.12062805e-03,  1.38693685e-02,  3.74527611e-02,  2.43657101e-02,
+        3.43408324e-02,  8.02342147e-02, -1.71090271e-02, -7.04095000e-03,
+        1.04522845e-02,  3.43474708e-02, -1.40156727e-02,  6.84063807e-02,
+        3.38155553e-02,  1.56406701e-01,  1.79476216e-02, -4.58403230e-02,
+       -4.15017596e-03,  2.82820929e-02,  5.71620092e-02, -1.77074708e-02,
+       -3.98685411e-02, -1.47484854e-01, -7.26067871e-02,  6.60759658e-02,
+       -1.58032253e-02, -6.50163293e-02,  4.24350947e-02,  1.12647265e-01,
+        4.10237350e-02,  2.98280325e-02,  3.11948135e-02, -7.24988058e-02,
+        1.41753890e-02, -3.46501283e-02,  1.00943372e-02, -4.47276309e-02,
+       -2.15441603e-02, -1.69435084e-01, -2.18652375e-02,  6.05334900e-02,
+        9.29217041e-02, -4.98547107e-02,  1.08486228e-02, -1.16886824e-01,
+       -7.03361072e-03, -6.75052553e-02,  5.19460291e-02, -3.68494578e-02,
+        3.72104347e-02,  4.01992016e-02, -3.65689546e-02,  5.73715456e-02,
+       -8.58063698e-02, -1.69679038e-02,  1.78947430e-02, -5.47890067e-02,
+       -1.79170370e-02,  6.18545935e-02,  1.40716946e-02, -5.53099699e-02,
+        3.28098610e-02, -8.61988366e-02, -1.38060516e-02, -7.77973756e-02,
+        3.01322360e-02, -2.97213811e-02, -5.12061007e-02, -7.44357333e-02,
+       -1.18710482e-02,  5.09540029e-02,  5.79989143e-02, -7.21113309e-02,
+        1.41676925e-02,  1.35432437e-01, -6.59376010e-03,  4.38096523e-02,
+       -6.01608269e-02,  2.00556521e-03,  1.74984355e-02,  4.49043103e-02,
+        1.09420130e-02,  8.18869006e-03,  1.52458772e-02, -2.65226234e-02,
+       -2.01061089e-02, -8.11586305e-02,  9.00103152e-02,  5.94500527e-02,
+        2.89643300e-03,  2.56725634e-03, -1.78116038e-02,  1.90644264e-02,
+       -2.26962790e-02,  3.18668643e-03, -7.71036968e-02,  1.93123269e-04,
+        2.58924272e-02,  3.18960845e-02, -8.47435892e-02,  3.89174446e-02,
+       -9.14918333e-02, -3.47692855e-02, -1.05178788e-01, -7.81329945e-02,
+       -2.56739929e-02, -2.41342392e-02, -5.45198135e-02, -3.73307355e-02,
+        2.69567072e-02,  4.54399176e-03, -4.00420465e-02,  5.33767864e-02,
+       -6.76332489e-02,  3.17393392e-02,  5.90901449e-02,  9.45589691e-02,
+        3.21563855e-02,  2.33184472e-02,  6.14998117e-03,  4.27653221e-03,
+       -5.73230572e-02, -5.30507602e-03, -8.49941671e-02, -2.04346944e-02,
+        9.48881656e-02,  5.88757657e-02, -1.11293055e-01,  1.90836471e-02,
+       -4.70569022e-02, -4.22467291e-02,  3.86966486e-03, -9.70810875e-02,
+       -7.43101314e-02,  5.24649993e-02, -3.29410285e-02, -2.38991026e-02,
+       -3.36377881e-02,  5.44135012e-02, -9.94117185e-02,  2.49974765e-02,
+       -4.42564599e-02,  8.74478966e-02, -3.85684483e-02,  3.34127881e-02,
+        8.24790299e-02,  5.33424094e-02,  1.31256990e-02,  2.96878815e-02,
+        2.22183373e-02, -2.11739577e-02,  8.04685652e-02, -3.71479578e-02,
+        7.73914915e-04, -4.12550308e-02,  5.00466563e-02,  2.51460876e-02,
+        3.03647742e-02, -1.26310617e-01, -1.64576340e-02,  6.23791106e-02,
+        5.53251542e-02, -7.69763142e-02, -6.70548202e-03, -6.63869753e-02,
+        1.24717746e-02, -1.68166086e-01,  1.68424156e-02, -6.28778115e-02,
+        9.77337211e-02,  4.71105427e-02,  8.92058201e-03, -1.37098841e-02,
+        3.06127220e-02,  1.73426419e-02, -2.89770309e-02, -1.85693940e-03,
+       -1.15272313e-04, -3.52074020e-02, -3.21245864e-02, -8.34794790e-02,
+        2.75801215e-02, -5.00087887e-02,  4.92503829e-02, -9.92316827e-02,
+       -2.22996939e-02,  1.18917022e-02,  3.88455503e-02,  1.20371632e-01,
+        5.02688885e-02, -1.04167230e-01,  4.91058379e-02, -1.05557941e-01,
+       -1.98254809e-02, -4.02186513e-02,  7.50040542e-03, -1.05268778e-02,
+       -7.07997382e-03,  9.48763639e-02,  4.84618731e-02, -3.02425772e-02,
+        6.50335848e-02, -3.24018374e-02, -3.04284208e-02, -9.73176360e-02,
+        6.17954507e-03,  6.41165003e-02, -6.53638914e-02,  3.88511792e-02,
+        1.19865581e-01,  6.39352277e-02,  3.71861272e-02, -6.28246441e-02,
+       -9.44986590e-04,  4.55985926e-02,  4.20346893e-02, -5.09408861e-02,
+        5.30342124e-02,  2.55930256e-02,  1.57046262e-02,  1.00914791e-01,
+       -5.51233701e-02, -5.27993068e-02, -1.68002993e-02, -6.69082999e-02,
+       -1.73713006e-02,  7.25108683e-02, -7.00484961e-02,  3.51085626e-02],
+      dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="s2">&quot;car&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:1: DeprecationWarning: Call to deprecated `most_similar` (Method will be removed in 4.0.0, use self.wv.most_similar() instead).
+  &quot;&quot;&quot;Entry point for launching an IPython kernel.
+/usr/local/lib/python3.6/dist-packages/gensim/matutils.py:737: FutureWarning: Conversion of the second argument of issubdtype from `int` to `np.signedinteger` is deprecated. In future, it will be treated as `np.int64 == np.dtype(int).type`.
+  if np.issubdtype(vec.dtype, np.int):
+</pre>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[(&#39;truck&#39;, 0.7517951726913452),
+ (&#39;jeep&#39;, 0.6925300359725952),
+ (&#39;bus&#39;, 0.6857529282569885),
+ (&#39;train&#39;, 0.6580698490142822),
+ (&#39;bike&#39;, 0.6402906179428101),
+ (&#39;plane&#39;, 0.6360883712768555),
+ (&#39;boat&#39;, 0.6104196310043335),
+ (&#39;helicopter&#39;, 0.6086692214012146),
+ (&#39;cars&#39;, 0.5979301929473877),
+ (&#39;chevy&#39;, 0.5919524431228638)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/16-intro-nlp"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jason Kuruzovich<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-32817743-6', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

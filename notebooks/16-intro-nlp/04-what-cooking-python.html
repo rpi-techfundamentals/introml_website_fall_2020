@@ -1,0 +1,997 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Logistic Regression and Regularization. &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Introduction to Machine Learning Applications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  OVERVIEW
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/preparation.html">
+   Before Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/in_class.html">
+   In Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/assignments.html">
+   Assignments
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SESSIONS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session1.html">
+   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session2.html">
+   2. Python Basics (09/03)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session3.html">
+   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session4.html">
+   4. Python conditionals, loops, functions, aggregating.  (09/10)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NOTEBOOKS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/01-python-overview.html">
+   1. Overview of Python Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/02-datastructures.html">
+   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/03-numpy.html">
+   3. Overview of Numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/04-pandas.html">
+   4. Large sections of this were adopted from Analyzing structured data with Pandas by Steve Phelps.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/04-pandas.html#introduction-to-pandas">
+   5. Introduction to Pandas
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/16-intro-nlp/04-what-cooking-python.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020/issues/new?title=Issue%20on%20page%20%2Fnotebooks/16-intro-nlp/04-what-cooking-python.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rpi-techfundamentals/introml_website_fall_2020/blob/master/site/notebooks/16-intro-nlp/04-what-cooking-python.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a class="reference external" href="http://rpi.analyticsdojo.com"><img alt="AnalyticsDojo" src="https://github.com/rpi-techfundamentals/spring2019-materials/blob/master/fig/final-logo.png?raw=1" /></a></p>
+<center><h1> What's Cooking  in Python</h1></center>
+<center><h3><a href = 'http://rpi.analyticsdojo.com'>rpi.analyticsdojo.com</a></h3></center><p>This was adopted from.
+https://www.kaggle.com/manuelatadvice/whats-cooking/noname/code</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This imports a bunch of packages.  </span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">WordNetLemmatizer</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">WordNetLemmatizer</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="c1">#from sklearn import grid_search</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="c1">#If you import the codes locally, this seems to cause some issues.  </span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+
+<span class="n">urltrain</span><span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/RPI-Analytics/MGMT6963-2015/master/data/whatscooking/whatscookingtrain.json&#39;</span>
+<span class="n">urltest</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/RPI-Analytics/MGMT6963-2015/master/data/whatscooking/whatscookingtest.json&#39;</span>
+
+
+<span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">urlopen</span><span class="p">(</span><span class="n">urltrain</span><span class="p">))</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">urlopen</span><span class="p">(</span><span class="n">urltest</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#First we want to see the most popular cuisine for the naive model. </span>
+<span class="n">train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cuisine&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>cuisine
+brazilian        467
+british          804
+cajun_creole    1546
+chinese         2673
+filipino         755
+french          2646
+greek           1175
+indian          3003
+irish            667
+italian         7838
+jamaican         526
+japanese        1423
+korean           830
+mexican         6438
+moroccan         821
+russian          489
+southern_us     4320
+spanish          989
+thai            1539
+vietnamese       825
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here we write the most popular selection.  This is the baseline by which we will judge other models. </span>
+<span class="n">test</span><span class="p">[</span><span class="s1">&#39;cuisine&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;italian&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#THis is a much more simple version that selects out the columns ID and cuisinte</span>
+<span class="n">submission</span><span class="o">=</span><span class="n">test</span><span class="p">[[</span><span class="s1">&#39;id&#39;</span> <span class="p">,</span>  <span class="s1">&#39;cuisine&#39;</span> <span class="p">]]</span>
+<span class="c1">#This is a more complex method I showed that gives same.</span>
+<span class="c1">#submission=pd.DataFrame(test.ix[:,[&#39;id&#39; ,  &#39;cuisine&#39; ]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This outputs the file.</span>
+<span class="n">submission</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;1_cookingSubmission.csv&quot;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+<span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;1_cookingSubmission.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#So it seems there is some data we need to use the NLTK leemmatizer.  </span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">WordNetLemmatizer</span><span class="p">()</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;wordnet&#39;</span><span class="p">)</span>
+
+ 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package wordnet to /root/nltk_data...
+[nltk_data]   Unzipping corpora/wordnet.zip.
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">train</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>cuisine</th>
+      <th>ingredients</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10259</td>
+      <td>greek</td>
+      <td>[romaine lettuce, black olives, grape tomatoes...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>25693</td>
+      <td>southern_us</td>
+      <td>[plain flour, ground pepper, salt, tomatoes, g...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>20130</td>
+      <td>filipino</td>
+      <td>[eggs, pepper, salt, mayonaise, cooking oil, g...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>22213</td>
+      <td>indian</td>
+      <td>[water, vegetable oil, wheat, salt]</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>13162</td>
+      <td>indian</td>
+      <td>[black pepper, shallots, cornflour, cayenne pe...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>39769</th>
+      <td>29109</td>
+      <td>irish</td>
+      <td>[light brown sugar, granulated sugar, butter, ...</td>
+    </tr>
+    <tr>
+      <th>39770</th>
+      <td>11462</td>
+      <td>italian</td>
+      <td>[KRAFT Zesty Italian Dressing, purple onion, b...</td>
+    </tr>
+    <tr>
+      <th>39771</th>
+      <td>2238</td>
+      <td>irish</td>
+      <td>[eggs, citrus fruit, raisins, sourdough starte...</td>
+    </tr>
+    <tr>
+      <th>39772</th>
+      <td>41882</td>
+      <td>chinese</td>
+      <td>[boneless chicken skinless thigh, minced garli...</td>
+    </tr>
+    <tr>
+      <th>39773</th>
+      <td>2362</td>
+      <td>mexican</td>
+      <td>[green chile, jalapeno chilies, onions, ground...</td>
+    </tr>
+  </tbody>
+</table>
+<p>39774 rows × 3 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#We see this in a Python Solution. </span>
+<span class="n">train</span><span class="p">[</span><span class="s1">&#39;ingredients_clean_string1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;ingredients&#39;</span><span class="p">]]</span> 
+
+<span class="c1">#We also know that we can do something similar though a Lambda function. </span>
+<span class="n">strip</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39; , &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> 
+<span class="c1">#Finally, we call the function for name</span>
+<span class="n">train</span><span class="p">[</span><span class="s1">&#39;ingredients_clean_string2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;ingredients&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">strip</span><span class="p">)</span>
+
+<span class="c1">#Now that we used the lambda function, we can reuse this for the test dataset. </span>
+<span class="n">test</span><span class="p">[</span><span class="s1">&#39;ingredients_clean_string1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="s1">&#39;ingredients&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">strip</span><span class="p">)</span>
+ 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#We see this in one of the solutions.  We can reconstruct it in a way that makes it abit easier to follow, but I found when doing that it took forever.  </span>
+
+<span class="c1">#To interpret this, read from right to left. </span>
+<span class="n">train</span><span class="p">[</span><span class="s1">&#39;ingredients_string1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">WordNetLemmatizer</span><span class="p">()</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[^A-Za-z]&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lists</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">lists</span> <span class="ow">in</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;ingredients&#39;</span><span class="p">]]</span>       
+<span class="n">test</span><span class="p">[</span><span class="s1">&#39;ingredients_string1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">WordNetLemmatizer</span><span class="p">()</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[^A-Za-z]&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lists</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">lists</span> <span class="ow">in</span> <span class="n">test</span><span class="p">[</span><span class="s1">&#39;ingredients&#39;</span><span class="p">]]</span>       
+
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;ingredients_string1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0        romaine lettuce black olives grape tomatoes ga...
+1        plain flour ground pepper salt tomato ground b...
+2        egg pepper salt mayonaise cooking oil green ch...
+3                           water vegetable oil wheat salt
+4        black pepper shallot cornflour cayenne pepper ...
+                               ...                        
+39769    light brown sugar granulated sugar butter warm...
+39770    KRAFT Zesty Italian Dressing purple onion broc...
+39771    egg citrus fruit raisin sourdough starter flou...
+39772    boneless chicken skinless thigh minced garlic ...
+39773    green chile jalapeno chilies onion ground blac...
+Name: ingredients_string1, Length: 39774, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ingredients</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;ingredients&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ingredients</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0        romaine lettuce,black olives,grape tomatoes,ga...
+1        plain flour,ground pepper,salt,tomatoes,ground...
+2        eggs,pepper,salt,mayonaise,cooking oil,green c...
+3                           water,vegetable oil,wheat,salt
+4        black pepper,shallots,cornflour,cayenne pepper...
+                               ...                        
+39769    light brown sugar,granulated sugar,butter,warm...
+39770    KRAFT Zesty Italian Dressing,purple onion,broc...
+39771    eggs,citrus fruit,raisins,sourdough starter,fl...
+39772    boneless chicken skinless thigh,minced garlic,...
+39773    green chile,jalapeno chilies,onions,ground bla...
+Name: ingredients, Length: 39774, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Now we will create a corpus.</span>
+<span class="n">corpustr</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;ingredients_string1&#39;</span><span class="p">]</span>
+<span class="n">corpusts</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="s1">&#39;ingredients_string1&#39;</span><span class="p">]</span>
+<span class="n">corpustr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0        romaine lettuce black olives grape tomatoes ga...
+1        plain flour ground pepper salt tomato ground b...
+2        egg pepper salt mayonaise cooking oil green ch...
+3                           water vegetable oil wheat salt
+4        black pepper shallot cornflour cayenne pepper ...
+                               ...                        
+39769    light brown sugar granulated sugar butter warm...
+39770    KRAFT Zesty Italian Dressing purple onion broc...
+39771    egg citrus fruit raisin sourdough starter flou...
+39772    boneless chicken skinless thigh minced garlic ...
+39773    green chile jalapeno chilies onion ground blac...
+Name: ingredients_string1, Length: 39774, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html</span>
+<span class="c1">#You could develop an understanding based on each.  </span>
+<span class="n">vectorizertr</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span>
+                             <span class="n">ngram_range</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">1</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">),</span><span class="n">analyzer</span><span class="o">=</span><span class="s2">&quot;word&quot;</span><span class="p">,</span> 
+                             <span class="n">max_df</span> <span class="o">=</span> <span class="o">.</span><span class="mi">57</span> <span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="kc">False</span> <span class="p">,</span> <span class="n">token_pattern</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\w+&#39;</span> <span class="p">,</span> <span class="n">sublinear_tf</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">vectorizerts</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Note that this doesn&#39;t work with the #todense option.  </span>
+<span class="n">tfidftr</span><span class="o">=</span><span class="n">vectorizertr</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">corpustr</span><span class="p">)</span>
+<span class="n">predictors_tr</span> <span class="o">=</span> <span class="n">tfidftr</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Note that this doesn&#39;t work with the #todense option.  This creates a matrix of predictors from the corpus. </span>
+<span class="n">tfidfts</span><span class="o">=</span><span class="n">vectorizertr</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">corpusts</span><span class="p">)</span>
+<span class="n">predictors_ts</span><span class="o">=</span> <span class="n">tfidfts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This is target variable.  </span>
+<span class="n">targets_tr</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;cuisine&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="logistic-regression-and-regularization">
+<h1>Logistic Regression and Regularization.<a class="headerlink" href="#logistic-regression-and-regularization" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Regularlization can help us with the large matrix by adding a penalty for each parameter.</p></li>
+<li><p>Finding out how much regularization via grid search (search across hyperparameters.)</p></li>
+</ul>
+<p>http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span>Inverse of regularization strength; must be a positive float. Like in support vector machines, smaller values specify stronger regularization.```
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Logistic Regression. </span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]}</span>
+<span class="c1">#clf = LinearSVC()</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">predictors_tr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;39774x2963 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;
+	with 727921 stored elements in Compressed Sparse Row format&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="c1">#This uses that associated paramters to search a grid space. </span>
+<span class="n">classifier</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">parameters</span><span class="p">)</span>
+<span class="n">classifier</span><span class="o">=</span><span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">predictors_tr</span><span class="p">,</span><span class="n">targets_tr</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/local/lib/python3.6/dist-packages/sklearn/model_selection/_split.py:1978: FutureWarning: The default value of cv will change from 3 to 5 in version 0.22. Specify it explicitly to silence this warning.
+  warnings.warn(CV_WARNING, FutureWarning)
+/usr/local/lib/python3.6/dist-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to 'lbfgs' in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+/usr/local/lib/python3.6/dist-packages/sklearn/linear_model/logistic.py:469: FutureWarning: Default multi_class will be changed to 'auto' in 0.22. Specify the multi_class option to silence this warning.
+  &quot;this warning.&quot;, FutureWarning)
+</pre>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This predicts the outcome for the test set. </span>
+<span class="n">predictions</span><span class="o">=</span><span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">predictors_ts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This adds it to the resulting dataframe. </span>
+<span class="n">test</span><span class="p">[</span><span class="s1">&#39;cuisine&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">predictions</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This creates the submision dataframe</span>
+<span class="n">submission2</span><span class="o">=</span><span class="n">test</span><span class="p">[[</span><span class="s1">&#39;id&#39;</span> <span class="p">,</span>  <span class="s1">&#39;cuisine&#39;</span> <span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This outputs the file.</span>
+<span class="n">submission2</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;2_logisticSubmission.csv&quot;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+<span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;2_logisticSubmission.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span> 
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the random forest object which will include all the parameters</span>
+<span class="c1"># for the fit</span>
+<span class="n">forest</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit the training data to the Survived labels and create the decision trees</span>
+<span class="n">forest</span> <span class="o">=</span> <span class="n">forest</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">predictors_tr</span><span class="p">,</span><span class="n">targets_tr</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Take the same decision trees and run it on the test data</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">forest</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">predictors_ts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This adds it to the resulting dataframe. </span>
+<span class="n">test</span><span class="p">[</span><span class="s1">&#39;cuisine&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">predictions</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This creates the submision dataframe</span>
+<span class="n">submission3</span><span class="o">=</span><span class="n">test</span><span class="p">[[</span><span class="s1">&#39;id&#39;</span> <span class="p">,</span>  <span class="s1">&#39;cuisine&#39;</span> <span class="p">]]</span>
+<span class="n">submission3</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;3_random_submission.csv&quot;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+<span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;3_random_submission.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ingredients</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;ingredients&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ingredients</span>
+<span class="n">train</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>cuisine</th>
+      <th>ingredients</th>
+      <th>ingredients_clean_string1</th>
+      <th>ingredients_clean_string2</th>
+      <th>ingredients_string1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10259</td>
+      <td>greek</td>
+      <td>[romaine lettuce, black olives, grape tomatoes...</td>
+      <td>romaine lettuce,black olives,grape tomatoes,ga...</td>
+      <td>romaine lettuce , black olives , grape tomatoe...</td>
+      <td>romaine lettuce black olives grape tomatoes ga...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>25693</td>
+      <td>southern_us</td>
+      <td>[plain flour, ground pepper, salt, tomatoes, g...</td>
+      <td>plain flour,ground pepper,salt,tomatoes,ground...</td>
+      <td>plain flour , ground pepper , salt , tomatoes ...</td>
+      <td>plain flour ground pepper salt tomato ground b...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>20130</td>
+      <td>filipino</td>
+      <td>[eggs, pepper, salt, mayonaise, cooking oil, g...</td>
+      <td>eggs,pepper,salt,mayonaise,cooking oil,green c...</td>
+      <td>eggs , pepper , salt , mayonaise , cooking oil...</td>
+      <td>egg pepper salt mayonaise cooking oil green ch...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>22213</td>
+      <td>indian</td>
+      <td>[water, vegetable oil, wheat, salt]</td>
+      <td>water,vegetable oil,wheat,salt</td>
+      <td>water , vegetable oil , wheat , salt</td>
+      <td>water vegetable oil wheat salt</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>13162</td>
+      <td>indian</td>
+      <td>[black pepper, shallots, cornflour, cayenne pe...</td>
+      <td>black pepper,shallots,cornflour,cayenne pepper...</td>
+      <td>black pepper , shallots , cornflour , cayenne ...</td>
+      <td>black pepper shallot cornflour cayenne pepper ...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>39769</th>
+      <td>29109</td>
+      <td>irish</td>
+      <td>[light brown sugar, granulated sugar, butter, ...</td>
+      <td>light brown sugar,granulated sugar,butter,warm...</td>
+      <td>light brown sugar , granulated sugar , butter ...</td>
+      <td>light brown sugar granulated sugar butter warm...</td>
+    </tr>
+    <tr>
+      <th>39770</th>
+      <td>11462</td>
+      <td>italian</td>
+      <td>[KRAFT Zesty Italian Dressing, purple onion, b...</td>
+      <td>KRAFT Zesty Italian Dressing,purple onion,broc...</td>
+      <td>KRAFT Zesty Italian Dressing , purple onion , ...</td>
+      <td>KRAFT Zesty Italian Dressing purple onion broc...</td>
+    </tr>
+    <tr>
+      <th>39771</th>
+      <td>2238</td>
+      <td>irish</td>
+      <td>[eggs, citrus fruit, raisins, sourdough starte...</td>
+      <td>eggs,citrus fruit,raisins,sourdough starter,fl...</td>
+      <td>eggs , citrus fruit , raisins , sourdough star...</td>
+      <td>egg citrus fruit raisin sourdough starter flou...</td>
+    </tr>
+    <tr>
+      <th>39772</th>
+      <td>41882</td>
+      <td>chinese</td>
+      <td>[boneless chicken skinless thigh, minced garli...</td>
+      <td>boneless chicken skinless thigh,minced garlic,...</td>
+      <td>boneless chicken skinless thigh , minced garli...</td>
+      <td>boneless chicken skinless thigh minced garlic ...</td>
+    </tr>
+    <tr>
+      <th>39773</th>
+      <td>2362</td>
+      <td>mexican</td>
+      <td>[green chile, jalapeno chilies, onions, ground...</td>
+      <td>green chile,jalapeno chilies,onions,ground bla...</td>
+      <td>green chile , jalapeno chilies , onions , grou...</td>
+      <td>green chile jalapeno chilies onion ground blac...</td>
+    </tr>
+  </tbody>
+</table>
+<p>39774 rows × 6 columns</p>
+</div></div></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/16-intro-nlp"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jason Kuruzovich<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-32817743-6', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
