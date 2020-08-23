@@ -1,0 +1,729 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>“The best thing about R is that it was developed by statisticians. The worst thing about R is that… it was developed by statisticians.” &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Introduction to Machine Learning Applications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  OVERVIEW
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/preparation.html">
+   Before Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/in_class.html">
+   In Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/assignments.html">
+   Assignments
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SESSIONS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session1.html">
+   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session2.html">
+   2. Python Basics (09/03)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session3.html">
+   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session4.html">
+   4. Python conditionals, loops, functions, aggregating.  (09/10)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NOTEBOOKS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/01-python-overview.html">
+   1. Overview of Python Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/02-datastructures.html">
+   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/03-numpy.html">
+   3. Overview of Numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/04-pandas.html">
+   4. Large sections of this were adopted from Analyzing structured data with Pandas by Steve Phelps.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/04-pandas.html#introduction-to-pandas">
+   5. Introduction to Pandas
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/10-intro-r/01-intro-r-overview.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020/issues/new?title=Issue%20on%20page%20%2Fnotebooks/10-intro-r/01-intro-r-overview.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rpi-techfundamentals/introml_website_fall_2020/blob/master/site/notebooks/10-intro-r/01-intro-r-overview.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bo-cowgill-google">
+   - Bo Cowgill, Google
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-r">
+   What is R?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modes-of-using-r">
+   Modes of Using R
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-r">
+   Why R?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-not-r">
+   Why Not R?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-and-jupyter">
+   R and Jupyter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-and-rstudio">
+   R and RStudio
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#r-and-conda">
+     R and Conda
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-as-calculator">
+   R as calculator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-of-values">
+   Assignment of Values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-and-packages-r-s-killer-app">
+   R and Packages (R’s killer app)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-r-packages">
+   Using R packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-packages-in-rstudio">
+   Installing Packages in RStudio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-packages-with-conda">
+   Install Packages with Conda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-packages">
+   Loading Packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#credits">
+   CREDITS
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a class="reference external" href="http://rpi.analyticsdojo.com"><img alt="AnalyticsDojo" src="https://github.com/rpi-techfundamentals/spring2019-materials/blob/master/fig/final-logo.png?raw=1" /></a></p>
+<center><h1>Introduction to R - Overview and Packages</h1></center>
+<center><h3><a href = 'http://rpi.analyticsdojo.com'>rpi.analyticsdojo.com</a></h3></center>
+<div class="section" id="the-best-thing-about-r-is-that-it-was-developed-by-statisticians-the-worst-thing-about-r-is-that-it-was-developed-by-statisticians">
+<h1>“The best thing about R is that it was developed by statisticians. The worst thing about R is that… it was developed by statisticians.”<a class="headerlink" href="#the-best-thing-about-r-is-that-it-was-developed-by-statisticians-the-worst-thing-about-r-is-that-it-was-developed-by-statisticians" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="bo-cowgill-google">
+<h2>- Bo Cowgill, Google<a class="headerlink" href="#bo-cowgill-google" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Language Features and Use Cases</p></li>
+<li><p>R</p></li>
+<li><p>R Studio</p></li>
+<li><p>R and Packages</p></li>
+</ul>
+</div>
+<div class="section" id="what-is-r">
+<h2>What is R?<a class="headerlink" href="#what-is-r" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>R is an Open Source (and freely available) environment for statistical computing and graphics.</p></li>
+<li><p>It is a full-featured programming language, in particular a scripting language (with similarities to Matlab and Python).</p></li>
+<li><p>It can be run interactively or as a batch/background job.</p></li>
+<li><p>R is being actively developed with ongoing updates/new releases.</p></li>
+<li><p>R has a variety of built-in as well as community-provided packages that extend its functionality with code and data; see CRAN for the thousands of add-on packages.</p></li>
+<li><p>It is freely-available and modifiable (Available for Windows, Mac OS X, and Linux).</p></li>
+</ul>
+</div>
+<div class="section" id="modes-of-using-r">
+<h2>Modes of Using R<a class="headerlink" href="#modes-of-using-r" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>From the command line in a Linux/Mac terminal window</p></li>
+<li><p>Using the Windows/Mac GUIs</p></li>
+<li><p>Using the RStudio GUI, an ‘integrated development environment’</p></li>
+<li><p>Running an R script in the background on a Linux/Mac machine (Windows?)</p></li>
+<li><p>RStudio</p></li>
+</ul>
+</div>
+<div class="section" id="why-r">
+<h2>Why R?<a class="headerlink" href="#why-r" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>R is widely used (statisticians, scientists, social scientists) and has the widest statistical functionality of any software</p></li>
+<li><p>Users add functionality via packages all the time</p></li>
+<li><p>R is free and available on all major platforms</p></li>
+<li><p>As a scripting language, R is very powerful, flexible, and easy to use</p></li>
+<li><p>As a scripting language, R allows for reproducibility and automating tasks</p></li>
+<li><p>As a language, R can do essentially anything</p></li>
+<li><p>Wide usage helps to improve quality and reduce bugs</p></li>
+<li><p>R can interact with other software, databases, the operating system, the web, etc.</p></li>
+<li><p>R is built on C and can call user-written and external C code and packages (in particular, see the <em>Rcpp</em> R package)</p></li>
+</ul>
+</div>
+<div class="section" id="why-not-r">
+<h2>Why Not R?<a class="headerlink" href="#why-not-r" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Other software is better than R at various tasks</p></li>
+</ul>
+<p>i.e., <a class="reference external" href="http://imgs.xkcd.com/comics/python.png">Python</a> is very good for text manipulation, interacting with the operating system, and as a glue for tying together various applications/software in a workflow-* R can be much slower than compiled languages (but is often quite fast with good coding practices!)</p>
+<ul class="simple">
+<li><p>R’s packages are only as good as the person who wrote them; no explicit quality control</p></li>
+<li><p>R is a sprawling and unstandardized ecosystem</p></li>
+<li><p>Google has a <a class="reference external" href="https://google.github.io/styleguide/Rguide.xml">recommended style</a> guide that should be taken into account.</p></li>
+</ul>
+</div>
+<div class="section" id="r-and-jupyter">
+<h2>R and Jupyter<a class="headerlink" href="#r-and-jupyter" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>R commands can be executed in a Jupyter Notebook just by play at the end of a cell.</p></li>
+<li><p>Blocks of cells or even the entire notebook can be executed by clicking on the <em>Cell</em> above.</p></li>
+<li><p>The Kernal is responsible for interpreting the code, and the current kernal is listed on the top right of the notebook.</p></li>
+<li><p>While Jupyter started as a Python project, there are now a variety of Kernals for different programming languages including R, Scala, and SAS.</p></li>
+<li><p>Read more about Jupyter in the documentation <a class="reference external" href="http://jupyter.readthedocs.io/en/latest/">here</a>.</p></li>
+<li><p>If a variable isn’t assigned it will be provided as output.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test</span><span class="o">&lt;-</span><span class="mi">5</span>
+<span class="n">test</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">5</div></div>
+</div>
+</div>
+<div class="section" id="r-and-rstudio">
+<h2>R and RStudio<a class="headerlink" href="#r-and-rstudio" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Powerful IDE for R</p></li>
+<li><p>Integrated usage of git</p></li>
+<li><p>Integrated GUI based package management</p></li>
+<li><p>Integrated GIT</p></li>
+<li><p>Solid enterprise infrastructure, owned by Microsoft</p></li>
+</ul>
+<div class="section" id="r-and-conda">
+<h3>R and Conda<a class="headerlink" href="#r-and-conda" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Conda can quickly and easily install R. We love conda!</p></li>
+<li><p>This is a rather long install, so may do it from command line.
+<code class="docutils literal notranslate"><span class="pre">!conda</span> <span class="pre">install</span> <span class="pre">r-essentials</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#conda install -y r-essentials</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="r-as-calculator">
+<h2>R as calculator<a class="headerlink" href="#r-as-calculator" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># R as a calculator</span>
+<span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="c1"># multiply by a constant</span>
+<span class="mi">7</span> <span class="o">+</span> <span class="n">runif</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># add a random number</span>
+<span class="mi">3</span><span class="o">^</span><span class="mi">4</span> <span class="c1"># powers</span>
+<span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="o">^</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># functions</span>
+<span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">log</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="mi">23</span> <span class="o">%/%</span> <span class="mi">2</span> 
+<span class="mi">23</span> <span class="o">%%</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">6.28318530717959</div><div class="output text_html">7.7227991654072</div><div class="output text_html">81</div><div class="output text_html">16</div><div class="output text_html">2.30258509299405</div><div class="output text_html">2</div><div class="output text_html">11</div><div class="output text_html">1</div></div>
+</div>
+</div>
+<div class="section" id="assignment-of-values">
+<h2>Assignment of Values<a class="headerlink" href="#assignment-of-values" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Don’t used the equal sign.</p></li>
+<li><p>Do use <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Assignment DON&quot;T use =</span>
+<span class="n">val</span> <span class="o">&lt;-</span> <span class="mi">3</span>
+<span class="n">val</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+<span class="n">Val</span> <span class="o">&lt;-</span> <span class="mi">7</span> <span class="c1"># case-sensitive!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">Val</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">3</div><div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[1] 3
+[1] 3 7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will gnerate numbers from 1 to 6. </span>
+<span class="n">mySeq</span> <span class="o">&lt;-</span> <span class="mi">1</span><span class="p">:</span><span class="mi">6</span>
+<span class="n">mySeq</span>
+
+<span class="c1">#Notice how this worrks like arrange in Python.</span>
+<span class="n">myOtherSeq</span> <span class="o">&lt;-</span> <span class="n">seq</span><span class="p">(</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">11.1</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">myOtherSeq</span>
+<span class="n">length</span><span class="p">(</span><span class="n">myOtherSeq</span><span class="p">)</span>
+
+<span class="n">fours</span> <span class="o">&lt;-</span> <span class="n">rep</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">fours</span>
+
+<span class="c1"># This is a comment: here is an example of non-numeric data</span>
+<span class="n">depts</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s1">&#39;espm&#39;</span><span class="p">,</span> <span class="s1">&#39;pmb&#39;</span><span class="p">,</span> <span class="s1">&#39;stats&#39;</span><span class="p">)</span>
+<span class="n">depts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><ol class=list-inline>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+</ol>
+</div><div class="output text_html"><ol class=list-inline>
+	<li>1.1</li>
+	<li>3.1</li>
+	<li>5.1</li>
+	<li>7.1</li>
+	<li>9.1</li>
+	<li>11.1</li>
+</ol>
+</div><div class="output text_html">6</div><div class="output text_html"><ol class=list-inline>
+	<li>4</li>
+	<li>4</li>
+	<li>4</li>
+	<li>4</li>
+	<li>4</li>
+	<li>4</li>
+</ol>
+</div><div class="output text_html"><ol class=list-inline>
+	<li>'espm'</li>
+	<li>'pmb'</li>
+	<li>'stats'</li>
+</ol>
+</div></div>
+</div>
+</div>
+<div class="section" id="r-and-packages-r-s-killer-app">
+<h2>R and Packages (R’s killer app)<a class="headerlink" href="#r-and-packages-r-s-killer-app" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>There are a tremendous number of packages available which extend the core capabilities of the R language.</p></li>
+<li><p>“Currently, the CRAN package repository features 9233 available packages.” (from https://cran.r-project.org/web/packages/)</p></li>
+<li><p><a class="reference external" href="https://cran.r-project.org/web/packages/">Packages on CRAN</a>. Also see the <a class="reference external" href="https://cran.r-project.org/web/views/">CRAN Task Views</a>.</p></li>
+<li><p>Packages may be source or compiled binary files.</p></li>
+<li><p>Installing source packages which contain C/C++/Fortran code requires that compilers and related tools be installed.</p></li>
+<li><p>Binary packages are platform-specific (Windows/Mac). This can cause problems in a large class and is a great reason to work in a standardized environment like the cloud or on Docker/VM.</p></li>
+<li><p>If you want to sound like an R expert, make sure to call them <em>packages</em> and not <em>libraries</em>. A <em>library</em> is the location in the directory structure where the packages are installed/stored.</p></li>
+</ul>
+</div>
+<div class="section" id="using-r-packages">
+<h2>Using R packages<a class="headerlink" href="#using-r-packages" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Install the package on your machine</p></li>
+<li><p>Load the package</p></li>
+</ol>
+</div>
+<div class="section" id="installing-packages-in-rstudio">
+<h2>Installing Packages in RStudio<a class="headerlink" href="#installing-packages-in-rstudio" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Only needs to be done one time on machine.</p></li>
+<li><p>To install a package, in RStudio, just do <code class="docutils literal notranslate"><span class="pre">Packages-&gt;Install</span> <span class="pre">Packages</span></code>.</p></li>
+<li><p>Option to specify the source repository: <code class="docutils literal notranslate"><span class="pre">install.packages('chron',</span> <span class="pre">repos='http://cran.us.r-project.org')</span></code></p></li>
+<li><p>Option to install multiple packages: <code class="docutils literal notranslate"><span class="pre">install.packages(c(&quot;pkg1&quot;,</span> <span class="pre">&quot;pkg2&quot;))</span></code></p></li>
+<li><p>You can install dependencies with: <code class="docutils literal notranslate"><span class="pre">install.packages(&quot;chron&quot;,</span> <span class="pre">dependencies</span> <span class="pre">=</span> <span class="pre">TRUE)</span></code></p></li>
+<li><p>If binary files aren’t available for your OS, install from source: <code class="docutils literal notranslate"><span class="pre">install.packages(path_to_file,</span> <span class="pre">repos</span> <span class="pre">=</span> <span class="pre">NULL,</span> <span class="pre">type=&quot;source&quot;)</span></code></p></li>
+<li><p>R installs are not done from the terminal (no <code class="docutils literal notranslate"><span class="pre">!</span></code>).</p></li>
+</ul>
+</div>
+<div class="section" id="install-packages-with-conda">
+<h2>Install Packages with Conda<a class="headerlink" href="#install-packages-with-conda" title="Permalink to this headline">¶</a></h2>
+<p>This will only work from the Anaconda Prompt or terminal.</p>
+<p><code class="docutils literal notranslate"><span class="pre">!conda</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">-c</span> <span class="pre">r</span> <span class="pre">r-yaml</span></code></p>
+</div>
+<div class="section" id="loading-packages">
+<h2>Loading Packages<a class="headerlink" href="#loading-packages" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>R packages must be imported before using.</p></li>
+<li><p>Packages only have to be imported once in a notebook (not in every cell).</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">library(chron)</span></code> would import the chron package, provided it has beeen installed.</p></li>
+<li><p>See all packages loaded with <code class="docutils literal notranslate"><span class="pre">search()</span></code></p></li>
+<li><p>search()    # see packages currently loaded</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">search</span><span class="p">()</span> <span class="c1"># see packages currently loaded</span>
+<span class="n">library</span><span class="p">(</span><span class="s2">&quot;yaml&quot;</span><span class="p">)</span> <span class="c1"># Load the package chron</span>
+<span class="n">search</span><span class="p">()</span>    <span class="c1"># see packages currently loaded</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><ol class=list-inline>
+	<li>'.GlobalEnv'</li>
+	<li>'jupyter:irkernel'</li>
+	<li>'jupyter:irkernel'</li>
+	<li>'package:stats'</li>
+	<li>'package:graphics'</li>
+	<li>'package:grDevices'</li>
+	<li>'package:utils'</li>
+	<li>'package:datasets'</li>
+	<li>'package:methods'</li>
+	<li>'Autoloads'</li>
+	<li>'package:base'</li>
+</ol>
+</div><div class="output text_html"><ol class=list-inline>
+	<li>'.GlobalEnv'</li>
+	<li>'package:yaml'</li>
+	<li>'jupyter:irkernel'</li>
+	<li>'jupyter:irkernel'</li>
+	<li>'package:stats'</li>
+	<li>'package:graphics'</li>
+	<li>'package:grDevices'</li>
+	<li>'package:utils'</li>
+	<li>'package:datasets'</li>
+	<li>'package:methods'</li>
+	<li>'Autoloads'</li>
+	<li>'package:base'</li>
+</ol>
+</div></div>
+</div>
+</div>
+<div class="section" id="credits">
+<h2>CREDITS<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
+<p>Copyright <a class="reference external" href="http://rpi.analyticsdojo.com">AnalyticsDojo</a> 2016.
+This work is licensed under the <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a> license agreement.
+This work is adopted from the Berkley R Bootcamp.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./notebooks/10-intro-r"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jason Kuruzovich<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-32817743-6', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

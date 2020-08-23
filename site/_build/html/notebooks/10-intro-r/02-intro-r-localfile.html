@@ -1,0 +1,554 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Test Notebook &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Introduction to Machine Learning Applications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  OVERVIEW
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/preparation.html">
+   Before Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/in_class.html">
+   In Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/assignments.html">
+   Assignments
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SESSIONS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session1.html">
+   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session2.html">
+   2. Python Basics (09/03)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session3.html">
+   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session4.html">
+   4. Python conditionals, loops, functions, aggregating.  (09/10)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NOTEBOOKS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/01-python-overview.html">
+   1. Overview of Python Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/02-datastructures.html">
+   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/03-numpy.html">
+   3. Overview of Numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/04-pandas.html">
+   4. Large sections of this were adopted from Analyzing structured data with Pandas by Steve Phelps.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/04-pandas.html#introduction-to-pandas">
+   5. Introduction to Pandas
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/10-intro-r/02-intro-r-localfile.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020/issues/new?title=Issue%20on%20page%20%2Fnotebooks/10-intro-r/02-intro-r-localfile.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rpi-techfundamentals/introml_website_fall_2020/blob/master/site/notebooks/10-intro-r/02-intro-r-localfile.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a class="reference external" href="http://rpi.analyticsdojo.com"><img alt="AnalyticsDojo" src="https://github.com/rpi-techfundamentals/spring2019-materials/blob/master/fig/final-logo.png?raw=1" /></a></p>
+<center><h1>Introduction to R - Test Local Jupyter Notebook</h1></center>
+<center><h3><a href = 'http://rpi.analyticsdojo.com'>rpi.analyticsdojo.com</a></h3></center><div class="section" id="test-notebook">
+<h1>Test Notebook<a class="headerlink" href="#test-notebook" title="Permalink to this headline">¶</a></h1>
+<p>The goal of this notebook is to simply test the R environment and to show how to interact with a local data file. Let’s first check the R version.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>               _                           
+platform       x86_64-apple-darwin14.5.0   
+arch           x86_64                      
+os             darwin14.5.0                
+system         x86_64, darwin14.5.0        
+status                                     
+major          3                           
+minor          5.1                         
+year           2018                        
+month          07                          
+day            02                          
+svn rev        74947                       
+language       R                           
+version.string R version 3.5.1 (2018-07-02)
+nickname       Feather Spray               
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reading-a-local-csv-file">
+<h1>Reading a Local CSV File<a class="headerlink" href="#reading-a-local-csv-file" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">read.csv</span></code> command can accepted a variety of delimited files.</p></li>
+<li><p>Relative references are indicated with <code class="docutils literal notranslate"><span class="pre">..</span></code> to indcate going up a directory.</p></li>
+<li><p>Windows: - use either \ or / to indicate directories</p></li>
+<li><p>setwd(‘C:\Users\Your_username\Desktop\r-bootcamp-2016’)</p></li>
+<li><p>setwd(‘..\r-bootcamp-2016’)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will load the local iris.csv file into an R dataframe.  We will work with these a lot in the future.</span>
+<span class="c1">#This is refered to a relative reference.  This is Relative to the current working directory. </span>
+<span class="n">frame</span><span class="o">=</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">&quot;../../input/iris.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will print out the dataframe.</span>
+<span class="n">frame</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>sepal_length</th><th scope=col>sepal_width</th><th scope=col>petal_length</th><th scope=col>petal_width</th><th scope=col>species</th></tr></thead>
+<tbody>
+	<tr><td>5.1   </td><td>3.5   </td><td>1.4   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>4.9   </td><td>3.0   </td><td>1.4   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>4.7   </td><td>3.2   </td><td>1.3   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>4.6   </td><td>3.1   </td><td>1.5   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>5.0   </td><td>3.6   </td><td>1.4   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>5.4   </td><td>3.9   </td><td>1.7   </td><td>0.4   </td><td>setosa</td></tr>
+	<tr><td>4.6   </td><td>3.4   </td><td>1.4   </td><td>0.3   </td><td>setosa</td></tr>
+	<tr><td>5.0   </td><td>3.4   </td><td>1.5   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>4.4   </td><td>2.9   </td><td>1.4   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>4.9   </td><td>3.1   </td><td>1.5   </td><td>0.1   </td><td>setosa</td></tr>
+	<tr><td>5.4   </td><td>3.7   </td><td>1.5   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>4.8   </td><td>3.4   </td><td>1.6   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>4.8   </td><td>3.0   </td><td>1.4   </td><td>0.1   </td><td>setosa</td></tr>
+	<tr><td>4.3   </td><td>3.0   </td><td>1.1   </td><td>0.1   </td><td>setosa</td></tr>
+	<tr><td>5.8   </td><td>4.0   </td><td>1.2   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>5.7   </td><td>4.4   </td><td>1.5   </td><td>0.4   </td><td>setosa</td></tr>
+	<tr><td>5.4   </td><td>3.9   </td><td>1.3   </td><td>0.4   </td><td>setosa</td></tr>
+	<tr><td>5.1   </td><td>3.5   </td><td>1.4   </td><td>0.3   </td><td>setosa</td></tr>
+	<tr><td>5.7   </td><td>3.8   </td><td>1.7   </td><td>0.3   </td><td>setosa</td></tr>
+	<tr><td>5.1   </td><td>3.8   </td><td>1.5   </td><td>0.3   </td><td>setosa</td></tr>
+	<tr><td>5.4   </td><td>3.4   </td><td>1.7   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>5.1   </td><td>3.7   </td><td>1.5   </td><td>0.4   </td><td>setosa</td></tr>
+	<tr><td>4.6   </td><td>3.6   </td><td>1.0   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>5.1   </td><td>3.3   </td><td>1.7   </td><td>0.5   </td><td>setosa</td></tr>
+	<tr><td>4.8   </td><td>3.4   </td><td>1.9   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>5.0   </td><td>3.0   </td><td>1.6   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>5.0   </td><td>3.4   </td><td>1.6   </td><td>0.4   </td><td>setosa</td></tr>
+	<tr><td>5.2   </td><td>3.5   </td><td>1.5   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>5.2   </td><td>3.4   </td><td>1.4   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>4.7   </td><td>3.2   </td><td>1.6   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
+	<tr><td>6.9      </td><td>3.2      </td><td>5.7      </td><td>2.3      </td><td>virginica</td></tr>
+	<tr><td>5.6      </td><td>2.8      </td><td>4.9      </td><td>2.0      </td><td>virginica</td></tr>
+	<tr><td>7.7      </td><td>2.8      </td><td>6.7      </td><td>2.0      </td><td>virginica</td></tr>
+	<tr><td>6.3      </td><td>2.7      </td><td>4.9      </td><td>1.8      </td><td>virginica</td></tr>
+	<tr><td>6.7      </td><td>3.3      </td><td>5.7      </td><td>2.1      </td><td>virginica</td></tr>
+	<tr><td>7.2      </td><td>3.2      </td><td>6.0      </td><td>1.8      </td><td>virginica</td></tr>
+	<tr><td>6.2      </td><td>2.8      </td><td>4.8      </td><td>1.8      </td><td>virginica</td></tr>
+	<tr><td>6.1      </td><td>3.0      </td><td>4.9      </td><td>1.8      </td><td>virginica</td></tr>
+	<tr><td>6.4      </td><td>2.8      </td><td>5.6      </td><td>2.1      </td><td>virginica</td></tr>
+	<tr><td>7.2      </td><td>3.0      </td><td>5.8      </td><td>1.6      </td><td>virginica</td></tr>
+	<tr><td>7.4      </td><td>2.8      </td><td>6.1      </td><td>1.9      </td><td>virginica</td></tr>
+	<tr><td>7.9      </td><td>3.8      </td><td>6.4      </td><td>2.0      </td><td>virginica</td></tr>
+	<tr><td>6.4      </td><td>2.8      </td><td>5.6      </td><td>2.2      </td><td>virginica</td></tr>
+	<tr><td>6.3      </td><td>2.8      </td><td>5.1      </td><td>1.5      </td><td>virginica</td></tr>
+	<tr><td>6.1      </td><td>2.6      </td><td>5.6      </td><td>1.4      </td><td>virginica</td></tr>
+	<tr><td>7.7      </td><td>3.0      </td><td>6.1      </td><td>2.3      </td><td>virginica</td></tr>
+	<tr><td>6.3      </td><td>3.4      </td><td>5.6      </td><td>2.4      </td><td>virginica</td></tr>
+	<tr><td>6.4      </td><td>3.1      </td><td>5.5      </td><td>1.8      </td><td>virginica</td></tr>
+	<tr><td>6.0      </td><td>3.0      </td><td>4.8      </td><td>1.8      </td><td>virginica</td></tr>
+	<tr><td>6.9      </td><td>3.1      </td><td>5.4      </td><td>2.1      </td><td>virginica</td></tr>
+	<tr><td>6.7      </td><td>3.1      </td><td>5.6      </td><td>2.4      </td><td>virginica</td></tr>
+	<tr><td>6.9      </td><td>3.1      </td><td>5.1      </td><td>2.3      </td><td>virginica</td></tr>
+	<tr><td>5.8      </td><td>2.7      </td><td>5.1      </td><td>1.9      </td><td>virginica</td></tr>
+	<tr><td>6.8      </td><td>3.2      </td><td>5.9      </td><td>2.3      </td><td>virginica</td></tr>
+	<tr><td>6.7      </td><td>3.3      </td><td>5.7      </td><td>2.5      </td><td>virginica</td></tr>
+	<tr><td>6.7      </td><td>3.0      </td><td>5.2      </td><td>2.3      </td><td>virginica</td></tr>
+	<tr><td>6.3      </td><td>2.5      </td><td>5.0      </td><td>1.9      </td><td>virginica</td></tr>
+	<tr><td>6.5      </td><td>3.0      </td><td>5.2      </td><td>2.0      </td><td>virginica</td></tr>
+	<tr><td>6.2      </td><td>3.4      </td><td>5.4      </td><td>2.3      </td><td>virginica</td></tr>
+	<tr><td>5.9      </td><td>3.0      </td><td>5.1      </td><td>1.8      </td><td>virginica</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="writing-data-out-from-r">
+<h1>Writing data out from R<a class="headerlink" href="#writing-data-out-from-r" title="Permalink to this headline">¶</a></h1>
+<p>Here you have a number of options.</p>
+<ol class="simple">
+<li><p>You can write out R objects to an R Data file, as we’ve seen, using <code class="docutils literal notranslate"><span class="pre">save()</span></code> and <code class="docutils literal notranslate"><span class="pre">save.image()</span></code>.</p></li>
+<li><p>You can use <code class="docutils literal notranslate"><span class="pre">write.csv()</span></code> and <code class="docutils literal notranslate"><span class="pre">write.table()</span></code> to write data frames/matrices to flat text files with delimiters such as comma and tab.</p></li>
+<li><p>You can use <code class="docutils literal notranslate"><span class="pre">write()</span></code> to write out matrices in a simple flat text format.</p></li>
+<li><p>You can use <code class="docutils literal notranslate"><span class="pre">cat()</span></code> to write to a file, while controlling the formatting to a fine degree.</p></li>
+<li><p>You can write out in the various file formats mentioned on the previous slide</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Writing Dataframe to a file. </span>
+<span class="n">write</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span> <span class="s2">&quot;iris2.csv&quot;</span><span class="p">)</span>
+
+<span class="c1">#Kaggle won&#39;t want the rownames. </span>
+<span class="n">write</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;iris3.csv&quot;</span><span class="p">,</span><span class="n">row</span><span class="o">.</span><span class="n">names</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setwd</span><span class="p">(</span><span class="s1">&#39;/Users/jasonkuruzovich/githubdesktop/0_class/techfundamentals-spring2018-materials/classes/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-working-directory">
+<h1>The Working Directory<a class="headerlink" href="#the-working-directory" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>To read and write from R, you need to have a firm grasp of where in the computer’s filesystem you are reading and writing from.</p></li>
+<li><p>It is common to set the working directory, and then just list the specific file without a path.</p></li>
+<li><p>Windows: - use either \ or / to indicate directories</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setwd('C:\\Users\\Your_username\\Desktop\\r-bootcamp-2016')</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setwd('..\\r-bootcamp-2016')</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Whhile this example is Docker, should work similarly for Mac or Windows Based Machines. </span>
+<span class="n">setwd</span><span class="p">(</span><span class="s2">&quot;/home/jovyan/techfundamentals-fall2017-materials/classes/05-intro-r&quot;</span><span class="p">)</span>
+<span class="n">getwd</span><span class="p">()</span>  <span class="c1"># what directory will R look in?</span>
+<span class="n">setwd</span><span class="p">(</span><span class="s2">&quot;/home/jovyan/techfundamentals-fall2017-materials/classes/input&quot;</span><span class="p">)</span> <span class="c1"># change the working directory</span>
+<span class="n">getwd</span><span class="p">()</span> 
+<span class="n">setwd</span><span class="p">(</span><span class="s2">&quot;/home/jovyan/techfundamentals-fall2017-materials/classes/05-intro-r&quot;</span><span class="p">)</span>
+<span class="n">setwd</span><span class="p">(</span><span class="s1">&#39;../input&#39;</span><span class="p">)</span> <span class="c1"># This is an alternate way of moving to data.</span>
+<span class="n">getwd</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'/home/jovyan/techfundamentals-fall2017-materials/classes/05-intro-r'</div><div class="output text_html">'/home/jovyan/techfundamentals-fall2017-materials/classes/input'</div><div class="output text_html">'/home/jovyan/techfundamentals-fall2017-materials/classes/input'</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Notice path isn&#39;t listed. We don&#39;t have to list the path if we have set the working directory</span>
+
+<span class="n">frame</span><span class="o">=</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">&quot;iris.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Make sure you are able to install packages from CRAN. E.g., try to install <em>lmtest</em>.</p></li>
+<li><p>Figure out what your current working directory is.</p></li>
+</ol>
+</div>
+<div class="section" id="using-the-ideas">
+<h2>Using the ideas<a class="headerlink" href="#using-the-ideas" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Put the <em>data/iris.csv</em> file in some other directory. Use <code class="docutils literal notranslate"><span class="pre">setwd()</span></code> to set your working directory to be that directory. Read the file in using <code class="docutils literal notranslate"><span class="pre">read.csv()</span></code>.  Now use <code class="docutils literal notranslate"><span class="pre">setwd()</span></code> to point to a different directory. Write the data frame out to a file without any row names and without quotes on the character strings.</p></li>
+</ol>
+</div>
+<div class="section" id="credits">
+<h2>CREDITS<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
+<p>Copyright <a class="reference external" href="http://rpi.analyticsdojo.com">AnalyticsDojo</a> 2016.
+This work is licensed under the <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a> license agreement.
+Work adopted from <a class="reference external" href="https://github.com/berkeley-scf/r-bootcamp-2016">Berkley R Bootcamp</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./notebooks/10-intro-r"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jason Kuruzovich<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-32817743-6', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

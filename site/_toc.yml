@@ -16,6 +16,13 @@
 - part: NOTEBOOKS
   numbered: true
   chapters:
-  - file: notebooks/python-overview
-  - file: notebooks/datastructures
-  - file: assignments/02starter
+  - file: notebooks/01-intro-python/01-python-overview
+  - file: notebooks/01-intro-python/02-datastructures
+  - file: notebooks/01-intro-python/03-numpy
+  - file: notebooks/01-intro-python/04-pandas
+  - file: notebooks/02-intro-python/01-conditionals-loops
+  - file: notebooks/02-intro-python/02-functions
+  - file: notebooks/02-intro-python/03-null-values
+  - file: notebooks/02-intro-python/04-groupby
+  - file: notebooks/02-intro-python/04-pivottable
+  - file: notebooks/02-intro-python/05-kaggle-baseline

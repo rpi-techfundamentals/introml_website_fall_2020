@@ -1,0 +1,882 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Overview &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Introduction to Machine Learning Applications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  OVERVIEW
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/preparation.html">
+   Before Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/in_class.html">
+   In Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/assignments.html">
+   Assignments
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SESSIONS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session1.html">
+   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session2.html">
+   2. Python Basics (09/03)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session3.html">
+   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session4.html">
+   4. Python conditionals, loops, functions, aggregating.  (09/10)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NOTEBOOKS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/01-python-overview.html">
+   1. Overview of Python Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/02-datastructures.html">
+   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/03-numpy.html">
+   3. Overview of Numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/04-pandas.html">
+   4. Large sections of this were adopted from Analyzing structured data with Pandas by Steve Phelps.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/04-pandas.html#introduction-to-pandas">
+   5. Introduction to Pandas
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/10-intro-r/07-intro-r-merge-agg-fun.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020/issues/new?title=Issue%20on%20page%20%2Fnotebooks/10-intro-r/07-intro-r-merge-agg-fun.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rpi-techfundamentals/introml_website_fall_2020/blob/master/site/notebooks/10-intro-r/07-intro-r-merge-agg-fun.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a class="reference external" href="http://rpi.analyticsdojo.com"><img alt="AnalyticsDojo" src="https://github.com/rpi-techfundamentals/spring2019-materials/blob/master/fig/final-logo.png?raw=1" /></a></p>
+<center><h1>Introduction to R - Merging and Aggregating Data</h1></center>
+<center><h3><a href = 'http://rpi.analyticsdojo.com'>rpi.analyticsdojo.com</a></h3></center>
+<div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Merging Dataframes</p></li>
+<li><p>Aggregating Dataframes</p></li>
+<li><p>Advanced Functions</p></li>
+</ul>
+</div>
+<div class="section" id="merging-data-frame-with-vector">
+<h1>Merging Data Frame with Vector<a class="headerlink" href="#merging-data-frame-with-vector" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Can combine vector with data frame in multiple ways.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data.frame(a,b)</span></code> where a &amp; b can be vectors, matrices, or data frames.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Below is the sample data we will be creating 2 dataframes  </span>
+<span class="n">key</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1">#Here we are passing the row names and column names as a list. </span>
+<span class="n">m</span><span class="o">&lt;-</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">matrix</span><span class="p">(</span><span class="n">rnorm</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">dimnames</span><span class="o">=</span><span class="nb">list</span><span class="p">((</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">),</span><span class="n">c</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="s2">&quot;d&quot;</span><span class="p">))))</span>
+<span class="n">m2</span><span class="o">&lt;-</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">matrix</span><span class="p">(</span><span class="n">rnorm</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">dimnames</span><span class="o">=</span><span class="nb">list</span><span class="p">((</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">),</span><span class="n">c</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="s2">&quot;f&quot;</span><span class="p">,</span><span class="s2">&quot;g&quot;</span><span class="p">,</span><span class="s2">&quot;h&quot;</span><span class="p">))))</span>
+
+<span class="c1">#This is one way of combining a vector with a dataframe. </span>
+<span class="n">df</span><span class="o">&lt;-</span>  <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
+<span class="n">df2</span><span class="o">&lt;-</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">m2</span><span class="p">)</span>
+
+<span class="c1">#This is another way way of combining a vector with a dataframe. </span>
+<span class="n">dfb</span><span class="o">&lt;-</span>  <span class="n">cbind</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
+<span class="n">df2b</span><span class="o">&lt;-</span> <span class="n">cbind</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">m2</span><span class="p">)</span>
+
+<span class="n">df</span>
+<span class="n">df2</span>
+<span class="n">dfb</span>
+<span class="n">df2b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>key</th><th scope=col>a</th><th scope=col>b</th><th scope=col>c</th><th scope=col>d</th></tr></thead>
+<tbody>
+	<tr><td> 1       </td><td>16.19873 </td><td>14.41495 </td><td>27.73225 </td><td>15.564688</td></tr>
+	<tr><td> 2       </td><td>27.76677 </td><td>18.54772 </td><td>21.06688 </td><td>15.697810</td></tr>
+	<tr><td> 3       </td><td>11.68592 </td><td>14.91207 </td><td>22.82086 </td><td>15.666790</td></tr>
+	<tr><td> 4       </td><td>16.39982 </td><td>28.30284 </td><td>10.97550 </td><td>19.083633</td></tr>
+	<tr><td> 5       </td><td>22.16232 </td><td>16.82574 </td><td>14.28676 </td><td>20.162797</td></tr>
+	<tr><td> 6       </td><td>17.17425 </td><td>14.36932 </td><td>18.55487 </td><td>13.498498</td></tr>
+	<tr><td> 7       </td><td>20.15380 </td><td>18.00987 </td><td>15.99028 </td><td>14.325000</td></tr>
+	<tr><td> 8       </td><td>20.68866 </td><td>12.83505 </td><td>25.24119 </td><td>24.538494</td></tr>
+	<tr><td> 9       </td><td>18.84664 </td><td>24.01079 </td><td>12.69775 </td><td> 8.095156</td></tr>
+	<tr><td>10       </td><td>16.29913 </td><td>21.51270 </td><td>15.14676 </td><td>23.722103</td></tr>
+</tbody>
+</table>
+</div><div class="output text_html"><table>
+<thead><tr><th scope=col>key</th><th scope=col>e</th><th scope=col>f</th><th scope=col>g</th><th scope=col>h</th></tr></thead>
+<tbody>
+	<tr><td> 1       </td><td>1004.1240</td><td> 997.4379</td><td> 997.5697</td><td>1000.8540</td></tr>
+	<tr><td> 2       </td><td>1002.6933</td><td> 998.4041</td><td>1009.1720</td><td>1010.4120</td></tr>
+	<tr><td> 3       </td><td> 995.9138</td><td>1001.0959</td><td>1004.6025</td><td>1002.5405</td></tr>
+	<tr><td> 4       </td><td> 999.5493</td><td> 998.8054</td><td>1003.9649</td><td>1000.0133</td></tr>
+	<tr><td> 5       </td><td>1007.2373</td><td>1006.2580</td><td>1000.1882</td><td> 992.9980</td></tr>
+	<tr><td> 6       </td><td>1000.2068</td><td> 994.7482</td><td> 998.2876</td><td>1002.7093</td></tr>
+	<tr><td> 7       </td><td> 999.1622</td><td> 998.6231</td><td> 998.7175</td><td> 998.0497</td></tr>
+	<tr><td> 8       </td><td>1003.1263</td><td>1002.7279</td><td>1004.1623</td><td>1000.5204</td></tr>
+	<tr><td> 9       </td><td>1003.1548</td><td> 994.2030</td><td>1002.1614</td><td> 999.3726</td></tr>
+	<tr><td>10       </td><td>1006.8744</td><td>1004.2677</td><td> 998.8720</td><td> 993.5726</td></tr>
+</tbody>
+</table>
+</div><div class="output text_html"><table>
+<thead><tr><th scope=col>key</th><th scope=col>a</th><th scope=col>b</th><th scope=col>c</th><th scope=col>d</th></tr></thead>
+<tbody>
+	<tr><td> 1       </td><td>16.19873 </td><td>14.41495 </td><td>27.73225 </td><td>15.564688</td></tr>
+	<tr><td> 2       </td><td>27.76677 </td><td>18.54772 </td><td>21.06688 </td><td>15.697810</td></tr>
+	<tr><td> 3       </td><td>11.68592 </td><td>14.91207 </td><td>22.82086 </td><td>15.666790</td></tr>
+	<tr><td> 4       </td><td>16.39982 </td><td>28.30284 </td><td>10.97550 </td><td>19.083633</td></tr>
+	<tr><td> 5       </td><td>22.16232 </td><td>16.82574 </td><td>14.28676 </td><td>20.162797</td></tr>
+	<tr><td> 6       </td><td>17.17425 </td><td>14.36932 </td><td>18.55487 </td><td>13.498498</td></tr>
+	<tr><td> 7       </td><td>20.15380 </td><td>18.00987 </td><td>15.99028 </td><td>14.325000</td></tr>
+	<tr><td> 8       </td><td>20.68866 </td><td>12.83505 </td><td>25.24119 </td><td>24.538494</td></tr>
+	<tr><td> 9       </td><td>18.84664 </td><td>24.01079 </td><td>12.69775 </td><td> 8.095156</td></tr>
+	<tr><td>10       </td><td>16.29913 </td><td>21.51270 </td><td>15.14676 </td><td>23.722103</td></tr>
+</tbody>
+</table>
+</div><div class="output text_html"><table>
+<thead><tr><th scope=col>key</th><th scope=col>e</th><th scope=col>f</th><th scope=col>g</th><th scope=col>h</th></tr></thead>
+<tbody>
+	<tr><td> 1       </td><td>1004.1240</td><td> 997.4379</td><td> 997.5697</td><td>1000.8540</td></tr>
+	<tr><td> 2       </td><td>1002.6933</td><td> 998.4041</td><td>1009.1720</td><td>1010.4120</td></tr>
+	<tr><td> 3       </td><td> 995.9138</td><td>1001.0959</td><td>1004.6025</td><td>1002.5405</td></tr>
+	<tr><td> 4       </td><td> 999.5493</td><td> 998.8054</td><td>1003.9649</td><td>1000.0133</td></tr>
+	<tr><td> 5       </td><td>1007.2373</td><td>1006.2580</td><td>1000.1882</td><td> 992.9980</td></tr>
+	<tr><td> 6       </td><td>1000.2068</td><td> 994.7482</td><td> 998.2876</td><td>1002.7093</td></tr>
+	<tr><td> 7       </td><td> 999.1622</td><td> 998.6231</td><td> 998.7175</td><td> 998.0497</td></tr>
+	<tr><td> 8       </td><td>1003.1263</td><td>1002.7279</td><td>1004.1623</td><td>1000.5204</td></tr>
+	<tr><td> 9       </td><td>1003.1548</td><td> 994.2030</td><td>1002.1614</td><td> 999.3726</td></tr>
+	<tr><td>10       </td><td>1006.8744</td><td>1004.2677</td><td> 998.8720</td><td> 993.5726</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="merging-columns-of-data-frame-with-another-data-frame">
+<h1>Merging Columns of Data Frame with another Data Frame<a class="headerlink" href="#merging-columns-of-data-frame-with-another-data-frame" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Can combine data frame in multiple ways.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">merge(a,b,by=&quot;key&quot;)</span></code> where a &amp; b are dataframes with the same keys.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cbind(a,b)</span></code> where a &amp; b are dataframes with the same number of rows.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This manages the merge by an associated key.</span>
+<span class="n">df3</span> <span class="o">&lt;-</span> <span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;key&quot;</span><span class="p">)</span>
+<span class="c1"># This just does a &quot;column bind&quot; </span>
+<span class="n">df4</span><span class="o">&lt;-</span> <span class="n">cbind</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">df5</span><span class="o">&lt;-</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">df3</span>
+<span class="n">df4</span>
+<span class="n">df5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>key</th><th scope=col>a</th><th scope=col>b</th><th scope=col>c</th><th scope=col>d</th><th scope=col>e</th><th scope=col>f</th><th scope=col>g</th><th scope=col>h</th></tr></thead>
+<tbody>
+	<tr><td> 1       </td><td>16.278799</td><td>23.004297</td><td>19.262524</td><td>22.11648 </td><td>1004.4714</td><td> 995.4055</td><td>1001.5156</td><td>1004.8862</td></tr>
+	<tr><td> 2       </td><td>19.287252</td><td>19.229253</td><td>18.817575</td><td>13.67939 </td><td>1000.7399</td><td>1004.6248</td><td> 995.8950</td><td>1008.5242</td></tr>
+	<tr><td> 3       </td><td>18.833623</td><td>16.142004</td><td>18.454224</td><td>18.29241 </td><td> 994.3794</td><td>1002.2578</td><td> 998.6004</td><td> 999.7609</td></tr>
+	<tr><td> 4       </td><td>23.780847</td><td>10.934207</td><td>13.448540</td><td>17.83936 </td><td>1001.4795</td><td>1009.0885</td><td>1002.5866</td><td> 998.8287</td></tr>
+	<tr><td> 5       </td><td>13.982935</td><td>16.924402</td><td>19.037475</td><td>20.19748 </td><td> 993.9745</td><td> 999.9868</td><td>1001.0336</td><td> 987.3751</td></tr>
+	<tr><td> 6       </td><td>15.534589</td><td>23.437320</td><td> 6.795926</td><td>20.19305 </td><td> 996.1284</td><td>1008.8440</td><td>1005.5196</td><td>1003.6926</td></tr>
+	<tr><td> 7       </td><td>16.660076</td><td>18.315077</td><td>32.107139</td><td>23.35534 </td><td> 994.5026</td><td>1004.9990</td><td>1004.0972</td><td>1005.6532</td></tr>
+	<tr><td> 8       </td><td>19.447799</td><td>18.278384</td><td>11.823108</td><td>13.09162 </td><td>1007.8858</td><td> 993.8745</td><td>1005.1093</td><td> 996.8686</td></tr>
+	<tr><td> 9       </td><td> 9.225069</td><td>24.925796</td><td>13.868021</td><td>17.06181 </td><td> 997.6026</td><td>1001.1045</td><td> 991.7969</td><td>1000.5898</td></tr>
+	<tr><td>10       </td><td>25.809451</td><td> 7.492747</td><td>18.483003</td><td>24.99244 </td><td> 995.6190</td><td>1010.2642</td><td> 998.6192</td><td> 998.8618</td></tr>
+</tbody>
+</table>
+</div><div class="output text_html"><table>
+<thead><tr><th scope=col>key</th><th scope=col>a</th><th scope=col>b</th><th scope=col>c</th><th scope=col>d</th><th scope=col>key</th><th scope=col>e</th><th scope=col>f</th><th scope=col>g</th><th scope=col>h</th></tr></thead>
+<tbody>
+	<tr><td> 1       </td><td>16.278799</td><td>23.004297</td><td>19.262524</td><td>22.11648 </td><td> 1       </td><td>1004.4714</td><td> 995.4055</td><td>1001.5156</td><td>1004.8862</td></tr>
+	<tr><td> 2       </td><td>19.287252</td><td>19.229253</td><td>18.817575</td><td>13.67939 </td><td> 2       </td><td>1000.7399</td><td>1004.6248</td><td> 995.8950</td><td>1008.5242</td></tr>
+	<tr><td> 3       </td><td>18.833623</td><td>16.142004</td><td>18.454224</td><td>18.29241 </td><td> 3       </td><td> 994.3794</td><td>1002.2578</td><td> 998.6004</td><td> 999.7609</td></tr>
+	<tr><td> 4       </td><td>23.780847</td><td>10.934207</td><td>13.448540</td><td>17.83936 </td><td> 4       </td><td>1001.4795</td><td>1009.0885</td><td>1002.5866</td><td> 998.8287</td></tr>
+	<tr><td> 5       </td><td>13.982935</td><td>16.924402</td><td>19.037475</td><td>20.19748 </td><td> 5       </td><td> 993.9745</td><td> 999.9868</td><td>1001.0336</td><td> 987.3751</td></tr>
+	<tr><td> 6       </td><td>15.534589</td><td>23.437320</td><td> 6.795926</td><td>20.19305 </td><td> 6       </td><td> 996.1284</td><td>1008.8440</td><td>1005.5196</td><td>1003.6926</td></tr>
+	<tr><td> 7       </td><td>16.660076</td><td>18.315077</td><td>32.107139</td><td>23.35534 </td><td> 7       </td><td> 994.5026</td><td>1004.9990</td><td>1004.0972</td><td>1005.6532</td></tr>
+	<tr><td> 8       </td><td>19.447799</td><td>18.278384</td><td>11.823108</td><td>13.09162 </td><td> 8       </td><td>1007.8858</td><td> 993.8745</td><td>1005.1093</td><td> 996.8686</td></tr>
+	<tr><td> 9       </td><td> 9.225069</td><td>24.925796</td><td>13.868021</td><td>17.06181 </td><td> 9       </td><td> 997.6026</td><td>1001.1045</td><td> 991.7969</td><td>1000.5898</td></tr>
+	<tr><td>10       </td><td>25.809451</td><td> 7.492747</td><td>18.483003</td><td>24.99244 </td><td>10       </td><td> 995.6190</td><td>1010.2642</td><td> 998.6192</td><td> 998.8618</td></tr>
+</tbody>
+</table>
+</div><div class="output text_html"><table>
+<thead><tr><th scope=col>key</th><th scope=col>a</th><th scope=col>b</th><th scope=col>c</th><th scope=col>d</th><th scope=col>key.1</th><th scope=col>e</th><th scope=col>f</th><th scope=col>g</th><th scope=col>h</th></tr></thead>
+<tbody>
+	<tr><td> 1       </td><td>16.278799</td><td>23.004297</td><td>19.262524</td><td>22.11648 </td><td> 1       </td><td>1004.4714</td><td> 995.4055</td><td>1001.5156</td><td>1004.8862</td></tr>
+	<tr><td> 2       </td><td>19.287252</td><td>19.229253</td><td>18.817575</td><td>13.67939 </td><td> 2       </td><td>1000.7399</td><td>1004.6248</td><td> 995.8950</td><td>1008.5242</td></tr>
+	<tr><td> 3       </td><td>18.833623</td><td>16.142004</td><td>18.454224</td><td>18.29241 </td><td> 3       </td><td> 994.3794</td><td>1002.2578</td><td> 998.6004</td><td> 999.7609</td></tr>
+	<tr><td> 4       </td><td>23.780847</td><td>10.934207</td><td>13.448540</td><td>17.83936 </td><td> 4       </td><td>1001.4795</td><td>1009.0885</td><td>1002.5866</td><td> 998.8287</td></tr>
+	<tr><td> 5       </td><td>13.982935</td><td>16.924402</td><td>19.037475</td><td>20.19748 </td><td> 5       </td><td> 993.9745</td><td> 999.9868</td><td>1001.0336</td><td> 987.3751</td></tr>
+	<tr><td> 6       </td><td>15.534589</td><td>23.437320</td><td> 6.795926</td><td>20.19305 </td><td> 6       </td><td> 996.1284</td><td>1008.8440</td><td>1005.5196</td><td>1003.6926</td></tr>
+	<tr><td> 7       </td><td>16.660076</td><td>18.315077</td><td>32.107139</td><td>23.35534 </td><td> 7       </td><td> 994.5026</td><td>1004.9990</td><td>1004.0972</td><td>1005.6532</td></tr>
+	<tr><td> 8       </td><td>19.447799</td><td>18.278384</td><td>11.823108</td><td>13.09162 </td><td> 8       </td><td>1007.8858</td><td> 993.8745</td><td>1005.1093</td><td> 996.8686</td></tr>
+	<tr><td> 9       </td><td> 9.225069</td><td>24.925796</td><td>13.868021</td><td>17.06181 </td><td> 9       </td><td> 997.6026</td><td>1001.1045</td><td> 991.7969</td><td>1000.5898</td></tr>
+	<tr><td>10       </td><td>25.809451</td><td> 7.492747</td><td>18.483003</td><td>24.99244 </td><td>10       </td><td> 995.6190</td><td>1010.2642</td><td> 998.6192</td><td> 998.8618</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="merging-rows-of-data-frame-with-another-data-frame">
+<h1>Merging Rows of Data Frame with another Data Frame<a class="headerlink" href="#merging-rows-of-data-frame-with-another-data-frame" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">rbind(a,b)</span></code> combines rows of data frames of a and b.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rbind(a,b,</span> <span class="pre">make.row.names=FALSE)</span></code> this will reset the index.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here we can combine rows with rbind. </span>
+<span class="n">df5</span><span class="o">&lt;-</span><span class="n">df</span>
+<span class="c1">#The make Row</span>
+<span class="n">df6</span><span class="o">&lt;-</span><span class="n">rbind</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">df5</span><span class="p">)</span>
+<span class="n">df6</span>
+<span class="n">df7</span><span class="o">&lt;-</span><span class="n">rbind</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">df5</span><span class="p">,</span> <span class="n">make</span><span class="o">.</span><span class="n">row</span><span class="o">.</span><span class="n">names</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
+<span class="n">df7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th></th><th scope=col>key</th><th scope=col>a</th><th scope=col>b</th><th scope=col>c</th><th scope=col>d</th></tr></thead>
+<tbody>
+	<tr><th scope=row>1</th><td> 1       </td><td>16.19873 </td><td>14.41495 </td><td>27.73225 </td><td>15.564688</td></tr>
+	<tr><th scope=row>2</th><td> 2       </td><td>27.76677 </td><td>18.54772 </td><td>21.06688 </td><td>15.697810</td></tr>
+	<tr><th scope=row>3</th><td> 3       </td><td>11.68592 </td><td>14.91207 </td><td>22.82086 </td><td>15.666790</td></tr>
+	<tr><th scope=row>4</th><td> 4       </td><td>16.39982 </td><td>28.30284 </td><td>10.97550 </td><td>19.083633</td></tr>
+	<tr><th scope=row>5</th><td> 5       </td><td>22.16232 </td><td>16.82574 </td><td>14.28676 </td><td>20.162797</td></tr>
+	<tr><th scope=row>6</th><td> 6       </td><td>17.17425 </td><td>14.36932 </td><td>18.55487 </td><td>13.498498</td></tr>
+	<tr><th scope=row>7</th><td> 7       </td><td>20.15380 </td><td>18.00987 </td><td>15.99028 </td><td>14.325000</td></tr>
+	<tr><th scope=row>8</th><td> 8       </td><td>20.68866 </td><td>12.83505 </td><td>25.24119 </td><td>24.538494</td></tr>
+	<tr><th scope=row>9</th><td> 9       </td><td>18.84664 </td><td>24.01079 </td><td>12.69775 </td><td> 8.095156</td></tr>
+	<tr><th scope=row>10</th><td>10       </td><td>16.29913 </td><td>21.51270 </td><td>15.14676 </td><td>23.722103</td></tr>
+	<tr><th scope=row>11</th><td> 1       </td><td>16.19873 </td><td>14.41495 </td><td>27.73225 </td><td>15.564688</td></tr>
+	<tr><th scope=row>21</th><td> 2       </td><td>27.76677 </td><td>18.54772 </td><td>21.06688 </td><td>15.697810</td></tr>
+	<tr><th scope=row>31</th><td> 3       </td><td>11.68592 </td><td>14.91207 </td><td>22.82086 </td><td>15.666790</td></tr>
+	<tr><th scope=row>41</th><td> 4       </td><td>16.39982 </td><td>28.30284 </td><td>10.97550 </td><td>19.083633</td></tr>
+	<tr><th scope=row>51</th><td> 5       </td><td>22.16232 </td><td>16.82574 </td><td>14.28676 </td><td>20.162797</td></tr>
+	<tr><th scope=row>61</th><td> 6       </td><td>17.17425 </td><td>14.36932 </td><td>18.55487 </td><td>13.498498</td></tr>
+	<tr><th scope=row>71</th><td> 7       </td><td>20.15380 </td><td>18.00987 </td><td>15.99028 </td><td>14.325000</td></tr>
+	<tr><th scope=row>81</th><td> 8       </td><td>20.68866 </td><td>12.83505 </td><td>25.24119 </td><td>24.538494</td></tr>
+	<tr><th scope=row>91</th><td> 9       </td><td>18.84664 </td><td>24.01079 </td><td>12.69775 </td><td> 8.095156</td></tr>
+	<tr><th scope=row>101</th><td>10       </td><td>16.29913 </td><td>21.51270 </td><td>15.14676 </td><td>23.722103</td></tr>
+</tbody>
+</table>
+</div><div class="output text_html"><table>
+<thead><tr><th scope=col>key</th><th scope=col>a</th><th scope=col>b</th><th scope=col>c</th><th scope=col>d</th></tr></thead>
+<tbody>
+	<tr><td> 1       </td><td>16.19873 </td><td>14.41495 </td><td>27.73225 </td><td>15.564688</td></tr>
+	<tr><td> 2       </td><td>27.76677 </td><td>18.54772 </td><td>21.06688 </td><td>15.697810</td></tr>
+	<tr><td> 3       </td><td>11.68592 </td><td>14.91207 </td><td>22.82086 </td><td>15.666790</td></tr>
+	<tr><td> 4       </td><td>16.39982 </td><td>28.30284 </td><td>10.97550 </td><td>19.083633</td></tr>
+	<tr><td> 5       </td><td>22.16232 </td><td>16.82574 </td><td>14.28676 </td><td>20.162797</td></tr>
+	<tr><td> 6       </td><td>17.17425 </td><td>14.36932 </td><td>18.55487 </td><td>13.498498</td></tr>
+	<tr><td> 7       </td><td>20.15380 </td><td>18.00987 </td><td>15.99028 </td><td>14.325000</td></tr>
+	<tr><td> 8       </td><td>20.68866 </td><td>12.83505 </td><td>25.24119 </td><td>24.538494</td></tr>
+	<tr><td> 9       </td><td>18.84664 </td><td>24.01079 </td><td>12.69775 </td><td> 8.095156</td></tr>
+	<tr><td>10       </td><td>16.29913 </td><td>21.51270 </td><td>15.14676 </td><td>23.722103</td></tr>
+	<tr><td> 1       </td><td>16.19873 </td><td>14.41495 </td><td>27.73225 </td><td>15.564688</td></tr>
+	<tr><td> 2       </td><td>27.76677 </td><td>18.54772 </td><td>21.06688 </td><td>15.697810</td></tr>
+	<tr><td> 3       </td><td>11.68592 </td><td>14.91207 </td><td>22.82086 </td><td>15.666790</td></tr>
+	<tr><td> 4       </td><td>16.39982 </td><td>28.30284 </td><td>10.97550 </td><td>19.083633</td></tr>
+	<tr><td> 5       </td><td>22.16232 </td><td>16.82574 </td><td>14.28676 </td><td>20.162797</td></tr>
+	<tr><td> 6       </td><td>17.17425 </td><td>14.36932 </td><td>18.55487 </td><td>13.498498</td></tr>
+	<tr><td> 7       </td><td>20.15380 </td><td>18.00987 </td><td>15.99028 </td><td>14.325000</td></tr>
+	<tr><td> 8       </td><td>20.68866 </td><td>12.83505 </td><td>25.24119 </td><td>24.538494</td></tr>
+	<tr><td> 9       </td><td>18.84664 </td><td>24.01079 </td><td>12.69775 </td><td> 8.095156</td></tr>
+	<tr><td>10       </td><td>16.29913 </td><td>21.51270 </td><td>15.14676 </td><td>23.722103</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>key</th><th scope=col>a</th><th scope=col>b</th><th scope=col>c</th><th scope=col>d</th></tr></thead>
+<tbody>
+	<tr><td> 1       </td><td>16.19873 </td><td>14.41495 </td><td>27.73225 </td><td>15.564688</td></tr>
+	<tr><td> 2       </td><td>27.76677 </td><td>18.54772 </td><td>21.06688 </td><td>15.697810</td></tr>
+	<tr><td> 3       </td><td>11.68592 </td><td>14.91207 </td><td>22.82086 </td><td>15.666790</td></tr>
+	<tr><td> 4       </td><td>16.39982 </td><td>28.30284 </td><td>10.97550 </td><td>19.083633</td></tr>
+	<tr><td> 5       </td><td>22.16232 </td><td>16.82574 </td><td>14.28676 </td><td>20.162797</td></tr>
+	<tr><td> 6       </td><td>17.17425 </td><td>14.36932 </td><td>18.55487 </td><td>13.498498</td></tr>
+	<tr><td> 7       </td><td>20.15380 </td><td>18.00987 </td><td>15.99028 </td><td>14.325000</td></tr>
+	<tr><td> 8       </td><td>20.68866 </td><td>12.83505 </td><td>25.24119 </td><td>24.538494</td></tr>
+	<tr><td> 9       </td><td>18.84664 </td><td>24.01079 </td><td>12.69775 </td><td> 8.095156</td></tr>
+	<tr><td>10       </td><td>16.29913 </td><td>21.51270 </td><td>15.14676 </td><td>23.722103</td></tr>
+	<tr><td> 1       </td><td>16.19873 </td><td>14.41495 </td><td>27.73225 </td><td>15.564688</td></tr>
+	<tr><td> 2       </td><td>27.76677 </td><td>18.54772 </td><td>21.06688 </td><td>15.697810</td></tr>
+	<tr><td> 3       </td><td>11.68592 </td><td>14.91207 </td><td>22.82086 </td><td>15.666790</td></tr>
+	<tr><td> 4       </td><td>16.39982 </td><td>28.30284 </td><td>10.97550 </td><td>19.083633</td></tr>
+	<tr><td> 5       </td><td>22.16232 </td><td>16.82574 </td><td>14.28676 </td><td>20.162797</td></tr>
+	<tr><td> 6       </td><td>17.17425 </td><td>14.36932 </td><td>18.55487 </td><td>13.498498</td></tr>
+	<tr><td> 7       </td><td>20.15380 </td><td>18.00987 </td><td>15.99028 </td><td>14.325000</td></tr>
+	<tr><td> 8       </td><td>20.68866 </td><td>12.83505 </td><td>25.24119 </td><td>24.538494</td></tr>
+	<tr><td> 9       </td><td>18.84664 </td><td>24.01079 </td><td>12.69775 </td><td> 8.095156</td></tr>
+	<tr><td>10       </td><td>16.29913 </td><td>21.51270 </td><td>15.14676 </td><td>23.722103</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="aggregate-and-by">
+<h1><code class="docutils literal notranslate"><span class="pre">aggregate</span></code> and <code class="docutils literal notranslate"><span class="pre">by</span></code><a class="headerlink" href="#aggregate-and-by" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Aggregation is a very important function.</p></li>
+<li><p>Can have variables/analyses that happen at different levels.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">by(x,</span> <span class="pre">by,</span> <span class="pre">FUN)</span></code> provides similar functionality.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">=</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">&quot;../../input/iris.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">head</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>sepal_length</th><th scope=col>sepal_width</th><th scope=col>petal_length</th><th scope=col>petal_width</th><th scope=col>species</th></tr></thead>
+<tbody>
+	<tr><td>5.1   </td><td>3.5   </td><td>1.4   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>4.9   </td><td>3.0   </td><td>1.4   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>4.7   </td><td>3.2   </td><td>1.3   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>4.6   </td><td>3.1   </td><td>1.5   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>5.0   </td><td>3.6   </td><td>1.4   </td><td>0.2   </td><td>setosa</td></tr>
+	<tr><td>5.4   </td><td>3.9   </td><td>1.7   </td><td>0.4   </td><td>setosa</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>iris&lt;-read.csv(file=&quot;../../input/iris.csv&quot;, header=TRUE,sep=&quot;,&quot;)
+
+#Aggregate by Species  aggregate(x, by, FUN, ...)
+iris.agg&lt;-aggregate(iris[,1:4], by=list(&quot;species&quot; = iris$species), mean)
+print(iris.agg)
+
+#Notice this gives us the same output but structured differently. 
+by(iris[, 1:4], iris$species, colMeans)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>     species sepal_length sepal_width petal_length petal_width
+1     setosa        5.006       3.418        1.464       0.244
+2 versicolor        5.936       2.770        4.260       1.326
+3  virginica        6.588       2.974        5.552       2.026
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>iris$species: setosa
+sepal_length  sepal_width petal_length  petal_width 
+       5.006        3.418        1.464        0.244 
+------------------------------------------------------------ 
+iris$species: versicolor
+sepal_length  sepal_width petal_length  petal_width 
+       5.936        2.770        4.260        1.326 
+------------------------------------------------------------ 
+iris$species: virginica
+sepal_length  sepal_width petal_length  petal_width 
+       6.588        2.974        5.552        2.026 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="apply-plus-lapply-sapply-tapply-rapply">
+<h1><code class="docutils literal notranslate"><span class="pre">apply</span></code>(plus <code class="docutils literal notranslate"><span class="pre">lapply</span></code>/<code class="docutils literal notranslate"><span class="pre">sapply</span></code>/<code class="docutils literal notranslate"><span class="pre">tapply</span></code>/<code class="docutils literal notranslate"><span class="pre">rapply</span></code>)<a class="headerlink" href="#apply-plus-lapply-sapply-tapply-rapply" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">apply</span></code> - Applying a function to <strong>an array or matrix</strong>, return a vector or array or list of values. <code class="docutils literal notranslate"><span class="pre">apply(X,</span> <span class="pre">MARGIN,</span> <span class="pre">FUN,</span> <span class="pre">...)</span></code></p></li>
+<li><p><a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/lapply.html"><code class="docutils literal notranslate"><span class="pre">lapply</span></code></a> - Apply a function to <strong>each element of a list or vector</strong>, return a <strong>list</strong>.</p></li>
+<li><p><a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/lapply.html"><code class="docutils literal notranslate"><span class="pre">sapply</span></code></a> - A user-friendly version if <code class="docutils literal notranslate"><span class="pre">lapply</span></code>. Apply a function to <strong>each element of a list or vector</strong>, return a <strong>vector</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tapply</span></code> - Apply a function to <strong>subsets of a vector</strong> (and the subsets are defined by some other vector, usually a factor), return a <strong>vector</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rapply</span></code> - Apply a function to <strong>each element of a nested list structure, recursively,</strong> return a list.</p></li>
+<li><p>Some functions aren’t vectorized, or you may want to use a function on every row or column of a matrix/data frame, every element of a list, etc.</p></li>
+<li><p>For more info see this <a class="reference external" href="https://nsaunders.wordpress.com/2010/08/20/a-brief-introduction-to-apply-in-r/">tutorial</a></p></li>
+</ul>
+</div>
+<div class="section" id="apply">
+<h1><code class="docutils literal notranslate"><span class="pre">apply</span></code><a class="headerlink" href="#apply" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">apply</span></code> - Applying a function to <strong>an array or matrix</strong>, return a vector or array or list of values. <code class="docutils literal notranslate"><span class="pre">apply(X,</span> <span class="pre">MARGIN,</span> <span class="pre">FUN,</span> <span class="pre">...)</span></code></p></li>
+<li><p>If you are using a data frame the data types must all be the same.</p></li>
+<li><p>`apply(X, MARGIN, FUN, …) where X is an array or matrix.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MARGIN</span></code> is a vector giving the where function should be applied. E.g., for a matrix 1 indicates rows, 2 indicates columns, c(1, 2) indicates rows and columns.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FUN</span></code> is any function.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>iris&lt;-read.csv(file=&quot;../../input/iris.csv&quot;, header=TRUE,sep=&quot;,&quot;)
+iris$sum&lt;-apply(iris[1:4], 1, sum) #This provides a sum across  for each row. 
+iris$mean&lt;-apply(iris[1:4], 1, mean)#This provides a mean across collumns for each row. 
+head(iris)
+apply(iris[1:4], 2, mean)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>sepal_length</th><th scope=col>sepal_width</th><th scope=col>petal_length</th><th scope=col>petal_width</th><th scope=col>species</th><th scope=col>sum</th><th scope=col>mean</th></tr></thead>
+<tbody>
+	<tr><td>5.1   </td><td>3.5   </td><td>1.4   </td><td>0.2   </td><td>setosa</td><td>10.2  </td><td>2.550 </td></tr>
+	<tr><td>4.9   </td><td>3.0   </td><td>1.4   </td><td>0.2   </td><td>setosa</td><td> 9.5  </td><td>2.375 </td></tr>
+	<tr><td>4.7   </td><td>3.2   </td><td>1.3   </td><td>0.2   </td><td>setosa</td><td> 9.4  </td><td>2.350 </td></tr>
+	<tr><td>4.6   </td><td>3.1   </td><td>1.5   </td><td>0.2   </td><td>setosa</td><td> 9.4  </td><td>2.350 </td></tr>
+	<tr><td>5.0   </td><td>3.6   </td><td>1.4   </td><td>0.2   </td><td>setosa</td><td>10.2  </td><td>2.550 </td></tr>
+	<tr><td>5.4   </td><td>3.9   </td><td>1.7   </td><td>0.4   </td><td>setosa</td><td>11.4  </td><td>2.850 </td></tr>
+</tbody>
+</table>
+</div><div class="output text_html"><dl class=dl-horizontal>
+	<dt>sepal_length</dt>
+		<dd>5.84333333333333</dd>
+	<dt>sepal_width</dt>
+		<dd>3.054</dd>
+	<dt>petal_length</dt>
+		<dd>3.75866666666667</dd>
+	<dt>petal_width</dt>
+		<dd>1.19866666666667</dd>
+</dl>
+</div></div>
+</div>
+</div>
+<div class="section" id="lapply-sapply">
+<h1><code class="docutils literal notranslate"><span class="pre">lapply</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">sapply</span></code><a class="headerlink" href="#lapply-sapply" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/lapply.html"><code class="docutils literal notranslate"><span class="pre">lapply</span></code></a> - Apply a function to <strong>each element of a list or vector</strong>, return a <strong>list</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lapply(X,</span> <span class="pre">FUN,</span> <span class="pre">...)</span></code></p></li>
+<li><p><a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/lapply.html"><code class="docutils literal notranslate"><span class="pre">sapply</span></code></a> - A user-friendly version if <code class="docutils literal notranslate"><span class="pre">lapply</span></code>. Apply a function to <strong>each element of a list or vector</strong>, return a <strong>vector</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sapply(X,</span> <span class="pre">FUN,</span> <span class="pre">...)</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a list with 2 elements</span>
+<span class="n">sample</span> <span class="o">&lt;-</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;count&quot;</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;numbers&quot;</span> <span class="o">=</span><span class="mi">5</span><span class="p">:</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># sum each and return as a list. </span>
+<span class="n">sample</span><span class="o">.</span><span class="n">sum</span><span class="o">&lt;-</span><span class="n">lapply</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
+
+<span class="n">class</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">sum</span><span class="p">,</span> <span class="n">sample</span><span class="o">.</span><span class="n">sum</span><span class="p">[</span><span class="s2">&quot;numbers&quot;</span><span class="p">],</span><span class="n">sample</span><span class="o">.</span><span class="n">sum</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'list'</div><div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>$count
+[1] 15
+
+$numbers
+[1] 45
+
+$numbers
+[1] 45
+
+$count
+[1] 15
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a list with 2 elements</span>
+<span class="n">sample</span> <span class="o">&lt;-</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;count&quot;</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;numbers&quot;</span> <span class="o">=</span><span class="mi">5</span><span class="p">:</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># sum each and return as a list. </span>
+<span class="n">sample</span><span class="o">.</span><span class="n">sum</span><span class="o">&lt;-</span><span class="n">sapply</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
+
+<span class="n">class</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">sum</span><span class="p">,</span> <span class="n">sample</span><span class="o">.</span><span class="n">sum</span><span class="p">[</span><span class="s2">&quot;numbers&quot;</span><span class="p">],</span><span class="n">sample</span><span class="o">.</span><span class="n">sum</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">],</span><span class="n">sample</span><span class="o">.</span><span class="n">sum</span><span class="p">[[</span><span class="s2">&quot;count&quot;</span><span class="p">]]))</span>
+
+<span class="c1">#Note the differenece between #sample.sum[[&quot;count&quot;]] and sample.sum[&quot;count&quot;]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'integer'</div><div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>  count numbers numbers   count         
+     15      45      45      15      15 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can also utilize simple </span>
+<span class="n">square</span><span class="o">&lt;-</span><span class="n">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">square</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># We can use our own function here.     </span>
+<span class="n">sapply</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="n">square</span><span class="p">)</span>
+
+<span class="c1">#We can also specify the function directly in sapply.</span>
+<span class="n">sapply</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><ol class=list-inline>
+	<li>1</li>
+	<li>4</li>
+	<li>9</li>
+	<li>16</li>
+	<li>25</li>
+</ol>
+</div><div class="output text_html"><ol class=list-inline>
+	<li>1</li>
+	<li>4</li>
+	<li>9</li>
+	<li>16</li>
+	<li>25</li>
+	<li>36</li>
+	<li>49</li>
+	<li>64</li>
+	<li>81</li>
+	<li>100</li>
+</ol>
+</div><div class="output text_html"><ol class=list-inline>
+	<li>1</li>
+	<li>4</li>
+	<li>9</li>
+	<li>16</li>
+	<li>25</li>
+	<li>36</li>
+	<li>49</li>
+	<li>64</li>
+	<li>81</li>
+	<li>100</li>
+</ol>
+</div></div>
+</div>
+</div>
+<div class="section" id="tapply">
+<h1><code class="docutils literal notranslate"><span class="pre">tapply</span></code><a class="headerlink" href="#tapply" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tapply</span></code> - Apply a function to subsets of a vector (and the subsets are defined by some other vector, usually a factor), return a vector.</p></li>
+<li><p>Can do something similar to aggregate.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#Tapply example
+#tapply(X, INDEX, FUN, …) 
+#X = a vector, INDEX = list of one or more factor, FUN = Function or operation that needs to be applied. 
+iris&lt;-read.csv(file=&quot;../../input/iris.csv&quot;, header=TRUE,sep=&quot;,&quot;)
+iris.sepal_length.agg&lt;-tapply(iris$sepal_length, iris$species, mean)
+print(iris.sepal_length.agg)
+
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>    setosa versicolor  virginica 
+     5.006      5.936      6.588 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="credits">
+<h1>CREDITS<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h1>
+<p>Copyright <a class="reference external" href="http://rpi.analyticsdojo.com">AnalyticsDojo</a> 2016.
+This work is licensed under the <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a> license agreement.
+This work is adopted from the Berkley R Bootcamp.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./notebooks/10-intro-r"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jason Kuruzovich<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-32817743-6', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

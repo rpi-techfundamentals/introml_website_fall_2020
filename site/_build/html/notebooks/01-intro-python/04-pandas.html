@@ -1,0 +1,1282 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>4. Introduction to Pandas &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5. Conditional Statements and Loops" href="../02-intro-python/01-conditionals-loops.html" />
+    <link rel="prev" title="3. Overview of Numpy" href="03-numpy.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Introduction to Machine Learning Applications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  OVERVIEW
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/preparation.html">
+   Before Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/in_class.html">
+   In Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/assignments.html">
+   Assignments
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SESSIONS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session1.html">
+   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session2.html">
+   2. Python Basics (09/03)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session3.html">
+   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session4.html">
+   4. Python conditionals, loops, functions, aggregating.  (09/10)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NOTEBOOKS
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-python-overview.html">
+   1. Overview of Python Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-datastructures.html">
+   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-numpy.html">
+   3. Overview of Numpy
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Introduction to Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-intro-python/01-conditionals-loops.html">
+   5. Conditional Statements and Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-intro-python/01-conditionals-loops.html#what-are-conditional-statements-why-do-we-need-them">
+   6. What are conditional statements? Why do we need them?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-intro-python/02-functions.html">
+   7. Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-intro-python/03-null-values.html">
+   8. Null Values
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-intro-python/04-groupby.html">
+   9. Groupby and Pivot Tables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-intro-python/04-pivottable.html">
+   10. More Pivottables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-intro-python/05-kaggle-baseline.html">
+   11. Kaggle Baseline
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/01-intro-python/04-pandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020/issues/new?title=Issue%20on%20page%20%2Fnotebooks/01-intro-python/04-pandas.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rpi-techfundamentals/introml_website_fall_2020/blob/master/site/notebooks/01-intro-python/04-pandas.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-overview">
+   4.1. Pandas Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-like-the-rest-of-python-is-object-oriented">
+   4.2. Pandas (like the rest of Python) is object-oriented
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-series">
+   4.3. Pandas Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-a-series">
+   4.4. Plotting a Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-series-from-a-dict">
+   4.5. Creating a Series from a
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dict
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexing-slicing-a-series-with-or-notation">
+   4.6. Indexing/Slicing a Series with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     []
+    </span>
+   </code>
+   or . notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-on-series">
+   4.7. Functions on Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-series">
+   4.8. Time Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-time-series">
+   4.9. Plot Time Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframes">
+   4.10. DataFrames
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-dataframe-from-outside-data">
+   4.11. Creating a DataFrame from Outside Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-dataframe-from-python-data-structures">
+   4.12. Creating a DataFrame from Python Data Structures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-creating-a-dataframe-from-multiple-series">
+   4.13. Example: Creating a DataFrame from Multiple Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-dataframes">
+   4.14. Plotting DataFrames
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-and-dataframes">
+   4.15. Functions and DataFrames
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-statistics">
+   4.16. Summary statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-types">
+   4.17. Data Types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-the-row-and-column-labels">
+   4.18. Accessing the Row and Column Labels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-files-with-pandas">
+   4.19. Loading Files with Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#large-dataframes-head-and-tail">
+   4.20. Large Dataframes - Head and Tail
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexing-slicing-rows-of-dataframes">
+   4.21. Indexing/Slicing Rows of DataFrames
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexing-slicing-columns-of-dataframes">
+   4.22. Indexing/Slicing Columns of DataFrames
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dropping-columns-from-dataframes">
+   4.23. Dropping Columns from Dataframes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selecting-rows">
+   4.24. Selecting Rows
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intro-to-filters-logical-indexing">
+   4.25. Intro to Filters (Logical indexing)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#joining-dataframes">
+   4.26. Joining Dataframes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stacking-dataframes-vertically">
+   4.27. Stacking Dataframes Vertically
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inner-outer-joins-dataframes">
+   4.28. Inner/Outer Joins Dataframes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#credits">
+   4.29. CREDITS
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#large-sections-of-this-were-adopted-from-analysing-structured-data-with-pandas-by-steve-phelps-thanks-steve">
+     4.29.1. Large sections of this were adopted from Analysing structured data with Pandas by Steve Phelps.  Thanks Steve!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a class="reference external" href="http://rpi.analyticsdojo.com"><img alt="AnalyticsDojo" src="https://github.com/rpi-techfundamentals/spring2019-materials/blob/master/fig/final-logo.png?raw=1" /></a></p>
+<center><h1>Introduction to Python - Introduction to Pandas</h1></center>
+<center><h3><a href = 'http://rpi.analyticsdojo.com'>rpi.analyticsdojo.com</a></h3></center>
+<div class="section" id="introduction-to-pandas">
+<h1><span class="section-number">4. </span>Introduction to Pandas<a class="headerlink" href="#introduction-to-pandas" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Pandas Overview</p></li>
+<li><p>Series Objects</p></li>
+<li><p>DataFrame Objects</p></li>
+<li><p>Slicing and Filtering</p></li>
+<li><p>Examples: Financial Data</p></li>
+<li><p>Examples: Iris</p></li>
+</ul>
+<div class="section" id="pandas-overview">
+<h2><span class="section-number">4.1. </span>Pandas Overview<a class="headerlink" href="#pandas-overview" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Pandas is object-oriented.</p></li>
+<li><p>We create data frames by constructing instances of different classes.</p></li>
+<li><p>The two most important classes are:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Series</span></code></p></li>
+</ul>
+</li>
+<li><p>Pandas follows the Java convention of starting the name of classes with an upper-case letter, whereas instances are all lower-case.</p></li>
+<li><p>The pandas module is usually imported with the alias <code class="docutils literal notranslate"><span class="pre">pd</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pandas-like-the-rest-of-python-is-object-oriented">
+<h2><span class="section-number">4.2. </span>Pandas (like the rest of Python) is object-oriented<a class="headerlink" href="#pandas-like-the-rest-of-python-is-object-oriented" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Pandas is object-oriented.</p></li>
+<li><p>We create data frames by constructing instances of different classes.</p></li>
+<li><p>The two most important classes are:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Series</span></code></p></li>
+</ul>
+</li>
+<li><p>Pandas follows the Java convention of starting the name of classes with an upper-case letter, whereas instances are all lower-case.</p></li>
+</ul>
+</div>
+<div class="section" id="pandas-series">
+<h2><span class="section-number">4.3. </span>Pandas Series<a class="headerlink" href="#pandas-series" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>One-dimensional array</p></li>
+<li><p>Series can be like array, with standard integer index starting at 0</p></li>
+<li><p>Series can be dictionary like, with defined index</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="c1">#This creates a list</span>
+<span class="n">my_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1">#array-like pandas series, index created automatically</span>
+<span class="n">my_series2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">])</span>  <span class="c1">#dict like, index specified</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_series</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">my_series2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_series2</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-a-series">
+<h2><span class="section-number">4.4. </span>Plotting a Series<a class="headerlink" href="#plotting-a-series" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>We can plot a series by invoking the <code class="docutils literal notranslate"><span class="pre">plot()</span></code> method on an instance of a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object.</p></li>
+<li><p>The x-axis will autimatically be labelled with the series index.</p></li>
+<li><p>This is the first time we are invoking a <code class="docutils literal notranslate"><span class="pre">magic</span></code> command. Read more about them <a class="reference external" href="http://ipython.readthedocs.io/en/stable/interactive/magics.html">here</a>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="n">my_series</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-series-from-a-dict">
+<h2><span class="section-number">4.5. </span>Creating a Series from a <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#creating-a-series-from-a-dict" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span> <span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="mf">1.</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span> <span class="p">:</span> <span class="mf">2.</span><span class="p">}</span>
+<span class="n">my_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">my_series</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexing-slicing-a-series-with-or-notation">
+<h2><span class="section-number">4.6. </span>Indexing/Slicing a Series with <code class="docutils literal notranslate"><span class="pre">[]</span></code> or . notation<a class="headerlink" href="#indexing-slicing-a-series-with-or-notation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Series can be accessed using the same syntax as arrays and dicts.</p></li>
+<li><p>We use the labels in the index to access each element.</p></li>
+<li><p>We can also use the label like an attribute <code class="docutils literal notranslate"><span class="pre">my_series.b</span></code></p></li>
+<li><p>We can specify a range with <code class="docutils literal notranslate"><span class="pre">my_series[['b',</span> <span class="pre">'c']]</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Notice the different ways that the parts of the series are specified. </span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">my_series</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">],</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">my_series</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">my_series</span><span class="p">[[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="functions-on-series">
+<h2><span class="section-number">4.7. </span>Functions on Series<a class="headerlink" href="#functions-on-series" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>We can perform calculations using the entire series similar to numpy.</p></li>
+<li><p>Methods are called from within <code class="docutils literal notranslate"><span class="pre">np.Series</span></code>, for example np.Series.add</p></li>
+<li><p>See a variety of series functions <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html">here</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#These are just a variety of examples of operations on series.</span>
+
+
+<span class="n">starter</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span> <span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="mf">1.</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span> <span class="p">:</span> <span class="mf">2.</span><span class="p">}</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">starter</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Print the entire array a: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="n">b1</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">a</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mulitiply by 10 directly:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">b1</span><span class="p">)</span>
+
+<span class="n">b2</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mulitiply by 10 using the function:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">b2</span><span class="p">)</span>
+
+<span class="n">c1</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">b1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Add a and b together directly:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">c1</span><span class="p">)</span>
+
+<span class="n">c2</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b1</span><span class="p">)</span> <span class="c1">#Note we are calling the method of the series class. Numpy used us np.add</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Add a and b together with a function:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>
+
+
+<span class="n">suma</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1">#Note we are calling the method of the series class. Numpy used us np.add</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sum all of a:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">suma</span><span class="p">)</span>
+
+
+<span class="n">f</span><span class="o">=</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span>  <span class="c1">#This squares the value. </span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;square a:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;a&#39;</span> <span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="mf">1.</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span> <span class="p">:</span> <span class="mf">2.</span><span class="p">})</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;a&#39;</span> <span class="p">:</span> <span class="mf">3.</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="mf">4.</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span> <span class="p">:</span> <span class="mf">5.</span><span class="p">})</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Add 2 series together:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="time-series">
+<h2><span class="section-number">4.8. </span>Time Series<a class="headerlink" href="#time-series" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Time series models link specific times with rows.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1/1/2000&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">dates</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">)</span>
+<span class="n">time_series</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-time-series">
+<h2><span class="section-number">4.9. </span>Plot Time Series<a class="headerlink" href="#plot-time-series" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>With a data and a value, the plot command can be used to provide quick visibility in the form of a line graph.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">time_series</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">time_series</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time_series</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dataframes">
+<h2><span class="section-number">4.10. </span>DataFrames<a class="headerlink" href="#dataframes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module provides a powerful data-structure called a data frame.</p></li>
+<li><p>It is similar, but not identical to:</p>
+<ul>
+<li><p>a table in a relational database,</p></li>
+<li><p>an Excel spreadsheet,</p></li>
+<li><p>a dataframe in R.</p></li>
+</ul>
+</li>
+<li><p>A data frame has multiple columns, each of which can hold a <em>different</em> type of value.</p></li>
+<li><p>Like a series, it has an index which provides a label for each and every row.</p></li>
+</ul>
+</div>
+<div class="section" id="creating-a-dataframe-from-outside-data">
+<h2><span class="section-number">4.11. </span>Creating a DataFrame from Outside Data<a class="headerlink" href="#creating-a-dataframe-from-outside-data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Data frames can be read and written to/from:</p>
+<ul>
+<li><p>database queries, database tables</p></li>
+<li><p>CSV files</p></li>
+<li><p>json files</p></li>
+<li><p>etc.</p></li>
+</ul>
+</li>
+<li><p>Beware that data frames are memory resident;</p>
+<ul>
+<li><p>If you read a large amount of data your PC might crash</p></li>
+<li><p>With big data, typically you would read a subset or summary of the data via e.g. a select statement.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="creating-a-dataframe-from-python-data-structures">
+<h2><span class="section-number">4.12. </span>Creating a DataFrame from Python Data Structures<a class="headerlink" href="#creating-a-dataframe-from-python-data-structures" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Data frames can be constructed from other data structures in memory:</p>
+<ul>
+<li><p>dict of arrays,</p></li>
+<li><p>dict of lists,</p></li>
+<li><p>dict of dict</p></li>
+<li><p>dict of Series</p></li>
+<li><p>2-dimensional array</p></li>
+<li><p>a single Series</p></li>
+<li><p>another DataFrame</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="example-creating-a-dataframe-from-multiple-series">
+<h2><span class="section-number">4.13. </span>Example: Creating a DataFrame from Multiple Series<a class="headerlink" href="#example-creating-a-dataframe-from-multiple-series" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Pandas codes missing values as <code class="docutils literal notranslate"><span class="pre">NaN</span></code> rather than <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p>Series should have matching keys for each matching row.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;x&#39;</span> <span class="p">:</span> 
+            <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]),</span>
+        <span class="s1">&#39;y&#39;</span> <span class="p">:</span> 
+            <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">4.</span><span class="p">,</span>  <span class="mf">6.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span>  <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]),</span>
+        <span class="s1">&#39;z&#39;</span> <span class="p">:</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">])</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-dataframes">
+<h2><span class="section-number">4.14. </span>Plotting DataFrames<a class="headerlink" href="#plotting-dataframes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>When plotting a data frame, each column is plotted as its own series on the same graph.</p></li>
+<li><p>The column names are used to label each series.</p></li>
+<li><p>The row names (index) is used to label the x-axis.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="functions-and-dataframes">
+<h2><span class="section-number">4.15. </span>Functions and DataFrames<a class="headerlink" href="#functions-and-dataframes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>We can do calculations and functions with dataframes just like series.</p></li>
+<li><p>Functions will typically return a dataframe or a series, depending.</p></li>
+<li><p>To make a copy, don’t set two dataframes equal us the <code class="docutils literal notranslate"><span class="pre">copy</span></code> method:  <code class="docutils literal notranslate"><span class="pre">df2=</span> <span class="pre">df.copy()</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Info</span>
+<span class="n">nulls</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nulls</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">nulls</span><span class="p">))</span>
+
+<span class="n">nullsum</span><span class="o">=</span><span class="n">nulls</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Null sum for each column </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">nullsum</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">nullsum</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">We can slice these results to get the answer for x </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">nullsum</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">nullsum</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">df2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">=</span><span class="n">df</span> <span class="o">**</span> <span class="mi">2</span> <span class="c1">#This squares all values. </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="summary-statistics">
+<h2><span class="section-number">4.16. </span>Summary statistics<a class="headerlink" href="#summary-statistics" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>To quickly obtain summary statistics on numerical values use the <code class="docutils literal notranslate"><span class="pre">describe</span></code> method.</p></li>
+<li><p>You will get a warning if there are missing values.</p></li>
+<li><p>The result is itself a DataFrame, that we can slice <code class="docutils literal notranslate"><span class="pre">dfstats.y['mean']</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dfstats</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<span class="n">dfstats</span>
+<span class="c1">#type(dfstats)</span>
+
+<span class="c1">#END HERE.....</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xmean</span> <span class="o">=</span> <span class="n">dfstats</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span> <span class="c1">#This is the X mean</span>
+<span class="n">ystd</span> <span class="o">=</span> <span class="n">dfstats</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">][</span><span class="s1">&#39;std&#39;</span><span class="p">]</span> <span class="c1">#This is the Y standardard deviation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">xmean</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">ystd</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-types">
+<h2><span class="section-number">4.17. </span>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Each will have an inferred data type.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="accessing-the-row-and-column-labels">
+<h2><span class="section-number">4.18. </span>Accessing the Row and Column Labels<a class="headerlink" href="#accessing-the-row-and-column-labels" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The row labels (index) can be accessed through <code class="docutils literal notranslate"><span class="pre">df.index</span></code>.</p></li>
+<li><p>The column labels can be accessed through <code class="docutils literal notranslate"><span class="pre">df.columns</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="loading-files-with-pandas">
+<h2><span class="section-number">4.19. </span>Loading Files with Pandas<a class="headerlink" href="#loading-files-with-pandas" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>We used Pandas in an earlier notebook to load the iris data file.</p></li>
+<li><p>Whenver you have a dataset with a variety of fields of various types, loading it into Pandas is a good strategy.</p></li>
+<li><p>You can load data from Azure, from a local file, or from a url.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!wget https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/input/iris.csv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>--2020-08-22 22:40:00--  https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/input/iris.csv
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.0.133, 151.101.64.133, 151.101.128.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.0.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3715 (3.6K) [text/plain]
+Saving to: ‘iris.csv’
+
+iris.csv            100%[===================&gt;]   3.63K  --.-KB/s    in 0s      
+
+2020-08-22 22:40:00 (22.4 MB/s) - ‘iris.csv’ saved [3715/3715]
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pulling from a local file</span>
+<span class="n">frame2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;iris.csv&#39;</span><span class="p">)</span>
+<span class="n">frame2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="large-dataframes-head-and-tail">
+<h2><span class="section-number">4.20. </span>Large Dataframes - Head and Tail<a class="headerlink" href="#large-dataframes-head-and-tail" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Many times you just want a sampling of the available data</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">head()</span></code> command can view the start of a data frame.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">tail()</span></code> command can be used to show the end of a data frame.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">frame2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">frame2</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pulling from a url.  Notice that this is the raw version of the file.</span>
+<span class="n">frame3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/input/iris.csv&quot;</span><span class="p">)</span>
+<span class="n">frame3</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexing-slicing-rows-of-dataframes">
+<h2><span class="section-number">4.21. </span>Indexing/Slicing Rows of DataFrames<a class="headerlink" href="#indexing-slicing-rows-of-dataframes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Simple ways of selecting all rows and colu (<code class="docutils literal notranslate"><span class="pre">df[:]</span></code>)</p></li>
+<li><p>Rows can be accessed via a key or a integer corresponding to the row number.</p></li>
+<li><p>Omitting a value generally means <em>all values</em> before or after an item.</p></li>
+<li><p>When we retrieve a single or mulitiple rows, the result is a Dataframe.</p></li>
+<li><p>Several ways, either directly, with <code class="docutils literal notranslate"><span class="pre">iloc</span></code>, or with <code class="docutils literal notranslate"><span class="pre">loc</span></code>. (See Examples).</p></li>
+<li><p>Read more <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/indexing.html">here</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This is going to create some sample data that we can work with for our analysis. </span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+ 
+<span class="c1">#Create a dataframe from a random numpy array </span>
+<span class="c1">#http://docs.scipy.org/doc/numpy/reference/generated/numpy.random.randn.html</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">((</span><span class="mi">20</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">),</span>  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">((</span><span class="mi">20</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">),</span>  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df2</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexing-slicing-columns-of-dataframes">
+<h2><span class="section-number">4.22. </span>Indexing/Slicing Columns of DataFrames<a class="headerlink" href="#indexing-slicing-columns-of-dataframes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Simple ways of selecting colum(s) <code class="docutils literal notranslate"><span class="pre">frame[[colname(s)]]</span></code>.</p></li>
+<li><p>Columns can have one (<code class="docutils literal notranslate"><span class="pre">df['x']</span></code>) or multiple (<code class="docutils literal notranslate"><span class="pre">df[['x',</span> <span class="pre">'y']]</span></code>) columns.</p></li>
+<li><p>When specifying one column, one can use simplified dot notation <code class="docutils literal notranslate"><span class="pre">df.x</span></code>.</p></li>
+<li><p>When we include multiple columns the slice that result is a DataFrame.</p></li>
+<li><p>When we retrieve a single column, the result is a Series.</p></li>
+<li><p>When we retrieve mulitiple column, the result is a Dataframe.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here we can see that there is a similar structure to R, with selecting the desired columns by passing a list.</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]])</span> <span class="c1">#All rows, column c, d</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="p">[[</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]])</span> <span class="c1">#All rows, column c, d</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span> <span class="c1">#All rows, column a,c,d</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>     <span class="c1">#All rows, column a-b</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>     <span class="c1">#All rows, column 0,2,3</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;b&#39;</span><span class="p">])</span> <span class="c1">#All rows, column a-b</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">]])</span> <span class="c1">#All rows, columns a, c, d</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dropping-columns-from-dataframes">
+<h2><span class="section-number">4.23. </span>Dropping Columns from Dataframes<a class="headerlink" href="#dropping-columns-from-dataframes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Done using the <code class="docutils literal notranslate"><span class="pre">drop</span></code> syntax.</p></li>
+<li><p><a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.drop.html">Drop Documentation</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here, we can remove columns specifically from a dataframe using the drop method.</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">((</span><span class="mi">20</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">),</span>  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="selecting-rows">
+<h2><span class="section-number">4.24. </span>Selecting Rows<a class="headerlink" href="#selecting-rows" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Similarly, we also might want to select out rows, and we can utilize the same syntax.</p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.iloc.html">iloc</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="c1">## Selecting rows</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>     <span class="c1">#Select rows 1-3</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,:])</span>     <span class="c1">#Select rows 1-3</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,])</span>      <span class="c1">#Select rows 1-3</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>       <span class="c1">#Select rows 1-3</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>   <span class="c1">#Select rows 1, 2, and 4</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="intro-to-filters-logical-indexing">
+<h2><span class="section-number">4.25. </span>Intro to Filters (Logical indexing)<a class="headerlink" href="#intro-to-filters-logical-indexing" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Filters are the selection of rows based on criteria.</p></li>
+<li><p>We can select based on specific criteria.</p></li>
+<li><p>These criteria can be connected together.</p></li>
+<li><p>Most of the time we won’t specfically assign selection critia to a list.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># At the foundation of the filter is a boolean array based on some type of condition. </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#notice how the logical statement is inside the dataframe specification.  This creates an intermediate boolean array. </span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This is an alternate method where we first set the boolean array. </span>
+<span class="n">included</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">20</span>
+<span class="n">df</span><span class="p">[</span><span class="n">included</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#We can now generate a vector based on a critera and then use this for selection</span>
+<span class="n">select</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">20</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">select</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">select</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">select</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">])</span> <span class="c1">#Notice by including only one variable we are selecting rows and all columns.</span>
+
+<span class="n">select2</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">)</span>  <span class="c1">#More complex criteria</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">select2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">select2</span><span class="p">,[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]])</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here we are creating a new variable based on the value of another variable.</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;aboveavg&#39;</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>  <span class="c1"># We first set the default to 0. </span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;aboveavg&#39;</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span> <span class="c1">#We then change all rows where a is &gt;=20 to 1.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;aboveavg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="joining-dataframes">
+<h2><span class="section-number">4.26. </span>Joining Dataframes<a class="headerlink" href="#joining-dataframes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Often you need to combine dataframe,</p></li>
+<li><p>either matching columns for the smae rows (column  bind)</p></li>
+<li><p>Add rows for the same columns (row bind)</p></li>
+</ul>
+</div>
+<div class="section" id="stacking-dataframes-vertically">
+<h2><span class="section-number">4.27. </span>Stacking Dataframes Vertically<a class="headerlink" href="#stacking-dataframes-vertically" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Adds rows vertially with the <code class="docutils literal notranslate"><span class="pre">concat</span></code> function</p></li>
+<li><p>The index is not automatically reset</p></li>
+<li><p>In R referred to as a row bind.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This first generates 2 dataframes. </span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">((</span><span class="mi">20</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">),</span>  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">((</span><span class="mi">20</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">),</span>  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="c1">#This will stack the 2 dataframes vertically on top of one another</span>
+<span class="n">dfbyrow</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">df2</span><span class="p">])</span>  <span class="c1">#This is equivalent to a rowbind in R. </span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">dfbyrow</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># View how the index here from df has been reset and incremented while in the earlier example the index was kept. </span>
+
+<span class="n">addition</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">addition</span> <span class="p">)</span>
+<span class="n">addition2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">addition2</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="inner-outer-joins-dataframes">
+<h2><span class="section-number">4.28. </span>Inner/Outer Joins Dataframes<a class="headerlink" href="#inner-outer-joins-dataframes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Adds rows vertially with the <code class="docutils literal notranslate"><span class="pre">concat</span></code> function</p></li>
+<li><p>In R referred to as a column bind.</p></li>
+<li><p>Can do the equivalent of an inner and outer join.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Merging additional columns also uses the concat function </span>
+<span class="c1">#This is equavalent to an inner join in SQL.</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">((</span><span class="mi">20</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">),</span>  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">df4</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">((</span><span class="mi">20</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">),</span>  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]</span> <span class="p">)</span>
+
+
+<span class="n">dfbycolumns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">df4</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">join</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">dfbycolumns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here we are generating a small dataframe to be used in merging so you can see the differences in specifying inner &amp; outer, </span>
+<span class="n">shortdf</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">dfbycolumns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">shortdf</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">join</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">dfbycolumns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here, the outer does the equivalent of a left outer join for this dataset. </span>
+<span class="n">shortdf</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">dfbycolumns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">shortdf</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">join</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+<span class="n">dfbycolumns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Copyright <a class="reference external" href="http://rpi.analyticsdojo.com">AnalyticsDojo</a> 2016.
+This work is licensed under the <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a> license agreement.</p>
+</div>
+<div class="section" id="credits">
+<h2><span class="section-number">4.29. </span>CREDITS<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="large-sections-of-this-were-adopted-from-analysing-structured-data-with-pandas-by-steve-phelps-thanks-steve">
+<h3><span class="section-number">4.29.1. </span>Large sections of this were adopted from Analysing structured data with Pandas by <a class="reference external" href="http://sphelps.net">Steve Phelps</a>.  Thanks Steve!<a class="headerlink" href="#large-sections-of-this-were-adopted-from-analysing-structured-data-with-pandas-by-steve-phelps-thanks-steve" title="Permalink to this headline">¶</a></h3>
+<p>This work is licensed under the <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a> license agreement.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/01-intro-python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="03-numpy.html" title="previous page"><span class="section-number">3. </span>Overview of Numpy</a>
+    <a class='right-next' id="next-link" href="../02-intro-python/01-conditionals-loops.html" title="next page"><span class="section-number">5. </span>Conditional Statements and Loops</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jason Kuruzovich<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-32817743-6', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

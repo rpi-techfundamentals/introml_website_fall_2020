@@ -1,0 +1,1129 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>String Manipulation and Regular Expressions &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Introduction to Machine Learning Applications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  OVERVIEW
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/preparation.html">
+   Before Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/in_class.html">
+   In Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/assignments.html">
+   Assignments
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SESSIONS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session1.html">
+   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session2.html">
+   2. Python Basics (09/03)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session3.html">
+   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session4.html">
+   4. Python conditionals, loops, functions, aggregating.  (09/10)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NOTEBOOKS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/01-python-overview.html">
+   1. Overview of Python Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/02-datastructures.html">
+   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/03-numpy.html">
+   3. Overview of Numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/04-pandas.html">
+   4. Large sections of this were adopted from Analyzing structured data with Pandas by Steve Phelps.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/04-pandas.html#introduction-to-pandas">
+   5. Introduction to Pandas
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/06-viz-api-scraper/04-strings-regular-expressions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020/issues/new?title=Issue%20on%20page%20%2Fnotebooks/06-viz-api-scraper/04-strings-regular-expressions.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rpi-techfundamentals/introml_website_fall_2020/blob/master/site/notebooks/06-viz-api-scraper/04-strings-regular-expressions.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-string-manipulation-in-python">
+   Simple String Manipulation in Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formatting-strings-adjusting-case">
+     Formatting strings: Adjusting case
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formatting-strings-adding-and-removing-spaces">
+     Formatting strings: Adding and removing spaces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-and-replacing-substrings">
+     Finding and replacing substrings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#splitting-and-partitioning-strings">
+     Splitting and partitioning strings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#format-strings">
+   Format Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flexible-pattern-matching-with-regular-expressions">
+   Flexible Pattern Matching with Regular Expressions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-more-sophisticated-example">
+     A more sophisticated example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basics-of-regular-expression-syntax">
+     Basics of regular expression syntax
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#simple-strings-are-matched-directly">
+       Simple strings are matched directly
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#some-characters-have-special-meanings">
+       Some characters have special meanings
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#special-characters-can-match-character-groups">
+       Special characters can match character groups
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#square-brackets-match-custom-character-groups">
+       Square brackets match custom character groups
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wildcards-match-repeated-characters">
+       Wildcards match repeated characters
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#parentheses-indicate-groups-to-extract">
+       Parentheses indicate
+       <em>
+        groups
+       </em>
+       to extract
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#further-resources-on-regular-expressions">
+     Further Resources on Regular Expressions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a class="reference external" href="http://rpi.analyticsdojo.com"><img alt="AnalyticsDojo" src="https://github.com/rpi-techfundamentals/spring2019-materials/blob/master/fig/final-logo.png?raw=1" /></a></p>
+<center><h1>Strings and Regular Expressions</h1></center>
+<center><h3><a href = 'http://rpi.analyticsdojo.com'>rpi.analyticsdojo.com</a></h3></center>
+<div class="section" id="string-manipulation-and-regular-expressions">
+<h1>String Manipulation and Regular Expressions<a class="headerlink" href="#string-manipulation-and-regular-expressions" title="Permalink to this headline">¶</a></h1>
+<p>One place where the Python language really shines is in the manipulation of strings.
+This section will cover some of Python’s built-in string methods and formatting operations, before moving on to a quick guide to the extremely useful subject of <em>regular expressions</em>.
+Such string manipulation patterns come up often in the context of data science work, and is one big perk of Python in this context.</p>
+<p>Strings in Python can be defined using either single or double quotations (they are functionally equivalent):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;a string&#39;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;a string&quot;</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;they are the same&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In addition, it is possible to define multi-line strings using a triple-quote syntax:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">multiline</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">one </span>
+<span class="s2">two </span>
+<span class="s2">three </span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With this, let’s take a quick tour of some of Python’s string manipulation tools.</p>
+<div class="section" id="simple-string-manipulation-in-python">
+<h2>Simple String Manipulation in Python<a class="headerlink" href="#simple-string-manipulation-in-python" title="Permalink to this headline">¶</a></h2>
+<p>For basic manipulation of strings, Python’s built-in string methods can be extremely convenient.
+If you have a background working in C or another low-level language, you will likely find the simplicity of Python’s methods extremely refreshing.
+We introduced Python’s string type and a few of these methods earlier; here we’ll dive a bit deeper</p>
+<div class="section" id="formatting-strings-adjusting-case">
+<h3>Formatting strings: Adjusting case<a class="headerlink" href="#formatting-strings-adjusting-case" title="Permalink to this headline">¶</a></h3>
+<p>Python makes it quite easy to adjust the case of a string.
+Here we’ll look at the <code class="docutils literal notranslate"><span class="pre">upper()</span></code>, <code class="docutils literal notranslate"><span class="pre">lower()</span></code>, <code class="docutils literal notranslate"><span class="pre">capitalize()</span></code>, <code class="docutils literal notranslate"><span class="pre">title()</span></code>, and <code class="docutils literal notranslate"><span class="pre">swapcase()</span></code> methods, using the following messy string as an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fox</span> <span class="o">=</span> <span class="s2">&quot;tHe qUICk bROWn fOx.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To convert the entire string into upper-case or lower-case, you can use the <code class="docutils literal notranslate"><span class="pre">upper()</span></code> or <code class="docutils literal notranslate"><span class="pre">lower()</span></code> methods respectively:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fox</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fox</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A common formatting need is to capitalize just the first letter of each word, or perhaps the first letter of each sentence.
+This can be done with the <code class="docutils literal notranslate"><span class="pre">title()</span></code> and <code class="docutils literal notranslate"><span class="pre">capitalize()</span></code> methods:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fox</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fox</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The cases can be swapped using the <code class="docutils literal notranslate"><span class="pre">swapcase()</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fox</span><span class="o">.</span><span class="n">swapcase</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fox</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="formatting-strings-adding-and-removing-spaces">
+<h3>Formatting strings: Adding and removing spaces<a class="headerlink" href="#formatting-strings-adding-and-removing-spaces" title="Permalink to this headline">¶</a></h3>
+<p>Another common need is to remove spaces (or other characters) from the beginning or end of the string.
+The basic method of removing characters is the <code class="docutils literal notranslate"><span class="pre">strip()</span></code> method, which strips whitespace from the beginning and end of the line:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;         this is the content         &#39;</span>
+<span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To remove just space to the right or left, use <code class="docutils literal notranslate"><span class="pre">rstrip()</span></code> or <code class="docutils literal notranslate"><span class="pre">lstrip()</span></code> respectively:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To remove characters other than spaces, you can pass the desired character to the <code class="docutils literal notranslate"><span class="pre">strip()</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="s2">&quot;000000000000435&quot;</span>
+<span class="n">num</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because zero-filling is such a common need, Python also provides <code class="docutils literal notranslate"><span class="pre">zfill()</span></code>, which is a special method to right-pad a string with zeros:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;435&#39;</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="finding-and-replacing-substrings">
+<h3>Finding and replacing substrings<a class="headerlink" href="#finding-and-replacing-substrings" title="Permalink to this headline">¶</a></h3>
+<p>If you want to find occurrences of a certain character in a string, the <code class="docutils literal notranslate"><span class="pre">find()</span></code>/<code class="docutils literal notranslate"><span class="pre">rfind()</span></code>, <code class="docutils literal notranslate"><span class="pre">index()</span></code>/<code class="docutils literal notranslate"><span class="pre">rindex()</span></code>, and <code class="docutils literal notranslate"><span class="pre">replace()</span></code> methods are the best built-in methods.</p>
+<p><code class="docutils literal notranslate"><span class="pre">find()</span></code> and <code class="docutils literal notranslate"><span class="pre">index()</span></code> are very similar, in that they search for the first occurrence of a character or substring within a string, and return the index of the substring:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;the quick brown fox jumped over a lazy dog&#39;</span>
+<span class="n">line</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;fox&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="p">[</span><span class="mi">19</span><span class="p">:</span><span class="mi">21</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;fox&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The only difference between <code class="docutils literal notranslate"><span class="pre">find()</span></code> and <code class="docutils literal notranslate"><span class="pre">index()</span></code> is their behavior when the search string is not found; <code class="docutils literal notranslate"><span class="pre">find()</span></code> returns <code class="docutils literal notranslate"><span class="pre">-1</span></code>, while <code class="docutils literal notranslate"><span class="pre">index()</span></code> raises a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;bear&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;bear&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The related <code class="docutils literal notranslate"><span class="pre">rfind()</span></code> and <code class="docutils literal notranslate"><span class="pre">rindex()</span></code> work similarly, except they search for the first occurrence from the end rather than the beginning of the string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the special case of checking for a substring at the beginning or end of a string, Python provides the <code class="docutils literal notranslate"><span class="pre">startswith()</span></code> and <code class="docutils literal notranslate"><span class="pre">endswith()</span></code> methods:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;fox&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To go one step further and replace a given substring with a new string, you can use the <code class="docutils literal notranslate"><span class="pre">replace()</span></code> method.
+Here, let’s replace <code class="docutils literal notranslate"><span class="pre">'brown'</span></code> with <code class="docutils literal notranslate"><span class="pre">'red'</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;brown&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">replace()</span></code> function returns a new string, and will replace all occurrences of the input:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For a more flexible approach to this <code class="docutils literal notranslate"><span class="pre">replace()</span></code> functionality, see the discussion of regular expressions in <a class="reference external" href="#Flexible-Pattern-Matching-with-Regular-Expressions">Flexible Pattern Matching with Regular Expressions</a>.</p>
+</div>
+<div class="section" id="splitting-and-partitioning-strings">
+<h3>Splitting and partitioning strings<a class="headerlink" href="#splitting-and-partitioning-strings" title="Permalink to this headline">¶</a></h3>
+<p>If you would like to find a substring <em>and then</em> split the string based on its location, the <code class="docutils literal notranslate"><span class="pre">partition()</span></code> and/or <code class="docutils literal notranslate"><span class="pre">split()</span></code> methods are what you’re looking for.
+Both will return a sequence of substrings.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">partition()</span></code> method returns a tuple with three elements: the substring before the first instance of the split-point, the split-point itself, and the substring after:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s1">&#39;fox&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">rpartition()</span></code> method is similar, but searches from the right of the string.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">split()</span></code> method is perhaps more useful; it finds <em>all</em> instances of the split-point and returns the substrings in between.
+The default is to split on any whitespace, returning a list of the individual words in a string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A related method is <code class="docutils literal notranslate"><span class="pre">splitlines()</span></code>, which splits on newline characters.
+Let’s do this with a Haiku, popularly attributed to the 17th-century poet Matsuo Bashō:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">haiku</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;matsushima-ya</span>
+<span class="s2">aah matsushima-ya</span>
+<span class="s2">matsushima-ya&quot;&quot;&quot;</span>
+
+<span class="n">haiku</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that if you would like to undo a <code class="docutils literal notranslate"><span class="pre">split()</span></code>, you can use the <code class="docutils literal notranslate"><span class="pre">join()</span></code> method, which returns a string built from a splitpoint and an iterable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;--&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A common pattern is to use the special character <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code> (newline) to join together lines that have been previously split, and recover the input:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;matsushima-ya&#39;</span><span class="p">,</span> <span class="s1">&#39;aah matsushima-ya&#39;</span><span class="p">,</span> <span class="s1">&#39;matsushima-ya&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="format-strings">
+<h2>Format Strings<a class="headerlink" href="#format-strings" title="Permalink to this headline">¶</a></h2>
+<p>In the preceding methods, we have learned how to extract values from strings, and to manipulate strings themselves into desired formats.
+Another use of string methods is to manipulate string <em>representations</em> of values of other types.
+Of course, string representations can always be found using the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function; for example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span>
+<span class="nb">str</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;The value of pi is &quot;</span> <span class="o">+</span> <span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For more complicated formats, you might be tempted to use string arithmetic as outlined in <span class="xref myst">Basic Python Semantics: Operators</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;The value of pi is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A more flexible way to do this is to use <em>format strings</em>, which are strings with special markers (noted by curly braces) into which string-formatted values will be inserted.
+Here is a basic example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;The value of pi is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Inside the <code class="docutils literal notranslate"><span class="pre">{}</span></code> marker you can also include information on exactly <em>what</em> you would like to appear there.
+If you include a number, it will refer to the index of the argument to insert:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;First letter: {0}. Last letter: {1}.&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you include a string, it will refer to the key of any keyword argument:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;First letter: {first}. Last letter: {last}.&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, for numerical inputs, you can include format codes which control how the value is converted to a string.
+For example, to print a number as a floating point with three digits after the decimal point, you can use the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;pi = </span><span class="si">{0:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As before, here the “<code class="docutils literal notranslate"><span class="pre">0</span></code>” refers to the index of the value to be inserted.
+The “<code class="docutils literal notranslate"><span class="pre">:</span></code>” marks that format codes will follow.
+The “<code class="docutils literal notranslate"><span class="pre">.3f</span></code>” encodes the desired precision: three digits beyond the decimal point, floating-point format.</p>
+<p>This style of format specification is very flexible, and the examples here barely scratch the surface of the formatting options available.
+For more information on the syntax of these format strings, see the <a class="reference external" href="https://docs.python.org/3/library/string.html#formatspec">Format Specification</a> section of Python’s online documentation.</p>
+</div>
+<div class="section" id="flexible-pattern-matching-with-regular-expressions">
+<h2>Flexible Pattern Matching with Regular Expressions<a class="headerlink" href="#flexible-pattern-matching-with-regular-expressions" title="Permalink to this headline">¶</a></h2>
+<p>The methods of Python’s <code class="docutils literal notranslate"><span class="pre">str</span></code> type give you a powerful set of tools for formatting, splitting, and manipulating string data.
+But even more powerful tools are available in Python’s built-in <em>regular expression</em> module.
+Regular expressions are a huge topic; there are there are entire books written on the topic (including Jeffrey E.F. Friedl’s <a class="reference external" href="http://shop.oreilly.com/product/9780596528126.do"><em>Mastering Regular Expressions, 3rd Edition</em></a>), so it will be hard to do justice within just a single subsection.</p>
+<p>My goal here is to give you an idea of the types of problems that might be addressed using regular expressions, as well as a basic idea of how to use them in Python.
+I’ll suggest some references for learning more in <a class="reference external" href="#Further-Resources-on-Regular-Expressions">Further Resources on Regular Expressions</a>.</p>
+<p>Fundamentally, regular expressions are a means of <em>flexible pattern matching</em> in strings.
+If you frequently use the command-line, you are probably familiar with this type of flexible matching with the “<code class="docutils literal notranslate"><span class="pre">*</span></code>” character, which acts as a wildcard.
+For example, we can list all the IPython notebooks (i.e., files with extension <em>.ipynb</em>) with “Python” in their filename by using the “<code class="docutils literal notranslate"><span class="pre">*</span></code>” wildcard to match any characters in between:</p>
+<p>Regular expressions generalize this “wildcard” idea to a wide range of flexible string-matching sytaxes.
+The Python interface to regular expressions is contained in the built-in <code class="docutils literal notranslate"><span class="pre">re</span></code> module; as a simple example, let’s use it to duplicate the functionality of the string <code class="docutils literal notranslate"><span class="pre">split()</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;\s+&#39;</span><span class="p">)</span>
+<span class="n">regex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we’ve first <em>compiled</em> a regular expression, then used it to <em>split</em> a string.
+Just as Python’s <code class="docutils literal notranslate"><span class="pre">split()</span></code> method returns a list of all substrings between whitespace, the regular expression <code class="docutils literal notranslate"><span class="pre">split()</span></code> method returns a list of all substrings between matches to the input pattern.</p>
+<p>In this case, the input is <code class="docutils literal notranslate"><span class="pre">&quot;\s+&quot;</span></code>: “<code class="docutils literal notranslate"><span class="pre">\s</span></code>” is a special character that matches any whitespace (space, tab, newline, etc.), and the “<code class="docutils literal notranslate"><span class="pre">+</span></code>” is a character that indicates <em>one or more</em> of the entity preceding it.
+Thus, the regular expression matches any substring consisting of one or more spaces.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">split()</span></code> method here is basically a convenience routine built upon this <em>pattern matching</em> behavior; more fundamental is the <code class="docutils literal notranslate"><span class="pre">match()</span></code> method, which will tell you whether the beginning of a string matches the pattern:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;     &quot;</span><span class="p">,</span> <span class="s2">&quot;abc  &quot;</span><span class="p">,</span> <span class="s2">&quot;  abc&quot;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">regex</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="s2">&quot;matches&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="s2">&quot;does not match&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Like <code class="docutils literal notranslate"><span class="pre">split()</span></code>, there are similar convenience routines to find the first match (like <code class="docutils literal notranslate"><span class="pre">str.index()</span></code> or <code class="docutils literal notranslate"><span class="pre">str.find()</span></code>) or to find and replace (like <code class="docutils literal notranslate"><span class="pre">str.replace()</span></code>).
+We’ll again use the line from before:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;the quick brown fox jumped over a lazy dog&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With this, we can see that the <code class="docutils literal notranslate"><span class="pre">regex.search()</span></code> method operates a lot like <code class="docutils literal notranslate"><span class="pre">str.index()</span></code> or <code class="docutils literal notranslate"><span class="pre">str.find()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;fox&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;fox&#39;</span><span class="p">)</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">regex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="n">match</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, the <code class="docutils literal notranslate"><span class="pre">regex.sub()</span></code> method operates much like <code class="docutils literal notranslate"><span class="pre">str.replace()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;fox&#39;</span><span class="p">,</span> <span class="s1">&#39;BEAR&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">regex</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;BEAR&#39;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With a bit of thought, other native string operations can also be cast as regular expressions.</p>
+<div class="section" id="a-more-sophisticated-example">
+<h3>A more sophisticated example<a class="headerlink" href="#a-more-sophisticated-example" title="Permalink to this headline">¶</a></h3>
+<p>But, you might ask, why would you want to use the more complicated and verbose syntax of regular expressions rather than the more intuitive and simple string methods?
+The advantage is that regular expressions offer <em>far</em> more flexibility.</p>
+<p>Here we’ll consider a more complicated example: the common task of matching email addresses.
+I’ll start by simply writing a (somewhat indecipherable) regular expression, and then walk through what is going on.
+Here it goes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">email</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;\w+@\w+\.[a-z]</span><span class="si">{3}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using this, if we’re given a line from a document, we can quickly extract things that look like email addresses</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;To email Guido, try guido@python.org or the older address guido@google.com.&quot;</span>
+<span class="n">email</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(Note that these addresses are entirely made up; there are probably better ways to get in touch with Guido).</p>
+<p>We can do further operations, like replacing these email addresses with another string, perhaps to hide addresses in the output:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">email</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;--@--.--&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">email</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, note that if you really want to match <em>any</em> email address, the preceding regular expression is far too simple.
+For example, it only allows addresses made of alphanumeric characters that end in one of several common domain suffixes.
+So, for example, the period used here means that we only find part of the address:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">email</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;barack.obama@whitehouse.gov&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This goes to show how unforgiving regular expressions can be if you’re not careful!
+If you search around online, you can find some suggestions for regular expressions that will match <em>all</em> valid emails, but beware: they are much more involved than the simple expression used here!</p>
+</div>
+<div class="section" id="basics-of-regular-expression-syntax">
+<h3>Basics of regular expression syntax<a class="headerlink" href="#basics-of-regular-expression-syntax" title="Permalink to this headline">¶</a></h3>
+<p>The syntax of regular expressions is much too large a topic for this short section.
+Still, a bit of familiarity can go a long way: I will walk through some of the basic constructs here, and then list some more complete resources from which you can learn more.
+My hope is that the following quick primer will enable you to use these resources effectively.</p>
+<div class="section" id="simple-strings-are-matched-directly">
+<h4>Simple strings are matched directly<a class="headerlink" href="#simple-strings-are-matched-directly" title="Permalink to this headline">¶</a></h4>
+<p>If you build a regular expression on a simple string of characters or digits, it will match that exact string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;ion&#39;</span><span class="p">)</span>
+<span class="n">regex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;Great Expectations&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="some-characters-have-special-meanings">
+<h4>Some characters have special meanings<a class="headerlink" href="#some-characters-have-special-meanings" title="Permalink to this headline">¶</a></h4>
+<p>While simple letters or numbers are direct matches, there are a handful of characters that have special meanings within regular expressions. They are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>. ^ $ * + ? { } [ ] \ | ( )
+</pre></div>
+</div>
+<p>We will discuss the meaning of some of these momentarily.
+In the meantime, you should know that if you’d like to match any of these characters directly, you can <em>escape</em> them with a back-slash:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\$&#39;</span><span class="p">)</span>
+<span class="n">regex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;the cost is 20&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">r</span></code> preface in <code class="docutils literal notranslate"><span class="pre">r'\$'</span></code> indicates a <em>raw string</em>; in standard Python strings, the backslash is used to indicate special characters.
+For example, a tab is indicated by <code class="docutils literal notranslate"><span class="pre">&quot;\t&quot;</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a</span><span class="se">\t</span><span class="s1">b</span><span class="se">\t</span><span class="s1">c&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Such substitutions are not made in a raw string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;a\tb\tc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For this reason, whenever you use backslashes in a regular expression, it is good practice to use a raw string.</p>
+</div>
+<div class="section" id="special-characters-can-match-character-groups">
+<h4>Special characters can match character groups<a class="headerlink" href="#special-characters-can-match-character-groups" title="Permalink to this headline">¶</a></h4>
+<p>Just as the <code class="docutils literal notranslate"><span class="pre">&quot;\&quot;</span></code> character within regular expressions can escape special characters, turning them into normal characters, it can also be used to give normal characters special meaning.
+These special characters match specified groups of characters, and we’ve seen them before.
+In the email address regexp from before, we used the character <code class="docutils literal notranslate"><span class="pre">&quot;\w&quot;</span></code>, which is a special marker matching <em>any alphanumeric character</em>. Similarly, in the simple <code class="docutils literal notranslate"><span class="pre">split()</span></code> example, we also saw <code class="docutils literal notranslate"><span class="pre">&quot;\s&quot;</span></code>, a special marker indicating <em>any whitespace character</em>.</p>
+<p>Putting these together, we can create a regular expression that will match <em>any two letters/digits with whitespace between them</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w\s\w&#39;</span><span class="p">)</span>
+<span class="n">regex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;the fox is 9 years old&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This example begins to hint at the power and flexibility of regular expressions.</p>
+<p>The following table lists a few of these characters that are commonly useful:</p>
+<p>| Character | Description                 || Character | Description                     |
+|———–|—————————–||———–|———————————|
+| <code class="docutils literal notranslate"><span class="pre">&quot;\d&quot;</span></code>  | Match any digit             || <code class="docutils literal notranslate"><span class="pre">&quot;\D&quot;</span></code>  | Match any non-digit             |
+| <code class="docutils literal notranslate"><span class="pre">&quot;\s&quot;</span></code>  | Match any whitespace        || <code class="docutils literal notranslate"><span class="pre">&quot;\S&quot;</span></code>  | Match any non-whitespace        |
+| <code class="docutils literal notranslate"><span class="pre">&quot;\w&quot;</span></code>  | Match any alphanumeric char || <code class="docutils literal notranslate"><span class="pre">&quot;\W&quot;</span></code>  | Match any non-alphanumeric char |</p>
+<p>This is <em>not</em> a comprehensive list or description; for more details, see Python’s <a class="reference external" href="https://docs.python.org/3/library/re.html#re-syntax">regular expression syntax documentation</a>.</p>
+</div>
+<div class="section" id="square-brackets-match-custom-character-groups">
+<h4>Square brackets match custom character groups<a class="headerlink" href="#square-brackets-match-custom-character-groups" title="Permalink to this headline">¶</a></h4>
+<p>If the built-in character groups aren’t specific enough for you, you can use square brackets to specify any set of characters you’re interested in.
+For example, the following will match any lower-case vowel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;[aeiou]&#39;</span><span class="p">)</span>
+<span class="n">regex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;consequential&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, you can use a dash to specify a range: for example, <code class="docutils literal notranslate"><span class="pre">&quot;[a-z]&quot;</span></code> will match any lower-case letter, and <code class="docutils literal notranslate"><span class="pre">&quot;[1-3]&quot;</span></code> will match any of <code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;3&quot;</span></code>.
+For instance, you may need to extract from a document specific numerical codes that consist of a capital letter followed by a digit. You could do this as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;[A-Z][0-9]&#39;</span><span class="p">)</span>
+<span class="n">regex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;1043879, G2, H6&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="wildcards-match-repeated-characters">
+<h4>Wildcards match repeated characters<a class="headerlink" href="#wildcards-match-repeated-characters" title="Permalink to this headline">¶</a></h4>
+<p>If you would like to match a string with, say, three alphanumeric characters in a row, it is possible to write, for example, <code class="docutils literal notranslate"><span class="pre">&quot;\w\w\w&quot;</span></code>.
+Because this is such a common need, there is a specific syntax to match repetitions – curly braces with a number:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w</span><span class="si">{3}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">regex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;The quick brown fox&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are also markers available to match any number of repetitions – for example, the <code class="docutils literal notranslate"><span class="pre">&quot;+&quot;</span></code> character will match <em>one or more</em> repetitions of what precedes it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+&#39;</span><span class="p">)</span>
+<span class="n">regex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;The quick brown fox&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following is a table of the repetition markers available for use in regular expressions:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Character</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">?</span></code></p></td>
+<td><p>Match zero or one repetitions of preceding</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;ab?&quot;</span></code> matches <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;ab&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p>Match zero or more repetitions of preceding</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;ab*&quot;</span></code> matches <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;ab&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;abb&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;abbb&quot;</span></code>…</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p>Match one or more repetitions of preceding</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;ab+&quot;</span></code> matches <code class="docutils literal notranslate"><span class="pre">&quot;ab&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;abb&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;abbb&quot;</span></code>… but not <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{n}</span></code></p></td>
+<td><p>Match <code class="docutils literal notranslate"><span class="pre">n</span></code> repetitions of preeeding</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;ab{2}&quot;</span></code> matches <code class="docutils literal notranslate"><span class="pre">&quot;abb&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{m,n}</span></code></p></td>
+<td><p>Match between <code class="docutils literal notranslate"><span class="pre">m</span></code> and <code class="docutils literal notranslate"><span class="pre">n</span></code> repetitions of preceding</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;ab{2,3}&quot;</span></code> matches <code class="docutils literal notranslate"><span class="pre">&quot;abb&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;abbb&quot;</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>With these basics in mind, let’s return to our email address matcher:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">email</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+@\w+\.[a-z]</span><span class="si">{3}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now understand what this means: we want one or more alphanumeric character (<code class="docutils literal notranslate"><span class="pre">&quot;\w+&quot;</span></code>) followed by the <em>at sign</em> (<code class="docutils literal notranslate"><span class="pre">&quot;&#64;&quot;</span></code>), followed by one or more alphanumeric character (<code class="docutils literal notranslate"><span class="pre">&quot;\w+&quot;</span></code>), followed by a period (<code class="docutils literal notranslate"><span class="pre">&quot;\.&quot;</span></code> – note the need for a backslash escape), followed by exactly three lower-case letters.</p>
+<p>If we want to now modify this so that the Obama email address matches, we can do so using the square-bracket notation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">email2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[\w.]+@\w+\.[a-z]</span><span class="si">{3}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">email2</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;barack.obama@whitehouse.gov&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have changed <code class="docutils literal notranslate"><span class="pre">&quot;\w+&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;[\w.]+&quot;</span></code>, so we will match any alphanumeric character <em>or</em> a period.
+With this more flexible expression, we can match a wider range of email addresses (though still not all – can you identify other shortcomings of this expression?).</p>
+</div>
+<div class="section" id="parentheses-indicate-groups-to-extract">
+<h4>Parentheses indicate <em>groups</em> to extract<a class="headerlink" href="#parentheses-indicate-groups-to-extract" title="Permalink to this headline">¶</a></h4>
+<p>For compound regular expressions like our email matcher, we often want to extract their components rather than the full match. This can be done using parentheses to <em>group</em> the results:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">email3</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([\w.]+)@(\w+)\.([a-z]</span><span class="si">{3}</span><span class="s1">)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;To email Guido, try guido@python.org or the older address guido@google.com.&quot;</span>
+<span class="n">email3</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we see, this grouping actually extracts a list of the sub-components of the email address.</p>
+<p>We can go a bit further and <em>name</em> the extracted components using the <code class="docutils literal notranslate"><span class="pre">&quot;(?P&lt;name&gt;</span> <span class="pre">)&quot;</span></code> syntax, in which case the groups can be extracted as a Python dictionary:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">email4</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?P&lt;user&gt;[\w.]+)@(?P&lt;domain&gt;\w+)\.(?P&lt;suffix&gt;[a-z]</span><span class="si">{3}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">email4</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;guido@python.org&#39;</span><span class="p">)</span>
+<span class="n">match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Combining these ideas (as well as some of the powerful regexp syntax that we have not covered here) allows you to flexibly and quickly extract information from strings in Python.</p>
+</div>
+</div>
+<div class="section" id="further-resources-on-regular-expressions">
+<h3>Further Resources on Regular Expressions<a class="headerlink" href="#further-resources-on-regular-expressions" title="Permalink to this headline">¶</a></h3>
+<p>The above discussion is just a quick (and far from complete) treatment of this large topic.
+If you’d like to learn more, I recommend the following resources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/re.html">Python’s <code class="docutils literal notranslate"><span class="pre">re</span></code> package Documentation</a>: I find that I promptly forget how to use regular expressions just about every time I use them. Now that I have the basics down, I have found this page to be an incredibly valuable resource to recall what each specific character or sequence means within a regular expression.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/howto/regex.html">Python’s official regular expression HOWTO</a>: a more narrative approach to regular expressions in Python.</p></li>
+<li><p><a class="reference external" href="http://shop.oreilly.com/product/9780596528126.do">Mastering Regular Expressions (OReilly, 2006)</a> is a 500+ page book on the subject. If you want a really complete treatment of this topic, this is the resource for you.</p></li>
+</ul>
+<p>For some examples of string manipulation and regular expressions in action at a larger scale, see <a class="reference external" href="15-Preview-of-Data-Science-Tools.ipynb#Pandas:-Labeled-Column-oriented-Data">Pandas: Labeled Column-oriented Data</a>, where we look at applying these sorts of expressions across <em>tables</em> of string data within the Pandas package.</p>
+<p><em>This notebook contains an excerpt from the <a class="reference external" href="http://www.oreilly.com/programming/free/a-whirlwind-tour-of-python.csp">Whirlwind Tour of Python</a> by Jake VanderPlas; the content is available <a class="reference external" href="https://github.com/jakevdp/WhirlwindTourOfPython">on GitHub</a>.</em></p>
+<p><em>The text and code are released under the <a class="reference external" href="https://github.com/jakevdp/WhirlwindTourOfPython/blob/master/LICENSE">CC0</a> license; see also the companion project, the <a class="reference external" href="https://github.com/jakevdp/PythonDataScienceHandbook">Python Data Science Handbook</a>.</em></p>
+<!--NAVIGATION-->
+<p>&lt; <span class="xref myst">Modules and Packages</span> | <span class="xref myst">Contents</span> | <span class="xref myst">A Preview of Data Science Tools</span> &gt;</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/06-viz-api-scraper"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jason Kuruzovich<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-32817743-6', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
