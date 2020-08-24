@@ -26,7 +26,19 @@
   - file: notebooks/02-intro-python/04-groupby
   - file: notebooks/02-intro-python/04-pivottable
   - file: notebooks/02-intro-python/05-kaggle-baseline
-- part: ASSIGNMENTS
+- part: ASSIGNMENT STARTERS
   numbered: true
   chapters:
   - file: assignments/01starter
+- part: BOOK NOTEBOOKS
+  numbered: true
+  chapters:
+  - file: notebooks/book/tools_numpy
+  - file: notebooks/book/tools_pandas
+  #- file: notebooks/book/tools_matplotlib
+  #- file: notebooks/book/01_the_machine_learning_landscape
+  #- file: notebooks/book/02_end_to_end_machine_learning_project
+  #- file: notebooks/book/extra_autodiff
+  #- file: notebooks/book/extra_gradient_descent_comparison
+  #- file: notebooks/book/math_differential_calculus
+  #- file: notebooks/book/math_linear_algebra
