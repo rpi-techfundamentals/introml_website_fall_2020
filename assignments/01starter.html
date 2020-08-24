@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>1. Homework 01 - Instructions &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <title>1. Assignment 1 &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -208,27 +208,7 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Homework 01 - Instructions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#before-you-begin">
-   2. BEFORE YOU BEGIN
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#run-these-cells">
-   3. Run these Cells
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#enter-your-information">
-   4. Enter your information
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#homework-rubric">
-   5. Homework Rubric
+   1. Assignment 1
   </a>
  </li>
 </ul>
@@ -338,6 +318,78 @@
    1.1. This is a 30 point assignment graded from answers to questions and automated tests that should be run at the bottom. Be sure to clearly label all of your answers and commit final tests at the end.
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#before-you-begin">
+   1.2. BEFORE YOU BEGIN
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-notebooks-in-colaboratory">
+     1.2.1. Working with Notebooks in Colaboratory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-data">
+     1.2.2. Working with Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-these-cells">
+   1.3. Run these Cells
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-packages">
+     1.3.1. Installing Packages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-fastparquet-package-to-be-able-to-work-with-parquet-files">
+     1.3.2. Install the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       fastparquet
+      </span>
+     </code>
+     Package to be able to work with Parquet Files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-csv-into-a-pandas-dataframe">
+     1.3.3. Importing CSV into a Pandas Dataframe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-csv-from-web-to-colab-using-wget">
+     1.3.4. Download CSV from Web to Colab using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       wget
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enter-your-information">
+   1.4. Enter your information
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#homework-rubric">
+   1.5. Homework Rubric
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-sure-that-this-entire-notebook-runs-without-errors-to-test-this-do-runtime-restart-and-run-all">
+     1.5.1. MAKE SURE THAT THIS ENTIRE NOTEBOOK RUNS WITHOUT ERRORS. TO TEST THIS DO RUNTIME –&gt; RESTART AND RUN ALL
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -348,19 +400,18 @@
         
               <div>
                 
-  <div class="section" id="homework-01-instructions">
-<h1><span class="section-number">1. </span>Homework 01 - Instructions<a class="headerlink" href="#homework-01-instructions" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="assignment-1">
+<h1><span class="section-number">1. </span>Assignment 1<a class="headerlink" href="#assignment-1" title="Permalink to this headline">¶</a></h1>
 <p><img alt="" src="https://github.com/rpi-techfundamentals/hm-01-starter/blob/master/notsaved.png?raw=1" /></p>
 <p>Before you turn this problem in, make sure everything runs as expected. First, restart the kernel (in the menubar, select Kernel → Restart) and then run all cells (in the menubar, select Cell → Run All).  You can speak with others regarding the assignment but all work must be your own.</p>
 <div class="section" id="this-is-a-30-point-assignment-graded-from-answers-to-questions-and-automated-tests-that-should-be-run-at-the-bottom-be-sure-to-clearly-label-all-of-your-answers-and-commit-final-tests-at-the-end">
 <h2><span class="section-number">1.1. </span>This is a 30 point assignment graded from answers to questions and automated tests that should be run at the bottom. Be sure to clearly label all of your answers and commit final tests at the end.<a class="headerlink" href="#this-is-a-30-point-assignment-graded-from-answers-to-questions-and-automated-tests-that-should-be-run-at-the-bottom-be-sure-to-clearly-label-all-of-your-answers-and-commit-final-tests-at-the-end" title="Permalink to this headline">¶</a></h2>
 </div>
-</div>
 <div class="section" id="before-you-begin">
-<h1><span class="section-number">2. </span>BEFORE YOU BEGIN<a class="headerlink" href="#before-you-begin" title="Permalink to this headline">¶</a></h1>
+<h2><span class="section-number">1.2. </span>BEFORE YOU BEGIN<a class="headerlink" href="#before-you-begin" title="Permalink to this headline">¶</a></h2>
 <p>Please work through each of these notebooks, which will give you some understanding of the Google Colab environment.</p>
 <div class="section" id="working-with-notebooks-in-colaboratory">
-<h2><span class="section-number">2.1. </span>Working with Notebooks in Colaboratory<a class="headerlink" href="#working-with-notebooks-in-colaboratory" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">1.2.1. </span>Working with Notebooks in Colaboratory<a class="headerlink" href="#working-with-notebooks-in-colaboratory" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://colab.research.google.com/notebooks/basic_features_overview.ipynb">Overview of Colaboratory</a></p></li>
 <li><p><a class="reference external" href="https://colab.research.google.com/notebooks/markdown_guide.ipynb">Guide to Markdown</a></p></li>
@@ -369,7 +420,7 @@
 </ul>
 </div>
 <div class="section" id="working-with-data">
-<h2><span class="section-number">2.2. </span>Working with Data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">1.2.2. </span>Working with Data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">¶</a></h3>
 <p>Some of this is a bit more advanced, but at this point just make sure you know where the code is for how to upload and download a file.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://colab.research.google.com/notebooks/io.ipynb">Loading data: Drive, Sheets, and Google Cloud Storage</a></p></li>
@@ -377,7 +428,7 @@
 </div>
 </div>
 <div class="section" id="run-these-cells">
-<h1><span class="section-number">3. </span>Run these Cells<a class="headerlink" href="#run-these-cells" title="Permalink to this headline">¶</a></h1>
+<h2><span class="section-number">1.3. </span>Run these Cells<a class="headerlink" href="#run-these-cells" title="Permalink to this headline">¶</a></h2>
 <p>This will setup the automated testing environment on Colab</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -413,44 +464,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-
-
-        <p>0 of 1 tests passed</p>
-
-
-        <p> <strong>Tests failed: </strong>
-            <ul>
-
-                <li> 
-    <p><strong style='color: red;'>./tests/q01.py</strong></p>
-    <p><strong>Test code:</strong><pre><div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>x
-<span style="color: #888888">150</span>
-</pre></div>
-</pre></p>
-    <p><strong>Test result:</strong><pre>Trying:
-    x
-Expecting:
-    150
-**********************************************************************
-Line 2, in ./tests/q01.py 0
-Failed example:
-    x
-Exception raised:
-    Traceback (most recent call last):
-      File "/Users/jasonkuruzovich/anaconda3/envs/tf2/lib/python3.7/doctest.py", line 1329, in __run
-        compileflags, 1), test.globs)
-      File "<doctest ./tests/q01.py 0[0]>", line 1, in <module>
-        x
-    NameError: name 'x' is not defined
-</pre></p>
-     </li>
-
-            </ul>
-
-
-</div></div>
 </div>
 <p><strong>Question 2.</strong></p>
 <p>Packages are really important compontent of most programming languages.</p>
@@ -497,7 +510,7 @@ For the above sub-header, make it an h5 tag using markdown.</p>
 (Embed this image)</p>
 <p><strong>Question 4.</strong></p>
 <div class="section" id="installing-packages">
-<h2><span class="section-number">3.1. </span>Installing Packages<a class="headerlink" href="#installing-packages" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">1.3.1. </span>Installing Packages<a class="headerlink" href="#installing-packages" title="Permalink to this headline">¶</a></h3>
 <p>Python packages are an important part of data science and critical to leveraging the broader Python ecosystem.</p>
 <p>You typically have two options when installing a package. You can install it with <a class="reference external" href="http://anaconda.org">Conda</a> or <a class="reference external" href="https://pypi.org">pip</a>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">!</span></code> in a jupyter notebook means that the line is being processed on the <code class="docutils literal notranslate"><span class="pre">commmand</span> <span class="pre">line</span></code> and not by the Python interpreter.</p>
@@ -510,7 +523,7 @@ For the above sub-header, make it an h5 tag using markdown.</p>
 <p>If you try to import something and get an error, it is usally a tell that you need to install a package.</p>
 </div>
 <div class="section" id="install-the-fastparquet-package-to-be-able-to-work-with-parquet-files">
-<h2><span class="section-number">3.2. </span>Install the <code class="docutils literal notranslate"><span class="pre">fastparquet</span></code> Package to be able to work with Parquet Files<a class="headerlink" href="#install-the-fastparquet-package-to-be-able-to-work-with-parquet-files" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">1.3.2. </span>Install the <code class="docutils literal notranslate"><span class="pre">fastparquet</span></code> Package to be able to work with Parquet Files<a class="headerlink" href="#install-the-fastparquet-package-to-be-able-to-work-with-parquet-files" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>CSV (comma delimited  files are great for humans to read and understand.</p></li>
 <li><p>For “big data” though, it isn’t a great long term storage option (inefficient/slow).</p></li>
@@ -556,7 +569,7 @@ For the above sub-header, make it an h5 tag using markdown.</p>
 <p><strong>Question 5.</strong></p>
 </div>
 <div class="section" id="importing-csv-into-a-pandas-dataframe">
-<h2><span class="section-number">3.3. </span>Importing CSV into a Pandas Dataframe<a class="headerlink" href="#importing-csv-into-a-pandas-dataframe" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">1.3.3. </span>Importing CSV into a Pandas Dataframe<a class="headerlink" href="#importing-csv-into-a-pandas-dataframe" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Comma delimited files are a common way of transmitting data.</p></li>
 <li><p>Data for different columns is separated by a comma.</p></li>
@@ -567,7 +580,7 @@ For the above sub-header, make it an h5 tag using markdown.</p>
 </ul>
 </div>
 <div class="section" id="download-csv-from-web-to-colab-using-wget">
-<h2><span class="section-number">3.4. </span>Download CSV from Web to Colab using <code class="docutils literal notranslate"><span class="pre">wget</span></code><a class="headerlink" href="#download-csv-from-web-to-colab-using-wget" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">1.3.4. </span>Download CSV from Web to Colab using <code class="docutils literal notranslate"><span class="pre">wget</span></code><a class="headerlink" href="#download-csv-from-web-to-colab-using-wget" title="Permalink to this headline">¶</a></h3>
 <p>Click this link <a class="reference external" href="https://data.cityofnewyork.us/api/views/kku6-nxdu/rows.csv?accessType=DOWNLOAD">https://data.cityofnewyork.us/api/views/kku6-nxdu/rows.csv?accessType=DOWNLOAD</a>
 to download the file to your local computer.</p>
 <p>To get the file onto the colab computational environment, the easiest way is to use wget.  If you have something on google drive, saving</p>
@@ -605,19 +618,20 @@ to download the file to your local computer.</p>
 </div>
 </div>
 <div class="section" id="enter-your-information">
-<h1><span class="section-number">4. </span>Enter your information<a class="headerlink" href="#enter-your-information" title="Permalink to this headline">¶</a></h1>
+<h2><span class="section-number">1.4. </span>Enter your information<a class="headerlink" href="#enter-your-information" title="Permalink to this headline">¶</a></h2>
 <p>This is required to make sure that you get credit for the assignment.</p>
 </div>
 <div class="section" id="homework-rubric">
-<h1><span class="section-number">5. </span>Homework Rubric<a class="headerlink" href="#homework-rubric" title="Permalink to this headline">¶</a></h1>
+<h2><span class="section-number">1.5. </span>Homework Rubric<a class="headerlink" href="#homework-rubric" title="Permalink to this headline">¶</a></h2>
 <p>The following Rubric will be used to grade homwork.
 4 pts. x 6 questions.
 6 points for commit to github and 0 errors.
 30 points total.</p>
 <div class="section" id="make-sure-that-this-entire-notebook-runs-without-errors-to-test-this-do-runtime-restart-and-run-all">
-<h2><span class="section-number">5.1. </span>MAKE SURE THAT THIS ENTIRE NOTEBOOK RUNS WITHOUT ERRORS. TO TEST THIS DO RUNTIME –&gt; RESTART AND RUN ALL<a class="headerlink" href="#make-sure-that-this-entire-notebook-runs-without-errors-to-test-this-do-runtime-restart-and-run-all" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">1.5.1. </span>MAKE SURE THAT THIS ENTIRE NOTEBOOK RUNS WITHOUT ERRORS. TO TEST THIS DO RUNTIME –&gt; RESTART AND RUN ALL<a class="headerlink" href="#make-sure-that-this-entire-notebook-runs-without-errors-to-test-this-do-runtime-restart-and-run-all" title="Permalink to this headline">¶</a></h3>
 <p>It should complete till the end.</p>
 <p>This work is licensed under the <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a> license agreement.</p>
+</div>
 </div>
 </div>
 
