@@ -19,10 +19,3 @@ This class introduces some basic computational background the Python computation
 |         2 | Numpy [Link](../notebooks/01-intro-python/03-numpy)                          |
 |         2 | Pandas [Link](../notebooks/01-intro-python/04-pandas)                        |
 
-
-## Assignment
-
-|   Session | Assignment                                                                                 | Due        |
-|----------:|:-------------------------------------------------------------------------------------------|:-----------|
-|         2 | This will test your ability to use Jupyter notebooks.  [Starter](../assignments/02starter) | 2020-09-10 |
-

@@ -14,7 +14,7 @@ In this class we motivate the overall field of data science, machine learning, a
 
 ## Assignment
 
-|   Session | Assignment                                                                                                                                                                                                                                                                                                       | Due        |
-|----------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
-|         1 | In this starter assignment, we are just going to try and test that everyone can go through and utilize some of the basic technologies we will use in the class, including Excel Solver. [Starter](https://github.com/rpi-techfundamentals/introml_website_fall_2020/raw/master/files/assignments/01starter.xlsx) | 2020-09-07 |
+|   Session | Assignment                                                                                                                                | Due        |
+|----------:|:------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
+|         1 | In this starter assignment, we will get some basic understanding of working with files and packages.  [Starter](../assignments/01starter) | 2020-09-07 |
 
