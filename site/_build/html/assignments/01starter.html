@@ -1,0 +1,684 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>1. Homework 01 - Instructions &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="11. Kaggle Baseline" href="../notebooks/02-intro-python/05-kaggle-baseline.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Introduction to Machine Learning Applications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  OVERVIEW
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/preparation.html">
+   Before Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/in_class.html">
+   In Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/assignments.html">
+   Assignments
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SESSIONS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session1.html">
+   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session2.html">
+   2. Python Basics (09/03)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session3.html">
+   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session4.html">
+   4. Python conditionals, loops, functions, aggregating.  (09/10)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NOTEBOOKS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01-intro-python/01-python-overview.html">
+   1. Overview of Python Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01-intro-python/02-datastructures.html">
+   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01-intro-python/03-numpy.html">
+   3. Overview of Numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01-intro-python/04-pandas.html">
+   4. Introduction to Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-intro-python/01-conditionals-loops.html">
+   5. Conditional Statements and Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-intro-python/01-conditionals-loops.html#what-are-conditional-statements-why-do-we-need-them">
+   6. What are conditional statements? Why do we need them?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-intro-python/02-functions.html">
+   7. Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-intro-python/03-null-values.html">
+   8. Null Values
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-intro-python/04-groupby.html">
+   9. Groupby and Pivot Tables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-intro-python/04-pivottable.html">
+   10. More Pivottables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-intro-python/05-kaggle-baseline.html">
+   11. Kaggle Baseline
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  ASSIGNMENTS
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Homework 01 - Instructions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#before-you-begin">
+   2. BEFORE YOU BEGIN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#run-these-cells">
+   3. Run these Cells
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#enter-your-information">
+   4. Enter your information
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#homework-rubric">
+   5. Homework Rubric
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/assignments/01starter.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020/issues/new?title=Issue%20on%20page%20%2Fassignments/01starter.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rpi-techfundamentals/introml_website_fall_2020/blob/master/site/assignments/01starter.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-is-a-30-point-assignment-graded-from-answers-to-questions-and-automated-tests-that-should-be-run-at-the-bottom-be-sure-to-clearly-label-all-of-your-answers-and-commit-final-tests-at-the-end">
+   1.1. This is a 30 point assignment graded from answers to questions and automated tests that should be run at the bottom. Be sure to clearly label all of your answers and commit final tests at the end.
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="homework-01-instructions">
+<h1><span class="section-number">1. </span>Homework 01 - Instructions<a class="headerlink" href="#homework-01-instructions" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="https://github.com/rpi-techfundamentals/hm-01-starter/blob/master/notsaved.png?raw=1" /></p>
+<p>Before you turn this problem in, make sure everything runs as expected. First, restart the kernel (in the menubar, select Kernel → Restart) and then run all cells (in the menubar, select Cell → Run All).  You can speak with others regarding the assignment but all work must be your own.</p>
+<div class="section" id="this-is-a-30-point-assignment-graded-from-answers-to-questions-and-automated-tests-that-should-be-run-at-the-bottom-be-sure-to-clearly-label-all-of-your-answers-and-commit-final-tests-at-the-end">
+<h2><span class="section-number">1.1. </span>This is a 30 point assignment graded from answers to questions and automated tests that should be run at the bottom. Be sure to clearly label all of your answers and commit final tests at the end.<a class="headerlink" href="#this-is-a-30-point-assignment-graded-from-answers-to-questions-and-automated-tests-that-should-be-run-at-the-bottom-be-sure-to-clearly-label-all-of-your-answers-and-commit-final-tests-at-the-end" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="before-you-begin">
+<h1><span class="section-number">2. </span>BEFORE YOU BEGIN<a class="headerlink" href="#before-you-begin" title="Permalink to this headline">¶</a></h1>
+<p>Please work through each of these notebooks, which will give you some understanding of the Google Colab environment.</p>
+<div class="section" id="working-with-notebooks-in-colaboratory">
+<h2><span class="section-number">2.1. </span>Working with Notebooks in Colaboratory<a class="headerlink" href="#working-with-notebooks-in-colaboratory" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://colab.research.google.com/notebooks/basic_features_overview.ipynb">Overview of Colaboratory</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/notebooks/markdown_guide.ipynb">Guide to Markdown</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/notebooks/snippets/importing_libraries.ipynb">Importing libraries and installing dependencies</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb">Saving and loading notebooks in GitHub</a></p></li>
+</ul>
+</div>
+<div class="section" id="working-with-data">
+<h2><span class="section-number">2.2. </span>Working with Data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">¶</a></h2>
+<p>Some of this is a bit more advanced, but at this point just make sure you know where the code is for how to upload and download a file.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://colab.research.google.com/notebooks/io.ipynb">Loading data: Drive, Sheets, and Google Cloud Storage</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="run-these-cells">
+<h1><span class="section-number">3. </span>Run these Cells<a class="headerlink" href="#run-these-cells" title="Permalink to this headline">¶</a></h1>
+<p>This will setup the automated testing environment on Colab</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>files = &quot;https://github.com/rpi-techfundamentals/hm-01-starter/raw/master/files.zip&quot; 
+!pip install otter-grader &amp;&amp; wget $files &amp;&amp; unzip -o files.zip
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run this. It initiates autograding. </span>
+<span class="kn">import</span> <span class="nn">otter</span>
+<span class="n">grader</span> <span class="o">=</span> <span class="n">otter</span><span class="o">.</span><span class="n">Notebook</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Question 1.</strong></p>
+<p>In the next cell, assign the value for <code class="docutils literal notranslate"><span class="pre">x</span></code> too 150.  Set the value for <code class="docutils literal notranslate"><span class="pre">y</span></code> to 13 times <code class="docutils literal notranslate"><span class="pre">x</span></code> , and set the value for <code class="docutils literal notranslate"><span class="pre">z</span></code> to <code class="docutils literal notranslate"><span class="pre">y</span></code> divided by <code class="docutils literal notranslate"><span class="pre">x</span></code> squared.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#enter your answer here</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run this cell to see if you passed the test.  If it fails, you probably didn&#39;t run the above required code. </span>
+<span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q01&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+
+
+        <p>0 of 1 tests passed</p>
+
+
+        <p> <strong>Tests failed: </strong>
+            <ul>
+
+                <li> 
+    <p><strong style='color: red;'>./tests/q01.py</strong></p>
+    <p><strong>Test code:</strong><pre><div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>x
+<span style="color: #888888">150</span>
+</pre></div>
+</pre></p>
+    <p><strong>Test result:</strong><pre>Trying:
+    x
+Expecting:
+    150
+**********************************************************************
+Line 2, in ./tests/q01.py 0
+Failed example:
+    x
+Exception raised:
+    Traceback (most recent call last):
+      File "/Users/jasonkuruzovich/anaconda3/envs/tf2/lib/python3.7/doctest.py", line 1329, in __run
+        compileflags, 1), test.globs)
+      File "<doctest ./tests/q01.py 0[0]>", line 1, in <module>
+        x
+    NameError: name 'x' is not defined
+</pre></p>
+     </li>
+
+            </ul>
+
+
+</div></div>
+</div>
+<p><strong>Question 2.</strong></p>
+<p>Packages are really important compontent of most programming languages.</p>
+<p>In the overview, you learnned about tab completion as a way to explore python objects.  This can be really useful.  Let’s use it to find the formula for the the factorial of 15. Assign the results to the variable <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#we have to first import the math function to use tab completion. </span>
+<span class="kn">import</span> <span class="nn">math</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Assign the result to the variable m.</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run this cell to see if you passed the test.  If it fails, you probably didn&#39;t run the above required code. </span>
+<span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q02&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Question 3.</strong></p>
+<p>Markdown is a useful aspect of Jupyter Notebooks.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://colab.research.google.com/notebooks/markdown_guide.ipynb">Guide to Markdown</a></p></li>
+</ul>
+<p>Use what you learned about markdown to adjust the text below to create the following:
+<img alt="" src="https://github.com/rpi-techfundamentals/hm-01-starter/blob/master/md_result.png?raw=1" /></p>
+<p>Header
+For the above header, make it an h1 tag using markdown.</p>
+<p>Sub-Header
+For the above sub-header, make it an h5 tag using markdown.</p>
+<p>Bold</p>
+<p>Italics</p>
+<p>https://tw.rpi.edu//images/rpi-logo-red.jpg<br />
+(Embed this image)</p>
+<p><strong>Question 4.</strong></p>
+<div class="section" id="installing-packages">
+<h2><span class="section-number">3.1. </span>Installing Packages<a class="headerlink" href="#installing-packages" title="Permalink to this headline">¶</a></h2>
+<p>Python packages are an important part of data science and critical to leveraging the broader Python ecosystem.</p>
+<p>You typically have two options when installing a package. You can install it with <a class="reference external" href="http://anaconda.org">Conda</a> or <a class="reference external" href="https://pypi.org">pip</a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">!</span></code> in a jupyter notebook means that the line is being processed on the <code class="docutils literal notranslate"><span class="pre">commmand</span> <span class="pre">line</span></code> and not by the Python interpreter.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!conda install -c conda-forge &lt;packagename&gt;
+
+!pip install &lt;packagename&gt;
+
+</pre></div>
+</div>
+<p>If you try to import something and get an error, it is usally a tell that you need to install a package.</p>
+</div>
+<div class="section" id="install-the-fastparquet-package-to-be-able-to-work-with-parquet-files">
+<h2><span class="section-number">3.2. </span>Install the <code class="docutils literal notranslate"><span class="pre">fastparquet</span></code> Package to be able to work with Parquet Files<a class="headerlink" href="#install-the-fastparquet-package-to-be-able-to-work-with-parquet-files" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>CSV (comma delimited  files are great for humans to read and understand.</p></li>
+<li><p>For “big data” though, it isn’t a great long term storage option (inefficient/slow).</p></li>
+<li><p>Parquet is a type columnar storage format.  It makes dealing with lots of columns fast.</p></li>
+<li><p><a class="reference external" href="https://fastparquet.readthedocs.io">fastparquet</a> is a Python package for dealing with Parquet files.</p></li>
+<li><p>Apache Spark also natively reads Parquet Files.</p></li>
+<li><p>Look <a class="reference external" href="https://pypi.org/project/fastparquet/">here</a> for instructions on installing the fastparquet package.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Install package for fastparquet here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#This gets a parque file we can use to test. 
+!wget https://github.com/rpi-techfundamentals/hm-01-starter/raw/master/Demographic_Statistics_By_Zip_Code.parq
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run this to try to load the name.parq. It won&#39;t work unless you downloaded the file and installed the package. </span>
+<span class="kn">from</span> <span class="nn">fastparquet</span> <span class="kn">import</span> <span class="n">ParquetFile</span>  <span class="c1">#This imports the package. </span>
+<span class="n">pf</span> <span class="o">=</span> <span class="n">ParquetFile</span><span class="p">(</span><span class="s1">&#39;Demographic_Statistics_By_Zip_Code.parq&#39;</span><span class="p">)</span>
+<span class="n">dfparq</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>   <span class="c1">#This changes the Parquet File object to a pandas dataframe. We will learn more about that later. </span>
+<span class="n">dfparq</span>  <span class="c1">#Just listing the value prints it out. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run this cell to see if you passed the test.  </span>
+<span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q04&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Question 5.</strong></p>
+</div>
+<div class="section" id="importing-csv-into-a-pandas-dataframe">
+<h2><span class="section-number">3.3. </span>Importing CSV into a Pandas Dataframe<a class="headerlink" href="#importing-csv-into-a-pandas-dataframe" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Comma delimited files are a common way of transmitting data.</p></li>
+<li><p>Data for different columns is separated by a comma.</p></li>
+<li><p>It is possible to open a csv in different ways, but Pandas is the easiest.</p></li>
+<li><p>Data structured like CSV’s are extremely common and known as tabular data.</p></li>
+<li><p>Pandas will give access to many useful methods for working with data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> is often imported as the abbreviated <code class="docutils literal notranslate"><span class="pre">pd</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="download-csv-from-web-to-colab-using-wget">
+<h2><span class="section-number">3.4. </span>Download CSV from Web to Colab using <code class="docutils literal notranslate"><span class="pre">wget</span></code><a class="headerlink" href="#download-csv-from-web-to-colab-using-wget" title="Permalink to this headline">¶</a></h2>
+<p>Click this link <a class="reference external" href="https://data.cityofnewyork.us/api/views/kku6-nxdu/rows.csv?accessType=DOWNLOAD">https://data.cityofnewyork.us/api/views/kku6-nxdu/rows.csv?accessType=DOWNLOAD</a>
+to download the file to your local computer.</p>
+<p>To get the file onto the colab computational environment, the easiest way is to use wget.  If you have something on google drive, saving</p>
+<p><code class="docutils literal notranslate"><span class="pre">!wget</span> <span class="pre">-O</span> <span class="pre">&lt;filename</span> <span class="pre">you</span> <span class="pre">want</span> <span class="pre">to</span> <span class="pre">save</span> <span class="pre">to&gt;</span> <span class="pre">&lt;link</span> <span class="pre">to</span> <span class="pre">file&gt;</span></code></p>
+<p>For example:
+<code class="docutils literal notranslate"><span class="pre">!wget</span> <span class="pre">-O</span> <span class="pre">foo.csv</span> <span class="pre">https://data.us/122/?accessType=DOWNLOAD</span></code></p>
+<p>You can read more about wget <a class="reference external" href="https://www.electrictoolbox.com/wget-save-different-filename/">here</a>.</p>
+<p><strong>Note that this is not a strategy for data that needs to remain secured, as anyone with access to your notebook would also gain access to the file.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Insert your wget command here</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will load the local name.csv file into a Pandas dataframe.  We will work with these a lot in the future.</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># This line imports the pandas package. </span>
+<span class="n">dfcsv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Demographic_Statistics_By_Zip_Code.csv&#39;</span><span class="p">)</span> 
+<span class="n">dfcsv</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run this cell to see if you passed the test.  </span>
+<span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q05&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="enter-your-information">
+<h1><span class="section-number">4. </span>Enter your information<a class="headerlink" href="#enter-your-information" title="Permalink to this headline">¶</a></h1>
+<p>This is required to make sure that you get credit for the assignment.</p>
+</div>
+<div class="section" id="homework-rubric">
+<h1><span class="section-number">5. </span>Homework Rubric<a class="headerlink" href="#homework-rubric" title="Permalink to this headline">¶</a></h1>
+<p>The following Rubric will be used to grade homwork.
+4 pts. x 6 questions.
+6 points for commit to github and 0 errors.
+30 points total.</p>
+<div class="section" id="make-sure-that-this-entire-notebook-runs-without-errors-to-test-this-do-runtime-restart-and-run-all">
+<h2><span class="section-number">5.1. </span>MAKE SURE THAT THIS ENTIRE NOTEBOOK RUNS WITHOUT ERRORS. TO TEST THIS DO RUNTIME –&gt; RESTART AND RUN ALL<a class="headerlink" href="#make-sure-that-this-entire-notebook-runs-without-errors-to-test-this-do-runtime-restart-and-run-all" title="Permalink to this headline">¶</a></h2>
+<p>It should complete till the end.</p>
+<p>This work is licensed under the <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a> license agreement.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./assignments"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../notebooks/02-intro-python/05-kaggle-baseline.html" title="previous page"><span class="section-number">11. </span>Kaggle Baseline</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jason Kuruzovich<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-32817743-6', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

@@ -26,3 +26,7 @@
   - file: notebooks/02-intro-python/04-groupby
   - file: notebooks/02-intro-python/04-pivottable
   - file: notebooks/02-intro-python/05-kaggle-baseline
+- part: ASSIGNMENTS
+  numbered: true
+  chapters:
+  - file: assignments/01starter
