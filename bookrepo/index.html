@@ -1,0 +1,520 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Machine Learning Notebooks &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Introduction to Machine Learning Applications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  OVERVIEW
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/preparation.html">
+   Before Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/in_class.html">
+   In Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/assignments.html">
+   Assignments
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SESSIONS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session1.html">
+   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session2.html">
+   2. Python Basics (09/03)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session3.html">
+   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sessions/session4.html">
+   4. Python conditionals, loops, functions, aggregating.  (09/10)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NOTEBOOKS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01-intro-python/01-python-overview.html">
+   1. Overview of Python Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01-intro-python/02-datastructures.html">
+   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01-intro-python/03-numpy.html">
+   3. Overview of Numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01-intro-python/04-pandas.html">
+   4. Introduction to Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-intro-python/01-conditionals-loops.html">
+   5. Conditional Statements and Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-intro-python/01-conditionals-loops.html#what-are-conditional-statements-why-do-we-need-them">
+   6. What are conditional statements? Why do we need them?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-intro-python/02-functions.html">
+   7. Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-intro-python/03-null-values.html">
+   8. Null Values
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-intro-python/04-groupby.html">
+   9. Groupby and Pivot Tables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-intro-python/04-pivottable.html">
+   10. More Pivottables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-intro-python/05-kaggle-baseline.html">
+   11. Kaggle Baseline
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  ASSIGNMENTS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/01starter.html">
+   1. Homework 01 - Instructions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/01starter.html#before-you-begin">
+   2. BEFORE YOU BEGIN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/01starter.html#run-these-cells">
+   3. Run these Cells
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/01starter.html#enter-your-information">
+   4. Enter your information
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/01starter.html#homework-rubric">
+   5. Homework Rubric
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/bookrepo/index.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020/issues/new?title=Issue%20on%20page%20%2Fbookrepo/index.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rpi-techfundamentals/introml_website_fall_2020/blob/master/site/bookrepo/index.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notebooks">
+   Notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scientific-python-tutorials">
+   Scientific Python tutorials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#math-tutorials">
+   Math Tutorials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-material">
+   Extra Material
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#misc">
+   Misc.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-understand">
+     To understand
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-run-the-examples">
+     To run the examples
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="machine-learning-notebooks">
+<h1>Machine Learning Notebooks<a class="headerlink" href="#machine-learning-notebooks" title="Permalink to this headline">¶</a></h1>
+<p><em>Welcome to the Machine Learning Notebooks!</em></p>
+<p><a class="reference external" href="#Prerequisites">Prerequisites</a> (see below)</p>
+<div class="section" id="notebooks">
+<h2>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference internal" href="01_the_machine_learning_landscape.html"><span class="doc std std-doc">The Machine Learning landscape</span></a></p></li>
+<li><p><a class="reference internal" href="02_end_to_end_machine_learning_project.html"><span class="doc std std-doc">End-to-end Machine Learning project</span></a></p></li>
+<li><p><a class="reference internal" href="03_classification.html"><span class="doc std std-doc">Classification</span></a></p></li>
+<li><p><a class="reference internal" href="04_training_linear_models.html"><span class="doc std std-doc">Training Models</span></a></p></li>
+<li><p><a class="reference internal" href="05_support_vector_machines.html"><span class="doc std std-doc">Support Vector Machines</span></a></p></li>
+<li><p><a class="reference internal" href="06_decision_trees.html"><span class="doc std std-doc">Decision Trees</span></a></p></li>
+<li><p><a class="reference internal" href="07_ensemble_learning_and_random_forests.html"><span class="doc std std-doc">Ensemble Learning and Random Forests</span></a></p></li>
+<li><p><a class="reference internal" href="08_dimensionality_reduction.html"><span class="doc std std-doc">Dimensionality Reduction</span></a></p></li>
+<li><p><a class="reference internal" href="09_unsupervised_learning.html"><span class="doc std std-doc">Unsupervised Learning Techniques</span></a></p></li>
+<li><p><a class="reference internal" href="10_neural_nets_with_keras.html"><span class="doc std std-doc">Artificial Neural Nets with Keras</span></a></p></li>
+<li><p><a class="reference internal" href="11_training_deep_neural_networks.html"><span class="doc std std-doc">Training Deep Neural Networks</span></a></p></li>
+<li><p><a class="reference internal" href="12_custom_models_and_training_with_tensorflow.html"><span class="doc std std-doc">Custom Models and Training with TensorFlow</span></a></p></li>
+<li><p><a class="reference internal" href="13_loading_and_preprocessing_data.html"><span class="doc std std-doc">Loading and Preprocessing Data</span></a></p></li>
+<li><p><a class="reference internal" href="14_deep_computer_vision_with_cnns.html"><span class="doc std std-doc">Deep Computer Vision Using Convolutional Neural Networks</span></a></p></li>
+<li><p><a class="reference internal" href="15_processing_sequences_using_rnns_and_cnns.html"><span class="doc std std-doc">Processing Sequences Using RNNs and CNNs</span></a></p></li>
+<li><p><a class="reference internal" href="16_nlp_with_rnns_and_attention.html"><span class="doc std std-doc">Natural Language Processing with RNNs and Attention</span></a></p></li>
+<li><p><span class="xref myst">Representation Learning Using Autoencoders</span></p></li>
+<li><p><a class="reference internal" href="18_reinforcement_learning.html"><span class="doc std std-doc">Reinforcement Learning</span></a></p></li>
+<li><p><a class="reference internal" href="19_training_and_deploying_at_scale.html"><span class="doc std std-doc">Training and Deploying TensorFlow Models at Scale</span></a></p></li>
+</ol>
+</div>
+<div class="section" id="scientific-python-tutorials">
+<h2>Scientific Python tutorials<a class="headerlink" href="#scientific-python-tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="tools_numpy.html"><span class="doc std std-doc">NumPy</span></a></p></li>
+<li><p><a class="reference internal" href="tools_matplotlib.html"><span class="doc std std-doc">Matplotlib</span></a></p></li>
+<li><p><a class="reference internal" href="tools_pandas.html"><span class="doc std std-doc">Pandas</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="math-tutorials">
+<h2>Math Tutorials<a class="headerlink" href="#math-tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="math_linear_algebra.html"><span class="doc std std-doc">Linear Algebra</span></a></p></li>
+<li><p><a class="reference internal" href="math_differential_calculus.html"><span class="doc std std-doc">Differential Calculus</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="extra-material">
+<h2>Extra Material<a class="headerlink" href="#extra-material" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="extra_autodiff.html"><span class="doc std std-doc">Auto-differentiation</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="misc">
+<h2>Misc.<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><span class="xref myst">Equations</span> (list of equations in the book)</p></li>
+</ul>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="to-understand">
+<h3>To understand<a class="headerlink" href="#to-understand" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Python</strong> – you don’t need to be an expert python programmer, but you do need to know the basics. If you don’t, the official <a class="reference external" href="https://docs.python.org/3/tutorial/">Python tutorial</a> is a good place to start.</p></li>
+<li><p><strong>Scientific Python</strong> – We will be using a few popular python libraries, in particular NumPy, matplotlib and pandas. If you are not familiar with these libraries, you should probably start by going through the tutorials in the Tools section (especially NumPy).</p></li>
+<li><p><strong>Math</strong> – We will also use some notions of Linear Algebra, Calculus, Statistics and Probability theory. You should be able to follow along if you learned these in the past as it won’t be very advanced, but if you don’t know about these topics or you need a refresher then go through the appropriate introduction in the Math section.</p></li>
+</ul>
+</div>
+<div class="section" id="to-run-the-examples">
+<h3>To run the examples<a class="headerlink" href="#to-run-the-examples" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Jupyter</strong> – These notebooks are based on Jupyter. You can run these notebooks in just one click using a hosted platform such as Binder, Deepnote or Colaboratory (no installation required), or you can just view them using Jupyter.org’s viewer, or you can install everything on your machine, as you prefer. Check out the <a class="reference external" href="https://github.com/ageron/handson-ml2/">home page</a> for more details.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./bookrepo"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jason Kuruzovich<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-32817743-6', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
