@@ -6,6 +6,7 @@ IMPORTANT LINKS
 - [RPI LMS](https://lms.rpi.edu/)
 - [WEBEX TEAMS Discussion Space](https://eurl.io/#KijTiY1Sa)
 - [WEBEX Meetings Classroom Link](https://rensselaer.webex.com/meet/kuruzj)
+- [Google shared drive](https://drive.google.com/drive/folders/1_5TGwja9jfGIi5FXMpLL_j5gkVuYC7U5?usp=sharing)
 
 
 This is the website for the Rensselaer class *Introduction to Machine Learning Applications*.
@@ -16,7 +17,7 @@ For class this semster, thank you in advance for complying with RPI mask policie
 
 Here is a quick reference for the systems that will be used in the class.  Please download the desktop copy of both Webex Meetings and Webex Teams via this [link](https://www.webex.com/downloads.html).
 
-## Webex Meetings: Hybrid Class Streaming  
+## Webex Meetings: Hybrid Class Streaming
 We will be using Webex Meetings to stream all classes.  The course recordings be made available through this website.
 [WEBEX Meetings Classroom Link](https://rensselaer.webex.com/meet/kuruzj)
 
@@ -28,9 +29,9 @@ I want to be very responsive to your questions and concerns as we go through the
 This website will be the primary source of content for the class. This includes readings, videos, Excel files, Jupyter notebooks, etc.
   - [Course Schedule](./content/schedule.md)  This covers when assignments are do.
   - Sessions Each day will summaries the variety of differnet activities on the session page.
-  - Assignments. All instructions for assignments will be provided in this website.  
+  - Assignments. All instructions for assignments will be provided in this website.
 
 ## LMS: Assignment Submission, Quizes, and Grading
   - Please be aware of the variety of course assignments listed on the schedule. We might even through a few quizes in there. These will done through the LMS.
   - In some cases, a starter excel spreadsheet or Jupyter notebook will be provided. Always upload the actual completed .xlsx file or .ipynb file for grading rather than a pdf.
-[RPI LMS](https://lms.rpi.edu/)     
+[RPI LMS](https://lms.rpi.edu/)
