@@ -52,7 +52,7 @@ content['Assignment']= pd.read_excel(excel_file, sheet_name = 'Assignments',  in
 
 #Create the syllabus link.
 #The second value of the index postion of the syllabus on the before class content.
-bd.create_syllabus(content['Before Class'],0,cf['syllabus_message'],content_path / 'syllabus.md', config['repository']['url'])
+#bd.create_syllabus(content['Before Class'],0,cf['syllabus_message'],content_path / 'syllabus.md', config['repository']['url'])
 
 
 # In[5]:
