@@ -7,11 +7,11 @@ IMPORTANT LINKS
 - [WEBEX TEAMS Homework Space](https://eurl.io/#8TF4_qsE9)
 
 SECTION 1
-- WEBEX Meetings Classroom Link [https://rensselaer.webex.com/meet/kuruzj](https://rensselaer.webex.com/meet/kuruzj)
+- Prof Kuruzovich WEBEX Meetings Classroom Link [https://rensselaer.webex.com/meet/kuruzj](https://rensselaer.webex.com/meet/kuruzj)
 - [Google Drive File link](https://drive.google.com/open?id=1IGle5FErQZB7QLa2H3vqraGL9Oglh07P)
 
 SECTION 2
-- WEBEX Meetings Classroom Link [https://rensselaer.webex.com/meet/morgat5](https://rensselaer.webex.com/meet/morgat5)
+- Prof Morgan WEBEX Meetings Classroom Link [https://rensselaer.webex.com/meet/morgat5](https://rensselaer.webex.com/meet/morgat5)
 - [Google Drive File link](https://drive.google.com/open?id=1IGle5FErQZB7QLa2H3vqraGL9Oglh07P)
 
 This is the website for the Rensselaer class *Introduction to Machine Learning Applications*.  Both sections 01 and 02..

@@ -35,6 +35,21 @@
   chapters:
   - file: notebooks/book/tools_numpy
   - file: notebooks/book/tools_pandas
+- part: IMPORTANT LINKS
+  numbered: true
+  chapters:
+  - url: https://lms.rpi.edu/
+    title: RPI LMS
+  - url: https://eurl.io/#KijTiY1Sa
+    title: Webex Teams Discussion
+  - url: https://eurl.io/#8TF4_qsE9
+    title: Webex Teams Homework
+  - url: https://rensselaer.webex.com/meet/kuruzj
+    title: Prof Kuruzovich Class Link
+  - url: https://rensselaer.webex.com/meet/morgat5
+    title: Prof Morgan Class Link
+  - url: https://drive.google.com/open?id=1IGle5FErQZB7QLa2H3vqraGL9Oglh07P
+    title: Google Drive (Files)
   #- file: notebooks/book/tools_matplotlib
   #- file: notebooks/book/01_the_machine_learning_landscape
   #- file: notebooks/book/02_end_to_end_machine_learning_project
