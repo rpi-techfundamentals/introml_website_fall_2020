@@ -8,11 +8,11 @@ IMPORTANT LINKS
 
 SECTION 1
 - Prof Kuruzovich WEBEX Meetings Classroom Link [https://rensselaer.webex.com/meet/kuruzj](https://rensselaer.webex.com/meet/kuruzj)
-- [Google Drive File link](https://drive.google.com/open?id=1IGle5FErQZB7QLa2H3vqraGL9Oglh07P)
+- [Google Drive File link](https://drive.google.com/open?id=1_5TGwja9jfGIi5FXMpLL_j5gkVuYC7U5)
 
 SECTION 2
 - Prof Morgan WEBEX Meetings Classroom Link [https://rensselaer.webex.com/meet/morgat5](https://rensselaer.webex.com/meet/morgat5)
-- [Google Drive File link](https://drive.google.com/open?id=1IGle5FErQZB7QLa2H3vqraGL9Oglh07P)
+- [Google Drive File link](https://drive.google.com/open?id=1_5TGwja9jfGIi5FXMpLL_j5gkVuYC7U5)
 
 This is the website for the Rensselaer class *Introduction to Machine Learning Applications*.  Both sections 01 and 02..
 
