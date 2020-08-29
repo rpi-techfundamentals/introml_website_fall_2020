@@ -14,7 +14,7 @@ In this class we will simply be providing a high level overview of the class.  W
 
 ## Assignment
 
-|   Session | Assignment                                                                                                                                                                                                                                                                                                       | Due        |
-|----------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
-|         1 | In this starter assignment, we are just going to try and test that everyone can go through and utilize some of the basic technologies we will use in the class, including Excel Solver. [Starter](https://github.com/rpi-techfundamentals/introml_website_fall_2020/raw/master/files/assignments/01starter.xlsx) | 2020-09-07 |
+|   Session | Assignment                                                                                                                                                                                                                                        | Due        |
+|----------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
+|         1 | This introductory assignment introduces the basics of loading files from a variety of formats and updating a number of different types of objects.  It also introduces the concepts of packages.  [Starter](../assignments/assignment1/01starter) | 2020-09-07 |
 
