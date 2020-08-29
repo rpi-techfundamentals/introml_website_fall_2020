@@ -27,7 +27,7 @@
   - file: notebooks/02-intro-python/04-pivottable
   - file: notebooks/02-intro-python/05-kaggle-baseline
 - part: ASSIGNMENT STARTERS
-  numbered: true
+  numbered: false
   chapters:
   - file: assignments/assignment1/01starter
 - part: BOOK NOTEBOOKS
