@@ -1,6 +1,6 @@
 # Assignment 1
 
-![](https://github.com/rpi-techfundamentals/hm-01-starter/blob/master/notsaved.png?raw=1)
+## ![](https://github.com/rpi-techfundamentals/hm-01-starter/blob/master/notsaved.png?raw=1) Before you start working on this assignment please click File -> Save a Copy in Drive. 
 
 
 Before you turn this problem in, make sure everything runs as expected. First, restart the kernel (in the menubar, select Kernel → Restart) and then run all cells (in the menubar, select Cell → Run All).  You can speak with others regarding the assignment but all work must be your own. 
@@ -199,6 +199,9 @@ grader.check('q05')
 ## MAKE SURE THAT THIS ENTIRE NOTEBOOK RUNS WITHOUT ERRORS. TO TEST THIS DO RUNTIME --> RESTART AND RUN ALL
 
 It should run without errors.  
+
+
+### Click File -> Download .ipynb to download the assignment.  Then Upload it to Assignment 1 in the LMS.
 
 
 
