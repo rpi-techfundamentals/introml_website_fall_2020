@@ -14,10 +14,11 @@ In this class we will simply be providing a high level overview of the class.  W
 
 ## In Class
 
-|   Session | Content                                                                 |
-|----------:|:------------------------------------------------------------------------|
-|         1 | Python Overview [Link](../notebooks/01-intro-python/01-python-overview) |
-|         1 | Assignment 1 [Link](../assignments/assignment1/01starter)               |
+|   Session | Content                                                                                   |
+|----------:|:------------------------------------------------------------------------------------------|
+|         1 | Python Overview [Link](../notebooks/01-intro-python/01-python-overview)                   |
+|         1 | Assignment 1 [Link](../assignments/assignment1/01starter)                                 |
+|         1 | Presentation 1 [Link](https://drive.google.com/open?id=1_5TGwja9jfGIi5FXMpLL_j5gkVuYC7U5) |
 
 
 ## Assignment
