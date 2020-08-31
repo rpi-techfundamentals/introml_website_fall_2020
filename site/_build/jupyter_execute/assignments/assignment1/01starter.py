@@ -30,7 +30,7 @@ Some of this is a bit more advanced, but at this point just make sure you know w
 This will setup the automated testing environment on Colab
 
 files = "https://github.com/rpi-techfundamentals/introml_website_fall_2020/raw/master/files/assignment1.zip" 
-!pip install otter-grader && wget $files && unzip -o files.zip
+!pip install otter-grader && wget $files && unzip -o assignment1.zip
 
 #Run this. It initiates autograding. 
 import otter
