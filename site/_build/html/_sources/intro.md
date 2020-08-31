@@ -14,7 +14,9 @@ SECTION 2
 - Prof Morgan WEBEX Meetings Classroom Link [https://rensselaer.webex.com/meet/morgat5](https://rensselaer.webex.com/meet/morgat5)
 - [Box File link](https://rpi.box.com/s/qdd5wlo58f5ludkxmb4yd17mgnyc0sbh)
 
-This is the website for the Rensselaer class *Introduction to Machine Learning Applications*.  Both sections 01 and 02..
+This is the website for the Rensselaer class *Introduction to Machine Learning Applications*.  Both sections 01 and 02.
+
+In order to be able to reach the Box file share, you will need an RPI Box Account.  Please sign up for it [here](https://itssc.rpi.edu/hc/en-us/articles/360004742212-Box-Overview-Registering-for-an-RPI-Box-Account).
 
 During these challenging times we are going to do our best to provide an engaging learning experience. We will be useing a combination of tools for the class and I wanted to provide that overview here.
 
