@@ -24,5 +24,5 @@ In this class we will simply be providing a high level overview of the class.  W
 
 |   Session | Assignment                                                                                                                                                                                                                                        | Due        |
 |----------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
-|         1 | This introductory assignment introduces the basics of loading files from a variety of formats and updating a number of different types of objects.  It also introduces the concepts of packages.  [Starter](../assignments/assignment1/01starter) | 2020-09-08 |
+|         1 | This introductory assignment introduces the basics of loading files from a variety of formats and updating a number of different types of objects.  It also introduces the concepts of packages.  [Starter](../assignments/assignment1/01starter) | 2020-09-10 |
 
