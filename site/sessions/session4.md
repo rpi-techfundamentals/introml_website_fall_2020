@@ -5,9 +5,9 @@ TBD [Link](../../sessions/session4)
 
 ## Before Class
 
-|   Session | Content                                                                                                                       |
-|----------:|:------------------------------------------------------------------------------------------------------------------------------|
-|         4 | Chapter 2: End to End Machine Learning Project [Link](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/) |
+|   Session | Content                                                                                                                                     |
+|----------:|:--------------------------------------------------------------------------------------------------------------------------------------------|
+|         4 | Chapter 2: End to End Machine Learning Project [Link](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646/) |
 
 
 ## In Class
