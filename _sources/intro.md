@@ -30,7 +30,7 @@ We will be using Webex Meetings to stream all classes.  The course recordings be
 we want to be very responsive to your questions and concerns as we go through the class.  Webex Teams *(NOT EMAIL)* is the best way to reach me.  We would suggest downloading the Webex Teams application for your phone and desktop.  Because Webex meeting chats do not persist, we are going to use the Webex Teams space for text discussions even when streaming from Webex meetings.
 [WEBEX TEAMS Discussion Space](https://eurl.io/#KijTiY1Sa)
 
-This semester could be challenging if you don't know others from the class and are working remotely.  Feel free to use this as a drop in space.  Create a meeting and collaborate with others.  
+This semester could be challenging if you don't know others from the class and are working remotely.  Feel free to use this as a drop in space.  Create a meeting and collaborate with others.
 - [WEBEX TEAMS Homework Space](https://eurl.io/#8TF4_qsE9)
 
 ## Course Content
@@ -54,4 +54,8 @@ This website will be the primary source of content for the class. This includes 
 
 
 
-Previous versions of the class can be found at spring_2020
+Previous versions of the class can be found at:
+
+Spring 2020 [https://rpispring2020.analyticsdojo.com/](https://rpispring2020.analyticsdojo.com/)
+
+Fall 2019 [https://rpifall2019.analyticsdojo.com/](https://rpifall2019.analyticsdojo.com/)
