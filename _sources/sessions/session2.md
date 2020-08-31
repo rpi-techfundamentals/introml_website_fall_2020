@@ -5,9 +5,9 @@ More detail on specific approches. [Link](../../sessions/session2)
 
 ## Before Class
 
-|   Session | Content                                                                                                                  |
-|----------:|:-------------------------------------------------------------------------------------------------------------------------|
-|         2 | Chapter 1: The Machine Learning Landscape [Link](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/) |
+|   Session | Content                                                                                                                                |
+|----------:|:---------------------------------------------------------------------------------------------------------------------------------------|
+|         2 | Chapter 1: The Machine Learning Landscape [Link](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646/) |
 
 
 ## In Class
