@@ -14,10 +14,11 @@ In this class we will simply be providing a high level overview of the class.  W
 
 ## In Class
 
-|   Session | Content                                                                                   |
-|----------:|:------------------------------------------------------------------------------------------|
-|         1 | Python Overview [Link](../notebooks/01-intro-python/01-python-overview)                   |
-|         1 | Presentation 1 [Link](https://drive.google.com/open?id=1_5TGwja9jfGIi5FXMpLL_j5gkVuYC7U5) |
+|   Session | Content                                                                                                                |
+|----------:|:-----------------------------------------------------------------------------------------------------------------------|
+|         1 | Python Overview [Link](../notebooks/01-intro-python/01-python-overview)                                                |
+|         1 | Presentation 1 [Link](https://drive.google.com/open?id=1_5TGwja9jfGIi5FXMpLL_j5gkVuYC7U5)                              |
+|         1 | Video Recording of Class [Link](https://rensselaer.webex.com/rensselaer/ldr.php?RCID=bfb2ae23c30e4151ba55599a4e0e1d8a) |
 
 
 ## Assignment
