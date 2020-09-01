@@ -14,8 +14,8 @@ More detail on specific approches. [Link](../../sessions/session2)
 
 |   Session | Content                                                                      |
 |----------:|:-----------------------------------------------------------------------------|
+|         2 | Python Overview [Link](../notebooks/01-intro-python/01-python-overview)      |
 |         2 | Basic Data Structures [Link](../notebooks/01-intro-python/02-datastructures) |
+|         2 | Assignment 1 [Link](../assignments/assignment1/01starter)                    |
 |         2 | Numpy [Link](../notebooks/01-intro-python/03-numpy)                          |
-|         2 | Pandas [Link](../notebooks/01-intro-python/04-pandas)                        |
-|         2 | Kaggle  [Link](https://www.kaggle.com/)                                      |
 
