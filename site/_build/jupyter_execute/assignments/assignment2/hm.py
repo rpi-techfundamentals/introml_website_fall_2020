@@ -233,6 +233,9 @@ For these you will need to import the iris dataset. You should find the file `ir
 
 While we showed 2 ways of importing a csv, you should use the `read_csv` method of Pandas to load the csv into a dataframe called `df`. 
 
+You can fine the IRIS dataset here:
+
+[https://raw.githubusercontent.com/rpi-techfundamentals/introml_website_fall_2020/master/files/iris.csv](https://raw.githubusercontent.com/rpi-techfundamentals/introml_website_fall_2020/master/files/iris.csv)
 
 #Load iris.csv into a Pandas dataframe df here.
 #Check out the first few rows with the head command. 
