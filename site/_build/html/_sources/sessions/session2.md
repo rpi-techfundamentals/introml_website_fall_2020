@@ -12,11 +12,12 @@ More detail on specific approches. [Link](../../sessions/session2)
 
 ## In Class
 
-|   Session | Content                                                                                                                |
-|----------:|:-----------------------------------------------------------------------------------------------------------------------|
-|         2 | Python Overview [Link](../notebooks/01-intro-python/01-python-overview)                                                |
-|         2 | Basic Data Structures [Link](../notebooks/01-intro-python/02-datastructures)                                           |
-|         2 | Assignment 1 [Link](../assignments/assignment1/01starter)                                                              |
-|         2 | Numpy [Link](../notebooks/01-intro-python/03-numpy)                                                                    |
-|         2 | Video Recording of Class [Link](https://rensselaer.webex.com/rensselaer/ldr.php?RCID=508048265d664a6f917a44a9bc67cb25) |
+|   Session | Content                                                                                                                                                |
+|----------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
+|         2 | Python Overview [Link](../notebooks/01-intro-python/01-python-overview)                                                                                |
+|         2 | Basic Data Structures [Link](../notebooks/01-intro-python/02-datastructures)                                                                           |
+|         2 | Assignment 1 [Link](../assignments/assignment1/01starter)                                                                                              |
+|         2 | Numpy [Link](../notebooks/01-intro-python/03-numpy)                                                                                                    |
+|         2 | Video Recording of Class Sec 01 [Link](https://rensselaer.webex.com/rensselaer/ldr.php?RCID=508048265d664a6f917a44a9bc67cb25)                          |
+|         2 | Video Recording of Class Sec 02 [Link](https://rensselaer.webex.com/recordingservice/sites/rensselaer/recording/play/e18980e944fe42aa847c242e4d0d8ab8) |
 
