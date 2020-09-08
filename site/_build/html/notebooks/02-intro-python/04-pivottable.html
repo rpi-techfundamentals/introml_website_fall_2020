@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>10. More Pivottables &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <title>9. More Pivottables &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -39,8 +39,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="11. Kaggle Baseline" href="05-kaggle-baseline.html" />
-    <link rel="prev" title="9. Groupby and Pivot Tables" href="04-groupby.html" />
+    <link rel="next" title="10. Kaggle Baseline" href="05-kaggle-baseline.html" />
+    <link rel="prev" title="8. Groupby and Pivot Tables" href="04-groupby.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -171,33 +171,83 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01-conditionals-loops.html#what-are-conditional-statements-why-do-we-need-them">
-   6. What are conditional statements? Why do we need them?
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="02-functions.html">
-   7. Functions
+   6. Functions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03-null-values.html">
-   8. Null Values
+   7. Null Values
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04-groupby.html">
-   9. Groupby and Pivot Tables
+   8. Groupby and Pivot Tables
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   10. More Pivottables
+   9. More Pivottables
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="05-kaggle-baseline.html">
-   11. Kaggle Baseline
+   10. Kaggle Baseline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-viz-api-scraper/01-intro-api-twitter.html">
+   11. Introduction to APIs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-viz-api-scraper/02-intro-python-webmining.html">
+   12. Web Mining
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-viz-api-scraper/03-visualization-python-seaborn.html">
+   13. Introduction to Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-viz-api-scraper/04-strings-regular-expressions.html">
+   14. String Manipulation and Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-viz-api-scraper/05-features-dummies.html">
+   15. Feature Extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-viz-api-scraper/06-matplotlib.html">
+   16. MatplotLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/01-neural-networks.html">
+   17. Neural Networks and the Simplist XOR Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/01-neural-networks.html#neural-networks">
+   18. Neural Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/02-train-test-split.html">
+   19. Train Test Splits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/03-intro-logistic-knn.html">
+   20. Classification with Scikit-learn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/04-knn.html">
+   21. KNN
   </a>
  </li>
 </ul>
@@ -215,11 +265,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../../assignments/assignment2/hm.html">
    Assignment 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment2/hm.html#exercise-numpy-array">
-   Exercise-Numpy Array
   </a>
  </li>
 </ul>
@@ -399,12 +444,12 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pivot-tables">
-   10.1. Pivot Tables
+   9.1. Pivot Tables
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#combining-multiple">
-   10.2. Combining Multiple
+   9.2. Combining Multiple
   </a>
  </li>
 </ul>
@@ -421,7 +466,7 @@
 <center><h1>Introduction to Python - Pivottable</h1></center>
 <center><h3><a href = 'http://introml.analyticsdojo.com'>introml.analyticsdojo.com</a></h3></center>
 <div class="section" id="more-pivottables">
-<h1><span class="section-number">10. </span>More Pivottables<a class="headerlink" href="#more-pivottables" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9. </span>More Pivottables<a class="headerlink" href="#more-pivottables" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!wget https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/input/train.csv
@@ -674,7 +719,7 @@ test.csv            100%[===================&gt;]  27.96K  --.-KB/s    in 0.03s
 </div></div></div>
 </div>
 <div class="section" id="pivot-tables">
-<h2><span class="section-number">10.1. </span>Pivot Tables<a class="headerlink" href="#pivot-tables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.1. </span>Pivot Tables<a class="headerlink" href="#pivot-tables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>A pivot table is a data summarization tool.</p></li>
 <li><p>It can be used to that sum, sort, averge, count, over a pandas dataframe.</p></li>
@@ -813,7 +858,7 @@ test.csv            100%[===================&gt;]  27.96K  --.-KB/s    in 0.03s
 </div>
 </div>
 <div class="section" id="combining-multiple">
-<h2><span class="section-number">10.2. </span>Combining Multiple<a class="headerlink" href="#combining-multiple" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2. </span>Combining Multiple<a class="headerlink" href="#combining-multiple" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><em>Splitting</em> the data into groups based on some criteria</p></li>
 <li><p><em>Applying</em> a function to each group independently</p></li>
@@ -879,8 +924,8 @@ test.csv            100%[===================&gt;]  27.96K  --.-KB/s    in 0.03s
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="04-groupby.html" title="previous page"><span class="section-number">9. </span>Groupby and Pivot Tables</a>
-    <a class='right-next' id="next-link" href="05-kaggle-baseline.html" title="next page"><span class="section-number">11. </span>Kaggle Baseline</a>
+    <a class='left-prev' id="prev-link" href="04-groupby.html" title="previous page"><span class="section-number">8. </span>Groupby and Pivot Tables</a>
+    <a class='right-next' id="next-link" href="05-kaggle-baseline.html" title="next page"><span class="section-number">10. </span>Kaggle Baseline</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

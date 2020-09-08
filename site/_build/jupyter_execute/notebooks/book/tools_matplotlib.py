@@ -1,11 +1,11 @@
-**Tools - matplotlib**
+# Tools - matplotlib
 
 *This notebook demonstrates how to use the matplotlib library to plot beautiful graphs.*
 
-# Table of Contents
+## Table of Contents
  <p><div class="lev1"><a href="#Plotting-your-first-graph"><span class="toc-item-num">1&nbsp;&nbsp;</span>Plotting your first graph</a></div><div class="lev1"><a href="#Line-style-and-color"><span class="toc-item-num">2&nbsp;&nbsp;</span>Line style and color</a></div><div class="lev1"><a href="#Saving-a-figure"><span class="toc-item-num">3&nbsp;&nbsp;</span>Saving a figure</a></div><div class="lev1"><a href="#Subplots"><span class="toc-item-num">4&nbsp;&nbsp;</span>Subplots</a></div><div class="lev1"><a href="#Multiple-figures"><span class="toc-item-num">5&nbsp;&nbsp;</span>Multiple figures</a></div><div class="lev1"><a href="#Pyplot's-state-machine:-implicit-vs-explicit"><span class="toc-item-num">6&nbsp;&nbsp;</span>Pyplot's state machine: implicit <em>vs</em> explicit</a></div><div class="lev1"><a href="#Pylab-vs-Pyplot-vs-Matplotlib"><span class="toc-item-num">7&nbsp;&nbsp;</span>Pylab <em>vs</em> Pyplot <em>vs</em> Matplotlib</a></div><div class="lev1"><a href="#Drawing-text"><span class="toc-item-num">8&nbsp;&nbsp;</span>Drawing text</a></div><div class="lev1"><a href="#Legends"><span class="toc-item-num">9&nbsp;&nbsp;</span>Legends</a></div><div class="lev1"><a href="#Non-linear-scales"><span class="toc-item-num">10&nbsp;&nbsp;</span>Non linear scales</a></div><div class="lev1"><a href="#Ticks-and-tickers"><span class="toc-item-num">11&nbsp;&nbsp;</span>Ticks and tickers</a></div><div class="lev1"><a href="#Polar-projection"><span class="toc-item-num">12&nbsp;&nbsp;</span>Polar projection</a></div><div class="lev1"><a href="#3D-projection"><span class="toc-item-num">13&nbsp;&nbsp;</span>3D projection</a></div><div class="lev1"><a href="#Scatter-plot"><span class="toc-item-num">14&nbsp;&nbsp;</span>Scatter plot</a></div><div class="lev1"><a href="#Lines"><span class="toc-item-num">15&nbsp;&nbsp;</span>Lines</a></div><div class="lev1"><a href="#Histograms"><span class="toc-item-num">16&nbsp;&nbsp;</span>Histograms</a></div><div class="lev1"><a href="#Images"><span class="toc-item-num">17&nbsp;&nbsp;</span>Images</a></div><div class="lev1"><a href="#Animations"><span class="toc-item-num">18&nbsp;&nbsp;</span>Animations</a></div><div class="lev1"><a href="#Saving-animations-to-video-files"><span class="toc-item-num">19&nbsp;&nbsp;</span>Saving animations to video files</a></div><div class="lev1"><a href="#What-next?"><span class="toc-item-num">20&nbsp;&nbsp;</span>What next?</a></div>
 
-# Plotting your first graph
+## Plotting your first graph
 
 First we need to import the `matplotlib` library.
 
@@ -54,7 +54,7 @@ plt.ylabel("y = x**2")
 plt.grid(True)
 plt.show()
 
-# Line style and color
+## Line style and color
 
 By default, matplotlib draws a line between consecutive points.
 
@@ -100,14 +100,14 @@ line1.set_dash_capstyle("round")
 line3.set_alpha(0.2)
 plt.show()
 
-# Saving a figure
+## Saving a figure
 Saving a figure to disk is as simple as calling [`savefig`](http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.savefig) with the name of the file (or a file object). The available image formats depend on the graphics backend you use.
 
 x = np.linspace(-1.4, 1.4, 30)
 plt.plot(x, x**2)
 plt.savefig("my_square_function.png", transparent=True)
 
-# Subplots
+## Subplots
 A matplotlib figure may contain multiple subplots. These subplots are organized in a grid. To create a subplot, just call the `subplot` function, and specify the number of rows and columns in the figure, and the index of the subplot you want to draw on (starting from 1, then left to right, and top to bottom). Note that pyplot keeps track of the currently active subplot (which you can get a reference to by calling `plt.gca()`), so when you call the `plot` function, it draws on the *active* subplot.
 
 
@@ -148,7 +148,7 @@ plt.show()
 
 If you need even more flexibility in subplot positioning, check out the [GridSpec documentation](http://matplotlib.org/users/gridspec.html)
 
-# Multiple figures
+## Multiple figures
 It is also possible to draw multiple figures. Each figure may contain one or more subplots. By default, matplotlib creates `figure(1)` automatically. When you switch figure, pyplot keeps track of the currently active figure (which you can get a reference to by calling `plt.gcf()`), and the active subplot of that figure becomes the current subplot.
 
 x = np.linspace(-1.4, 1.4, 30)
@@ -173,7 +173,7 @@ plt.plot(x, -x**3, "r:")
 
 plt.show()
 
-# Pyplot's state machine: implicit *vs* explicit
+## Pyplot's state machine: implicit *vs* explicit
 So far we have used Pyplot's state machine which keeps track of the currently active subplot. Every time you call the `plot` function, pyplot just draws on the currently active subplot. It also does some more magic, such as automatically creating a figure and a subplot when you call `plot`, if they don't exist yet. This magic is convenient in an interactive environment (such as Jupyter).
 
 But when you are writing a program, *explicit is better than implicit*. Explicit code is usually easier to debug and maintain, and if you don't believe me just read the 2nd rule in the Zen of Python:
@@ -195,7 +195,7 @@ plt.show()
 
 For consistency, we will continue to use pyplot's state machine in the rest of this tutorial, but we recommend using the object-oriented interface in your programs.
 
-# Pylab *vs* Pyplot *vs* Matplotlib
+## Pylab *vs* Pyplot *vs* Matplotlib
 
 There is some confusion around the relationship between pylab, pyplot and matplotlib. It's simple: matplotlib is the full library, it contains everything including pylab and pyplot.
 
@@ -203,7 +203,7 @@ Pyplot provides a number of tools to plot graphs, including the state-machine in
 
 Pylab is a convenience module that imports matplotlib.pyplot and NumPy in a single name space. You will find many examples using pylab, but it is no longer recommended (because *explicit* imports are better than *implicit* ones).
 
-# Drawing text
+## Drawing text
 You can call `text` to add text at any location in the graph. Just specify the horizontal and vertical coordinates and the text, and optionally some extra attributes.  Any text in matplotlib may contain TeX equation expressions, see [the documentation](http://matplotlib.org/users/mathtext.html) for more details.
 
 x = np.linspace(-1.5, 1.5, 30)
@@ -255,7 +255,7 @@ with plt.xkcd():
 
     plt.show()
 
-# Legends
+## Legends
 The simplest way to add a legend is to set a label on all lines, then just call the `legend` function.
 
 x = np.linspace(-1.4, 1.4, 50)
@@ -265,7 +265,7 @@ plt.legend(loc="best")
 plt.grid(True)
 plt.show()
 
-# Non linear scales
+## Non linear scales
 Matplotlib supports non linear scales, such as logarithmic or logit scales.
 
 x = np.linspace(0.1, 15, 500)
@@ -297,7 +297,7 @@ plt.grid(True)
 
 plt.show()
 
-# Ticks and tickers
+## Ticks and tickers
 The axes have little marks called "ticks".  To be precise, "ticks" are the *locations* of the marks (eg. (-1, 0, 1)), "tick lines" are the small lines drawn at those locations, "tick labels" are the labels drawn next to the tick lines, and "tickers" are objects that are capable of deciding where to place ticks. The default tickers typically do a pretty good job at placing ~5 to 8 ticks at a reasonable distance from one another.
 
 But sometimes you need more control (eg. there are too many tick labels on the logit graph above). Fortunately, matplotlib gives you full control over ticks.  You can even activate minor ticks.
@@ -332,7 +332,7 @@ plt.grid(True)
 
 plt.show()
 
-# Polar projection
+## Polar projection
 Drawing a polar graph is as easy as setting the `projection` attribute to `"polar"` when creating the subplot.
 
 radius = 1
@@ -343,7 +343,7 @@ plt.plot(theta, np.sin(5*theta), "g-")
 plt.plot(theta, 0.5*np.cos(20*theta), "b-")
 plt.show()
 
-# 3D projection
+## 3D projection
 
 Plotting 3D graphs is quite straightforward. You need to import `Axes3D`, which registers the `"3d"` projection. Then create a subplot setting the `projection` to `"3d"`. This returns an `Axes3DSubplot` object, which you can use to call `plot_surface`, giving x, y, and z coordinates, plus optional attributes.
 
@@ -367,7 +367,7 @@ plt.contourf(X, Y, Z, cmap=matplotlib.cm.coolwarm)
 plt.colorbar()
 plt.show()
 
-# Scatter plot
+## Scatter plot
 
 To draw a scatter plot, simply provide the x and y coordinates of the points.
 
@@ -396,7 +396,7 @@ plt.grid(True)
 plt.show()
 
 
-# Lines
+## Lines
 You can draw lines simply using the `plot` function, as we have done so far. However, it is often convenient to create a utility function that plots a (seemingly) infinite line across the graph, given a slope and an intercept. You can also use the `hlines` and `vlines` functions that plot horizontal and vertical line segments.
 For example:
 
@@ -417,7 +417,7 @@ plot_line(axis=plt.gca(), slope=0.5, intercept=5, color="magenta")
 plt.grid(True)
 plt.show()
 
-# Histograms
+## Histograms
 
 data = [1, 1.1, 1.8, 2, 2.1, 3.2, 3, 3, 3, 3]
 plt.subplot(211)
@@ -447,7 +447,7 @@ plt.legend()
 plt.grid(True)
 plt.show()
 
-# Images
+## Images
 Reading, generating and plotting images in matplotlib is quite straightforward.
 
 To read an image, just import the `matplotlib.image` module, and call its `imread` function, passing it the file name (or file object). This returns the image data, as a NumPy array. Let's try this with the `my_square_function.png` image we saved earlier.
@@ -494,7 +494,7 @@ Since the `img` array is just quite small (20x30), when the `imshow` function di
 plt.imshow(img, interpolation="bilinear")
 plt.show()
 
-# Animations
+## Animations
 Although matplotlib is mostly used to generate images, it is also capable of displaying animations. First, you need to import `matplotlib.animation`.
 
 import matplotlib.animation as animation
@@ -544,12 +544,13 @@ animation.FuncAnimation(fig, update_line, frames=50, fargs=(data, line), interva
 
 **Warning:** if you save the notebook along with its outputs, then the animations will take up a lot of space.
 
-# Saving animations to video files
+## Saving animations to video files
 Matplotlib relies on 3rd-party libraries to write videos such as [FFMPEG](https://www.ffmpeg.org/) or [ImageMagick](https://imagemagick.org/). In this example we will be using FFMPEG so be sure to install it first. To save the animation to the GIF format, you would need ImageMagick.
 
 Writer = animation.writers['ffmpeg']
 writer = Writer(fps=15, metadata=dict(artist='Me'), bitrate=1800)
 line_ani.save('my_wiggly_animation.mp4', writer=writer)
 
-# What next?
+## What next?
 Now you know all the basics of matplotlib, but there are many more options available. The best way to learn more, is to visit the [gallery](http://matplotlib.org/gallery.html), look at the images, choose a plot that you are interested in, then just copy the code in a Jupyter notebook and play around with it.
+

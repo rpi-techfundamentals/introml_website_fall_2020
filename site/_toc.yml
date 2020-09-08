@@ -32,6 +32,12 @@
   - file: notebooks/03-viz-api-scraper/03-visualization-python-seaborn
   - file: notebooks/03-viz-api-scraper/04-strings-regular-expressions
   - file: notebooks/03-viz-api-scraper/05-features-dummies
+  - file: notebooks/03-viz-api-scraper/06-matplotlib
+  - file: notebooks/04-intro-modeling/01-neural-networks
+  - file: notebooks/04-intro-modeling/02-train-test-split
+  - file: notebooks/04-intro-modeling/03-intro-logistic-knn
+  - file: notebooks/04-intro-modeling/04-knn
+  - file: notebooks/04-intro-modeling/05-svm-roc
 - part: ASSIGNMENT STARTERS
   numbered: false
   chapters:

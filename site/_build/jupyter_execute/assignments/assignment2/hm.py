@@ -177,7 +177,7 @@ grader.check('q16')
 
 grader.check('q17')
 
-# Exercise-Numpy Array
+## Exercise-Numpy Array
 
 (18) Create a new numpy array `nparray1` that is 3x3 and all the number 3 (should be integer type).
 
