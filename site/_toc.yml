@@ -26,6 +26,12 @@
   - file: notebooks/02-intro-python/04-groupby
   - file: notebooks/02-intro-python/04-pivottable
   - file: notebooks/02-intro-python/05-kaggle-baseline
+  #New
+  - file: notebooks/03-viz-api-scraper/01-intro-api-twitter
+  - file: notebooks/03-viz-api-scraper/02-intro-python-webmining
+  - file: notebooks/03-viz-api-scraper/03-visualization-python-seaborn
+  - file: notebooks/03-viz-api-scraper/04-strings-regular-expressions
+  - file: notebooks/03-viz-api-scraper/05-features-dummies
 - part: ASSIGNMENT STARTERS
   numbered: false
   chapters:
