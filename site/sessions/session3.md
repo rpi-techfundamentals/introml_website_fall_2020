@@ -24,5 +24,5 @@ This lecture discusses the general strategic impact of data, open data, data enc
 
 |   Session | Assignment                                                                                                                                                                                                                         | Due        |
 |----------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
-|         3 | This assignment will require you to gain some familiarity with working with a variety of different Python data structures (sets, lists, dictionaries) as well as packages (numpy, pandas) [Starter](../assignments/assignment1/hm) | 2020-09-17 |
+|         3 | This assignment will require you to gain some familiarity with working with a variety of different Python data structures (sets, lists, dictionaries) as well as packages (numpy, pandas) [Starter](../assignments/assignment2/hm) | 2020-09-17 |
 
