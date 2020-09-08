@@ -19,3 +19,10 @@ TBD [Link](../../sessions/session3)
 |         3 | Pandas [Link](../notebooks/01-intro-python/04-pandas) |
 |         3 | Kaggle  [Link](https://www.kaggle.com/)               |
 
+
+## Assignment
+
+|   Session | Assignment                                                                                                                                                                                                                                | Due        |
+|----------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
+|         3 | This assignment will require you to gain some familiarity with working with a variety of different Python data structures (sets, lists, dictionaries) as well as packages (numpy, pandas) [Starter](../assignments/assignment1/02starter) | 2020-09-17 |
+
