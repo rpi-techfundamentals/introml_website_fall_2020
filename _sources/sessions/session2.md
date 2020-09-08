@@ -1,7 +1,7 @@
 Python Basics (09/03)
 ============================
 
-More detail on specific approches. [Link](../../sessions/session2)
+This lecture discusses the general strategic impact of data, open data, data encoding, data provenance, data wrangling, includeing merging, aggregation, filtering. Continued introduction to coding includes conditionals, loops, functions, missing values, filtering, group-by.  We will also introduce a basic Kaggle model for the Titantic dataset.  [Link](../../sessions/session2)
 
 ## Before Class
 
