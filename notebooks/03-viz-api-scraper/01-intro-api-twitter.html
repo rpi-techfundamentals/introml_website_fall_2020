@@ -1,0 +1,1020 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>11. Introduction to APIs &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="12. Web Mining" href="02-intro-python-webmining.html" />
+    <link rel="prev" title="10. Kaggle Baseline" href="../02-intro-python/05-kaggle-baseline.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Introduction to Machine Learning Applications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  OVERVIEW
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/preparation.html">
+   Before Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/in_class.html">
+   In Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/assignments.html">
+   Assignments
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SESSIONS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session1.html">
+   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session2.html">
+   2. Python Basics (09/03)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session3.html">
+   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session4.html">
+   4. Python conditionals, loops, functions, aggregating.  (09/10)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NOTEBOOKS
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/01-python-overview.html">
+   1. Overview of Python Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/02-datastructures.html">
+   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/03-numpy.html">
+   3. Overview of Numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro-python/04-pandas.html">
+   4. Introduction to Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-intro-python/01-conditionals-loops.html">
+   5. Conditional Statements and Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-intro-python/02-functions.html">
+   6. Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-intro-python/03-null-values.html">
+   7. Null Values
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-intro-python/04-groupby.html">
+   8. Groupby and Pivot Tables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-intro-python/04-pivottable.html">
+   9. More Pivottables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-intro-python/05-kaggle-baseline.html">
+   10. Kaggle Baseline
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   11. Introduction to APIs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-intro-python-webmining.html">
+   12. Web Mining
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-visualization-python-seaborn.html">
+   13. Introduction to Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-strings-regular-expressions.html">
+   14. String Manipulation and Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-features-dummies.html">
+   15. Feature Extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-matplotlib.html">
+   16. MatplotLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/01-neural-networks.html">
+   17. Neural Networks and the Simplist XOR Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/01-neural-networks.html#neural-networks">
+   18. Neural Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/02-train-test-split.html">
+   19. Train Test Splits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/03-intro-logistic-knn.html">
+   20. Classification with Scikit-learn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/04-knn.html">
+   21. KNN
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  ASSIGNMENT STARTERS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../assignments/assignment1/01starter.html">
+   Assignment 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../assignments/assignment2/hm.html">
+   Assignment 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  BOOK NOTEBOOKS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/tools_numpy.html">
+   1. Tools - NumPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/tools_pandas.html">
+   2. Tools - Pandas
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  IMPORTANT LINKS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://lms.rpi.edu/">
+   RPI LMS
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://eurl.io/#KijTiY1Sa">
+   Webex Teams Discussion
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://eurl.io/#8TF4_qsE9">
+   Webex Teams Homework
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://rensselaer.webex.com/meet/kuruzj">
+   Prof Kuruzovich Class Link
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://rpi.box.com/s/g3wsswc1gvqxvamkuxee77eb4qugizvj">
+   Box File link (Sec01)
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://rensselaer.webex.com/meet/morgat5">
+   Prof Morgan Class Link
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://rpi.box.com/s/qdd5wlo58f5ludkxmb4yd17mgnyc0sbh">
+   Box File link (Sec02)
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/03-viz-api-scraper/01-intro-api-twitter.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020/issues/new?title=Issue%20on%20page%20%2Fnotebooks/03-viz-api-scraper/01-intro-api-twitter.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rpi-techfundamentals/introml_website_fall_2020/blob/master/site/notebooks/03-viz-api-scraper/01-intro-api-twitter.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#before-you-begin-1">
+   11.1. Before you Begin #1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#before-you-begin-2">
+   11.2. Before you Begin #2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-authorization-file-look-at-webex-teams-for-file">
+   11.3. Download Authorization file (look at Webex Teams for file)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step1-loading-authorization-data">
+   11.4. Step1.  Loading Authorization Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cat-command-to-look-at-files">
+   11.5.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cat
+    </span>
+   </code>
+   command to look at files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-some-relevant-functions">
+   11.6. Create Some Relevant Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-twitter-handle-from-csv">
+   11.7. Load Twitter Handle From CSV
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-twitter-object">
+   11.8. Create Twitter Object
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-look-at-the-files-created">
+   11.9. Let’s look at the files created.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-getting-help">
+   11.10. Step 2. Getting Help
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-displaying-api-responses-as-pretty-printed-json">
+   11.11. Step 3. Displaying API responses as pretty-printed JSON
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-collecting-search-results-for-a-targeted-hashtag">
+   11.12. Step 4. Collecting search results for a targeted hashtag.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-extracting-text-screen-names-and-hashtags-from-tweets">
+   11.13. Step 5. Extracting text, screen names, and hashtags from tweets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-creating-a-basic-frequency-distribution-from-the-words-in-tweets">
+   11.14. Step 6. Creating a basic frequency distribution from the words in tweets
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a class="reference external" href="http://rpi.analyticsdojo.com"><img alt="AnalyticsDojo" src="https://github.com/rpi-techfundamentals/spring2019-materials/blob/master/fig/final-logo.png?raw=1" /></a></p>
+<center><h1>Introduction to API's with Python</h1></center>
+<center><h3><a href = 'http://introml.analyticsdojo.com'>rpi.analyticsdojo.com</a></h3></center>
+<div class="section" id="introduction-to-apis">
+<h1><span class="section-number">11. </span>Introduction to APIs<a class="headerlink" href="#introduction-to-apis" title="Permalink to this headline">¶</a></h1>
+<p>This is adopted from <a class="reference external" href="http://bit.ly/16kGNyb">Mining the Social Web, 2nd Edition</a>
+Copyright (c) 2013, Matthew A. Russell
+All rights reserved.</p>
+<p>This work is licensed under the <a class="reference external" href="https://github.com/ptwobrussell/Mining-the-Social-Web-2nd-Edition/blob/master/LICENSE.txt">Simplified BSD License</a>.</p>
+<div class="section" id="before-you-begin-1">
+<h2><span class="section-number">11.1. </span>Before you Begin #1<a class="headerlink" href="#before-you-begin-1" title="Permalink to this headline">¶</a></h2>
+<p>If you are working locally or on colab, this exercise requires the twitter package and the ruamel.yaml package.   Yaml files are structured files useful for storing configuration.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> !pip install twitter ruamel.yaml
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#see if it worked by importing the twitter package &amp; some other things we will use.  </span>
+<span class="kn">from</span>  <span class="nn">twitter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">datetime</span><span class="o">,</span> <span class="nn">traceback</span> 
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="before-you-begin-2">
+<h2><span class="section-number">11.2. </span>Before you Begin #2<a class="headerlink" href="#before-you-begin-2" title="Permalink to this headline">¶</a></h2>
+<p>Download the sample configuration.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!wget https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/04-viz-api-scraper/screen_names.csv &amp;&amp; wget https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/04-viz-api-scraper/twitlab.py 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="download-authorization-file-look-at-webex-teams-for-file">
+<h2><span class="section-number">11.3. </span>Download Authorization file (look at Webex Teams for file)<a class="headerlink" href="#download-authorization-file-look-at-webex-teams-for-file" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="step1-loading-authorization-data">
+<h2><span class="section-number">11.4. </span>Step1.  Loading Authorization Data<a class="headerlink" href="#step1-loading-authorization-data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Here we are going to store the authorization data in a .YAML file rather than directly in the notebook.</p></li>
+<li><p>We have also added <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> to the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file so we won’t accidentally commit our sensitive data to the repository.</p></li>
+<li><p>You should generally keep sensitive data out of all git repositories (public or private) but definitely Public.</p></li>
+<li><p>If you ever accidentally commit data to a public repository you must consider it compromised.</p></li>
+<li><p>A .yaml file is a common way to store configuration data, but it is not really secure.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This will import some required libraries.</span>
+<span class="kn">import</span> <span class="nn">sys</span> 
+<span class="kn">import</span> <span class="nn">ruamel.yaml</span> <span class="c1">#A .yaml file </span>
+<span class="c1">#This is your configuration file. </span>
+<span class="n">twitter_yaml</span><span class="o">=</span><span class="s1">&#39;config.yaml&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">twitter_yaml</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">yaml_t</span><span class="p">:</span>
+    <span class="n">cf_t</span><span class="o">=</span><span class="n">ruamel</span><span class="o">.</span><span class="n">yaml</span><span class="o">.</span><span class="n">round_trip_load</span><span class="p">(</span><span class="n">yaml_t</span><span class="p">,</span> <span class="n">preserve_quotes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1">#You can check your config was loaded by printing, but you should not commit this.</span>
+<span class="n">cf_t</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cat-command-to-look-at-files">
+<h2><span class="section-number">11.5. </span><code class="docutils literal notranslate"><span class="pre">cat</span></code> command to look at files<a class="headerlink" href="#cat-command-to-look-at-files" title="Permalink to this headline">¶</a></h2>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">cat</span></code> command to look at the structure of our files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!cat config.yaml
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-some-relevant-functions">
+<h2><span class="section-number">11.6. </span>Create Some Relevant Functions<a class="headerlink" href="#create-some-relevant-functions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>We first will create a Twitter object we can used to authorize data.</p></li>
+<li><p>Then we will get profiles.</p></li>
+<li><p>Finally we will get some tweets.</p></li>
+</ul>
+<p><strong>Don’t worry about not understanding all the code.  Here we are pushing you us more complex functions.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
+<span class="k">def</span> <span class="nf">create_twitter_auth</span><span class="p">(</span><span class="n">cf_t</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Function to create a twitter object</span>
+<span class="sd">           Args: cf_t is configuration dictionary. </span>
+<span class="sd">           Returns: Twitter object.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+        <span class="c1"># When using twitter stream you must authorize.</span>
+        <span class="c1"># these tokens are necessary for user authentication</span>
+        <span class="c1"># create twitter API object</span>
+
+        <span class="n">auth</span> <span class="o">=</span> <span class="n">OAuth</span><span class="p">(</span><span class="n">cf_t</span><span class="p">[</span><span class="s1">&#39;access_token&#39;</span><span class="p">],</span> <span class="n">cf_t</span><span class="p">[</span><span class="s1">&#39;access_token_secret&#39;</span><span class="p">],</span> <span class="n">cf_t</span><span class="p">[</span><span class="s1">&#39;consumer_key&#39;</span><span class="p">],</span> <span class="n">cf_t</span><span class="p">[</span><span class="s1">&#39;consumer_secret&#39;</span><span class="p">])</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># create twitter API object</span>
+            <span class="n">twitter</span> <span class="o">=</span> <span class="n">Twitter</span><span class="p">(</span><span class="n">auth</span> <span class="o">=</span> <span class="n">auth</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">TwitterHTTPError</span><span class="p">:</span>
+            <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">cf_t</span><span class="p">[</span><span class="s1">&#39;sleep_interval&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">twitter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_profiles</span><span class="p">(</span><span class="n">twitter</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">cf_t</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Function write profiles to a file with the form *data-user-profiles.json*</span>
+<span class="sd">       Args: names is a list of names</span>
+<span class="sd">             cf_t is a list of twitter config</span>
+<span class="sd">       Returns: Nothing</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    <span class="c1"># file name for daily tracking</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="n">fn</span> <span class="o">=</span> <span class="n">cf_t</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;/profiles/&#39;</span><span class="o">+</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">-user-profiles.json&#39;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Searching twitter for User profile: &quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># create a subquery, looking up information about these users</span>
+                <span class="c1"># twitter API docs: https://dev.twitter.com/docs/api/1/get/users/lookup</span>
+                <span class="n">profiles</span> <span class="o">=</span> <span class="n">twitter</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">screen_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">)</span>
+                <span class="n">sub_start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">profile</span> <span class="ow">in</span> <span class="n">profiles</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User found. Total tweets:&quot;</span><span class="p">,</span> <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;statuses_count&#39;</span><span class="p">])</span>
+                    <span class="c1"># now save user info</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">profile</span><span class="p">))</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">sub_elapsed_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">sub_start_time</span><span class="p">;</span>
+                <span class="k">if</span> <span class="n">sub_elapsed_time</span> <span class="o">&lt;</span> <span class="n">cf_t</span><span class="p">[</span><span class="s1">&#39;sleep_interval&#39;</span><span class="p">]:</span>
+                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">cf_t</span><span class="p">[</span><span class="s1">&#39;sleep_interval&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">sub_elapsed_time</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">TwitterHTTPError</span><span class="p">:</span>
+                <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">cf_t</span><span class="p">[</span><span class="s1">&#39;sleep_interval&#39;</span><span class="p">])</span>
+                <span class="k">continue</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">fn</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-twitter-handle-from-csv">
+<h2><span class="section-number">11.7. </span>Load Twitter Handle From CSV<a class="headerlink" href="#load-twitter-handle-from-csv" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>This is a .csv that has individuals we want to collect data on.</p></li>
+<li><p>Go ahead and follow <a class="reference external" href="https://twitter.com/AnalyticsDojo">AnalyticsDojo</a>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">cf_t</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-twitter-object">
+<h2><span class="section-number">11.8. </span>Create Twitter Object<a class="headerlink" href="#create-twitter-object" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">twitlab</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create Twitter Object</span>
+<span class="n">twitter</span><span class="o">=</span> <span class="n">twitlab</span><span class="o">.</span><span class="n">create_twitter_auth</span><span class="p">(</span><span class="n">cf_t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;screen_name&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!mkdir data &amp;&amp; mkdir data/profiles
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This will get general profile data</span>
+<span class="n">profiles_fn</span><span class="o">=</span><span class="n">twitlab</span><span class="o">.</span><span class="n">get_profiles</span><span class="p">(</span><span class="n">twitter</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;screen_name&#39;</span><span class="p">],</span> <span class="n">cf_t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!ls data/profiles
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-look-at-the-files-created">
+<h2><span class="section-number">11.9. </span>Let’s look at the files created.<a class="headerlink" href="#let-s-look-at-the-files-created" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!cat data/profiles/*-user-profiles.json
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&quot;time_zone&quot;: &quot;Quito&quot;, &quot;default_profile&quot;: false, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/Qox5pT4c31&quot;, &quot;display_url&quot;: &quot;rpi.edu&quot;, &quot;expanded_url&quot;: &quot;http://www.rpi.edu&quot;, &quot;indices&quot;: [0, 23]}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;needs_phone_verification&quot;: false, &quot;has_extended_profile&quot;: false, &quot;id&quot;: 18250462, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme2/bg.gif&quot;, &quot;followers_count&quot;: 588, &quot;translator_type&quot;: &quot;none&quot;, &quot;profile_link_color&quot;: &quot;1F98C7&quot;, &quot;friends_count&quot;: 606, &quot;created_at&quot;: &quot;Fri Dec 19 20:23:58 +0000 2008&quot;, &quot;profile_use_background_image&quot;: true, &quot;suspended&quot;: false, &quot;location&quot;: &quot;Troy, NY&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/1621460585/profile_normal.jpg&quot;, &quot;listed_count&quot;: 47, &quot;default_profile_image&quot;: false, &quot;notifications&quot;: false, &quot;protected&quot;: false, &quot;status&quot;: {&quot;in_reply_to_status_id_str&quot;: null, &quot;possibly_sensitive&quot;: false, &quot;quoted_status_id&quot;: 913764584732938240, &quot;is_quote_status&quot;: true, &quot;lang&quot;: &quot;en&quot;, &quot;retweet_count&quot;: 1, &quot;geo&quot;: null, &quot;retweeted&quot;: false, &quot;entities&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/QqtYkhpiRU&quot;, &quot;display_url&quot;: &quot;twitter.com/i/web/status/9\u2026&quot;, &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/914671471670243328&quot;, &quot;indices&quot;: [107, 130]}], &quot;user_mentions&quot;: [{&quot;screen_name&quot;: &quot;SaratogaSprings&quot;, &quot;id&quot;: 25881261, &quot;id_str&quot;: &quot;25881261&quot;, &quot;name&quot;: &quot;Saratoga Springs&quot;, &quot;indices&quot;: [43, 59]}, {&quot;screen_name&quot;: &quot;clarkefoley&quot;, &quot;id&quot;: 32967328, &quot;id_str&quot;: &quot;32967328&quot;, &quot;name&quot;: &quot;Clarke Foley&quot;, &quot;indices&quot;: [93, 105]}], &quot;symbols&quot;: [], &quot;hashtags&quot;: [{&quot;indices&quot;: [13, 31], &quot;text&quot;: &quot;startuptechvalley&quot;}]}, &quot;in_reply_to_user_id_str&quot;: null, &quot;contributors&quot;: null, &quot;id&quot;: 914671471670243328, &quot;truncated&quot;: true, &quot;place&quot;: null, &quot;text&quot;: &quot;Great to see #startuptechvalley heading to @SaratogaSprings for October (3rd year running).  @clarkefoley\u2026 https://t.co/QqtYkhpiRU&quot;, &quot;source&quot;: &quot;&lt;a href=\&quot;http://twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter Web Client&lt;/a&gt;&quot;, &quot;in_reply_to_user_id&quot;: null, &quot;created_at&quot;: &quot;Mon Oct 02 02:00:47 +0000 2017&quot;, &quot;id_str&quot;: &quot;914671471670243328&quot;, &quot;quoted_status_id_str&quot;: &quot;913764584732938240&quot;, &quot;in_reply_to_screen_name&quot;: null, &quot;in_reply_to_status_id&quot;: null, &quot;coordinates&quot;: null, &quot;favorited&quot;: false, &quot;favorite_count&quot;: 3}, &quot;is_translator&quot;: false, &quot;screen_name&quot;: &quot;JasonKuruzovich&quot;, &quot;following&quot;: false, &quot;favourites_count&quot;: 339, &quot;profile_text_color&quot;: &quot;663B12&quot;, &quot;lang&quot;: &quot;en&quot;, &quot;profile_sidebar_border_color&quot;: &quot;C6E2EE&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme2/bg.gif&quot;, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/1621460585/profile_normal.jpg&quot;, &quot;contributors_enabled&quot;: false, &quot;description&quot;: &quot;Director of the Severino Center for Entrepreneurship at RPI, Professor of Business Analytics, husband, parent, and aspiring entrepreneur.&quot;, &quot;geo_enabled&quot;: true, &quot;is_translation_enabled&quot;: false, &quot;statuses_count&quot;: 499, &quot;profile_background_color&quot;: &quot;C6E2EE&quot;, &quot;profile_sidebar_fill_color&quot;: &quot;DAECF4&quot;, &quot;utc_offset&quot;: -18000, &quot;id_str&quot;: &quot;18250462&quot;, &quot;profile_background_tile&quot;: false, &quot;name&quot;: &quot;Jason Kuruzovich&quot;, &quot;verified&quot;: false, &quot;url&quot;: &quot;https://t.co/Qox5pT4c31&quot;, &quot;follow_request_sent&quot;: false}
+{&quot;screen_name&quot;: &quot;AnalyticsDojo&quot;, &quot;profile_link_color&quot;: &quot;1DA1F2&quot;, &quot;time_zone&quot;: null, &quot;name&quot;: &quot;AnalyticsDojo&quot;, &quot;profile_text_color&quot;: &quot;333333&quot;, &quot;default_profile&quot;: true, &quot;lang&quot;: &quot;en&quot;, &quot;profile_sidebar_border_color&quot;: &quot;C0DEED&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;description&quot;: &quot;Jupyter notebook based analytics platform modeled off of @freecodecamp. Contact @jasonkurzovich to get involved.&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/oPgImNINZq&quot;, &quot;display_url&quot;: &quot;analyticsdojo.com&quot;, &quot;expanded_url&quot;: &quot;http://www.analyticsdojo.com&quot;, &quot;indices&quot;: [0, 23]}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;contributors_enabled&quot;: false, &quot;notifications&quot;: false, &quot;id&quot;: 618143966, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;followers_count&quot;: 5, &quot;created_at&quot;: &quot;Mon Jun 25 14:37:19 +0000 2012&quot;, &quot;status&quot;: {&quot;in_reply_to_status_id_str&quot;: null, &quot;possibly_sensitive&quot;: false, &quot;is_quote_status&quot;: false, &quot;lang&quot;: &quot;en&quot;, &quot;retweet_count&quot;: 0, &quot;geo&quot;: null, &quot;contributors&quot;: null, &quot;entities&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/ekiNh3bKgD&quot;, &quot;display_url&quot;: &quot;goo.gl/dRSZd4&quot;, &quot;expanded_url&quot;: &quot;https://goo.gl/dRSZd4&quot;, &quot;indices&quot;: [115, 138]}], &quot;user_mentions&quot;: [{&quot;screen_name&quot;: &quot;AnalyticsDojo&quot;, &quot;id&quot;: 618143966, &quot;id_str&quot;: &quot;618143966&quot;, &quot;name&quot;: &quot;AnalyticsDojo&quot;, &quot;indices&quot;: [19, 33]}, {&quot;screen_name&quot;: &quot;JupyterCon&quot;, &quot;id&quot;: 816450116127113216, &quot;id_str&quot;: &quot;816450116127113216&quot;, &quot;name&quot;: &quot;JupyterCon&quot;, &quot;indices&quot;: [34, 45]}], &quot;symbols&quot;: [], &quot;hashtags&quot;: []}, &quot;in_reply_to_user_id_str&quot;: null, &quot;retweeted&quot;: false, &quot;id&quot;: 900438934077014017, &quot;truncated&quot;: false, &quot;place&quot;: null, &quot;text&quot;: &quot;Excited to present @analyticsdojo @jupytercon&#39;s poster session: We Need a Jupyter Based FreeCodeCamp for Analytics https://t.co/ekiNh3bKgD&quot;, &quot;source&quot;: &quot;&lt;a href=\&quot;http://twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter Web Client&lt;/a&gt;&quot;, &quot;in_reply_to_user_id&quot;: null, &quot;created_at&quot;: &quot;Wed Aug 23 19:25:45 +0000 2017&quot;, &quot;id_str&quot;: &quot;900438934077014017&quot;, &quot;in_reply_to_screen_name&quot;: null, &quot;in_reply_to_status_id&quot;: null, &quot;coordinates&quot;: null, &quot;favorite_count&quot;: 0, &quot;favorited&quot;: false}, &quot;translator_type&quot;: &quot;none&quot;, &quot;is_translation_enabled&quot;: false, &quot;statuses_count&quot;: 1, &quot;profile_background_color&quot;: &quot;C0DEED&quot;, &quot;profile_sidebar_fill_color&quot;: &quot;DDEEF6&quot;, &quot;friends_count&quot;: 5, &quot;utc_offset&quot;: null, &quot;verified&quot;: false, &quot;profile_use_background_image&quot;: true, &quot;id_str&quot;: &quot;618143966&quot;, &quot;location&quot;: &quot;New York, USA&quot;, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/732403133519908864/ox4XZhs3_normal.jpg&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/732403133519908864/ox4XZhs3_normal.jpg&quot;, &quot;profile_background_tile&quot;: false, &quot;listed_count&quot;: 0, &quot;has_extended_profile&quot;: false, &quot;default_profile_image&quot;: false, &quot;favourites_count&quot;: 0, &quot;url&quot;: &quot;https://t.co/oPgImNINZq&quot;, &quot;protected&quot;: false, &quot;geo_enabled&quot;: false, &quot;is_translator&quot;: false, &quot;follow_request_sent&quot;: false, &quot;following&quot;: true}
+{&quot;translator_type&quot;: &quot;none&quot;, &quot;utc_offset&quot;: -18000, &quot;contributors_enabled&quot;: false, &quot;follow_request_sent&quot;: false, &quot;profile_link_color&quot;: &quot;1F98C7&quot;, &quot;status&quot;: {&quot;quoted_status_id&quot;: 913764584732938240, &quot;in_reply_to_screen_name&quot;: null, &quot;source&quot;: &quot;&lt;a href=\&quot;http://twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter Web Client&lt;/a&gt;&quot;, &quot;truncated&quot;: true, &quot;place&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_status_id&quot;: null, &quot;coordinates&quot;: null, &quot;text&quot;: &quot;Great to see #startuptechvalley heading to @SaratogaSprings for October (3rd year running).  @clarkefoley\u2026 https://t.co/QqtYkhpiRU&quot;, &quot;retweeted&quot;: false, &quot;in_reply_to_status_id_str&quot;: null, &quot;lang&quot;: &quot;en&quot;, &quot;is_quote_status&quot;: true, &quot;favorite_count&quot;: 7, &quot;created_at&quot;: &quot;Mon Oct 02 02:00:47 +0000 2017&quot;, &quot;contributors&quot;: null, &quot;geo&quot;: null, &quot;id&quot;: 914671471670243328, &quot;favorited&quot;: false, &quot;possibly_sensitive&quot;: false, &quot;entities&quot;: {&quot;user_mentions&quot;: [{&quot;id&quot;: 25881261, &quot;name&quot;: &quot;Saratoga Springs&quot;, &quot;indices&quot;: [43, 59], &quot;id_str&quot;: &quot;25881261&quot;, &quot;screen_name&quot;: &quot;SaratogaSprings&quot;}, {&quot;id&quot;: 32967328, &quot;name&quot;: &quot;Clarke Foley&quot;, &quot;indices&quot;: [93, 105], &quot;id_str&quot;: &quot;32967328&quot;, &quot;screen_name&quot;: &quot;clarkefoley&quot;}], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/QqtYkhpiRU&quot;, &quot;indices&quot;: [107, 130], &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/914671471670243328&quot;, &quot;display_url&quot;: &quot;twitter.com/i/web/status/9\u2026&quot;}], &quot;hashtags&quot;: [{&quot;indices&quot;: [13, 31], &quot;text&quot;: &quot;startuptechvalley&quot;}], &quot;symbols&quot;: []}, &quot;quoted_status_id_str&quot;: &quot;913764584732938240&quot;, &quot;retweet_count&quot;: 3, &quot;in_reply_to_user_id_str&quot;: null, &quot;id_str&quot;: &quot;914671471670243328&quot;}, &quot;default_profile&quot;: false, &quot;profile_background_tile&quot;: false, &quot;profile_text_color&quot;: &quot;663B12&quot;, &quot;description&quot;: &quot;Director of the Severino Center for Entrepreneurship at RPI, Professor of Business Analytics, husband, parent, and aspiring entrepreneur.&quot;, &quot;protected&quot;: false, &quot;lang&quot;: &quot;en&quot;, &quot;listed_count&quot;: 47, &quot;is_translation_enabled&quot;: false, &quot;id&quot;: 18250462, &quot;profile_sidebar_fill_color&quot;: &quot;DAECF4&quot;, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/1621460585/profile_normal.jpg&quot;, &quot;name&quot;: &quot;Jason Kuruzovich&quot;, &quot;url&quot;: &quot;https://t.co/Qox5pT4c31&quot;, &quot;profile_sidebar_border_color&quot;: &quot;C6E2EE&quot;, &quot;favourites_count&quot;: 339, &quot;profile_use_background_image&quot;: true, &quot;needs_phone_verification&quot;: false, &quot;created_at&quot;: &quot;Fri Dec 19 20:23:58 +0000 2008&quot;, &quot;verified&quot;: false, &quot;notifications&quot;: false, &quot;profile_background_color&quot;: &quot;C6E2EE&quot;, &quot;suspended&quot;: false, &quot;is_translator&quot;: false, &quot;has_extended_profile&quot;: false, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/1621460585/profile_normal.jpg&quot;, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme2/bg.gif&quot;, &quot;geo_enabled&quot;: true, &quot;default_profile_image&quot;: false, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme2/bg.gif&quot;, &quot;time_zone&quot;: &quot;Quito&quot;, &quot;location&quot;: &quot;Troy, NY&quot;, &quot;statuses_count&quot;: 499, &quot;friends_count&quot;: 606, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/Qox5pT4c31&quot;, &quot;indices&quot;: [0, 23], &quot;expanded_url&quot;: &quot;http://www.rpi.edu&quot;, &quot;display_url&quot;: &quot;rpi.edu&quot;}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;followers_count&quot;: 587, &quot;following&quot;: false, &quot;id_str&quot;: &quot;18250462&quot;, &quot;screen_name&quot;: &quot;JasonKuruzovich&quot;}
+{&quot;favourites_count&quot;: 0, &quot;profile_sidebar_fill_color&quot;: &quot;DDEEF6&quot;, &quot;translator_type&quot;: &quot;none&quot;, &quot;lang&quot;: &quot;en&quot;, &quot;contributors_enabled&quot;: false, &quot;verified&quot;: false, &quot;profile_text_color&quot;: &quot;333333&quot;, &quot;notifications&quot;: false, &quot;profile_background_color&quot;: &quot;C0DEED&quot;, &quot;status&quot;: {&quot;in_reply_to_screen_name&quot;: null, &quot;source&quot;: &quot;&lt;a href=\&quot;http://twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter Web Client&lt;/a&gt;&quot;, &quot;truncated&quot;: false, &quot;place&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_status_id&quot;: null, &quot;coordinates&quot;: null, &quot;text&quot;: &quot;Excited to present @analyticsdojo @jupytercon&#39;s poster session: We Need a Jupyter Based FreeCodeCamp for Analytics https://t.co/ekiNh3bKgD&quot;, &quot;retweeted&quot;: false, &quot;in_reply_to_status_id_str&quot;: null, &quot;lang&quot;: &quot;en&quot;, &quot;is_quote_status&quot;: false, &quot;favorite_count&quot;: 0, &quot;created_at&quot;: &quot;Wed Aug 23 19:25:45 +0000 2017&quot;, &quot;contributors&quot;: null, &quot;geo&quot;: null, &quot;id&quot;: 900438934077014017, &quot;favorited&quot;: false, &quot;possibly_sensitive&quot;: false, &quot;entities&quot;: {&quot;user_mentions&quot;: [{&quot;id&quot;: 618143966, &quot;name&quot;: &quot;AnalyticsDojo&quot;, &quot;indices&quot;: [19, 33], &quot;id_str&quot;: &quot;618143966&quot;, &quot;screen_name&quot;: &quot;AnalyticsDojo&quot;}, {&quot;id&quot;: 816450116127113216, &quot;name&quot;: &quot;JupyterCon&quot;, &quot;indices&quot;: [34, 45], &quot;id_str&quot;: &quot;816450116127113216&quot;, &quot;screen_name&quot;: &quot;JupyterCon&quot;}], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/ekiNh3bKgD&quot;, &quot;indices&quot;: [115, 138], &quot;expanded_url&quot;: &quot;https://goo.gl/dRSZd4&quot;, &quot;display_url&quot;: &quot;goo.gl/dRSZd4&quot;}], &quot;hashtags&quot;: [], &quot;symbols&quot;: []}, &quot;retweet_count&quot;: 0, &quot;in_reply_to_user_id_str&quot;: null, &quot;id_str&quot;: &quot;900438934077014017&quot;}, &quot;profile_sidebar_border_color&quot;: &quot;C0DEED&quot;, &quot;default_profile&quot;: true, &quot;is_translator&quot;: false, &quot;profile_link_color&quot;: &quot;1DA1F2&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;description&quot;: &quot;Jupyter notebook based analytics platform modeled off of @freecodecamp. Contact @jasonkurzovich to get involved.&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/732403133519908864/ox4XZhs3_normal.jpg&quot;, &quot;protected&quot;: false, &quot;created_at&quot;: &quot;Mon Jun 25 14:37:19 +0000 2012&quot;, &quot;default_profile_image&quot;: false, &quot;listed_count&quot;: 0, &quot;time_zone&quot;: null, &quot;is_translation_enabled&quot;: false, &quot;id&quot;: 618143966, &quot;location&quot;: &quot;New York, USA&quot;, &quot;utc_offset&quot;: null, &quot;geo_enabled&quot;: false, &quot;friends_count&quot;: 5, &quot;profile_use_background_image&quot;: true, &quot;id_str&quot;: &quot;618143966&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/oPgImNINZq&quot;, &quot;indices&quot;: [0, 23], &quot;expanded_url&quot;: &quot;http://www.analyticsdojo.com&quot;, &quot;display_url&quot;: &quot;analyticsdojo.com&quot;}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;name&quot;: &quot;AnalyticsDojo&quot;, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/732403133519908864/ox4XZhs3_normal.jpg&quot;, &quot;followers_count&quot;: 5, &quot;follow_request_sent&quot;: false, &quot;has_extended_profile&quot;: false, &quot;url&quot;: &quot;https://t.co/oPgImNINZq&quot;, &quot;following&quot;: true, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;profile_background_tile&quot;: false, &quot;statuses_count&quot;: 1, &quot;screen_name&quot;: &quot;AnalyticsDojo&quot;}
+{&quot;favourites_count&quot;: 125, &quot;profile_use_background_image&quot;: false, &quot;profile_sidebar_fill_color&quot;: &quot;000000&quot;, &quot;translator_type&quot;: &quot;none&quot;, &quot;lang&quot;: &quot;en&quot;, &quot;contributors_enabled&quot;: false, &quot;verified&quot;: false, &quot;profile_text_color&quot;: &quot;000000&quot;, &quot;notifications&quot;: false, &quot;profile_background_color&quot;: &quot;000000&quot;, &quot;status&quot;: {&quot;in_reply_to_screen_name&quot;: null, &quot;source&quot;: &quot;&lt;a href=\&quot;https://www.sprinklr.com\&quot; rel=\&quot;nofollow\&quot;&gt;Sprinklr&lt;/a&gt;&quot;, &quot;truncated&quot;: true, &quot;place&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_status_id&quot;: null, &quot;coordinates&quot;: null, &quot;text&quot;: &quot;#AI powered by #TensorFlow coming to the #UnrealEngine! \n\nGet the Unreal Engine plugin here \u2192\u2026 https://t.co/VEIH9Pvg9o&quot;, &quot;retweeted&quot;: false, &quot;in_reply_to_status_id_str&quot;: null, &quot;lang&quot;: &quot;en&quot;, &quot;is_quote_status&quot;: false, &quot;favorite_count&quot;: 236, &quot;created_at&quot;: &quot;Thu Sep 28 18:00:07 +0000 2017&quot;, &quot;contributors&quot;: null, &quot;geo&quot;: null, &quot;id&quot;: 913463346678128643, &quot;favorited&quot;: false, &quot;possibly_sensitive&quot;: false, &quot;entities&quot;: {&quot;user_mentions&quot;: [], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/VEIH9Pvg9o&quot;, &quot;indices&quot;: [95, 118], &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/913463346678128643&quot;, &quot;display_url&quot;: &quot;twitter.com/i/web/status/9\u2026&quot;}], &quot;hashtags&quot;: [{&quot;indices&quot;: [0, 3], &quot;text&quot;: &quot;AI&quot;}, {&quot;indices&quot;: [15, 26], &quot;text&quot;: &quot;TensorFlow&quot;}, {&quot;indices&quot;: [41, 54], &quot;text&quot;: &quot;UnrealEngine&quot;}], &quot;symbols&quot;: []}, &quot;retweet_count&quot;: 140, &quot;in_reply_to_user_id_str&quot;: null, &quot;id_str&quot;: &quot;913463346678128643&quot;}, &quot;profile_sidebar_border_color&quot;: &quot;000000&quot;, &quot;default_profile&quot;: false, &quot;is_translator&quot;: false, &quot;profile_link_color&quot;: &quot;FAB81E&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;description&quot;: &quot;TensorFlow is a fast, flexible, and scalable open-source machine learning library for research and production.&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/773317101012586496/q8sc1KuZ_normal.jpg&quot;, &quot;protected&quot;: false, &quot;created_at&quot;: &quot;Fri Feb 18 16:21:31 +0000 2011&quot;, &quot;default_profile_image&quot;: false, &quot;listed_count&quot;: 540, &quot;time_zone&quot;: &quot;Pacific Time (US &amp; Canada)&quot;, &quot;is_translation_enabled&quot;: false, &quot;id&quot;: 254107028, &quot;location&quot;: &quot;Mountain View, CA&quot;, &quot;utc_offset&quot;: -25200, &quot;geo_enabled&quot;: true, &quot;friends_count&quot;: 88, &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/254107028/1473208179&quot;, &quot;id_str&quot;: &quot;254107028&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/gxgTGHp5yO&quot;, &quot;indices&quot;: [0, 23], &quot;expanded_url&quot;: &quot;http://tensorflow.org&quot;, &quot;display_url&quot;: &quot;tensorflow.org&quot;}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;name&quot;: &quot;TensorFlow&quot;, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/773317101012586496/q8sc1KuZ_normal.jpg&quot;, &quot;followers_count&quot;: 40832, &quot;follow_request_sent&quot;: false, &quot;has_extended_profile&quot;: false, &quot;url&quot;: &quot;https://t.co/gxgTGHp5yO&quot;, &quot;following&quot;: false, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;profile_background_tile&quot;: false, &quot;statuses_count&quot;: 140, &quot;screen_name&quot;: &quot;tensorflow&quot;}
+{&quot;favourites_count&quot;: 387, &quot;profile_use_background_image&quot;: true, &quot;profile_sidebar_fill_color&quot;: &quot;C0DFEC&quot;, &quot;translator_type&quot;: &quot;none&quot;, &quot;lang&quot;: &quot;en&quot;, &quot;contributors_enabled&quot;: false, &quot;verified&quot;: false, &quot;profile_text_color&quot;: &quot;333333&quot;, &quot;notifications&quot;: false, &quot;profile_background_color&quot;: &quot;022330&quot;, &quot;status&quot;: {&quot;in_reply_to_screen_name&quot;: null, &quot;source&quot;: &quot;&lt;a href=\&quot;http://bufferapp.com\&quot; rel=\&quot;nofollow\&quot;&gt;Buffer&lt;/a&gt;&quot;, &quot;truncated&quot;: false, &quot;place&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_status_id&quot;: null, &quot;coordinates&quot;: null, &quot;text&quot;: &quot;RT @gcosma1: A must read! An Overview of Multi-Task Learning in Deep Neural Networks  https://t.co/KHZPbJgDGL #DeepLearning  #transfer lear\u2026&quot;, &quot;retweeted&quot;: false, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;lang&quot;: &quot;en&quot;, &quot;is_quote_status&quot;: false, &quot;favorite_count&quot;: 0, &quot;created_at&quot;: &quot;Tue Jun 06 18:51:57 +0000 2017&quot;, &quot;contributors&quot;: null, &quot;geo&quot;: null, &quot;id&quot;: 872164171164651520, &quot;favorited&quot;: false, &quot;possibly_sensitive&quot;: false, &quot;entities&quot;: {&quot;user_mentions&quot;: [{&quot;id&quot;: 224161598, &quot;name&quot;: &quot;Georgina Cosma&quot;, &quot;indices&quot;: [3, 11], &quot;id_str&quot;: &quot;224161598&quot;, &quot;screen_name&quot;: &quot;gcosma1&quot;}], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/KHZPbJgDGL&quot;, &quot;indices&quot;: [86, 109], &quot;expanded_url&quot;: &quot;http://sebastianruder.com/multi-task/&quot;, &quot;display_url&quot;: &quot;sebastianruder.com/multi-task/&quot;}], &quot;hashtags&quot;: [{&quot;indices&quot;: [110, 123], &quot;text&quot;: &quot;DeepLearning&quot;}, {&quot;indices&quot;: [125, 134], &quot;text&quot;: &quot;transfer&quot;}], &quot;symbols&quot;: []}, &quot;retweet_count&quot;: 209, &quot;retweeted_status&quot;: {&quot;in_reply_to_screen_name&quot;: null, &quot;source&quot;: &quot;&lt;a href=\&quot;http://twitter.com/download/android\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for Android&lt;/a&gt;&quot;, &quot;truncated&quot;: true, &quot;place&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_status_id&quot;: null, &quot;coordinates&quot;: null, &quot;text&quot;: &quot;A must read! An Overview of Multi-Task Learning in Deep Neural Networks  https://t.co/KHZPbJgDGL #DeepLearning\u2026 https://t.co/PK12eeCvhW&quot;, &quot;retweeted&quot;: false, &quot;in_reply_to_status_id_str&quot;: null, &quot;lang&quot;: &quot;en&quot;, &quot;is_quote_status&quot;: false, &quot;favorite_count&quot;: 332, &quot;created_at&quot;: &quot;Tue Jun 06 18:11:14 +0000 2017&quot;, &quot;contributors&quot;: null, &quot;geo&quot;: null, &quot;id&quot;: 872153925125902336, &quot;favorited&quot;: false, &quot;possibly_sensitive&quot;: false, &quot;entities&quot;: {&quot;user_mentions&quot;: [], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/KHZPbJgDGL&quot;, &quot;indices&quot;: [73, 96], &quot;expanded_url&quot;: &quot;http://sebastianruder.com/multi-task/&quot;, &quot;display_url&quot;: &quot;sebastianruder.com/multi-task/&quot;}, {&quot;url&quot;: &quot;https://t.co/PK12eeCvhW&quot;, &quot;indices&quot;: [112, 135], &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/872153925125902336&quot;, &quot;display_url&quot;: &quot;twitter.com/i/web/status/8\u2026&quot;}], &quot;hashtags&quot;: [{&quot;indices&quot;: [97, 110], &quot;text&quot;: &quot;DeepLearning&quot;}], &quot;symbols&quot;: []}, &quot;retweet_count&quot;: 209, &quot;in_reply_to_user_id_str&quot;: null, &quot;id_str&quot;: &quot;872153925125902336&quot;}, &quot;id_str&quot;: &quot;872164171164651520&quot;}, &quot;profile_sidebar_border_color&quot;: &quot;A8C7F7&quot;, &quot;default_profile&quot;: false, &quot;is_translator&quot;: false, &quot;profile_link_color&quot;: &quot;0084B4&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme15/bg.png&quot;, &quot;description&quot;: &quot;Account for Deep Learning related news, papers, software, reading materials and also other machine learning related news and facts&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/534326120162656256/9pjHTMqm_normal.png&quot;, &quot;protected&quot;: false, &quot;created_at&quot;: &quot;Mon Nov 10 16:29:34 +0000 2014&quot;, &quot;default_profile_image&quot;: false, &quot;listed_count&quot;: 864, &quot;time_zone&quot;: &quot;New Delhi&quot;, &quot;is_translation_enabled&quot;: false, &quot;id&quot;: 2895770934, &quot;location&quot;: &quot;&quot;, &quot;utc_offset&quot;: 19800, &quot;geo_enabled&quot;: false, &quot;friends_count&quot;: 429, &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/2895770934/1427524254&quot;, &quot;id_str&quot;: &quot;2895770934&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/fKXpPW5IVI&quot;, &quot;indices&quot;: [0, 23], &quot;expanded_url&quot;: &quot;https://plus.google.com/107322247125350038821&quot;, &quot;display_url&quot;: &quot;plus.google.com/10732224712535\u2026&quot;}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;name&quot;: &quot;Deep Learning Hub&quot;, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/534326120162656256/9pjHTMqm_normal.png&quot;, &quot;followers_count&quot;: 38007, &quot;follow_request_sent&quot;: false, &quot;has_extended_profile&quot;: false, &quot;url&quot;: &quot;https://t.co/fKXpPW5IVI&quot;, &quot;following&quot;: false, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme15/bg.png&quot;, &quot;profile_background_tile&quot;: false, &quot;statuses_count&quot;: 2404, &quot;screen_name&quot;: &quot;DeepLearningHub&quot;}
+{&quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;verified&quot;: false, &quot;id_str&quot;: &quot;254107028&quot;, &quot;is_translation_enabled&quot;: false, &quot;follow_request_sent&quot;: false, &quot;screen_name&quot;: &quot;TensorFlow&quot;, &quot;description&quot;: &quot;TensorFlow is a fast, flexible, and scalable open-source machine learning library for research and production.&quot;, &quot;profile_background_tile&quot;: false, &quot;location&quot;: &quot;Mountain View, CA&quot;, &quot;has_extended_profile&quot;: false, &quot;name&quot;: &quot;TensorFlow&quot;, &quot;utc_offset&quot;: -25200, &quot;profile_sidebar_fill_color&quot;: &quot;000000&quot;, &quot;statuses_count&quot;: 144, &quot;profile_text_color&quot;: &quot;000000&quot;, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/773317101012586496/q8sc1KuZ_normal.jpg&quot;, &quot;profile_background_color&quot;: &quot;000000&quot;, &quot;notifications&quot;: false, &quot;status&quot;: {&quot;geo&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;lang&quot;: &quot;en&quot;, &quot;is_quote_status&quot;: false, &quot;id_str&quot;: &quot;917474245290221571&quot;, &quot;retweet_count&quot;: 271, &quot;text&quot;: &quot;RT @Google: Powered by @tensorflow, an open source machine learning library, Tanzanian farmers can now spot sick crops with AI. https://t.c\u2026&quot;, &quot;favorited&quot;: false, &quot;contributors&quot;: null, &quot;retweeted_status&quot;: {&quot;geo&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;lang&quot;: &quot;en&quot;, &quot;is_quote_status&quot;: false, &quot;id_str&quot;: &quot;917468018032099331&quot;, &quot;retweet_count&quot;: 271, &quot;text&quot;: &quot;Powered by @tensorflow, an open source machine learning library, Tanzanian farmers can now spot sick crops with AI. https://t.co/OB2YUT4XK6&quot;, &quot;favorited&quot;: false, &quot;contributors&quot;: null, &quot;place&quot;: null, &quot;truncated&quot;: false, &quot;retweeted&quot;: false, &quot;source&quot;: &quot;&lt;a href=\&quot;http://twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter Web Client&lt;/a&gt;&quot;, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_status_id&quot;: null, &quot;possibly_sensitive&quot;: false, &quot;in_reply_to_status_id_str&quot;: null, &quot;created_at&quot;: &quot;Mon Oct 09 19:13:15 +0000 2017&quot;, &quot;id&quot;: 917468018032099331, &quot;coordinates&quot;: null, &quot;entities&quot;: {&quot;user_mentions&quot;: [{&quot;indices&quot;: [11, 22], &quot;id_str&quot;: &quot;254107028&quot;, &quot;name&quot;: &quot;TensorFlow&quot;, &quot;screen_name&quot;: &quot;TensorFlow&quot;, &quot;id&quot;: 254107028}], &quot;hashtags&quot;: [], &quot;urls&quot;: [{&quot;expanded_url&quot;: &quot;https://www.wired.com/story/plant-ai&quot;, &quot;url&quot;: &quot;https://t.co/OB2YUT4XK6&quot;, &quot;indices&quot;: [116, 139], &quot;display_url&quot;: &quot;wired.com/story/plant-ai&quot;}], &quot;symbols&quot;: []}, &quot;in_reply_to_screen_name&quot;: null, &quot;favorite_count&quot;: 861}, &quot;truncated&quot;: false, &quot;retweeted&quot;: false, &quot;source&quot;: &quot;&lt;a href=\&quot;https://www.sprinklr.com\&quot; rel=\&quot;nofollow\&quot;&gt;Sprinklr&lt;/a&gt;&quot;, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;created_at&quot;: &quot;Mon Oct 09 19:38:00 +0000 2017&quot;, &quot;id&quot;: 917474245290221571, &quot;coordinates&quot;: null, &quot;entities&quot;: {&quot;user_mentions&quot;: [{&quot;indices&quot;: [3, 10], &quot;id_str&quot;: &quot;20536157&quot;, &quot;name&quot;: &quot;Google&quot;, &quot;screen_name&quot;: &quot;Google&quot;, &quot;id&quot;: 20536157}, {&quot;indices&quot;: [23, 34], &quot;id_str&quot;: &quot;254107028&quot;, &quot;name&quot;: &quot;TensorFlow&quot;, &quot;screen_name&quot;: &quot;TensorFlow&quot;, &quot;id&quot;: 254107028}], &quot;hashtags&quot;: [], &quot;urls&quot;: [], &quot;symbols&quot;: []}, &quot;in_reply_to_screen_name&quot;: null, &quot;favorite_count&quot;: 0, &quot;place&quot;: null}, &quot;followers_count&quot;: 41928, &quot;is_translator&quot;: false, &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/254107028/1473208179&quot;, &quot;geo_enabled&quot;: true, &quot;following&quot;: false, &quot;contributors_enabled&quot;: false, &quot;id&quot;: 254107028, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;listed_count&quot;: 547, &quot;lang&quot;: &quot;en&quot;, &quot;created_at&quot;: &quot;Fri Feb 18 16:21:31 +0000 2011&quot;, &quot;translator_type&quot;: &quot;none&quot;, &quot;profile_sidebar_border_color&quot;: &quot;000000&quot;, &quot;default_profile_image&quot;: false, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/773317101012586496/q8sc1KuZ_normal.jpg&quot;, &quot;protected&quot;: false, &quot;profile_link_color&quot;: &quot;FAB81E&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;expanded_url&quot;: &quot;http://tensorflow.org&quot;, &quot;url&quot;: &quot;https://t.co/gxgTGHp5yO&quot;, &quot;indices&quot;: [0, 23], &quot;display_url&quot;: &quot;tensorflow.org&quot;}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;profile_use_background_image&quot;: false, &quot;default_profile&quot;: false, &quot;favourites_count&quot;: 125, &quot;url&quot;: &quot;https://t.co/gxgTGHp5yO&quot;, &quot;time_zone&quot;: &quot;Pacific Time (US &amp; Canada)&quot;, &quot;friends_count&quot;: 88}
+{&quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme15/bg.png&quot;, &quot;verified&quot;: false, &quot;id_str&quot;: &quot;2895770934&quot;, &quot;is_translation_enabled&quot;: false, &quot;follow_request_sent&quot;: false, &quot;screen_name&quot;: &quot;DeepLearningHub&quot;, &quot;description&quot;: &quot;Account for Deep Learning related news, papers, software, reading materials and also other machine learning related news and facts&quot;, &quot;profile_background_tile&quot;: false, &quot;location&quot;: &quot;&quot;, &quot;has_extended_profile&quot;: false, &quot;name&quot;: &quot;Deep Learning Hub&quot;, &quot;utc_offset&quot;: 19800, &quot;profile_sidebar_fill_color&quot;: &quot;C0DFEC&quot;, &quot;statuses_count&quot;: 2404, &quot;profile_text_color&quot;: &quot;333333&quot;, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/534326120162656256/9pjHTMqm_normal.png&quot;, &quot;profile_background_color&quot;: &quot;022330&quot;, &quot;notifications&quot;: false, &quot;status&quot;: {&quot;geo&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;lang&quot;: &quot;en&quot;, &quot;is_quote_status&quot;: false, &quot;id_str&quot;: &quot;872164171164651520&quot;, &quot;retweet_count&quot;: 210, &quot;text&quot;: &quot;RT @gcosma1: A must read! An Overview of Multi-Task Learning in Deep Neural Networks  https://t.co/KHZPbJgDGL #DeepLearning  #transfer lear\u2026&quot;, &quot;favorited&quot;: false, &quot;contributors&quot;: null, &quot;retweeted_status&quot;: {&quot;geo&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;lang&quot;: &quot;en&quot;, &quot;is_quote_status&quot;: false, &quot;id_str&quot;: &quot;872153925125902336&quot;, &quot;retweet_count&quot;: 210, &quot;text&quot;: &quot;A must read! An Overview of Multi-Task Learning in Deep Neural Networks  https://t.co/KHZPbJgDGL #DeepLearning\u2026 https://t.co/PK12eeCvhW&quot;, &quot;favorited&quot;: false, &quot;contributors&quot;: null, &quot;place&quot;: null, &quot;truncated&quot;: true, &quot;retweeted&quot;: false, &quot;source&quot;: &quot;&lt;a href=\&quot;http://twitter.com/download/android\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for Android&lt;/a&gt;&quot;, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_status_id&quot;: null, &quot;possibly_sensitive&quot;: false, &quot;in_reply_to_status_id_str&quot;: null, &quot;created_at&quot;: &quot;Tue Jun 06 18:11:14 +0000 2017&quot;, &quot;id&quot;: 872153925125902336, &quot;coordinates&quot;: null, &quot;entities&quot;: {&quot;user_mentions&quot;: [], &quot;hashtags&quot;: [{&quot;indices&quot;: [97, 110], &quot;text&quot;: &quot;DeepLearning&quot;}], &quot;urls&quot;: [{&quot;expanded_url&quot;: &quot;http://sebastianruder.com/multi-task/&quot;, &quot;url&quot;: &quot;https://t.co/KHZPbJgDGL&quot;, &quot;indices&quot;: [73, 96], &quot;display_url&quot;: &quot;sebastianruder.com/multi-task/&quot;}, {&quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/872153925125902336&quot;, &quot;url&quot;: &quot;https://t.co/PK12eeCvhW&quot;, &quot;indices&quot;: [112, 135], &quot;display_url&quot;: &quot;twitter.com/i/web/status/8\u2026&quot;}], &quot;symbols&quot;: []}, &quot;in_reply_to_screen_name&quot;: null, &quot;favorite_count&quot;: 333}, &quot;truncated&quot;: false, &quot;retweeted&quot;: false, &quot;source&quot;: &quot;&lt;a href=\&quot;http://bufferapp.com\&quot; rel=\&quot;nofollow\&quot;&gt;Buffer&lt;/a&gt;&quot;, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_status_id&quot;: null, &quot;possibly_sensitive&quot;: false, &quot;in_reply_to_status_id_str&quot;: null, &quot;created_at&quot;: &quot;Tue Jun 06 18:51:57 +0000 2017&quot;, &quot;id&quot;: 872164171164651520, &quot;coordinates&quot;: null, &quot;entities&quot;: {&quot;user_mentions&quot;: [{&quot;indices&quot;: [3, 11], &quot;id_str&quot;: &quot;224161598&quot;, &quot;name&quot;: &quot;Georgina Cosma&quot;, &quot;screen_name&quot;: &quot;gcosma1&quot;, &quot;id&quot;: 224161598}], &quot;hashtags&quot;: [{&quot;indices&quot;: [110, 123], &quot;text&quot;: &quot;DeepLearning&quot;}, {&quot;indices&quot;: [125, 134], &quot;text&quot;: &quot;transfer&quot;}], &quot;urls&quot;: [{&quot;expanded_url&quot;: &quot;http://sebastianruder.com/multi-task/&quot;, &quot;url&quot;: &quot;https://t.co/KHZPbJgDGL&quot;, &quot;indices&quot;: [86, 109], &quot;display_url&quot;: &quot;sebastianruder.com/multi-task/&quot;}], &quot;symbols&quot;: []}, &quot;in_reply_to_screen_name&quot;: null, &quot;favorite_count&quot;: 0, &quot;place&quot;: null}, &quot;followers_count&quot;: 38236, &quot;is_translator&quot;: false, &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/2895770934/1427524254&quot;, &quot;geo_enabled&quot;: false, &quot;following&quot;: false, &quot;contributors_enabled&quot;: false, &quot;id&quot;: 2895770934, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme15/bg.png&quot;, &quot;listed_count&quot;: 867, &quot;lang&quot;: &quot;en&quot;, &quot;created_at&quot;: &quot;Mon Nov 10 16:29:34 +0000 2014&quot;, &quot;translator_type&quot;: &quot;none&quot;, &quot;profile_sidebar_border_color&quot;: &quot;A8C7F7&quot;, &quot;default_profile_image&quot;: false, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/534326120162656256/9pjHTMqm_normal.png&quot;, &quot;protected&quot;: false, &quot;profile_link_color&quot;: &quot;0084B4&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;expanded_url&quot;: &quot;https://plus.google.com/107322247125350038821&quot;, &quot;url&quot;: &quot;https://t.co/fKXpPW5IVI&quot;, &quot;indices&quot;: [0, 23], &quot;display_url&quot;: &quot;plus.google.com/10732224712535\u2026&quot;}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;profile_use_background_image&quot;: true, &quot;default_profile&quot;: false, &quot;favourites_count&quot;: 387, &quot;url&quot;: &quot;https://t.co/fKXpPW5IVI&quot;, &quot;time_zone&quot;: &quot;New Delhi&quot;, &quot;friends_count&quot;: 429}
+{&quot;id&quot;: 254107028, &quot;id_str&quot;: &quot;254107028&quot;, &quot;name&quot;: &quot;TensorFlow&quot;, &quot;screen_name&quot;: &quot;TensorFlow&quot;, &quot;location&quot;: &quot;Mountain View, CA&quot;, &quot;description&quot;: &quot;TensorFlow is a fast, flexible, and scalable open-source machine learning library for research and production.&quot;, &quot;url&quot;: &quot;https://t.co/gxgTGHp5yO&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/gxgTGHp5yO&quot;, &quot;expanded_url&quot;: &quot;http://tensorflow.org&quot;, &quot;display_url&quot;: &quot;tensorflow.org&quot;, &quot;indices&quot;: [0, 23]}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;protected&quot;: false, &quot;followers_count&quot;: 61146, &quot;friends_count&quot;: 91, &quot;listed_count&quot;: 811, &quot;created_at&quot;: &quot;Fri Feb 18 16:21:31 +0000 2011&quot;, &quot;favourites_count&quot;: 125, &quot;utc_offset&quot;: -28800, &quot;time_zone&quot;: &quot;Pacific Time (US &amp; Canada)&quot;, &quot;geo_enabled&quot;: true, &quot;verified&quot;: true, &quot;statuses_count&quot;: 201, &quot;lang&quot;: &quot;en&quot;, &quot;status&quot;: {&quot;created_at&quot;: &quot;Mon Feb 12 17:18:55 +0000 2018&quot;, &quot;id&quot;: 963100113617997825, &quot;id_str&quot;: &quot;963100113617997825&quot;, &quot;text&quot;: &quot;We like fast hardware, and Cloud TPUs are now available in beta to help you train and run TensorFlow models really\u2026 https://t.co/bzrgqvs4NN&quot;, &quot;truncated&quot;: true, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/bzrgqvs4NN&quot;, &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/963100113617997825&quot;, &quot;display_url&quot;: &quot;twitter.com/i/web/status/9\u2026&quot;, &quot;indices&quot;: [116, 139]}]}, &quot;source&quot;: &quot;&lt;a href=\&quot;https://www.sprinklr.com\&quot; rel=\&quot;nofollow\&quot;&gt;Sprinklr&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_screen_name&quot;: null, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: null, &quot;contributors&quot;: null, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 22, &quot;favorite_count&quot;: 50, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;possibly_sensitive&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;contributors_enabled&quot;: false, &quot;is_translator&quot;: false, &quot;is_translation_enabled&quot;: false, &quot;profile_background_color&quot;: &quot;000000&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;profile_background_tile&quot;: false, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/773317101012586496/q8sc1KuZ_normal.jpg&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/773317101012586496/q8sc1KuZ_normal.jpg&quot;, &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/254107028/1473208179&quot;, &quot;profile_link_color&quot;: &quot;FAB81E&quot;, &quot;profile_sidebar_border_color&quot;: &quot;000000&quot;, &quot;profile_sidebar_fill_color&quot;: &quot;000000&quot;, &quot;profile_text_color&quot;: &quot;000000&quot;, &quot;profile_use_background_image&quot;: false, &quot;has_extended_profile&quot;: false, &quot;default_profile&quot;: false, &quot;default_profile_image&quot;: false, &quot;following&quot;: false, &quot;follow_request_sent&quot;: false, &quot;notifications&quot;: false, &quot;translator_type&quot;: &quot;none&quot;}
+{&quot;id&quot;: 2895770934, &quot;id_str&quot;: &quot;2895770934&quot;, &quot;name&quot;: &quot;Deep Learning Hub&quot;, &quot;screen_name&quot;: &quot;DeepLearningHub&quot;, &quot;location&quot;: &quot;&quot;, &quot;description&quot;: &quot;Account for Deep Learning related news, papers, software, reading materials and also other machine learning related news and facts&quot;, &quot;url&quot;: &quot;https://t.co/fKXpPW5IVI&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/fKXpPW5IVI&quot;, &quot;expanded_url&quot;: &quot;https://plus.google.com/107322247125350038821&quot;, &quot;display_url&quot;: &quot;plus.google.com/10732224712535\u2026&quot;, &quot;indices&quot;: [0, 23]}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;protected&quot;: false, &quot;followers_count&quot;: 45100, &quot;friends_count&quot;: 436, &quot;listed_count&quot;: 973, &quot;created_at&quot;: &quot;Mon Nov 10 16:29:34 +0000 2014&quot;, &quot;favourites_count&quot;: 386, &quot;utc_offset&quot;: 19800, &quot;time_zone&quot;: &quot;New Delhi&quot;, &quot;geo_enabled&quot;: false, &quot;verified&quot;: false, &quot;statuses_count&quot;: 2434, &quot;lang&quot;: &quot;en&quot;, &quot;status&quot;: {&quot;created_at&quot;: &quot;Wed Jan 10 15:38:00 +0000 2018&quot;, &quot;id&quot;: 951115919929077760, &quot;id_str&quot;: &quot;951115919929077760&quot;, &quot;text&quot;: &quot;RT @jeremyphoward: @yoavgo @nlpmattg @seb_ruder @Smerity @dennybritz A good example of a paper that pulls together quite a few useful techn\u2026&quot;, &quot;truncated&quot;: false, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [{&quot;screen_name&quot;: &quot;jeremyphoward&quot;, &quot;name&quot;: &quot;Jeremy Howard&quot;, &quot;id&quot;: 175282603, &quot;id_str&quot;: &quot;175282603&quot;, &quot;indices&quot;: [3, 17]}, {&quot;screen_name&quot;: &quot;yoavgo&quot;, &quot;name&quot;: &quot;(((\u03bb()(\u03bb() &#39;yoav))))&quot;, &quot;id&quot;: 39547749, &quot;id_str&quot;: &quot;39547749&quot;, &quot;indices&quot;: [19, 26]}, {&quot;screen_name&quot;: &quot;nlpmattg&quot;, &quot;name&quot;: &quot;Matt Gardner&quot;, &quot;id&quot;: 866469276978364416, &quot;id_str&quot;: &quot;866469276978364416&quot;, &quot;indices&quot;: [27, 36]}, {&quot;screen_name&quot;: &quot;seb_ruder&quot;, &quot;name&quot;: &quot;Sebastian Ruder&quot;, &quot;id&quot;: 2785337469, &quot;id_str&quot;: &quot;2785337469&quot;, &quot;indices&quot;: [37, 47]}, {&quot;screen_name&quot;: &quot;Smerity&quot;, &quot;name&quot;: &quot;Smerity&quot;, &quot;id&quot;: 15363432, &quot;id_str&quot;: &quot;15363432&quot;, &quot;indices&quot;: [48, 56]}, {&quot;screen_name&quot;: &quot;dennybritz&quot;, &quot;name&quot;: &quot;Denny Britz&quot;, &quot;id&quot;: 11766442, &quot;id_str&quot;: &quot;11766442&quot;, &quot;indices&quot;: [57, 68]}], &quot;urls&quot;: []}, &quot;source&quot;: &quot;&lt;a href=\&quot;http://bufferapp.com\&quot; rel=\&quot;nofollow\&quot;&gt;Buffer&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_screen_name&quot;: null, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: null, &quot;contributors&quot;: null, &quot;retweeted_status&quot;: {&quot;created_at&quot;: &quot;Tue Jan 09 18:19:28 +0000 2018&quot;, &quot;id&quot;: 950794163297009664, &quot;id_str&quot;: &quot;950794163297009664&quot;, &quot;text&quot;: &quot;@yoavgo @nlpmattg @seb_ruder @Smerity @dennybritz A good example of a paper that pulls together quite a few useful\u2026 https://t.co/wmbH9diMXO&quot;, &quot;truncated&quot;: true, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [{&quot;screen_name&quot;: &quot;yoavgo&quot;, &quot;name&quot;: &quot;(((\u03bb()(\u03bb() &#39;yoav))))&quot;, &quot;id&quot;: 39547749, &quot;id_str&quot;: &quot;39547749&quot;, &quot;indices&quot;: [0, 7]}, {&quot;screen_name&quot;: &quot;nlpmattg&quot;, &quot;name&quot;: &quot;Matt Gardner&quot;, &quot;id&quot;: 866469276978364416, &quot;id_str&quot;: &quot;866469276978364416&quot;, &quot;indices&quot;: [8, 17]}, {&quot;screen_name&quot;: &quot;seb_ruder&quot;, &quot;name&quot;: &quot;Sebastian Ruder&quot;, &quot;id&quot;: 2785337469, &quot;id_str&quot;: &quot;2785337469&quot;, &quot;indices&quot;: [18, 28]}, {&quot;screen_name&quot;: &quot;Smerity&quot;, &quot;name&quot;: &quot;Smerity&quot;, &quot;id&quot;: 15363432, &quot;id_str&quot;: &quot;15363432&quot;, &quot;indices&quot;: [29, 37]}, {&quot;screen_name&quot;: &quot;dennybritz&quot;, &quot;name&quot;: &quot;Denny Britz&quot;, &quot;id&quot;: 11766442, &quot;id_str&quot;: &quot;11766442&quot;, &quot;indices&quot;: [38, 49]}], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/wmbH9diMXO&quot;, &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/950794163297009664&quot;, &quot;display_url&quot;: &quot;twitter.com/i/web/status/9\u2026&quot;, &quot;indices&quot;: [116, 139]}]}, &quot;source&quot;: &quot;&lt;a href=\&quot;http://twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter Web Client&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: 950775709215191040, &quot;in_reply_to_status_id_str&quot;: &quot;950775709215191040&quot;, &quot;in_reply_to_user_id&quot;: 39547749, &quot;in_reply_to_user_id_str&quot;: &quot;39547749&quot;, &quot;in_reply_to_screen_name&quot;: &quot;yoavgo&quot;, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: null, &quot;contributors&quot;: null, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 15, &quot;favorite_count&quot;: 27, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;possibly_sensitive&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 15, &quot;favorite_count&quot;: 0, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;contributors_enabled&quot;: false, &quot;is_translator&quot;: false, &quot;is_translation_enabled&quot;: false, &quot;profile_background_color&quot;: &quot;022330&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme15/bg.png&quot;, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme15/bg.png&quot;, &quot;profile_background_tile&quot;: false, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/534326120162656256/9pjHTMqm_normal.png&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/534326120162656256/9pjHTMqm_normal.png&quot;, &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/2895770934/1427524254&quot;, &quot;profile_link_color&quot;: &quot;0084B4&quot;, &quot;profile_sidebar_border_color&quot;: &quot;A8C7F7&quot;, &quot;profile_sidebar_fill_color&quot;: &quot;C0DFEC&quot;, &quot;profile_text_color&quot;: &quot;333333&quot;, &quot;profile_use_background_image&quot;: true, &quot;has_extended_profile&quot;: false, &quot;default_profile&quot;: false, &quot;default_profile_image&quot;: false, &quot;following&quot;: false, &quot;follow_request_sent&quot;: false, &quot;notifications&quot;: false, &quot;translator_type&quot;: &quot;none&quot;}
+{&quot;id&quot;: 254107028, &quot;id_str&quot;: &quot;254107028&quot;, &quot;name&quot;: &quot;TensorFlow&quot;, &quot;screen_name&quot;: &quot;TensorFlow&quot;, &quot;location&quot;: &quot;Mountain View, CA&quot;, &quot;description&quot;: &quot;TensorFlow is a fast, flexible, and scalable open-source machine learning library for research and production.&quot;, &quot;url&quot;: &quot;https://t.co/gxgTGHp5yO&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/gxgTGHp5yO&quot;, &quot;expanded_url&quot;: &quot;http://tensorflow.org&quot;, &quot;display_url&quot;: &quot;tensorflow.org&quot;, &quot;indices&quot;: [0, 23]}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;protected&quot;: false, &quot;followers_count&quot;: 102995, &quot;friends_count&quot;: 91, &quot;listed_count&quot;: 1256, &quot;created_at&quot;: &quot;Fri Feb 18 16:21:31 +0000 2011&quot;, &quot;favourites_count&quot;: 130, &quot;utc_offset&quot;: null, &quot;time_zone&quot;: null, &quot;geo_enabled&quot;: true, &quot;verified&quot;: true, &quot;statuses_count&quot;: 424, &quot;lang&quot;: &quot;en&quot;, &quot;status&quot;: {&quot;created_at&quot;: &quot;Thu Sep 20 18:54:49 +0000 2018&quot;, &quot;id&quot;: 1042849580554088448, &quot;id_str&quot;: &quot;1042849580554088448&quot;, &quot;text&quot;: &quot;Last week, we pre-processed our data for text classification training. Now, @lmoroney shows you how to design a neu\u2026 https://t.co/pzIY1VOLv3&quot;, &quot;truncated&quot;: true, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [{&quot;screen_name&quot;: &quot;lmoroney&quot;, &quot;name&quot;: &quot;Laurence Moroney&quot;, &quot;id&quot;: 5659072, &quot;id_str&quot;: &quot;5659072&quot;, &quot;indices&quot;: [76, 85]}], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/pzIY1VOLv3&quot;, &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/1042849580554088448&quot;, &quot;display_url&quot;: &quot;twitter.com/i/web/status/1\u2026&quot;, &quot;indices&quot;: [117, 140]}]}, &quot;source&quot;: &quot;&lt;a href=\&quot;https://www.sprinklr.com\&quot; rel=\&quot;nofollow\&quot;&gt;Sprinklr&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_screen_name&quot;: null, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: null, &quot;contributors&quot;: null, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 36, &quot;favorite_count&quot;: 105, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;possibly_sensitive&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;contributors_enabled&quot;: false, &quot;is_translator&quot;: false, &quot;is_translation_enabled&quot;: false, &quot;profile_background_color&quot;: &quot;000000&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;profile_background_tile&quot;: false, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/773317101012586496/q8sc1KuZ_normal.jpg&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/773317101012586496/q8sc1KuZ_normal.jpg&quot;, &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/254107028/1473208179&quot;, &quot;profile_link_color&quot;: &quot;FAB81E&quot;, &quot;profile_sidebar_border_color&quot;: &quot;000000&quot;, &quot;profile_sidebar_fill_color&quot;: &quot;000000&quot;, &quot;profile_text_color&quot;: &quot;000000&quot;, &quot;profile_use_background_image&quot;: false, &quot;has_extended_profile&quot;: false, &quot;default_profile&quot;: false, &quot;default_profile_image&quot;: false, &quot;following&quot;: false, &quot;follow_request_sent&quot;: false, &quot;notifications&quot;: false, &quot;translator_type&quot;: &quot;none&quot;}
+{&quot;id&quot;: 2895770934, &quot;id_str&quot;: &quot;2895770934&quot;, &quot;name&quot;: &quot;Deep Learning Hub&quot;, &quot;screen_name&quot;: &quot;DeepLearningHub&quot;, &quot;location&quot;: &quot;&quot;, &quot;description&quot;: &quot;Account for Deep Learning related news, papers, software, reading materials and also other machine learning related news and facts&quot;, &quot;url&quot;: &quot;https://t.co/fKXpPW5IVI&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/fKXpPW5IVI&quot;, &quot;expanded_url&quot;: &quot;https://plus.google.com/107322247125350038821&quot;, &quot;display_url&quot;: &quot;plus.google.com/10732224712535\u2026&quot;, &quot;indices&quot;: [0, 23]}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;protected&quot;: false, &quot;followers_count&quot;: 52793, &quot;friends_count&quot;: 439, &quot;listed_count&quot;: 1063, &quot;created_at&quot;: &quot;Mon Nov 10 16:29:34 +0000 2014&quot;, &quot;favourites_count&quot;: 388, &quot;utc_offset&quot;: null, &quot;time_zone&quot;: null, &quot;geo_enabled&quot;: false, &quot;verified&quot;: false, &quot;statuses_count&quot;: 2431, &quot;lang&quot;: &quot;en&quot;, &quot;status&quot;: {&quot;created_at&quot;: &quot;Tue Apr 03 06:35:52 +0000 2018&quot;, &quot;id&quot;: 981057678565892096, &quot;id_str&quot;: &quot;981057678565892096&quot;, &quot;text&quot;: &quot;RT @DarshanaN: Tomorrow Tue 4/3 talk on \&quot;Deep Learning &amp;amp; its application in Medicine\&quot; at 456 W. Olive Avenue, Sunnyvale. This is a free eve\u2026&quot;, &quot;truncated&quot;: false, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [{&quot;screen_name&quot;: &quot;DarshanaN&quot;, &quot;name&quot;: &quot;Dr Darshana Nadkarni&quot;, &quot;id&quot;: 24947616, &quot;id_str&quot;: &quot;24947616&quot;, &quot;indices&quot;: [3, 13]}], &quot;urls&quot;: []}, &quot;source&quot;: &quot;&lt;a href=\&quot;https://about.twitter.com/products/tweetdeck\&quot; rel=\&quot;nofollow\&quot;&gt;TweetDeck&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_screen_name&quot;: null, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: null, &quot;contributors&quot;: null, &quot;retweeted_status&quot;: {&quot;created_at&quot;: &quot;Tue Apr 03 04:40:55 +0000 2018&quot;, &quot;id&quot;: 981028752179122176, &quot;id_str&quot;: &quot;981028752179122176&quot;, &quot;text&quot;: &quot;Tomorrow Tue 4/3 talk on \&quot;Deep Learning &amp;amp; its application in Medicine\&quot; at 456 W. Olive Avenue, Sunnyvale. This is a\u2026 https://t.co/wsMvHjpvhC&quot;, &quot;truncated&quot;: true, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/wsMvHjpvhC&quot;, &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/981028752179122176&quot;, &quot;display_url&quot;: &quot;twitter.com/i/web/status/9\u2026&quot;, &quot;indices&quot;: [121, 144]}]}, &quot;source&quot;: &quot;&lt;a href=\&quot;http://twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter Web Client&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_screen_name&quot;: null, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: {&quot;id&quot;: &quot;30344aecffe6a491&quot;, &quot;url&quot;: &quot;https://api.twitter.com/1.1/geo/id/30344aecffe6a491.json&quot;, &quot;place_type&quot;: &quot;city&quot;, &quot;name&quot;: &quot;Fremont&quot;, &quot;full_name&quot;: &quot;Fremont, CA&quot;, &quot;country_code&quot;: &quot;US&quot;, &quot;country&quot;: &quot;United States&quot;, &quot;contained_within&quot;: [], &quot;bounding_box&quot;: {&quot;type&quot;: &quot;Polygon&quot;, &quot;coordinates&quot;: [[[-122.069956, 37.454962], [-121.889098, 37.454962], [-121.889098, 37.592327], [-122.069956, 37.592327]]]}, &quot;attributes&quot;: {}}, &quot;contributors&quot;: null, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 6, &quot;favorite_count&quot;: 22, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 6, &quot;favorite_count&quot;: 0, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;contributors_enabled&quot;: false, &quot;is_translator&quot;: false, &quot;is_translation_enabled&quot;: false, &quot;profile_background_color&quot;: &quot;022330&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme15/bg.png&quot;, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme15/bg.png&quot;, &quot;profile_background_tile&quot;: false, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/534326120162656256/9pjHTMqm_normal.png&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/534326120162656256/9pjHTMqm_normal.png&quot;, &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/2895770934/1427524254&quot;, &quot;profile_link_color&quot;: &quot;0084B4&quot;, &quot;profile_sidebar_border_color&quot;: &quot;A8C7F7&quot;, &quot;profile_sidebar_fill_color&quot;: &quot;C0DFEC&quot;, &quot;profile_text_color&quot;: &quot;333333&quot;, &quot;profile_use_background_image&quot;: true, &quot;has_extended_profile&quot;: false, &quot;default_profile&quot;: false, &quot;default_profile_image&quot;: false, &quot;following&quot;: false, &quot;follow_request_sent&quot;: false, &quot;notifications&quot;: false, &quot;translator_type&quot;: &quot;none&quot;}
+{&quot;id&quot;: 254107028, &quot;id_str&quot;: &quot;254107028&quot;, &quot;name&quot;: &quot;TensorFlow&quot;, &quot;screen_name&quot;: &quot;TensorFlow&quot;, &quot;location&quot;: &quot;Mountain View, CA&quot;, &quot;description&quot;: &quot;TensorFlow is a fast, flexible, and scalable open-source machine learning library for research and production.&quot;, &quot;url&quot;: &quot;https://t.co/gxgTGHp5yO&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/gxgTGHp5yO&quot;, &quot;expanded_url&quot;: &quot;http://tensorflow.org&quot;, &quot;display_url&quot;: &quot;tensorflow.org&quot;, &quot;indices&quot;: [0, 23]}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;protected&quot;: false, &quot;followers_count&quot;: 103680, &quot;friends_count&quot;: 91, &quot;listed_count&quot;: 1262, &quot;created_at&quot;: &quot;Fri Feb 18 16:21:31 +0000 2011&quot;, &quot;favourites_count&quot;: 130, &quot;utc_offset&quot;: null, &quot;time_zone&quot;: null, &quot;geo_enabled&quot;: true, &quot;verified&quot;: true, &quot;statuses_count&quot;: 425, &quot;lang&quot;: &quot;en&quot;, &quot;status&quot;: {&quot;created_at&quot;: &quot;Fri Sep 21 18:17:01 +0000 2018&quot;, &quot;id&quot;: 1043202452374339587, &quot;id_str&quot;: &quot;1043202452374339587&quot;, &quot;text&quot;: &quot;Congrats to @Qualcomm on winning track one of the Low-Power Image Recognition Challenge (LPIRC), with\u2026 https://t.co/iO2SXotGF8&quot;, &quot;truncated&quot;: true, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [{&quot;screen_name&quot;: &quot;Qualcomm&quot;, &quot;name&quot;: &quot;Qualcomm&quot;, &quot;id&quot;: 84623395, &quot;id_str&quot;: &quot;84623395&quot;, &quot;indices&quot;: [12, 21]}], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/iO2SXotGF8&quot;, &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/1043202452374339587&quot;, &quot;display_url&quot;: &quot;twitter.com/i/web/status/1\u2026&quot;, &quot;indices&quot;: [103, 126]}]}, &quot;source&quot;: &quot;&lt;a href=\&quot;https://www.sprinklr.com\&quot; rel=\&quot;nofollow\&quot;&gt;Sprinklr&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_screen_name&quot;: null, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: null, &quot;contributors&quot;: null, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 68, &quot;favorite_count&quot;: 262, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;possibly_sensitive&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;contributors_enabled&quot;: false, &quot;is_translator&quot;: false, &quot;is_translation_enabled&quot;: false, &quot;profile_background_color&quot;: &quot;000000&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;profile_background_tile&quot;: false, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/773317101012586496/q8sc1KuZ_normal.jpg&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/773317101012586496/q8sc1KuZ_normal.jpg&quot;, &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/254107028/1473208179&quot;, &quot;profile_link_color&quot;: &quot;FAB81E&quot;, &quot;profile_sidebar_border_color&quot;: &quot;000000&quot;, &quot;profile_sidebar_fill_color&quot;: &quot;000000&quot;, &quot;profile_text_color&quot;: &quot;000000&quot;, &quot;profile_use_background_image&quot;: false, &quot;has_extended_profile&quot;: false, &quot;default_profile&quot;: false, &quot;default_profile_image&quot;: false, &quot;following&quot;: false, &quot;follow_request_sent&quot;: false, &quot;notifications&quot;: false, &quot;translator_type&quot;: &quot;none&quot;}
+{&quot;id&quot;: 2895770934, &quot;id_str&quot;: &quot;2895770934&quot;, &quot;name&quot;: &quot;Deep Learning Hub&quot;, &quot;screen_name&quot;: &quot;DeepLearningHub&quot;, &quot;location&quot;: &quot;&quot;, &quot;description&quot;: &quot;Account for Deep Learning related news, papers, software, reading materials and also other machine learning related news and facts&quot;, &quot;url&quot;: &quot;https://t.co/fKXpPW5IVI&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/fKXpPW5IVI&quot;, &quot;expanded_url&quot;: &quot;https://plus.google.com/107322247125350038821&quot;, &quot;display_url&quot;: &quot;plus.google.com/10732224712535\u2026&quot;, &quot;indices&quot;: [0, 23]}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;protected&quot;: false, &quot;followers_count&quot;: 52859, &quot;friends_count&quot;: 439, &quot;listed_count&quot;: 1066, &quot;created_at&quot;: &quot;Mon Nov 10 16:29:34 +0000 2014&quot;, &quot;favourites_count&quot;: 388, &quot;utc_offset&quot;: null, &quot;time_zone&quot;: null, &quot;geo_enabled&quot;: false, &quot;verified&quot;: false, &quot;statuses_count&quot;: 2431, &quot;lang&quot;: &quot;en&quot;, &quot;status&quot;: {&quot;created_at&quot;: &quot;Tue Apr 03 06:35:52 +0000 2018&quot;, &quot;id&quot;: 981057678565892096, &quot;id_str&quot;: &quot;981057678565892096&quot;, &quot;text&quot;: &quot;RT @DarshanaN: Tomorrow Tue 4/3 talk on \&quot;Deep Learning &amp;amp; its application in Medicine\&quot; at 456 W. Olive Avenue, Sunnyvale. This is a free eve\u2026&quot;, &quot;truncated&quot;: false, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [{&quot;screen_name&quot;: &quot;DarshanaN&quot;, &quot;name&quot;: &quot;Dr Darshana Nadkarni&quot;, &quot;id&quot;: 24947616, &quot;id_str&quot;: &quot;24947616&quot;, &quot;indices&quot;: [3, 13]}], &quot;urls&quot;: []}, &quot;source&quot;: &quot;&lt;a href=\&quot;https://about.twitter.com/products/tweetdeck\&quot; rel=\&quot;nofollow\&quot;&gt;TweetDeck&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_screen_name&quot;: null, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: null, &quot;contributors&quot;: null, &quot;retweeted_status&quot;: {&quot;created_at&quot;: &quot;Tue Apr 03 04:40:55 +0000 2018&quot;, &quot;id&quot;: 981028752179122176, &quot;id_str&quot;: &quot;981028752179122176&quot;, &quot;text&quot;: &quot;Tomorrow Tue 4/3 talk on \&quot;Deep Learning &amp;amp; its application in Medicine\&quot; at 456 W. Olive Avenue, Sunnyvale. This is a\u2026 https://t.co/wsMvHjpvhC&quot;, &quot;truncated&quot;: true, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/wsMvHjpvhC&quot;, &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/981028752179122176&quot;, &quot;display_url&quot;: &quot;twitter.com/i/web/status/9\u2026&quot;, &quot;indices&quot;: [121, 144]}]}, &quot;source&quot;: &quot;&lt;a href=\&quot;http://twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter Web Client&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_screen_name&quot;: null, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: {&quot;id&quot;: &quot;30344aecffe6a491&quot;, &quot;url&quot;: &quot;https://api.twitter.com/1.1/geo/id/30344aecffe6a491.json&quot;, &quot;place_type&quot;: &quot;city&quot;, &quot;name&quot;: &quot;Fremont&quot;, &quot;full_name&quot;: &quot;Fremont, CA&quot;, &quot;country_code&quot;: &quot;US&quot;, &quot;country&quot;: &quot;United States&quot;, &quot;contained_within&quot;: [], &quot;bounding_box&quot;: {&quot;type&quot;: &quot;Polygon&quot;, &quot;coordinates&quot;: [[[-122.069956, 37.454962], [-121.889098, 37.454962], [-121.889098, 37.592327], [-122.069956, 37.592327]]]}, &quot;attributes&quot;: {}}, &quot;contributors&quot;: null, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 6, &quot;favorite_count&quot;: 22, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 6, &quot;favorite_count&quot;: 0, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;contributors_enabled&quot;: false, &quot;is_translator&quot;: false, &quot;is_translation_enabled&quot;: false, &quot;profile_background_color&quot;: &quot;022330&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme15/bg.png&quot;, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme15/bg.png&quot;, &quot;profile_background_tile&quot;: false, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/534326120162656256/9pjHTMqm_normal.png&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/534326120162656256/9pjHTMqm_normal.png&quot;, &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/2895770934/1427524254&quot;, &quot;profile_link_color&quot;: &quot;0084B4&quot;, &quot;profile_sidebar_border_color&quot;: &quot;A8C7F7&quot;, &quot;profile_sidebar_fill_color&quot;: &quot;C0DFEC&quot;, &quot;profile_text_color&quot;: &quot;333333&quot;, &quot;profile_use_background_image&quot;: true, &quot;has_extended_profile&quot;: false, &quot;default_profile&quot;: false, &quot;default_profile_image&quot;: false, &quot;following&quot;: false, &quot;follow_request_sent&quot;: false, &quot;notifications&quot;: false, &quot;translator_type&quot;: &quot;none&quot;}
+{&quot;id&quot;: 254107028, &quot;id_str&quot;: &quot;254107028&quot;, &quot;name&quot;: &quot;TensorFlow&quot;, &quot;screen_name&quot;: &quot;TensorFlow&quot;, &quot;location&quot;: &quot;Mountain View, CA&quot;, &quot;description&quot;: &quot;TensorFlow is a fast, flexible, and scalable open-source machine learning library for research and production.&quot;, &quot;url&quot;: &quot;https://t.co/gxgTGHp5yO&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/gxgTGHp5yO&quot;, &quot;expanded_url&quot;: &quot;http://tensorflow.org&quot;, &quot;display_url&quot;: &quot;tensorflow.org&quot;, &quot;indices&quot;: [0, 23]}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;protected&quot;: false, &quot;followers_count&quot;: 103759, &quot;friends_count&quot;: 91, &quot;listed_count&quot;: 1266, &quot;created_at&quot;: &quot;Fri Feb 18 16:21:31 +0000 2011&quot;, &quot;favourites_count&quot;: 130, &quot;utc_offset&quot;: null, &quot;time_zone&quot;: null, &quot;geo_enabled&quot;: true, &quot;verified&quot;: true, &quot;statuses_count&quot;: 425, &quot;lang&quot;: &quot;en&quot;, &quot;status&quot;: {&quot;created_at&quot;: &quot;Fri Sep 21 18:17:01 +0000 2018&quot;, &quot;id&quot;: 1043202452374339587, &quot;id_str&quot;: &quot;1043202452374339587&quot;, &quot;text&quot;: &quot;Congrats to @Qualcomm on winning track one of the Low-Power Image Recognition Challenge (LPIRC), with\u2026 https://t.co/iO2SXotGF8&quot;, &quot;truncated&quot;: true, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [{&quot;screen_name&quot;: &quot;Qualcomm&quot;, &quot;name&quot;: &quot;Qualcomm&quot;, &quot;id&quot;: 84623395, &quot;id_str&quot;: &quot;84623395&quot;, &quot;indices&quot;: [12, 21]}], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/iO2SXotGF8&quot;, &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/1043202452374339587&quot;, &quot;display_url&quot;: &quot;twitter.com/i/web/status/1\u2026&quot;, &quot;indices&quot;: [103, 126]}]}, &quot;source&quot;: &quot;&lt;a href=\&quot;https://www.sprinklr.com\&quot; rel=\&quot;nofollow\&quot;&gt;Sprinklr&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_screen_name&quot;: null, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: null, &quot;contributors&quot;: null, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 68, &quot;favorite_count&quot;: 265, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;possibly_sensitive&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;contributors_enabled&quot;: false, &quot;is_translator&quot;: false, &quot;is_translation_enabled&quot;: false, &quot;profile_background_color&quot;: &quot;000000&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;profile_background_tile&quot;: false, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/773317101012586496/q8sc1KuZ_normal.jpg&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/773317101012586496/q8sc1KuZ_normal.jpg&quot;, &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/254107028/1473208179&quot;, &quot;profile_link_color&quot;: &quot;FAB81E&quot;, &quot;profile_sidebar_border_color&quot;: &quot;000000&quot;, &quot;profile_sidebar_fill_color&quot;: &quot;000000&quot;, &quot;profile_text_color&quot;: &quot;000000&quot;, &quot;profile_use_background_image&quot;: false, &quot;has_extended_profile&quot;: false, &quot;default_profile&quot;: false, &quot;default_profile_image&quot;: false, &quot;following&quot;: false, &quot;follow_request_sent&quot;: false, &quot;notifications&quot;: false, &quot;translator_type&quot;: &quot;none&quot;}
+{&quot;id&quot;: 2895770934, &quot;id_str&quot;: &quot;2895770934&quot;, &quot;name&quot;: &quot;Deep Learning Hub&quot;, &quot;screen_name&quot;: &quot;DeepLearningHub&quot;, &quot;location&quot;: &quot;&quot;, &quot;description&quot;: &quot;Account for Deep Learning related news, papers, software, reading materials and also other machine learning related news and facts&quot;, &quot;url&quot;: &quot;https://t.co/fKXpPW5IVI&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/fKXpPW5IVI&quot;, &quot;expanded_url&quot;: &quot;https://plus.google.com/107322247125350038821&quot;, &quot;display_url&quot;: &quot;plus.google.com/10732224712535\u2026&quot;, &quot;indices&quot;: [0, 23]}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;protected&quot;: false, &quot;followers_count&quot;: 52875, &quot;friends_count&quot;: 439, &quot;listed_count&quot;: 1066, &quot;created_at&quot;: &quot;Mon Nov 10 16:29:34 +0000 2014&quot;, &quot;favourites_count&quot;: 388, &quot;utc_offset&quot;: null, &quot;time_zone&quot;: null, &quot;geo_enabled&quot;: false, &quot;verified&quot;: false, &quot;statuses_count&quot;: 2431, &quot;lang&quot;: &quot;en&quot;, &quot;status&quot;: {&quot;created_at&quot;: &quot;Tue Apr 03 06:35:52 +0000 2018&quot;, &quot;id&quot;: 981057678565892096, &quot;id_str&quot;: &quot;981057678565892096&quot;, &quot;text&quot;: &quot;RT @DarshanaN: Tomorrow Tue 4/3 talk on \&quot;Deep Learning &amp;amp; its application in Medicine\&quot; at 456 W. Olive Avenue, Sunnyvale. This is a free eve\u2026&quot;, &quot;truncated&quot;: false, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [{&quot;screen_name&quot;: &quot;DarshanaN&quot;, &quot;name&quot;: &quot;Dr Darshana Nadkarni&quot;, &quot;id&quot;: 24947616, &quot;id_str&quot;: &quot;24947616&quot;, &quot;indices&quot;: [3, 13]}], &quot;urls&quot;: []}, &quot;source&quot;: &quot;&lt;a href=\&quot;https://about.twitter.com/products/tweetdeck\&quot; rel=\&quot;nofollow\&quot;&gt;TweetDeck&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_screen_name&quot;: null, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: null, &quot;contributors&quot;: null, &quot;retweeted_status&quot;: {&quot;created_at&quot;: &quot;Tue Apr 03 04:40:55 +0000 2018&quot;, &quot;id&quot;: 981028752179122176, &quot;id_str&quot;: &quot;981028752179122176&quot;, &quot;text&quot;: &quot;Tomorrow Tue 4/3 talk on \&quot;Deep Learning &amp;amp; its application in Medicine\&quot; at 456 W. Olive Avenue, Sunnyvale. This is a\u2026 https://t.co/wsMvHjpvhC&quot;, &quot;truncated&quot;: true, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/wsMvHjpvhC&quot;, &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/981028752179122176&quot;, &quot;display_url&quot;: &quot;twitter.com/i/web/status/9\u2026&quot;, &quot;indices&quot;: [121, 144]}]}, &quot;source&quot;: &quot;&lt;a href=\&quot;http://twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter Web Client&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_screen_name&quot;: null, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: {&quot;id&quot;: &quot;30344aecffe6a491&quot;, &quot;url&quot;: &quot;https://api.twitter.com/1.1/geo/id/30344aecffe6a491.json&quot;, &quot;place_type&quot;: &quot;city&quot;, &quot;name&quot;: &quot;Fremont&quot;, &quot;full_name&quot;: &quot;Fremont, CA&quot;, &quot;country_code&quot;: &quot;US&quot;, &quot;country&quot;: &quot;United States&quot;, &quot;contained_within&quot;: [], &quot;bounding_box&quot;: {&quot;type&quot;: &quot;Polygon&quot;, &quot;coordinates&quot;: [[[-122.069956, 37.454962], [-121.889098, 37.454962], [-121.889098, 37.592327], [-122.069956, 37.592327]]]}, &quot;attributes&quot;: {}}, &quot;contributors&quot;: null, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 6, &quot;favorite_count&quot;: 23, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 6, &quot;favorite_count&quot;: 0, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;contributors_enabled&quot;: false, &quot;is_translator&quot;: false, &quot;is_translation_enabled&quot;: false, &quot;profile_background_color&quot;: &quot;022330&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme15/bg.png&quot;, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme15/bg.png&quot;, &quot;profile_background_tile&quot;: false, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/534326120162656256/9pjHTMqm_normal.png&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/534326120162656256/9pjHTMqm_normal.png&quot;, &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/2895770934/1427524254&quot;, &quot;profile_link_color&quot;: &quot;0084B4&quot;, &quot;profile_sidebar_border_color&quot;: &quot;A8C7F7&quot;, &quot;profile_sidebar_fill_color&quot;: &quot;C0DFEC&quot;, &quot;profile_text_color&quot;: &quot;333333&quot;, &quot;profile_use_background_image&quot;: true, &quot;has_extended_profile&quot;: false, &quot;default_profile&quot;: false, &quot;default_profile_image&quot;: false, &quot;following&quot;: false, &quot;follow_request_sent&quot;: false, &quot;notifications&quot;: false, &quot;translator_type&quot;: &quot;none&quot;}
+{&quot;id&quot;: 254107028, &quot;id_str&quot;: &quot;254107028&quot;, &quot;name&quot;: &quot;TensorFlow&quot;, &quot;screen_name&quot;: &quot;TensorFlow&quot;, &quot;location&quot;: &quot;Mountain View, CA&quot;, &quot;description&quot;: &quot;TensorFlow is a fast, flexible, and scalable open-source machine learning library for research and production.&quot;, &quot;url&quot;: &quot;https://t.co/gxgTGHp5yO&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/gxgTGHp5yO&quot;, &quot;expanded_url&quot;: &quot;http://tensorflow.org&quot;, &quot;display_url&quot;: &quot;tensorflow.org&quot;, &quot;indices&quot;: [0, 23]}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;protected&quot;: false, &quot;followers_count&quot;: 104337, &quot;friends_count&quot;: 91, &quot;listed_count&quot;: 1272, &quot;created_at&quot;: &quot;Fri Feb 18 16:21:31 +0000 2011&quot;, &quot;favourites_count&quot;: 130, &quot;utc_offset&quot;: null, &quot;time_zone&quot;: null, &quot;geo_enabled&quot;: true, &quot;verified&quot;: true, &quot;statuses_count&quot;: 426, &quot;lang&quot;: &quot;en&quot;, &quot;status&quot;: {&quot;created_at&quot;: &quot;Thu Sep 27 21:21:12 +0000 2018&quot;, &quot;id&quot;: 1045423130867429376, &quot;id_str&quot;: &quot;1045423130867429376&quot;, &quot;text&quot;: &quot;TensorFlow 1.11.0 has been released! Please see the full release notes for details on added features and changes.\u2026 https://t.co/u7wuV4doDW&quot;, &quot;truncated&quot;: true, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/u7wuV4doDW&quot;, &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/1045423130867429376&quot;, &quot;display_url&quot;: &quot;twitter.com/i/web/status/1\u2026&quot;, &quot;indices&quot;: [115, 138]}]}, &quot;source&quot;: &quot;&lt;a href=\&quot;http://twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter Web Client&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_screen_name&quot;: null, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: null, &quot;contributors&quot;: null, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 165, &quot;favorite_count&quot;: 375, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;possibly_sensitive&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;contributors_enabled&quot;: false, &quot;is_translator&quot;: false, &quot;is_translation_enabled&quot;: false, &quot;profile_background_color&quot;: &quot;000000&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme1/bg.png&quot;, &quot;profile_background_tile&quot;: false, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/773317101012586496/q8sc1KuZ_normal.jpg&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/773317101012586496/q8sc1KuZ_normal.jpg&quot;, &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/254107028/1473208179&quot;, &quot;profile_link_color&quot;: &quot;FAB81E&quot;, &quot;profile_sidebar_border_color&quot;: &quot;000000&quot;, &quot;profile_sidebar_fill_color&quot;: &quot;000000&quot;, &quot;profile_text_color&quot;: &quot;000000&quot;, &quot;profile_use_background_image&quot;: false, &quot;has_extended_profile&quot;: false, &quot;default_profile&quot;: false, &quot;default_profile_image&quot;: false, &quot;following&quot;: false, &quot;follow_request_sent&quot;: false, &quot;notifications&quot;: false, &quot;translator_type&quot;: &quot;none&quot;}
+{&quot;id&quot;: 2895770934, &quot;id_str&quot;: &quot;2895770934&quot;, &quot;name&quot;: &quot;Deep Learning Hub&quot;, &quot;screen_name&quot;: &quot;DeepLearningHub&quot;, &quot;location&quot;: &quot;&quot;, &quot;description&quot;: &quot;Account for Deep Learning related news, papers, software, reading materials and also other machine learning related news and facts&quot;, &quot;url&quot;: &quot;https://t.co/fKXpPW5IVI&quot;, &quot;entities&quot;: {&quot;url&quot;: {&quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/fKXpPW5IVI&quot;, &quot;expanded_url&quot;: &quot;https://plus.google.com/107322247125350038821&quot;, &quot;display_url&quot;: &quot;plus.google.com/10732224712535\u2026&quot;, &quot;indices&quot;: [0, 23]}]}, &quot;description&quot;: {&quot;urls&quot;: []}}, &quot;protected&quot;: false, &quot;followers_count&quot;: 52934, &quot;friends_count&quot;: 439, &quot;listed_count&quot;: 1066, &quot;created_at&quot;: &quot;Mon Nov 10 16:29:34 +0000 2014&quot;, &quot;favourites_count&quot;: 388, &quot;utc_offset&quot;: null, &quot;time_zone&quot;: null, &quot;geo_enabled&quot;: false, &quot;verified&quot;: false, &quot;statuses_count&quot;: 2431, &quot;lang&quot;: &quot;en&quot;, &quot;status&quot;: {&quot;created_at&quot;: &quot;Tue Apr 03 06:35:52 +0000 2018&quot;, &quot;id&quot;: 981057678565892096, &quot;id_str&quot;: &quot;981057678565892096&quot;, &quot;text&quot;: &quot;RT @DarshanaN: Tomorrow Tue 4/3 talk on \&quot;Deep Learning &amp;amp; its application in Medicine\&quot; at 456 W. Olive Avenue, Sunnyvale. This is a free eve\u2026&quot;, &quot;truncated&quot;: false, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [{&quot;screen_name&quot;: &quot;DarshanaN&quot;, &quot;name&quot;: &quot;Dr Darshana Nadkarni&quot;, &quot;id&quot;: 24947616, &quot;id_str&quot;: &quot;24947616&quot;, &quot;indices&quot;: [3, 13]}], &quot;urls&quot;: []}, &quot;source&quot;: &quot;&lt;a href=\&quot;https://about.twitter.com/products/tweetdeck\&quot; rel=\&quot;nofollow\&quot;&gt;TweetDeck&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_screen_name&quot;: null, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: null, &quot;contributors&quot;: null, &quot;retweeted_status&quot;: {&quot;created_at&quot;: &quot;Tue Apr 03 04:40:55 +0000 2018&quot;, &quot;id&quot;: 981028752179122176, &quot;id_str&quot;: &quot;981028752179122176&quot;, &quot;text&quot;: &quot;Tomorrow Tue 4/3 talk on \&quot;Deep Learning &amp;amp; its application in Medicine\&quot; at 456 W. Olive Avenue, Sunnyvale. This is a\u2026 https://t.co/wsMvHjpvhC&quot;, &quot;truncated&quot;: true, &quot;entities&quot;: {&quot;hashtags&quot;: [], &quot;symbols&quot;: [], &quot;user_mentions&quot;: [], &quot;urls&quot;: [{&quot;url&quot;: &quot;https://t.co/wsMvHjpvhC&quot;, &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/981028752179122176&quot;, &quot;display_url&quot;: &quot;twitter.com/i/web/status/9\u2026&quot;, &quot;indices&quot;: [121, 144]}]}, &quot;source&quot;: &quot;&lt;a href=\&quot;http://twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter Web Client&lt;/a&gt;&quot;, &quot;in_reply_to_status_id&quot;: null, &quot;in_reply_to_status_id_str&quot;: null, &quot;in_reply_to_user_id&quot;: null, &quot;in_reply_to_user_id_str&quot;: null, &quot;in_reply_to_screen_name&quot;: null, &quot;geo&quot;: null, &quot;coordinates&quot;: null, &quot;place&quot;: {&quot;id&quot;: &quot;30344aecffe6a491&quot;, &quot;url&quot;: &quot;https://api.twitter.com/1.1/geo/id/30344aecffe6a491.json&quot;, &quot;place_type&quot;: &quot;city&quot;, &quot;name&quot;: &quot;Fremont&quot;, &quot;full_name&quot;: &quot;Fremont, CA&quot;, &quot;country_code&quot;: &quot;US&quot;, &quot;country&quot;: &quot;United States&quot;, &quot;contained_within&quot;: [], &quot;bounding_box&quot;: {&quot;type&quot;: &quot;Polygon&quot;, &quot;coordinates&quot;: [[[-122.069956, 37.454962], [-121.889098, 37.454962], [-121.889098, 37.592327], [-122.069956, 37.592327]]]}, &quot;attributes&quot;: {}}, &quot;contributors&quot;: null, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 6, &quot;favorite_count&quot;: 23, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;is_quote_status&quot;: false, &quot;retweet_count&quot;: 6, &quot;favorite_count&quot;: 0, &quot;favorited&quot;: false, &quot;retweeted&quot;: false, &quot;lang&quot;: &quot;en&quot;}, &quot;contributors_enabled&quot;: false, &quot;is_translator&quot;: false, &quot;is_translation_enabled&quot;: false, &quot;profile_background_color&quot;: &quot;022330&quot;, &quot;profile_background_image_url&quot;: &quot;http://abs.twimg.com/images/themes/theme15/bg.png&quot;, &quot;profile_background_image_url_https&quot;: &quot;https://abs.twimg.com/images/themes/theme15/bg.png&quot;, &quot;profile_background_tile&quot;: false, &quot;profile_image_url&quot;: &quot;http://pbs.twimg.com/profile_images/534326120162656256/9pjHTMqm_normal.png&quot;, &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/534326120162656256/9pjHTMqm_normal.png&quot;, &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/2895770934/1427524254&quot;, &quot;profile_link_color&quot;: &quot;0084B4&quot;, &quot;profile_sidebar_border_color&quot;: &quot;A8C7F7&quot;, &quot;profile_sidebar_fill_color&quot;: &quot;C0DFEC&quot;, &quot;profile_text_color&quot;: &quot;333333&quot;, &quot;profile_use_background_image&quot;: true, &quot;has_extended_profile&quot;: false, &quot;default_profile&quot;: false, &quot;default_profile_image&quot;: false, &quot;following&quot;: false, &quot;follow_request_sent&quot;: false, &quot;notifications&quot;: false, &quot;translator_type&quot;: &quot;none&quot;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The outcoming of running the above API is to generate a twitter object.</p>
+</div>
+<div class="section" id="step-2-getting-help">
+<h2><span class="section-number">11.10. </span>Step 2. Getting Help<a class="headerlink" href="#step-2-getting-help" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can get some help on how to use the twitter api with the following. </span>
+<span class="n">help</span><span class="p">(</span><span class="n">twitter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Go ahead and take a look at the <a class="reference external" href="https://dev.twitter.com/rest/public">twitter docs</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The Yahoo! Where On Earth ID for the entire world is 1.</span>
+<span class="c1"># See https://dev.twitter.com/docs/api/1.1/get/trends/place and</span>
+<span class="c1"># http://developer.yahoo.com/geo/geoplanet/</span>
+
+<span class="n">WORLD_WOE_ID</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">US_WOE_ID</span> <span class="o">=</span> <span class="mi">23424977</span>
+
+<span class="c1"># Prefix ID with the underscore for query string parameterization.</span>
+<span class="c1"># Without the underscore, the twitter package appends the ID value</span>
+<span class="c1"># to the URL itself as a special case keyword argument.</span>
+
+<span class="n">world_trends</span> <span class="o">=</span> <span class="n">twitter</span><span class="o">.</span><span class="n">trends</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">_id</span><span class="o">=</span><span class="n">WORLD_WOE_ID</span><span class="p">)</span>
+<span class="n">us_trends</span> <span class="o">=</span> <span class="n">twitter</span><span class="o">.</span><span class="n">trends</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">_id</span><span class="o">=</span><span class="n">US_WOE_ID</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">world_trends</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">us_trends</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-3-displaying-api-responses-as-pretty-printed-json">
+<h2><span class="section-number">11.11. </span>Step 3. Displaying API responses as pretty-printed JSON<a class="headerlink" href="#step-3-displaying-api-responses-as-pretty-printed-json" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">world_trends</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">us_trends</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Take a look at the <a class="reference external" href="https://dev.twitter.com/rest/reference/get/trends/place">api docs</a> for the /trends/place call made above.</p>
+</div>
+<div class="section" id="step-4-collecting-search-results-for-a-targeted-hashtag">
+<h2><span class="section-number">11.12. </span>Step 4. Collecting search results for a targeted hashtag.<a class="headerlink" href="#step-4-collecting-search-results-for-a-targeted-hashtag" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import unquote to prevent url encoding errors in next_results</span>
+<span class="c1">#from urllib3 import unquote</span>
+
+<span class="c1">#This can be any trending topic, but let&#39;s focus on a hashtag that is relevant to the class. </span>
+<span class="n">q</span> <span class="o">=</span> <span class="s1">&#39;#analytics&#39;</span> 
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># See https://dev.twitter.com/rest/reference/get/search/tweets</span>
+<span class="n">search_results</span> <span class="o">=</span> <span class="n">twitter</span><span class="o">.</span><span class="n">search</span><span class="o">.</span><span class="n">tweets</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="n">q</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="p">)</span>
+
+<span class="c1">#This selects out </span>
+<span class="n">statuses</span> <span class="o">=</span> <span class="n">search_results</span><span class="p">[</span><span class="s1">&#39;statuses&#39;</span><span class="p">]</span>
+
+
+<span class="c1"># Iterate through 5 more batches of results by following the cursor</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Length of statuses&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">statuses</span><span class="p">))</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">next_results</span> <span class="o">=</span> <span class="n">search_results</span><span class="p">[</span><span class="s1">&#39;search_metadata&#39;</span><span class="p">][</span><span class="s1">&#39;next_results&#39;</span><span class="p">]</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;next_results&quot;</span><span class="p">,</span> <span class="n">next_results</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span> <span class="c1"># No more results when next_results doesn&#39;t exist</span>
+        <span class="k">break</span>
+        
+    <span class="c1"># Create a dictionary from next_results, which has the following form:</span>
+    <span class="c1"># ?max_id=313519052523986943&amp;q=NCAA&amp;include_entities=1</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([</span> <span class="n">kv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">kv</span> <span class="ow">in</span> <span class="n">next_results</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;&amp;&quot;</span><span class="p">)</span> <span class="p">])</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">search_results</span> <span class="o">=</span> <span class="n">twitter</span><span class="o">.</span><span class="n">search</span><span class="o">.</span><span class="n">tweets</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">statuses</span> <span class="o">+=</span> <span class="n">search_results</span><span class="p">[</span><span class="s1">&#39;statuses&#39;</span><span class="p">]</span>
+
+<span class="c1"># Show one sample search result by slicing the list...</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">statuses</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Print several</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">statuses</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-5-extracting-text-screen-names-and-hashtags-from-tweets">
+<h2><span class="section-number">11.13. </span>Step 5. Extracting text, screen names, and hashtags from tweets<a class="headerlink" href="#step-5-extracting-text-screen-names-and-hashtags-from-tweets" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#We can access an individual tweet like so:</span>
+<span class="n">statuses</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+
+
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">statuses</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;entities&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#notice the nested relationships.  We have to take notice of this to further access the data.</span>
+<span class="n">statuses</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;entities&#39;</span><span class="p">][</span><span class="s1">&#39;hashtags&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">status_texts</span> <span class="o">=</span> <span class="p">[</span> <span class="n">status</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> 
+                 <span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">statuses</span> <span class="p">]</span>
+
+<span class="n">screen_names</span> <span class="o">=</span> <span class="p">[</span> <span class="n">user_mention</span><span class="p">[</span><span class="s1">&#39;screen_name&#39;</span><span class="p">]</span> 
+                 <span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">statuses</span>
+                     <span class="k">for</span> <span class="n">user_mention</span> <span class="ow">in</span> <span class="n">status</span><span class="p">[</span><span class="s1">&#39;entities&#39;</span><span class="p">][</span><span class="s1">&#39;user_mentions&#39;</span><span class="p">]</span> <span class="p">]</span>
+
+<span class="n">hashtags</span> <span class="o">=</span> <span class="p">[</span> <span class="n">hashtag</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> 
+             <span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">statuses</span>
+                 <span class="k">for</span> <span class="n">hashtag</span> <span class="ow">in</span> <span class="n">status</span><span class="p">[</span><span class="s1">&#39;entities&#39;</span><span class="p">][</span><span class="s1">&#39;hashtags&#39;</span><span class="p">]</span> <span class="p">]</span>
+
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span> <span class="n">url</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span> 
+             <span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">statuses</span>
+                 <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">status</span><span class="p">[</span><span class="s1">&#39;entities&#39;</span><span class="p">][</span><span class="s1">&#39;urls&#39;</span><span class="p">]</span> <span class="p">]</span>
+
+
+
+<span class="c1"># Compute a collection of all words from all tweets</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span> <span class="n">w</span> 
+          <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">status_texts</span> 
+              <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="p">]</span>
+
+<span class="c1"># Explore the first 5 items for each...</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">status_texts</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">screen_names</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> 
+<span class="nb">print</span> <span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">hashtags</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-6-creating-a-basic-frequency-distribution-from-the-words-in-tweets">
+<h2><span class="section-number">11.14. </span>Step 6. Creating a basic frequency distribution from the words in tweets<a class="headerlink" href="#step-6-creating-a-basic-frequency-distribution-from-the-words-in-tweets" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="n">words</span><span class="p">,</span> <span class="n">screen_names</span><span class="p">,</span> <span class="n">hashtags</span><span class="p">]:</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">most_common</span><span class="p">()[:</span><span class="mi">10</span><span class="p">])</span> <span class="c1"># top 10, &quot;\n&quot;)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/03-viz-api-scraper"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../02-intro-python/05-kaggle-baseline.html" title="previous page"><span class="section-number">10. </span>Kaggle Baseline</a>
+    <a class='right-next' id="next-link" href="02-intro-python-webmining.html" title="next page"><span class="section-number">12. </span>Web Mining</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jason Kuruzovich<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-32817743-6', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

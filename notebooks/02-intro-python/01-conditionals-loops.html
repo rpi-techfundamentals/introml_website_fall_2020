@@ -39,7 +39,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7. Functions" href="02-functions.html" />
+    <link rel="next" title="6. Functions" href="02-functions.html" />
     <link rel="prev" title="4. Introduction to Pandas" href="../01-intro-python/04-pandas.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -171,33 +171,83 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="#what-are-conditional-statements-why-do-we-need-them">
-   6. What are conditional statements? Why do we need them?
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="02-functions.html">
-   7. Functions
+   6. Functions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03-null-values.html">
-   8. Null Values
+   7. Null Values
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04-groupby.html">
-   9. Groupby and Pivot Tables
+   8. Groupby and Pivot Tables
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04-pivottable.html">
-   10. More Pivottables
+   9. More Pivottables
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="05-kaggle-baseline.html">
-   11. Kaggle Baseline
+   10. Kaggle Baseline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-viz-api-scraper/01-intro-api-twitter.html">
+   11. Introduction to APIs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-viz-api-scraper/02-intro-python-webmining.html">
+   12. Web Mining
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-viz-api-scraper/03-visualization-python-seaborn.html">
+   13. Introduction to Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-viz-api-scraper/04-strings-regular-expressions.html">
+   14. String Manipulation and Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-viz-api-scraper/05-features-dummies.html">
+   15. Feature Extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-viz-api-scraper/06-matplotlib.html">
+   16. MatplotLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/01-neural-networks.html">
+   17. Neural Networks and the Simplist XOR Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/01-neural-networks.html#neural-networks">
+   18. Neural Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/02-train-test-split.html">
+   19. Train Test Splits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/03-intro-logistic-knn.html">
+   20. Classification with Scikit-learn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-intro-modeling/04-knn.html">
+   21. KNN
   </a>
  </li>
 </ul>
@@ -215,11 +265,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../../assignments/assignment2/hm.html">
    Assignment 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment2/hm.html#exercise-numpy-array">
-   Exercise-Numpy Array
   </a>
  </li>
 </ul>
@@ -407,6 +452,90 @@
    5.2. Indentation in Python
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-conditional-statements-why-do-we-need-them">
+   5.3. What are conditional statements? Why do we need them?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-statements">
+   5.4.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   Statements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditional-statements-and-indentation">
+   5.5. Conditional Statements and Indentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-logit-and-conditions">
+   5.6. Python Logit and Conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-conditionals-alt-syntax">
+   5.7. Python Conditionals (Alt Syntax)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-why-not-loops">
+   5.8. Why, Why Not Loops?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-for-loop">
+   5.9. The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   Loop
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-set-and-dict-comprehension-fancy-for-loops">
+     5.9.1. List, Set, and Dict Comprehension (Fancy for Loops)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-interators">
+     5.9.2. Multiple Interators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-comprehension">
+     5.9.3. Set Comprehension
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dict-comprehension">
+     5.9.4. Dict Comprehension
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-loops">
+   5.10. While Loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recoding-variables-creating-features-with-for-if">
+   5.11. Recoding Variables/Creating Features with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for/if
+    </span>
+   </code>
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -443,11 +572,11 @@
 <li><p>In Python, spaces are preferred according to the <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8 style guide</a>.</p></li>
 </ul>
 </div>
-</div>
 <div class="section" id="what-are-conditional-statements-why-do-we-need-them">
-<h1><span class="section-number">6. </span>What are conditional statements? Why do we need them?<a class="headerlink" href="#what-are-conditional-statements-why-do-we-need-them" title="Permalink to this headline">¶</a></h1>
+<h2><span class="section-number">5.3. </span>What are conditional statements? Why do we need them?<a class="headerlink" href="#what-are-conditional-statements-why-do-we-need-them" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="if-statements">
-<h2><span class="section-number">6.1. </span><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements<a class="headerlink" href="#if-statements" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4. </span><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements<a class="headerlink" href="#if-statements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Enables logical branching and recoding of data.</p></li>
 <li><p>BUT, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">statements</span></code> can result in long code branches, repeated code.</p></li>
@@ -456,7 +585,7 @@
 </ul>
 </div>
 <div class="section" id="conditional-statements-and-indentation">
-<h2><span class="section-number">6.2. </span>Conditional Statements and Indentation<a class="headerlink" href="#conditional-statements-and-indentation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.5. </span>Conditional Statements and Indentation<a class="headerlink" href="#conditional-statements-and-indentation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>The syntax for control structures in Python use <em>colons</em> and <em>indentation</em>.</p></li>
 <li><p>Beware that indentation affects flow.</p></li>
@@ -552,7 +681,7 @@ Finished.
 </div>
 </div>
 <div class="section" id="python-logit-and-conditions">
-<h2><span class="section-number">6.3. </span>Python Logit and Conditions<a class="headerlink" href="#python-logit-and-conditions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.6. </span>Python Logit and Conditions<a class="headerlink" href="#python-logit-and-conditions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Less than	&lt;</p></li>
 <li><p>Greater than		&gt;</p></li>
@@ -587,7 +716,7 @@ Finished.
 </div>
 </div>
 <div class="section" id="python-conditionals-alt-syntax">
-<h2><span class="section-number">6.4. </span>Python Conditionals (Alt Syntax)<a class="headerlink" href="#python-conditionals-alt-syntax" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.7. </span>Python Conditionals (Alt Syntax)<a class="headerlink" href="#python-conditionals-alt-syntax" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Clean syntax doesn’t get complex branching</p></li>
 <li><p>Python ternary conditional operator <code class="docutils literal notranslate"><span class="pre">(falseValue,</span> <span class="pre">trueValue)[&lt;logicalTest&gt;]</span></code></p></li>
@@ -625,7 +754,7 @@ Finished.
 </div>
 </div>
 <div class="section" id="why-why-not-loops">
-<h2><span class="section-number">6.5. </span>Why, Why Not Loops?<a class="headerlink" href="#why-why-not-loops" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8. </span>Why, Why Not Loops?<a class="headerlink" href="#why-why-not-loops" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Iterate over arrays or lists easily. <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> loops can be nested.</p></li>
 <li><p>BUT, in many cases for loops don’t scale well and are slower than alternate methods involving functions.</p></li>
@@ -684,7 +813,7 @@ India
 </div>
 </div>
 <div class="section" id="the-for-loop">
-<h2><span class="section-number">6.6. </span>The <code class="docutils literal notranslate"><span class="pre">for</span></code> Loop<a class="headerlink" href="#the-for-loop" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.9. </span>The <code class="docutils literal notranslate"><span class="pre">for</span></code> Loop<a class="headerlink" href="#the-for-loop" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Can accept a <code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code> or <code class="docutils literal notranslate"><span class="pre">range(stop)</span></code> object</p></li>
 <li><p>Can break out of it with a <code class="docutils literal notranslate"><span class="pre">break</span></code> command</p></li>
@@ -771,7 +900,7 @@ x: 2
 </div>
 </div>
 <div class="section" id="list-set-and-dict-comprehension-fancy-for-loops">
-<h3><span class="section-number">6.6.1. </span>List, Set, and Dict Comprehension (Fancy for Loops)<a class="headerlink" href="#list-set-and-dict-comprehension-fancy-for-loops" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.9.1. </span>List, Set, and Dict Comprehension (Fancy for Loops)<a class="headerlink" href="#list-set-and-dict-comprehension-fancy-for-loops" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Python has a special way of compressing list building to a single line.</p></li>
 <li><p>Set Comprehension is very similar, but with the <code class="docutils literal notranslate"><span class="pre">{</span></code> bracket.</p></li>
@@ -823,7 +952,7 @@ x: 2
 </div>
 </div>
 <div class="section" id="multiple-interators">
-<h3><span class="section-number">6.6.2. </span>Multiple Interators<a class="headerlink" href="#multiple-interators" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.9.2. </span>Multiple Interators<a class="headerlink" href="#multiple-interators" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Iterating on multiple values</p></li>
 </ul>
@@ -841,7 +970,7 @@ x: 2
 </div>
 </div>
 <div class="section" id="set-comprehension">
-<h3><span class="section-number">6.6.3. </span>Set Comprehension<a class="headerlink" href="#set-comprehension" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.9.3. </span>Set Comprehension<a class="headerlink" href="#set-comprehension" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Remember sets must have unique values.</p></li>
 </ul>
@@ -860,7 +989,7 @@ x: 2
 </div>
 </div>
 <div class="section" id="dict-comprehension">
-<h3><span class="section-number">6.6.4. </span>Dict Comprehension<a class="headerlink" href="#dict-comprehension" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.9.4. </span>Dict Comprehension<a class="headerlink" href="#dict-comprehension" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Remember sets must have unique values.</p></li>
 </ul>
@@ -880,7 +1009,7 @@ x: 2
 </div>
 </div>
 <div class="section" id="while-loops">
-<h2><span class="section-number">6.7. </span>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.10. </span>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Performs a loop while a conditional is True.</p></li>
 <li><p>Doesn’t auto-increment.</p></li>
@@ -913,7 +1042,7 @@ Printing x= 9 sum= 80
 </div>
 </div>
 <div class="section" id="recoding-variables-creating-features-with-for-if">
-<h2><span class="section-number">6.8. </span>Recoding Variables/Creating Features with <code class="docutils literal notranslate"><span class="pre">for/if</span></code><a class="headerlink" href="#recoding-variables-creating-features-with-for-if" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.11. </span>Recoding Variables/Creating Features with <code class="docutils literal notranslate"><span class="pre">for/if</span></code><a class="headerlink" href="#recoding-variables-creating-features-with-for-if" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Often we want to recode data applying some type of conditional statement to each value of a series, list, or column of a data frame.</p></li>
 <li><p><a class="reference external" href="https://docs.python.org/3/howto/regex.html">Regular Expressions</a> can be useful in recoding</p></li>
@@ -978,7 +1107,7 @@ Adopted from <a class="reference external" href="https://github.com/phelps-sg/py
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="../01-intro-python/04-pandas.html" title="previous page"><span class="section-number">4. </span>Introduction to Pandas</a>
-    <a class='right-next' id="next-link" href="02-functions.html" title="next page"><span class="section-number">7. </span>Functions</a>
+    <a class='right-next' id="next-link" href="02-functions.html" title="next page"><span class="section-number">6. </span>Functions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
