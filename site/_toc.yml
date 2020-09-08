@@ -30,7 +30,7 @@
   numbered: false
   chapters:
   - file: assignments/assignment1/01starter
-  - file: assignments/assignment1/hm
+  - file: assignments/assignment2/hm
 - part: BOOK NOTEBOOKS
   numbered: true
   chapters:
