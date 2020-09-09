@@ -16,7 +16,8 @@ In this class we will simply be providing a high level overview of the class.  W
 
 |   Session | Content                                                                                                                |
 |----------:|:-----------------------------------------------------------------------------------------------------------------------|
-|         1 | Presentation 1 [Link](https://drive.google.com/open?id=1_5TGwja9jfGIi5FXMpLL_j5gkVuYC7U5)                              |
+|         1 | Presentation  - Section 01  [Link](https://rpi.box.com/s/g3wsswc1gvqxvamkuxee77eb4qugizvj)                             |
+|         1 | Presentation  - Section 02 [Link](https://rpi.box.com/s/qdd5wlo58f5ludkxmb4yd17mgnyc0sbh)                              |
 |         1 | Video Recording of Class [Link](https://rensselaer.webex.com/rensselaer/ldr.php?RCID=bfb2ae23c30e4151ba55599a4e0e1d8a) |
 
 
