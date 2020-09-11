@@ -6,14 +6,6 @@ test = {
       'cases': [
         {
           'code': r"""
-          >>> X_train.columns.values.tolist() == np.ndarray
-          True
-          """,
-          'hidden': False,
-          'locked': False
-        },
-        {
-          'code': r"""
           >>> len(a)
           4
           """,

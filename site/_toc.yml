@@ -11,6 +11,7 @@
   - file: sessions/session2
   - file: sessions/session3
   - file: sessions/session4
+  - file: sessions/session5
   numbered: true
   part: SESSIONS
 - part: NOTEBOOKS
