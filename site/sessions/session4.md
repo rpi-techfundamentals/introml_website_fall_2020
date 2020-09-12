@@ -16,6 +16,6 @@ More operationalization of Python basics as they relate to data. [Link](../../se
 |         4 | Groupby  [Link](../notebooks/02-intro-python/04-groupby)                                                                                               |
 |         4 | Pivot Tables [Link](../notebooks/02-intro-python/04-pivottable)                                                                                        |
 |         4 | Kaggle Baseline [Link](../notebooks/02-intro-python/05-kaggle-baseline)                                                                                |
-|         4 | Video Recording of Class Sec 01 [Link](https://rensselaer.webex.com/rensselaer/ldr.php?RCID=29593001f3af4073bbcef364cef06bbc)                          |
+|         4 | Video Recording of Class Sec 01 [Link](https://rensselaer.webex.com/recordingservice/sites/rensselaer/recording/play/7cf2c9cb7fe04c0ba0b4697e96c291dc) |
 |         4 | Video Recording of Class Sec 02 [Link](https://rensselaer.webex.com/recordingservice/sites/rensselaer/recording/play/e8ebc605718049ce99e07f066d7cd25f) |
 
