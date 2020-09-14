@@ -4,13 +4,9 @@
 
 *This notebook contains all the sample code and solutions to the exercices in chapter 2.*
 
-<table align="left">
-  <td>
-    <a target="_blank" href="https://colab.research.google.com/github/ageron/handson-ml2/blob/master/02_end_to_end_machine_learning_project.ipynb"><img src="https://www.tensorflow.org/images/colab_logo_32px.png" />Run in Google Colab</a>
-  </td>
-</table>
+ # End-to-end Machine Learning project
 
-# Setup
+## Setup
 
 First, let's import a few common modules, ensure MatplotLib plots figures inline and prepare a function to save the figures. We also check that Python 3.5 or later is installed (although Python 2.x may work, it is deprecated so we strongly recommend you use Python 3 instead), as well as Scikit-Learn ≥0.20.
 
@@ -51,7 +47,7 @@ def save_fig(fig_id, tight_layout=True, fig_extension="png", resolution=300):
 import warnings
 warnings.filterwarnings(action="ignore", message="^internal gelsd")
 
-# Get the data
+## Get the data
 
 import os
 import tarfile
@@ -186,7 +182,7 @@ compare_props
 for set_ in (strat_train_set, strat_test_set):
     set_.drop("income_cat", axis=1, inplace=True)
 
-# Discover and visualize the data to gain insights
+## Discover and visualize the data to gain insights
 
 housing = strat_train_set.copy()
 
@@ -267,7 +263,7 @@ plt.show()
 
 housing.describe()
 
-# Prepare the data for Machine Learning algorithms
+## Prepare the data for Machine Learning algorithms
 
 housing = strat_train_set.drop("median_house_value", axis=1) # drop labels for training set
 housing_labels = strat_train_set["median_house_value"].copy()
@@ -453,7 +449,7 @@ The result is the same as with the `ColumnTransformer`:
 
 np.allclose(housing_prepared, old_housing_prepared)
 
-# Select and train a model 
+## Select and train a model 
 
 from sklearn.linear_model import LinearRegression
 
@@ -495,7 +491,7 @@ tree_mse = mean_squared_error(housing_labels, housing_predictions)
 tree_rmse = np.sqrt(tree_mse)
 tree_rmse
 
-# Fine-tune your model
+## Fine-tune your model
 
 from sklearn.model_selection import cross_val_score
 
@@ -640,7 +636,7 @@ zscore = stats.norm.ppf((1 + confidence) / 2)
 zmargin = zscore * squared_errors.std(ddof=1) / np.sqrt(m)
 np.sqrt(mean - zmargin), np.sqrt(mean + zmargin)
 
-# Extra material
+## Extra material
 
 ## A full pipeline with both preparation and prediction
 
@@ -671,7 +667,7 @@ plt.show()
 plt.hist(expon_distrib, bins=50)
 plt.show()
 
-# Exercise solutions
+## Exercise solutions
 
 ## 1.
 

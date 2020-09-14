@@ -137,19 +137,6 @@ import twitlab
 #Create Twitter Object
 twitter= twitlab.create_twitter_auth(cf_t)
 
-df['screen_name']
-
-!mkdir data && mkdir data/profiles
-
-#This will get general profile data
-profiles_fn=twitlab.get_profiles(twitter, df['screen_name'], cf_t)
-
-!ls data/profiles
-
-## Let's look at the files created.  
-
-!cat data/profiles/*-user-profiles.json
-
 The outcoming of running the above API is to generate a twitter object. 
 
 ## Step 2. Getting Help
