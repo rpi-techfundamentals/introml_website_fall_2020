@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Setup &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <title>End-to-end Machine Learning project &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -444,7 +444,94 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-the-data">
+   Get the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discover-and-visualize-the-data-to-gain-insights">
+   Discover and visualize the data to gain insights
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prepare-the-data-for-machine-learning-algorithms">
+   Prepare the data for Machine Learning algorithms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#select-and-train-a-model">
+   Select and train a model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fine-tune-your-model">
+   Fine-tune your model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-material">
+   Extra material
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-full-pipeline-with-both-preparation-and-prediction">
+   A full pipeline with both preparation and prediction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-persistence-using-joblib">
+   Model persistence using joblib
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-scipy-distributions-for-randomizedsearchcv">
+   Example SciPy distributions for
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     RandomizedSearchCV
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-solutions">
+   Exercise solutions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   1.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   2.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   3.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   4.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   5.
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -456,12 +543,10 @@
   <p><strong>Chapter 2 – End-to-end Machine Learning project</strong></p>
 <p><em>Welcome to Machine Learning Housing Corp.! Your task is to predict median house values in Californian districts, given a number of features from these districts.</em></p>
 <p><em>This notebook contains all the sample code and solutions to the exercices in chapter 2.</em></p>
-<table align="left">
-  <td>
-    <a target="_blank" href="https://colab.research.google.com/github/ageron/handson-ml2/blob/master/02_end_to_end_machine_learning_project.ipynb"><img src="https://www.tensorflow.org/images/colab_logo_32px.png" />Run in Google Colab</a>
-  </td>
-</table><div class="section" id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="end-to-end-machine-learning-project">
+<h1>End-to-end Machine Learning project<a class="headerlink" href="#end-to-end-machine-learning-project" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <p>First, let’s import a few common modules, ensure MatplotLib plots figures inline and prepare a function to save the figures. We also check that Python 3.5 or later is installed (although Python 2.x may work, it is deprecated so we strongly recommend you use Python 3 instead), as well as Scikit-Learn ≥0.20.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -507,7 +592,7 @@
 </div>
 </div>
 <div class="section" id="get-the-data">
-<h1>Get the data<a class="headerlink" href="#get-the-data" title="Permalink to this headline">¶</a></h1>
+<h2>Get the data<a class="headerlink" href="#get-the-data" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -1390,7 +1475,7 @@ Name: income_cat, dtype: float64
 </div>
 </div>
 <div class="section" id="discover-and-visualize-the-data-to-gain-insights">
-<h1>Discover and visualize the data to gain insights<a class="headerlink" href="#discover-and-visualize-the-data-to-gain-insights" title="Permalink to this headline">¶</a></h1>
+<h2>Discover and visualize the data to gain insights<a class="headerlink" href="#discover-and-visualize-the-data-to-gain-insights" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">housing</span> <span class="o">=</span> <span class="n">strat_train_set</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1777,7 +1862,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="section" id="prepare-the-data-for-machine-learning-algorithms">
-<h1>Prepare the data for Machine Learning algorithms<a class="headerlink" href="#prepare-the-data-for-machine-learning-algorithms" title="Permalink to this headline">¶</a></h1>
+<h2>Prepare the data for Machine Learning algorithms<a class="headerlink" href="#prepare-the-data-for-machine-learning-algorithms" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">housing</span> <span class="o">=</span> <span class="n">strat_train_set</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># drop labels for training set</span>
@@ -2929,7 +3014,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="section" id="select-and-train-a-model">
-<h1>Select and train a model<a class="headerlink" href="#select-and-train-a-model" title="Permalink to this headline">¶</a></h1>
+<h2>Select and train a model<a class="headerlink" href="#select-and-train-a-model" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
@@ -3076,7 +3161,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="section" id="fine-tune-your-model">
-<h1>Fine-tune your model<a class="headerlink" href="#fine-tune-your-model" title="Permalink to this headline">¶</a></h1>
+<h2>Fine-tune your model<a class="headerlink" href="#fine-tune-your-model" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
@@ -3995,7 +4080,8 @@ dtype: float64
 </div>
 </div>
 <div class="section" id="extra-material">
-<h1>Extra material<a class="headerlink" href="#extra-material" title="Permalink to this headline">¶</a></h1>
+<h2>Extra material<a class="headerlink" href="#extra-material" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="a-full-pipeline-with-both-preparation-and-prediction">
 <h2>A full pipeline with both preparation and prediction<a class="headerlink" href="#a-full-pipeline-with-both-preparation-and-prediction" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
@@ -4058,9 +4144,9 @@ dtype: float64
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="exercise-solutions">
-<h1>Exercise solutions<a class="headerlink" href="#exercise-solutions" title="Permalink to this headline">¶</a></h1>
+<h2>Exercise solutions<a class="headerlink" href="#exercise-solutions" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="id1">
 <h2>1.<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Question: Try a Support Vector Machine regressor (<code class="docutils literal notranslate"><span class="pre">sklearn.svm.SVR</span></code>), with various hyperparameters such as <code class="docutils literal notranslate"><span class="pre">kernel=&quot;linear&quot;</span></code> (with various values for the <code class="docutils literal notranslate"><span class="pre">C</span></code> hyperparameter) or <code class="docutils literal notranslate"><span class="pre">kernel=&quot;rbf&quot;</span></code> (with various values for the <code class="docutils literal notranslate"><span class="pre">C</span></code> and <code class="docutils literal notranslate"><span class="pre">gamma</span></code> hyperparameters). Don’t worry about what these hyperparameters mean for now. How does the best <code class="docutils literal notranslate"><span class="pre">SVR</span></code> predictor perform?</p>
