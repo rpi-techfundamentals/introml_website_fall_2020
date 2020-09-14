@@ -12,6 +12,10 @@
   - file: sessions/session3
   - file: sessions/session4
   - file: sessions/session5
+  - file: sessions/session6
+  - file: sessions/session7
+  - file: sessions/session8
+  - file: sessions/session9
   numbered: true
   part: SESSIONS
 - part: NOTEBOOKS

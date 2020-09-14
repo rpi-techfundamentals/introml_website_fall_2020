@@ -1,7 +1,7 @@
 Python conditionals, loops, functions, aggregating (continued)  (09/14)
 ============================
 
-TBD [Link](../../sessions/session5)
+More operationalization of Python basics as they relate to data. [Link](../../sessions/session5)
 
 ## Before Class
 
