@@ -1,0 +1,865 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Introduction to Python Exercises &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Introduction to Machine Learning Applications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  OVERVIEW
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/preparation.html">
+   Before Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/in_class.html">
+   In Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/assignments.html">
+   Assignments
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SESSIONS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session1.html">
+   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session2.html">
+   2. Python Basics (09/03)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session3.html">
+   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session4.html">
+   4. Python conditionals, loops, functions, aggregating.  (09/10)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session5.html">
+   5. Python conditionals, loops, functions, aggregating (continued)  (09/14)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session6.html">
+   6. Python visualization, data manipulation , and feature creation. (09/17)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session7.html">
+   7. Python visualization, data manipulation , and feature creation (continued) (09/21)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session8.html">
+   8. Overview of Modeling (09/24)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sessions/session9.html">
+   9. Overview of Modeling (09/28)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NOTEBOOKS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/01-intro-python/01-python-overview.html">
+   1. Overview of Python Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/01-intro-python/02-datastructures.html">
+   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/01-intro-python/03-numpy.html">
+   3. Overview of Numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/01-intro-python/04-pandas.html">
+   4. Introduction to Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/02-intro-python/01-conditionals-loops.html">
+   5. Conditional Statements and Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/02-intro-python/02-functions.html">
+   6. Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/02-intro-python/03-null-values.html">
+   7. Null Values
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/02-intro-python/04-groupby.html">
+   8. Groupby and Pivot Tables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/02-intro-python/04-pivottable.html">
+   9. More Pivottables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/02-intro-python/05-kaggle-baseline.html">
+   10. Kaggle Baseline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/03-viz-api-scraper/01-intro-api-twitter.html">
+   11. Introduction to APIs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/03-viz-api-scraper/02-intro-python-webmining.html">
+   12. Web Mining
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/03-viz-api-scraper/03-visualization-python-seaborn.html">
+   13. Introduction to Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/03-viz-api-scraper/04-strings-regular-expressions.html">
+   14. String Manipulation and Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/03-viz-api-scraper/05-features-dummies.html">
+   15. Feature Extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/03-viz-api-scraper/06-matplotlib.html">
+   16. MatplotLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/04-intro-modeling/01-neural-networks.html">
+   17. Neural Networks and the Simplist XOR Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/04-intro-modeling/01-neural-networks.html#neural-networks">
+   18. Neural Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/04-intro-modeling/02-train-test-split.html">
+   19. Train Test Splits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/04-intro-modeling/03-intro-logistic-knn.html">
+   20. Classification with Scikit-learn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/04-intro-modeling/04-knn.html">
+   21. KNN
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  ASSIGNMENT STARTERS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment1/01starter.html">
+   Assignment 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment2/hm.html">
+   Assignment 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  BOOK NOTEBOOKS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/book/tools_numpy.html">
+   1. Tools - NumPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/book/tools_pandas.html">
+   2. Tools - Pandas
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  IMPORTANT LINKS
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://lms.rpi.edu/">
+   RPI LMS
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://eurl.io/#KijTiY1Sa">
+   Webex Teams Discussion
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://eurl.io/#8TF4_qsE9">
+   Webex Teams Homework
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://rensselaer.webex.com/meet/kuruzj">
+   Prof Kuruzovich Class Link
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://rpi.box.com/s/g3wsswc1gvqxvamkuxee77eb4qugizvj">
+   Box File link (Sec01)
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://rensselaer.webex.com/meet/morgat5">
+   Prof Morgan Class Link
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://rpi.box.com/s/qdd5wlo58f5ludkxmb4yd17mgnyc0sbh">
+   Box File link (Sec02)
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/assignments/assignment3/hm.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020/issues/new?title=Issue%20on%20page%20%2Fassignments/assignment3/hm.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rpi-techfundamentals/introml_website_fall_2020/blob/master/site/assignments/assignment3/hm.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-is-a-30-point-assignment">
+   This is a 30 point assignment.
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction-to-python-exercises">
+<h1>Introduction to Python Exercises<a class="headerlink" href="#introduction-to-python-exercises" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="https://github.com/rpi-techfundamentals/hm-01-starter/blob/master/notsaved.png?raw=1" /></p>
+<p><strong>Save your working file in Google drive so that all changes will be saved as you work. MAKE SURE that your final version is saved to GitHub.</strong></p>
+<p>Before you turn this in, make sure everything runs as expected. First, restart the kernel (in the menu, select Kernel → Restart) and then run all cells (in the menubar, select Cell → Run All).  You can speak with others regarding the assignment but all work must be your own.</p>
+<div class="section" id="this-is-a-30-point-assignment">
+<h2>This is a 30 point assignment.<a class="headerlink" href="#this-is-a-30-point-assignment" title="Permalink to this headline">¶</a></h2>
+<p><strong>You may find it useful to go through the notebooks from the course materials when doing these exercises.</strong></p>
+<p><strong>If you attempt to fake passing the tests you will receive a 0 on the assignment and it will be considered an ethical violation.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>files = &quot;https://github.com/rpi-techfundamentals/hm-03-starter/raw/master/files.zip&quot;
+!pip install otter-grader &amp;&amp; wget $files &amp;&amp; unzip -o files.zip
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run this. It initiates autograding. </span>
+<span class="kn">import</span> <span class="nn">otter</span>
+<span class="n">grader</span> <span class="o">=</span> <span class="n">otter</span><span class="o">.</span><span class="n">Notebook</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercises-for-and-if-and-functions">
+<h1>Exercises - For and If and Functions<a class="headerlink" href="#exercises-for-and-if-and-functions" title="Permalink to this headline">¶</a></h1>
+<p>(1). Create a function <code class="docutils literal notranslate"><span class="pre">list_step</span></code> that accepts 3 variables (<code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">stop</span></code>, <code class="docutils literal notranslate"><span class="pre">step</span></code>).  The function returns a list starting at <code class="docutils literal notranslate"><span class="pre">start</span></code>, ending at <code class="docutils literal notranslate"><span class="pre">stop</span></code>, and with a step of <code class="docutils literal notranslate"><span class="pre">step</span></code>.</p>
+<p>For example:</p>
+<p><code class="docutils literal notranslate"><span class="pre">list_step(5,</span> <span class="pre">19,</span> <span class="pre">2)</span></code></p>
+<p>Should return:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">7,</span> <span class="pre">9,</span> <span class="pre">11,</span> <span class="pre">13,</span> <span class="pre">15,</span> <span class="pre">17]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer question 1 here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span><span class="o">=</span> <span class="n">list_step</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#include this code</span>
+<span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q01&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(2). Create a function <code class="docutils literal notranslate"><span class="pre">list_divisible</span></code> that accepts 3 variables (<code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">stop</span></code>, <code class="docutils literal notranslate"><span class="pre">divisible</span></code>).  Use a for loop to create a list of all numbers from <code class="docutils literal notranslate"><span class="pre">start</span></code> to <code class="docutils literal notranslate"><span class="pre">stop</span></code> which are divisible by <code class="docutils literal notranslate"><span class="pre">divisible</span></code>.</p>
+<p>For example:</p>
+<p><code class="docutils literal notranslate"><span class="pre">list_divisible(1,</span> <span class="pre">50,</span> <span class="pre">7)</span></code></p>
+<p>Should return:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[7,</span> <span class="pre">14,</span> <span class="pre">21,</span> <span class="pre">28,</span> <span class="pre">35,</span> <span class="pre">42,</span> <span class="pre">49]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer question 2 here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">list2</span><span class="o">=</span> <span class="n">list_divisible</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="c1">#include this code</span>
+<span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q02&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(3). Create a function <code class="docutils literal notranslate"><span class="pre">list_divisible_not</span></code> that accepts 4 variables (<code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">stop</span></code>, <code class="docutils literal notranslate"><span class="pre">divisible</span></code>, <code class="docutils literal notranslate"><span class="pre">not_divisible</span></code>).  Use a for loop to create a list of all numbers from <code class="docutils literal notranslate"><span class="pre">start</span></code> to <code class="docutils literal notranslate"><span class="pre">stop</span></code> which are divisible by <code class="docutils literal notranslate"><span class="pre">divisible</span></code> but not divisible by <code class="docutils literal notranslate"><span class="pre">not_divisible</span></code>.</p>
+<p>For example:</p>
+<p><code class="docutils literal notranslate"><span class="pre">list_divisible_not(1,</span> <span class="pre">100,</span> <span class="pre">4,</span> <span class="pre">3)</span></code></p>
+<p>Should return:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">8,</span> <span class="pre">16,</span> <span class="pre">20,</span> <span class="pre">28,</span> <span class="pre">32,</span> <span class="pre">40,</span> <span class="pre">44,</span> <span class="pre">52,</span> <span class="pre">56,</span> <span class="pre">64,</span> <span class="pre">68,</span> <span class="pre">76,</span> <span class="pre">80,</span> <span class="pre">88,</span> <span class="pre">92]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer question 3 here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">list3</span><span class="o">=</span> <span class="n">list_divisible_not</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">#include this code</span>
+<span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q03&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercises-titanic">
+<h1>Exercises-Titanic<a class="headerlink" href="#exercises-titanic" title="Permalink to this headline">¶</a></h1>
+<p>The following exercises will use the titanic data from Kaggle.  I’ve included it in the input folder just like Kaggle.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+
+<span class="c1"># Input data files are available in the &quot;../input/&quot; directory.</span>
+<span class="c1"># Let&#39;s input them into a Pandas DataFrame</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./input/train.csv&quot;</span><span class="p">)</span>
+<span class="n">test</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./input/test.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(4) What is the key difference between the train and the test?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man4</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(5) Create a new column <code class="docutils literal notranslate"><span class="pre">family</span></code> that is equal to the <code class="docutils literal notranslate"><span class="pre">SibSp</span></code> * <code class="docutils literal notranslate"><span class="pre">Parch</span></code> for both the train and the test dataframes.  DON’T use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q05&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(6). While we can submit our answer to Kaggle to see how it will perform, we can also utilize our training data to assess accuracy. Accuracy is the percentage of predictions made correctly-i.e., the percentage of people in which our prediction regarding their survival is correct. In other words, accuracy = (#correct predictions)/(Total # of predictions). Create a function <code class="docutils literal notranslate"><span class="pre">generate_accuracy</span></code> which accepts two Pandas series objects (<code class="docutils literal notranslate"><span class="pre">predicted</span></code>, <code class="docutils literal notranslate"><span class="pre">actual</span></code>) and returns the accuracy.</p>
+<p>For example, when a and b are two different Pandas Series:
+<code class="docutils literal notranslate"><span class="pre">generate_accuracy(predicted,</span> <span class="pre">actual)</span></code></p>
+<p>For the sample data below, the data should retun <code class="docutils literal notranslate"><span class="pre">50.0</span></code> (i.e., a percentage).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example DATA</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">ex</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;predicted&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;actual&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;predicted&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>  <span class="s1">&#39;actual&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;predicted&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="s1">&#39;actual&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;predicted&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="s1">&#39;actual&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span> <span class="p">]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q06&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(7) Create a column <code class="docutils literal notranslate"><span class="pre">PredEveryoneDies</span></code> which is equal to 0 for everyone in both training and testing datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q07&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(8) Find the accuracy of <code class="docutils literal notranslate"><span class="pre">PredEveryoneDies</span></code> in predicting <code class="docutils literal notranslate"><span class="pre">Survived</span></code> using the function <code class="docutils literal notranslate"><span class="pre">generate_accuracy</span></code> that you created earlier and assign it to the <code class="docutils literal notranslate"><span class="pre">AccEveryoneDies</span></code> variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q08&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(9) In both the training and testing datasets, create the column <code class="docutils literal notranslate"><span class="pre">PredGender</span></code> that is 1 – if the person is a woman and 0 – if the person is a man. (This is based on the “women and children first” law of shipwrecks).  Then set <code class="docutils literal notranslate"><span class="pre">AccGender</span></code> to the accuracy of the <code class="docutils literal notranslate"><span class="pre">PredGender</span></code> in the Train dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q09&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(10). Create a <code class="docutils literal notranslate"><span class="pre">generate_submission</span></code> function that accepts a DataFrame, a target column, and a filename (<code class="docutils literal notranslate"><span class="pre">df</span></code>, <code class="docutils literal notranslate"><span class="pre">target</span></code>, <code class="docutils literal notranslate"><span class="pre">filename</span></code>) and writes out the submission file with just the <code class="docutils literal notranslate"><span class="pre">passengerID</span></code> and the <code class="docutils literal notranslate"><span class="pre">Survived</span></code> columns, where the <code class="docutils literal notranslate"><span class="pre">Survived</span></code> column is equal to the target column.</p>
+<p>For example:
+<code class="docutils literal notranslate"><span class="pre">submitdie</span> <span class="pre">=</span> <span class="pre">generate_submission(train,</span> <span class="pre">'PredEveryoneDies',</span> <span class="pre">'submiteveryonedies.csv')</span></code></p>
+<p>Should return a dataframe with just <code class="docutils literal notranslate"><span class="pre">passengerID</span></code> and the <code class="docutils literal notranslate"><span class="pre">Survived</span></code> column.</p>
+<p><strong>Make sure your submission file prediction for Survived is an integer and not at float. If you submit a float it may not work.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q10&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(11).  To use the <a class="reference external" href="https://en.wikipedia.org/wiki/Women_and_children_first">women and children first</a> protocol, we will need to use the age field. This has some missing values. We are going to replace null values in the train and test set with the median value for each.</p>
+<p>For this particular question:</p>
+<p>Set the variables <code class="docutils literal notranslate"><span class="pre">AgeMissingTrain</span></code> and <code class="docutils literal notranslate"><span class="pre">AgeMissingTest</span></code> using the count of the number of missing values in the train and test sets, respectively.</p>
+<p>Set the variable <code class="docutils literal notranslate"><span class="pre">AgeMedianTrain</span></code> and <code class="docutils literal notranslate"><span class="pre">AgeMedianTest</span></code> using the median age of the train and test sets, respectively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q11&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(12) For rows in which the age value is  missing, set the age to the appropriate median value for the train/test set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q12&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(13). In our initial calculation of the <code class="docutils literal notranslate"><span class="pre">PredGender</span></code> column, we made our prediction based on whether the individual was male or female.  In accordance to the <a class="reference external" href="https://en.wikipedia.org/wiki/Women_and_children_first">women and children first</a> protocol, we hypothesize that our model could be improved by including whether the individual was a child in addition to gender. We also have a question, what age to use to determine “child”? (People weren’t likely to check for IDs.)  We will check 2 ages…&lt;13 and &lt;18 (somewhat arbitrary but have to start somewhere) and see which yields a better accuracy. <br></p>
+<br> 
+<p>Specifically, create 2 predictions as follows:</p>
+<p><code class="docutils literal notranslate"><span class="pre">train['PredGenderAge13']</span></code> should be the prediction incorporating both Gender (women survive) and Age (Children Age&lt;13 survived while Age&gt;=13 died)  <br>
+<code class="docutils literal notranslate"><span class="pre">train['PredGenderAge18']</span></code> should be the prediction incorporating both Gender (women survive) and Age (Children Age&lt;18 survived while Age&gt;=18 died)  <br></p>
+<p><em>The analysis assumes that you have addressed missing values in the earlier step and you should do it for both the train and test dataframes</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q13&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(14). Calculate the accuracy for your new predictions.  Use <code class="docutils literal notranslate"><span class="pre">PredGenderAge13</span></code> in the training set to calculate <code class="docutils literal notranslate"><span class="pre">AccGenderAge13</span></code> (you can use your function again!) and <code class="docutils literal notranslate"><span class="pre">PredGenderAge18</span></code> to calcuate <code class="docutils literal notranslate"><span class="pre">AccGenderAge18</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q14&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(15). You should find that the accuracy is higher when using 13 as a designation for a child than 18. What does this tell you about the role of age in surviving a shipwreck?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">man15</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Answer here.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(16) Create a prediction file for the “women and children first” model in using the test dataset and upload it to Kaggle. Go through the process of uploading it to Kaggle. Put your Kaggle username so we can verify your prediction occued.</p>
+<p><strong>Make sure your submission file prediction is an integer and not at float. If you submit a float it may not work.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kaggle_username</span><span class="o">=</span><span class="s2">&quot;***your kaggle username****&quot;</span>
+<span class="n">man15</span><span class="o">=</span><span class="s2">&quot;https://www.kaggle.com/&quot;</span><span class="o">+</span><span class="n">kaggle_username</span><span class="o">+</span><span class="s2">&quot;/competitions&quot;</span>
+<span class="c1">#This gives a link to your competition page</span>
+<span class="n">man15</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./assignments/assignment3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jason Kuruzovich<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-32817743-6', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
