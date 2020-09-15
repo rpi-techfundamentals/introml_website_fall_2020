@@ -15,3 +15,11 @@ More operationalization of Python basics as they relate to data. [Link](../../se
 |         5 | 10 Best Visualization Examples [Link](https://www.tableau.com/learn/articles/best-beautiful-data-visualization-examples)                                                                   |
 |         5 | Regex Cheatsheet [Link](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)                                                                       |
 
+
+## In Class
+
+|   Session | Content                                                                                                                                                |
+|----------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
+|         5 | Video Recording of Class Sec 01 [Link](https://rensselaer.webex.com/rensselaer/ldr.php?RCID=6deccb8602db4a1984a7a0e727dffbbc)                          |
+|         5 | Video Recording of Class Sec 02 [Link](https://rensselaer.webex.com/recordingservice/sites/rensselaer/recording/play/ceeddcf8fdb54ee9a953ed814b4727ab) |
+

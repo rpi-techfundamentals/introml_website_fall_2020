@@ -29,4 +29,18 @@ In Class
 |      2 |         4 | 09/10  | Pivot Tables [Link](../notebooks/02-intro-python/04-pivottable)                                                                                        |
 |      2 |         4 | 09/10  | Kaggle Baseline [Link](../notebooks/02-intro-python/05-kaggle-baseline)                                                                                |
 |      2 |         4 | 09/10  | Video Recording of Class Sec 01 [Link](https://rensselaer.webex.com/webappng/sites/rensselaer/recording/play/53d4aef08b534337b8fe077870ee7ec0)         |
-|      2 |         4 | 09/10  | Video Recording of Class Sec 02 [Link](https://rensselaer.webex.com/recordingservice/sites/rensselaer/recording/play/7cf2c9cb7fe04c0ba0b4697e96c291dc) |
+|      2 |         4 | 09/10  | Video Recording of Class Sec 01 [Link](https://rensselaer.webex.com/recordingservice/sites/rensselaer/recording/play/7cf2c9cb7fe04c0ba0b4697e96c291dc) |
+|      3 |         5 | 09/14  | Video Recording of Class Sec 01 [Link](https://rensselaer.webex.com/rensselaer/ldr.php?RCID=6deccb8602db4a1984a7a0e727dffbbc)                          |
+|      3 |         5 | 09/14  | Video Recording of Class Sec 02 [Link](https://rensselaer.webex.com/recordingservice/sites/rensselaer/recording/play/ceeddcf8fdb54ee9a953ed814b4727ab) |
+|      3 |         6 | 09/17  | TwitterAPIs [Link](../notebooks/03-viz-api-scraper/01-intro-api-twitter)                                                                               |
+|      3 |         6 | 09/17  | Web Mining [Link](../notebooks/03-viz-api-scraper/02-intro-python-webmining)                                                                           |
+|      3 |         6 | 09/17  | Visualization [Link](../notebooks/03-viz-api-scraper/03-visualization-python-seaborn)                                                                  |
+|      3 |         6 | 09/17  | Regular Expressions [Link](../notebooks/03-viz-api-scraper/04-strings-regular-expressions)                                                             |
+|      3 |         6 | 09/17  | Feature Dummies [Link](../notebooks/03-viz-api-scraper/05-features-dummies)                                                                            |
+|      3 |         6 | 09/17  | Matplotlib [Link](../notebooks/03-viz-api-scraper/06-matplotlib)                                                                                       |
+|      4 |         7 | 09/21  | Neural Networks [Link](../notebooks/04-intro-modeling/01-neural-networks)                                                                              |
+|      4 |         7 | 09/21  | Train Test Split [Link](../notebooks/04-intro-modeling/02-train-test-split)                                                                            |
+|      4 |         7 | 09/21  | Intro Logistic Regression KNN [Link](../notebooks/04-intro-modeling/03-intro-logistic-knn)                                                             |
+|      4 |         8 | 09/24  | Intro Logistic Regression KNN [Link](../notebooks/04-intro-modeling/04-knn)                                                                            |
+|      4 |         8 | 09/24  | SVM [Link](../notebooks/04-intro-modeling/05-svm-roc)                                                                                                  |
+|      4 |         8 | 09/24  | End to End [Link](../notebooks/book/02_end_to_end_machine_learning_project)                                                                            |
