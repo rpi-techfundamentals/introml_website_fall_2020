@@ -23,3 +23,10 @@ More operationalization of Python basics as they relate to data. [Link](../../se
 |         5 | Video Recording of Class Sec 01 [Link](https://rensselaer.webex.com/rensselaer/ldr.php?RCID=6deccb8602db4a1984a7a0e727dffbbc)                          |
 |         5 | Video Recording of Class Sec 02 [Link](https://rensselaer.webex.com/recordingservice/sites/rensselaer/recording/play/ceeddcf8fdb54ee9a953ed814b4727ab) |
 
+
+## Assignment
+
+|   Session | Assignment                                                                                                         | Due        |
+|----------:|:-------------------------------------------------------------------------------------------------------------------|:-----------|
+|         5 | This has us create a few different functions and our first simple model.  [Starter](../assignments/assignment3/hm) | 2020-09-24 |
+
