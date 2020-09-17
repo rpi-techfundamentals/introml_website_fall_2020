@@ -1,4 +1,4 @@
-## Introduction to Python Exercises
+# Assignment 3
 
 ![](https://github.com/rpi-techfundamentals/hm-01-starter/blob/master/notsaved.png?raw=1)
 
@@ -7,7 +7,7 @@
 Before you turn this in, make sure everything runs as expected. First, restart the kernel (in the menu, select Kernel → Restart) and then run all cells (in the menubar, select Cell → Run All).  You can speak with others regarding the assignment but all work must be your own. 
 
 
-### This is a 30 point assignment.
+## This is a 30 point assignment.
 
 **You may find it useful to go through the notebooks from the course materials when doing these exercises.**
 
