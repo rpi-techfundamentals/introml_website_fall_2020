@@ -54,6 +54,7 @@
   chapters:
   - file: notebooks/book/tools_numpy
   - file: notebooks/book/tools_pandas
+  - file: notebooks/book/02_end_to_end_machine_learning_project
 - part: IMPORTANT LINKS
   numbered: true
   chapters:
