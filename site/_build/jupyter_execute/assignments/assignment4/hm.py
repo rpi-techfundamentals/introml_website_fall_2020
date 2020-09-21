@@ -1,4 +1,4 @@
-## Homework 04 - Instructions
+# Assignment 4
 
 ![](https://github.com/rpi-techfundamentals/hm-01-starter/blob/master/notsaved.png?raw=1)
 
