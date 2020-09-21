@@ -271,13 +271,6 @@ axes[1].hist(n, cumulative=True, bins=50)
 axes[1].set_title("Cumulative detailed histogram")
 axes[1].set_xlim((min(n), max(n)));
 
-import pandas as pd
-df = pd.read_csv('../input/iris.csv')
-df.head()
-
-# This plots using the .plot extension from Pandas dataframes.
-df.plot(kind="scatter", x="sepal_length", y="sepal_width")
-
 Copyright [AnalyticsDojo](http://rpi.analyticsdojo.com) 2016.
 This work is licensed under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license agreement
 
