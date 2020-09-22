@@ -5,12 +5,18 @@ Introduction to visualiation,  APIs, web scraping feature creation, and feature 
 
 ## In Class
 
-|   Session | Content                                                                                    |
-|----------:|:-------------------------------------------------------------------------------------------|
-|         7 | Regular Expressions [Link](../notebooks/03-viz-api-scraper/04-strings-regular-expressions) |
-|         7 | Feature Dummies [Link](../notebooks/03-viz-api-scraper/05-features-dummies)                |
-|         7 | Matplotlib [Link](../notebooks/03-viz-api-scraper/06-matplotlib)                           |
-|         7 | Neural Networks [Link](../notebooks/04-intro-modeling/01-neural-networks)                  |
-|         7 | Train Test Split [Link](../notebooks/04-intro-modeling/02-train-test-split)                |
-|         7 | Intro Logistic Regression KNN [Link](../notebooks/04-intro-modeling/03-intro-logistic-knn) |
+|   Session | Content                                                                                                                                                |
+|----------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
+|         7 | Regular Expressions [Link](../notebooks/03-viz-api-scraper/04-strings-regular-expressions)                                                             |
+|         7 | Feature Dummies [Link](../notebooks/03-viz-api-scraper/05-features-dummies)                                                                            |
+|         7 | Matplotlib [Link](../notebooks/03-viz-api-scraper/06-matplotlib)                                                                                       |
+|         7 | Video Recording of Class Sec 01 [Link](https://rensselaer.webex.com/rensselaer/ldr.php?RCID=535c1cf442ad41f5a6de4e50dd8ab646)                          |
+|         7 | Video Recording of Class Sec 02 [Link](https://rensselaer.webex.com/recordingservice/sites/rensselaer/recording/play/e210b8b46f824822b383e452c26ff3af) |
+
+
+## Assignment
+
+|   Session | Assignment                                                                                   | Due        |
+|----------:|:---------------------------------------------------------------------------------------------|:-----------|
+|         7 | Some exercises with visualization and web scraping. [Starter](../assignments/assignment3/hm) | 2020-10-01 |
 

@@ -9,10 +9,15 @@ IMPORTANT LINKS
 SECTION 1
 - Prof Kuruzovich WEBEX Meetings Classroom Link [https://rensselaer.webex.com/meet/kuruzj](https://rensselaer.webex.com/meet/kuruzj)
 - [Box File link](https://rpi.box.com/s/g3wsswc1gvqxvamkuxee77eb4qugizvj)
+- Office Hours Tuesday 2:00 PM – 4:00 PM.  Please Message me in the Kuruzovich Office Hours Space on Webex Teams.
+- TA Shailesh Divey, Office Hours Tuesday 3:00 PM – 5:00 PM) email: diveys@rpi.edu
 
 SECTION 2
 - Prof Morgan WEBEX Meetings Classroom Link [https://rensselaer.webex.com/meet/morgat5](https://rensselaer.webex.com/meet/morgat5)
 - [Box File link](https://rpi.box.com/s/qdd5wlo58f5ludkxmb4yd17mgnyc0sbh)
+- Office Hours Monday 10:00 AM - 12:00 PM, or by appointment
+- TA Liang Zhao, email: zhaol11@rpi.edu
+
 
 This is the website for the Rensselaer class *Introduction to Machine Learning Applications*.  Both sections 01 and 02.
 
