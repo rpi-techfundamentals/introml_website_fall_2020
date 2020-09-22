@@ -13,9 +13,12 @@ We examine the basics of classess of supervised, unsupervised, reenforcement lea
 
 ## In Class
 
-|   Session | Content                                                                     |
-|----------:|:----------------------------------------------------------------------------|
-|         8 | Intro Logistic Regression KNN [Link](../notebooks/04-intro-modeling/04-knn) |
-|         8 | SVM [Link](../notebooks/04-intro-modeling/05-svm-roc)                       |
-|         8 | End to End [Link](../notebooks/book/02_end_to_end_machine_learning_project) |
+|   Session | Content                                                                                    |
+|----------:|:-------------------------------------------------------------------------------------------|
+|         8 | Neural Networks [Link](../notebooks/04-intro-modeling/01-neural-networks)                  |
+|         8 | Train Test Split [Link](../notebooks/04-intro-modeling/02-train-test-split)                |
+|         8 | Intro Logistic Regression KNN [Link](../notebooks/04-intro-modeling/03-intro-logistic-knn) |
+|         8 | Intro Logistic Regression KNN [Link](../notebooks/04-intro-modeling/04-knn)                |
+|         8 | SVM [Link](../notebooks/04-intro-modeling/05-svm-roc)                                      |
+|         8 | End to End [Link](../notebooks/book/02_end_to_end_machine_learning_project)                |
 
