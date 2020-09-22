@@ -18,5 +18,5 @@ Introduction to visualiation,  APIs, web scraping feature creation, and feature 
 
 |   Session | Assignment                                                                                   | Due        |
 |----------:|:---------------------------------------------------------------------------------------------|:-----------|
-|         7 | Some exercises with visualization and web scraping. [Starter](../assignments/assignment3/hm) | 2020-10-01 |
+|         7 | Some exercises with visualization and web scraping. [Starter](../assignments/assignment4/hm) | 2020-10-01 |
 
