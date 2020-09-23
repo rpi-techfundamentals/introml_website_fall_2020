@@ -10,7 +10,7 @@ Introduction to visualiation,  APIs, web scraping feature creation, and feature 
 |         7 | Regular Expressions [Link](../notebooks/03-viz-api-scraper/04-strings-regular-expressions)                                                             |
 |         7 | Feature Dummies [Link](../notebooks/03-viz-api-scraper/05-features-dummies)                                                                            |
 |         7 | Matplotlib [Link](../notebooks/03-viz-api-scraper/06-matplotlib)                                                                                       |
-|         7 | Video Recording of Class Sec 01 [Link](https://rensselaer.webex.com/webappng/sites/rensselaer/recording/play/81e5a43124864832b5558c03731fc132)         |
+|         7 | Video Recording of Class Sec 01 [Link](https://rensselaer.webex.com/webappng/sites/rensselaer/recording/play/6bd4d10ef7a443838e020218e96144f5)         |
 |         7 | Video Recording of Class Sec 02 [Link](https://rensselaer.webex.com/recordingservice/sites/rensselaer/recording/play/e210b8b46f824822b383e452c26ff3af) |
 
 
