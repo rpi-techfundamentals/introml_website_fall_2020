@@ -40,7 +40,7 @@ In Class
 |      4 |         7 | 09/21  | Regular Expressions [Link](../notebooks/03-viz-api-scraper/04-strings-regular-expressions)                                                                 |
 |      4 |         7 | 09/21  | Feature Dummies [Link](../notebooks/03-viz-api-scraper/05-features-dummies)                                                                                |
 |      4 |         7 | 09/21  | Matplotlib [Link](../notebooks/03-viz-api-scraper/06-matplotlib)                                                                                           |
-|      4 |         7 | 09/21  | Video Recording of Class Sec 01 [Link](https://rensselaer.webex.com/rensselaer/ldr.php?RCID=535c1cf442ad41f5a6de4e50dd8ab646)                              |
+|      4 |         7 | 09/21  | Video Recording of Class Sec 01 [Link](https://rensselaer.webex.com/webappng/sites/rensselaer/recording/play/81e5a43124864832b5558c03731fc132)             |
 |      4 |         7 | 09/21  | Video Recording of Class Sec 02 [Link](https://rensselaer.webex.com/recordingservice/sites/rensselaer/recording/play/e210b8b46f824822b383e452c26ff3af)     |
 |      4 |         8 | 09/24  | Neural Networks [Link](../notebooks/04-intro-modeling/01-neural-networks)                                                                                  |
 |      4 |         8 | 09/24  | Train Test Split [Link](../notebooks/04-intro-modeling/02-train-test-split)                                                                                |
