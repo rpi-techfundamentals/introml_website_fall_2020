@@ -9,7 +9,7 @@ IMPORTANT LINKS
 SECTION 1
 - Prof Kuruzovich WEBEX Meetings Classroom Link [https://rensselaer.webex.com/meet/kuruzj](https://rensselaer.webex.com/meet/kuruzj)
 - [Box File link](https://rpi.box.com/s/g3wsswc1gvqxvamkuxee77eb4qugizvj)
-- Office Hours Tuesday 2:00 PM – 4:00 PM, or by appointment.  Please Message me in the Kuruzovich Office Hours Space on Webex Teams.
+- Office Hours Tuesday 2:00 PM – 4:00 PM, or by appointment .  Please Message me in the Kuruzovich Office Hours Space on Webex Teams.
 - TA Shailesh Divey, Office Hours Tuesday 3:00 PM – 5:00 PM, or by appointment, email: diveys@rpi.edu
 
 SECTION 2
