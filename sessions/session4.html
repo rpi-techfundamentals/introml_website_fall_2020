@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4. Python conditionals, loops, functions, aggregating. (09/10) &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <title>Python conditionals, loops, functions, aggregating. (09/10) &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -39,8 +39,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Python conditionals, loops, functions, aggregating (continued) (09/14)" href="session5.html" />
-    <link rel="prev" title="3. Python Basics (First in Person Class, Tuesday follow Monday Schedule) (09/08)" href="session3.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -80,304 +78,10 @@
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  OVERVIEW
- </span>
-</p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../content/schedule.html">
    Schedule
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../content/syllabus.html">
-   Syllabus
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../content/preparation.html">
-   Before Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../content/in_class.html">
-   In Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../content/assignments.html">
-   Assignments
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  SESSIONS
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="session1.html">
-   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="session2.html">
-   2. Python Basics (09/03)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="session3.html">
-   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   4. Python conditionals, loops, functions, aggregating.  (09/10)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="session5.html">
-   5. Python conditionals, loops, functions, aggregating (continued)  (09/14)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="session6.html">
-   6. Python visualization, data manipulation , and feature creation. (09/17)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="session7.html">
-   7. Python visualization, data manipulation , and feature creation (continued) (09/21)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="session8.html">
-   8. Overview of Modeling (09/24)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="session9.html">
-   9. Overview of Modeling (09/28)
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  NOTEBOOKS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/01-intro-python/01-python-overview.html">
-   1. Overview of Python Features
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/01-intro-python/02-datastructures.html">
-   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/01-intro-python/03-numpy.html">
-   3. Overview of Numpy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/01-intro-python/04-pandas.html">
-   4. Introduction to Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/02-intro-python/01-conditionals-loops.html">
-   5. Conditional Statements and Loops
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/02-intro-python/02-functions.html">
-   6. Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/02-intro-python/03-null-values.html">
-   7. Null Values
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/02-intro-python/04-groupby.html">
-   8. Groupby and Pivot Tables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/02-intro-python/04-pivottable.html">
-   9. More Pivottables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/02-intro-python/05-kaggle-baseline.html">
-   10. Kaggle Baseline
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/03-viz-api-scraper/01-intro-api-twitter.html">
-   11. Introduction to APIs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/03-viz-api-scraper/02-intro-python-webmining.html">
-   12. Web Mining
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/03-viz-api-scraper/03-visualization-python-seaborn.html">
-   13. Introduction to Seaborn
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/03-viz-api-scraper/04-strings-regular-expressions.html">
-   14. String Manipulation and Regular Expressions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/03-viz-api-scraper/05-features-dummies.html">
-   15. Feature Extraction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/03-viz-api-scraper/06-matplotlib.html">
-   16. MatplotLab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/04-intro-modeling/01-neural-networks.html">
-   17. Neural Networks and the Simplist XOR Problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/04-intro-modeling/01-neural-networks.html#neural-networks">
-   18. Neural Networks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/04-intro-modeling/02-train-test-split.html">
-   19. Train Test Splits
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/04-intro-modeling/03-intro-logistic-knn.html">
-   20. Classification with Scikit-learn
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/04-intro-modeling/04-knn.html">
-   21. KNN
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  ASSIGNMENT STARTERS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/assignment1/01starter.html">
-   Assignment 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/assignment2/hm.html">
-   Assignment 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/assignment3/hm.html">
-   Assignment 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/assignment4/hm.html">
-   Assignment 4
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  BOOK NOTEBOOKS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/book/tools_numpy.html">
-   1. Tools - NumPy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/book/tools_pandas.html">
-   2. Tools - Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/book/02_end_to_end_machine_learning_project.html">
-   3. End-to-end Machine Learning project
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  IMPORTANT LINKS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference external" href="https://lms.rpi.edu/">
-   RPI LMS
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://eurl.io/#KijTiY1Sa">
-   Webex Teams Discussion
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://eurl.io/#8TF4_qsE9">
-   Webex Teams Homework
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rensselaer.webex.com/meet/kuruzj">
-   Prof Kuruzovich Class Link
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rpi.box.com/s/g3wsswc1gvqxvamkuxee77eb4qugizvj">
-   Box File link (Sec01)
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rensselaer.webex.com/meet/morgat5">
-   Prof Morgan Class Link
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rpi.box.com/s/qdd5wlo58f5ludkxmb4yd17mgnyc0sbh">
-   Box File link (Sec02)
-   <i class="fas fa-external-link-alt">
-   </i>
   </a>
  </li>
 </ul>
@@ -468,7 +172,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#in-class">
-   4.1. In Class
+   In Class
   </a>
  </li>
 </ul>
@@ -482,10 +186,10 @@
               <div>
                 
   <div class="section" id="python-conditionals-loops-functions-aggregating-09-10">
-<h1><span class="section-number">4. </span>Python conditionals, loops, functions, aggregating.  (09/10)<a class="headerlink" href="#python-conditionals-loops-functions-aggregating-09-10" title="Permalink to this headline">¶</a></h1>
+<h1>Python conditionals, loops, functions, aggregating.  (09/10)<a class="headerlink" href="#python-conditionals-loops-functions-aggregating-09-10" title="Permalink to this headline">¶</a></h1>
 <p>More operationalization of Python basics as they relate to data. <a class="reference internal" href="#"><span class="doc std std-doc">Link</span></a></p>
 <div class="section" id="in-class">
-<h2><span class="section-number">4.1. </span>In Class<a class="headerlink" href="#in-class" title="Permalink to this headline">¶</a></h2>
+<h2>In Class<a class="headerlink" href="#in-class" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:right head"><p>Session</p></th>
@@ -559,8 +263,6 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="session3.html" title="previous page"><span class="section-number">3. </span>Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)</a>
-    <a class='right-next' id="next-link" href="session5.html" title="next page"><span class="section-number">5. </span>Python conditionals, loops, functions, aggregating (continued)  (09/14)</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

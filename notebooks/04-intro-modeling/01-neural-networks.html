@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>17. Neural Networks and the Simplist XOR Problem &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <title>Neural Networks and the Simplist XOR Problem &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -39,8 +39,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="19. Train Test Splits" href="02-train-test-split.html" />
-    <link rel="prev" title="16. MatplotLab" href="../03-viz-api-scraper/06-matplotlib.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -80,304 +78,10 @@
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  OVERVIEW
- </span>
-</p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../content/schedule.html">
    Schedule
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/syllabus.html">
-   Syllabus
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/preparation.html">
-   Before Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/in_class.html">
-   In Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/assignments.html">
-   Assignments
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  SESSIONS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session1.html">
-   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session2.html">
-   2. Python Basics (09/03)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session3.html">
-   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session4.html">
-   4. Python conditionals, loops, functions, aggregating.  (09/10)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session5.html">
-   5. Python conditionals, loops, functions, aggregating (continued)  (09/14)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session6.html">
-   6. Python visualization, data manipulation , and feature creation. (09/17)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session7.html">
-   7. Python visualization, data manipulation , and feature creation (continued) (09/21)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session8.html">
-   8. Overview of Modeling (09/24)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session9.html">
-   9. Overview of Modeling (09/28)
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  NOTEBOOKS
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/01-python-overview.html">
-   1. Overview of Python Features
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/02-datastructures.html">
-   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/03-numpy.html">
-   3. Overview of Numpy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/04-pandas.html">
-   4. Introduction to Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/01-conditionals-loops.html">
-   5. Conditional Statements and Loops
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/02-functions.html">
-   6. Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/03-null-values.html">
-   7. Null Values
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/04-groupby.html">
-   8. Groupby and Pivot Tables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/04-pivottable.html">
-   9. More Pivottables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/05-kaggle-baseline.html">
-   10. Kaggle Baseline
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/01-intro-api-twitter.html">
-   11. Introduction to APIs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/02-intro-python-webmining.html">
-   12. Web Mining
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/03-visualization-python-seaborn.html">
-   13. Introduction to Seaborn
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/04-strings-regular-expressions.html">
-   14. String Manipulation and Regular Expressions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/05-features-dummies.html">
-   15. Feature Extraction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/06-matplotlib.html">
-   16. MatplotLab
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   17. Neural Networks and the Simplist XOR Problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#neural-networks">
-   18. Neural Networks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-train-test-split.html">
-   19. Train Test Splits
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-intro-logistic-knn.html">
-   20. Classification with Scikit-learn
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-knn.html">
-   21. KNN
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  ASSIGNMENT STARTERS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment1/01starter.html">
-   Assignment 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment2/hm.html">
-   Assignment 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment3/hm.html">
-   Assignment 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment4/hm.html">
-   Assignment 4
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  BOOK NOTEBOOKS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/tools_numpy.html">
-   1. Tools - NumPy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/tools_pandas.html">
-   2. Tools - Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/02_end_to_end_machine_learning_project.html">
-   3. End-to-end Machine Learning project
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  IMPORTANT LINKS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference external" href="https://lms.rpi.edu/">
-   RPI LMS
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://eurl.io/#KijTiY1Sa">
-   Webex Teams Discussion
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://eurl.io/#8TF4_qsE9">
-   Webex Teams Homework
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rensselaer.webex.com/meet/kuruzj">
-   Prof Kuruzovich Class Link
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rpi.box.com/s/g3wsswc1gvqxvamkuxee77eb4qugizvj">
-   Box File link (Sec01)
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rensselaer.webex.com/meet/morgat5">
-   Prof Morgan Class Link
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rpi.box.com/s/qdd5wlo58f5ludkxmb4yd17mgnyc0sbh">
-   Box File link (Sec02)
-   <i class="fas fa-external-link-alt">
-   </i>
   </a>
  </li>
 </ul>
@@ -491,7 +195,7 @@
               <div>
                 
   <div class="section" id="neural-networks-and-the-simplist-xor-problem">
-<h1><span class="section-number">17. </span>Neural Networks and the Simplist XOR Problem<a class="headerlink" href="#neural-networks-and-the-simplist-xor-problem" title="Permalink to this headline">¶</a></h1>
+<h1>Neural Networks and the Simplist XOR Problem<a class="headerlink" href="#neural-networks-and-the-simplist-xor-problem" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>This was adopted from the PyTorch Tutorials.</p></li>
 <li><p>Simple supervised machine learning.</p></li>
@@ -499,7 +203,7 @@
 </ul>
 </div>
 <div class="section" id="neural-networks">
-<h1><span class="section-number">18. </span>Neural Networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h1>
+<h1>Neural Networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Neural networks are the foundation of deep learning, which has revolutionized the</p></li>
 </ul>
@@ -509,7 +213,7 @@
 <li><p>The XOR problem involves an output being 1 if either of two inputs is 1, but not both.</p></li>
 </ul>
 <div class="section" id="generate-fake-data">
-<h2><span class="section-number">18.1. </span>Generate Fake Data<a class="headerlink" href="#generate-fake-data" title="Permalink to this headline">¶</a></h2>
+<h2>Generate Fake Data<a class="headerlink" href="#generate-fake-data" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">D_in</span></code> is the number of dimensions of an input varaible.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">D_out</span></code> is the number of dimentions of an output variable.</p></li>
@@ -545,7 +249,7 @@
 </div>
 </div>
 <div class="section" id="a-simple-neural-network">
-<h2><span class="section-number">18.2. </span>A Simple Neural Network<a class="headerlink" href="#a-simple-neural-network" title="Permalink to this headline">¶</a></h2>
+<h2>A Simple Neural Network<a class="headerlink" href="#a-simple-neural-network" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Here we are going to build a neural network.</p></li>
 <li><p>First layer (<code class="docutils literal notranslate"><span class="pre">D_in</span></code>)has to be the length of the input.</p></li>
@@ -570,7 +274,7 @@
 </div>
 </div>
 <div class="section" id="but-hidden-layers-aren-t-hidden">
-<h2><span class="section-number">18.3. </span>But “Hidden Layers” Aren’t Hidden<a class="headerlink" href="#but-hidden-layers-aren-t-hidden" title="Permalink to this headline">¶</a></h2>
+<h2>But “Hidden Layers” Aren’t Hidden<a class="headerlink" href="#but-hidden-layers-aren-t-hidden" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Let’s take a look</p></li>
 <li><p>These are just random numbers.</p></li>
@@ -592,7 +296,7 @@
 </div>
 </div>
 <div class="section" id="update-the-weights-using-gradient-decent">
-<h2><span class="section-number">18.4. </span>Update the Weights using Gradient Decent<a class="headerlink" href="#update-the-weights-using-gradient-decent" title="Permalink to this headline">¶</a></h2>
+<h2>Update the Weights using Gradient Decent<a class="headerlink" href="#update-the-weights-using-gradient-decent" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Calculate the predited value</p></li>
 <li><p>Calculate the loss function</p></li>
@@ -1136,7 +840,7 @@
 <p>Fully connected</p>
 </div>
 <div class="section" id="verify-the-predictions">
-<h2><span class="section-number">18.5. </span>Verify the Predictions<a class="headerlink" href="#verify-the-predictions" title="Permalink to this headline">¶</a></h2>
+<h2>Verify the Predictions<a class="headerlink" href="#verify-the-predictions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Obtained a predicted value from our model and compare to origional.</p></li>
 </ul>
@@ -1252,8 +956,6 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../03-viz-api-scraper/06-matplotlib.html" title="previous page"><span class="section-number">16. </span>MatplotLab</a>
-    <a class='right-next' id="next-link" href="02-train-test-split.html" title="next page"><span class="section-number">19. </span>Train Test Splits</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

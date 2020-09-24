@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>21. KNN &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <title>KNN &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -39,8 +39,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Assignment 1" href="../../assignments/assignment1/01starter.html" />
-    <link rel="prev" title="20. Classification with Scikit-learn" href="03-intro-logistic-knn.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -80,304 +78,10 @@
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  OVERVIEW
- </span>
-</p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../content/schedule.html">
    Schedule
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/syllabus.html">
-   Syllabus
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/preparation.html">
-   Before Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/in_class.html">
-   In Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/assignments.html">
-   Assignments
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  SESSIONS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session1.html">
-   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session2.html">
-   2. Python Basics (09/03)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session3.html">
-   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session4.html">
-   4. Python conditionals, loops, functions, aggregating.  (09/10)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session5.html">
-   5. Python conditionals, loops, functions, aggregating (continued)  (09/14)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session6.html">
-   6. Python visualization, data manipulation , and feature creation. (09/17)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session7.html">
-   7. Python visualization, data manipulation , and feature creation (continued) (09/21)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session8.html">
-   8. Overview of Modeling (09/24)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session9.html">
-   9. Overview of Modeling (09/28)
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  NOTEBOOKS
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/01-python-overview.html">
-   1. Overview of Python Features
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/02-datastructures.html">
-   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/03-numpy.html">
-   3. Overview of Numpy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/04-pandas.html">
-   4. Introduction to Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/01-conditionals-loops.html">
-   5. Conditional Statements and Loops
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/02-functions.html">
-   6. Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/03-null-values.html">
-   7. Null Values
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/04-groupby.html">
-   8. Groupby and Pivot Tables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/04-pivottable.html">
-   9. More Pivottables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/05-kaggle-baseline.html">
-   10. Kaggle Baseline
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/01-intro-api-twitter.html">
-   11. Introduction to APIs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/02-intro-python-webmining.html">
-   12. Web Mining
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/03-visualization-python-seaborn.html">
-   13. Introduction to Seaborn
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/04-strings-regular-expressions.html">
-   14. String Manipulation and Regular Expressions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/05-features-dummies.html">
-   15. Feature Extraction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/06-matplotlib.html">
-   16. MatplotLab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01-neural-networks.html">
-   17. Neural Networks and the Simplist XOR Problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01-neural-networks.html#neural-networks">
-   18. Neural Networks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-train-test-split.html">
-   19. Train Test Splits
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-intro-logistic-knn.html">
-   20. Classification with Scikit-learn
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   21. KNN
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  ASSIGNMENT STARTERS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment1/01starter.html">
-   Assignment 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment2/hm.html">
-   Assignment 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment3/hm.html">
-   Assignment 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment4/hm.html">
-   Assignment 4
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  BOOK NOTEBOOKS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/tools_numpy.html">
-   1. Tools - NumPy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/tools_pandas.html">
-   2. Tools - Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/02_end_to_end_machine_learning_project.html">
-   3. End-to-end Machine Learning project
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  IMPORTANT LINKS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference external" href="https://lms.rpi.edu/">
-   RPI LMS
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://eurl.io/#KijTiY1Sa">
-   Webex Teams Discussion
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://eurl.io/#8TF4_qsE9">
-   Webex Teams Homework
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rensselaer.webex.com/meet/kuruzj">
-   Prof Kuruzovich Class Link
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rpi.box.com/s/g3wsswc1gvqxvamkuxee77eb4qugizvj">
-   Box File link (Sec01)
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rensselaer.webex.com/meet/morgat5">
-   Prof Morgan Class Link
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rpi.box.com/s/qdd5wlo58f5ludkxmb4yd17mgnyc0sbh">
-   Box File link (Sec02)
-   <i class="fas fa-external-link-alt">
-   </i>
   </a>
  </li>
 </ul>
@@ -484,47 +188,47 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#shuffling-dataset">
-   21.1. Shuffling Dataset
+   Shuffling Dataset
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stratified-splitting">
-   21.2. Stratified Splitting
+   Stratified Splitting
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#prediction-using-simple-nearest-neighbor-classifier">
-   21.3. Prediction using Simple Nearest Neighbor Classifier
+   Prediction using Simple Nearest Neighbor Classifier
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#scoring">
-   21.4. Scoring
+   Scoring
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cross-validation">
-   21.5. Cross Validation
+   Cross Validation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualizing-errors">
-   21.6. Visualizing Errors
+   Visualizing Errors
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nearest-neighbor-classification">
-   21.7. Nearest Neighbor Classification
+   Nearest Neighbor Classification
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example">
-   21.8. Example
+   Example
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hyperparameter-tuning">
-   21.9. Hyperparameter Tuning
+   Hyperparameter Tuning
   </a>
  </li>
 </ul>
@@ -541,7 +245,7 @@
 <center><h1>KNN  </h1></center>
 <center><h3><a href = 'http://introml.analyticsdojo.com'>introml.analyticsdojo.com</a></h3></center>
 <div class="section" id="knn">
-<h1><span class="section-number">21. </span>KNN<a class="headerlink" href="#knn" title="Permalink to this headline">¶</a></h1>
+<h1>KNN<a class="headerlink" href="#knn" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s get rid of some imports</span>
@@ -587,7 +291,7 @@
 </div>
 </div>
 <div class="section" id="shuffling-dataset">
-<h2><span class="section-number">21.1. </span>Shuffling Dataset<a class="headerlink" href="#shuffling-dataset" title="Permalink to this headline">¶</a></h2>
+<h2>Shuffling Dataset<a class="headerlink" href="#shuffling-dataset" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Now we need to split the data into training and testing.</p></li>
 <li><p>Luckily, this is a common pattern in machine learning and scikit-learn has a pre-built function to split data into training and testing sets for you.</p></li>
@@ -626,7 +330,7 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="stratified-splitting">
-<h2><span class="section-number">21.2. </span>Stratified Splitting<a class="headerlink" href="#stratified-splitting" title="Permalink to this headline">¶</a></h2>
+<h2>Stratified Splitting<a class="headerlink" href="#stratified-splitting" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Especially for relatively small datasets, it’s better to stratify the split.</p></li>
 <li><p>Stratification means that we maintain the original class proportion of the dataset in the test and training sets.</p></li>
@@ -674,7 +378,7 @@ Test: [ 33.33333333  33.33333333  33.33333333]
 </div>
 <hr class="docutils" />
 <div class="section" id="prediction-using-simple-nearest-neighbor-classifier">
-<h2><span class="section-number">21.3. </span>Prediction using Simple Nearest Neighbor Classifier<a class="headerlink" href="#prediction-using-simple-nearest-neighbor-classifier" title="Permalink to this headline">¶</a></h2>
+<h2>Prediction using Simple Nearest Neighbor Classifier<a class="headerlink" href="#prediction-using-simple-nearest-neighbor-classifier" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>By evaluating our classifier performance on data that has been seen during training, we could get false confidence in the predictive power of our model.</p></li>
 <li><p>In the worst case, it may simply memorize the training samples but completely fails classifying new, similar samples – we really don’t want to put such a system into production!</p></li>
@@ -695,7 +399,7 @@ Test: [ 33.33333333  33.33333333  33.33333333]
 </div>
 </div>
 <div class="section" id="scoring">
-<h2><span class="section-number">21.4. </span>Scoring<a class="headerlink" href="#scoring" title="Permalink to this headline">¶</a></h2>
+<h2>Scoring<a class="headerlink" href="#scoring" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>We can manually calculate the accuracy as we have done before.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">metrics.accuracy_score</span></code> is passed the target value and the predicted value.Model objects also built in scoring functions.</p></li>
@@ -722,7 +426,7 @@ Classifier score:  0.96
 </div>
 </div>
 <div class="section" id="cross-validation">
-<h2><span class="section-number">21.5. </span>Cross Validation<a class="headerlink" href="#cross-validation" title="Permalink to this headline">¶</a></h2>
+<h2>Cross Validation<a class="headerlink" href="#cross-validation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Teh <code class="docutils literal notranslate"><span class="pre">cv</span></code> parameter is the number of folds.</p></li>
 <li><p>Scoring type depends on whether classification, clustering, regression.
@@ -748,7 +452,7 @@ Ten-fold cross validation: [ 1.          0.88888889  0.88888889  1.          1. 
 </div>
 </div>
 <div class="section" id="visualizing-errors">
-<h2><span class="section-number">21.6. </span>Visualizing Errors<a class="headerlink" href="#visualizing-errors" title="Permalink to this headline">¶</a></h2>
+<h2>Visualizing Errors<a class="headerlink" href="#visualizing-errors" title="Permalink to this headline">¶</a></h2>
 <p>We can also visualize the correct and failed predictions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -801,7 +505,7 @@ Samples incorrectly classified:
 <p>We can see that the errors occur in the area where green (class 1) and gray (class 2) overlap. This gives us insight about what features to add - any feature which helps separate class 1 and class 2 should improve classifier performance.</p>
 </div>
 <div class="section" id="nearest-neighbor-classification">
-<h2><span class="section-number">21.7. </span>Nearest Neighbor Classification<a class="headerlink" href="#nearest-neighbor-classification" title="Permalink to this headline">¶</a></h2>
+<h2>Nearest Neighbor Classification<a class="headerlink" href="#nearest-neighbor-classification" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://scikit-learn.org/stable/modules/neighbors.html">Documentation</a> and <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">Function</a>.</p></li>
 <li><p>Various ways of tuning the model to take into account K neighbors or weighted values.</p></li>
@@ -810,7 +514,7 @@ Samples incorrectly classified:
 </ul>
 </div>
 <div class="section" id="example">
-<h2><span class="section-number">21.8. </span>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Example below: The test sample (green circle) should be classified either to the first class of blue squares or to the second class of red triangles. If k = 3 (solid line circle) it is assigned to the second class because there are 2 triangles and only 1 square inside the inner circle. If k = 5 (dashed line circle) it is assigned to the first class (3 squares vs. 2 triangles inside the outer circle).
 <img alt="" src="notebooks/04-intro-modeling/../fig/nearest-neighbor.png" />
@@ -818,7 +522,7 @@ By Antti Ajanki AnAj (Own work) [GFDL (http://www.gnu.org/copyleft/fdl.html), CC
 </ul>
 </div>
 <div class="section" id="hyperparameter-tuning">
-<h2><span class="section-number">21.9. </span>Hyperparameter Tuning<a class="headerlink" href="#hyperparameter-tuning" title="Permalink to this headline">¶</a></h2>
+<h2>Hyperparameter Tuning<a class="headerlink" href="#hyperparameter-tuning" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Hyperprameters are the various settings you can provide to an algorithm.</p></li>
 <li><p>For example, you could detrmine the number of neighors or the weighting method used.</p></li>
@@ -872,8 +576,6 @@ By Antti Ajanki AnAj (Own work) [GFDL (http://www.gnu.org/copyleft/fdl.html), CC
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03-intro-logistic-knn.html" title="previous page"><span class="section-number">20. </span>Classification with Scikit-learn</a>
-    <a class='right-next' id="next-link" href="../../assignments/assignment1/01starter.html" title="next page">Assignment 1</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

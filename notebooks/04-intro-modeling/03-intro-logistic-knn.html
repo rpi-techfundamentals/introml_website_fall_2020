@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>20. Classification with Scikit-learn &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <title>Classification with Scikit-learn &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -39,8 +39,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="21. KNN" href="04-knn.html" />
-    <link rel="prev" title="19. Train Test Splits" href="02-train-test-split.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -80,304 +78,10 @@
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  OVERVIEW
- </span>
-</p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../content/schedule.html">
    Schedule
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/syllabus.html">
-   Syllabus
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/preparation.html">
-   Before Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/in_class.html">
-   In Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/assignments.html">
-   Assignments
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  SESSIONS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session1.html">
-   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session2.html">
-   2. Python Basics (09/03)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session3.html">
-   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session4.html">
-   4. Python conditionals, loops, functions, aggregating.  (09/10)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session5.html">
-   5. Python conditionals, loops, functions, aggregating (continued)  (09/14)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session6.html">
-   6. Python visualization, data manipulation , and feature creation. (09/17)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session7.html">
-   7. Python visualization, data manipulation , and feature creation (continued) (09/21)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session8.html">
-   8. Overview of Modeling (09/24)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session9.html">
-   9. Overview of Modeling (09/28)
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  NOTEBOOKS
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/01-python-overview.html">
-   1. Overview of Python Features
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/02-datastructures.html">
-   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/03-numpy.html">
-   3. Overview of Numpy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/04-pandas.html">
-   4. Introduction to Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/01-conditionals-loops.html">
-   5. Conditional Statements and Loops
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/02-functions.html">
-   6. Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/03-null-values.html">
-   7. Null Values
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/04-groupby.html">
-   8. Groupby and Pivot Tables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/04-pivottable.html">
-   9. More Pivottables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/05-kaggle-baseline.html">
-   10. Kaggle Baseline
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/01-intro-api-twitter.html">
-   11. Introduction to APIs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/02-intro-python-webmining.html">
-   12. Web Mining
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/03-visualization-python-seaborn.html">
-   13. Introduction to Seaborn
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/04-strings-regular-expressions.html">
-   14. String Manipulation and Regular Expressions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/05-features-dummies.html">
-   15. Feature Extraction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-viz-api-scraper/06-matplotlib.html">
-   16. MatplotLab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01-neural-networks.html">
-   17. Neural Networks and the Simplist XOR Problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01-neural-networks.html#neural-networks">
-   18. Neural Networks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-train-test-split.html">
-   19. Train Test Splits
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   20. Classification with Scikit-learn
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-knn.html">
-   21. KNN
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  ASSIGNMENT STARTERS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment1/01starter.html">
-   Assignment 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment2/hm.html">
-   Assignment 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment3/hm.html">
-   Assignment 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment4/hm.html">
-   Assignment 4
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  BOOK NOTEBOOKS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/tools_numpy.html">
-   1. Tools - NumPy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/tools_pandas.html">
-   2. Tools - Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/02_end_to_end_machine_learning_project.html">
-   3. End-to-end Machine Learning project
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  IMPORTANT LINKS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference external" href="https://lms.rpi.edu/">
-   RPI LMS
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://eurl.io/#KijTiY1Sa">
-   Webex Teams Discussion
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://eurl.io/#8TF4_qsE9">
-   Webex Teams Homework
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rensselaer.webex.com/meet/kuruzj">
-   Prof Kuruzovich Class Link
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rpi.box.com/s/g3wsswc1gvqxvamkuxee77eb4qugizvj">
-   Box File link (Sec01)
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rensselaer.webex.com/meet/morgat5">
-   Prof Morgan Class Link
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rpi.box.com/s/qdd5wlo58f5ludkxmb4yd17mgnyc0sbh">
-   Box File link (Sec02)
-   <i class="fas fa-external-link-alt">
-   </i>
   </a>
  </li>
 </ul>
@@ -484,24 +188,24 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#scikit-learn-interface">
-   20.1. Scikit-learn Interface
+   Scikit-learn Interface
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#intro-to-classification">
-     20.1.1. Intro to Classification
+     Intro to Classification
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-scikit-learn-estimator-api">
-     20.1.2. The scikit-learn estimator API
+     The scikit-learn estimator API
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#another-classifier-k-nearest-neighbors">
-   20.2. Another classifier: K Nearest Neighbors
+   Another classifier: K Nearest Neighbors
   </a>
  </li>
 </ul>
@@ -518,7 +222,7 @@
 <center><h1>Classification with Scikit-learn </h1></center>
 <center><h3><a href = 'http://introml.analyticsdojo.com'>introml.analyticsdojo.com</a></h3></center>
 <div class="section" id="classification-with-scikit-learn">
-<h1><span class="section-number">20. </span>Classification with Scikit-learn<a class="headerlink" href="#classification-with-scikit-learn" title="Permalink to this headline">¶</a></h1>
+<h1>Classification with Scikit-learn<a class="headerlink" href="#classification-with-scikit-learn" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
@@ -529,7 +233,7 @@
 </div>
 </div>
 <div class="section" id="scikit-learn-interface">
-<h2><span class="section-number">20.1. </span>Scikit-learn Interface<a class="headerlink" href="#scikit-learn-interface" title="Permalink to this headline">¶</a></h2>
+<h2>Scikit-learn Interface<a class="headerlink" href="#scikit-learn-interface" title="Permalink to this headline">¶</a></h2>
 <p>Scikit-learn strives to have a uniform interface across all methods. Given a scikit-learn <em>estimator</em>
 object named <code class="docutils literal notranslate"><span class="pre">model</span></code>, the following methods are available (not all for each model):</p>
 <ul class="simple">
@@ -569,7 +273,7 @@ which more efficiently performs a fit and a transform on the same input data.</p
 </li>
 </ul>
 <div class="section" id="intro-to-classification">
-<h3><span class="section-number">20.1.1. </span>Intro to Classification<a class="headerlink" href="#intro-to-classification" title="Permalink to this headline">¶</a></h3>
+<h3>Intro to Classification<a class="headerlink" href="#intro-to-classification" title="Permalink to this headline">¶</a></h3>
 <p>To visualize the workings of machine learning algorithms, it is often helpful to study two-dimensional or one-dimensional data, that is data with only one or two features. While in practice, datasets usually have many more features, it is hard to plot high-dimensional data in on two-dimensional screens.</p>
 <p>We will illustrate some very simple examples before we move on to more “real world” data sets.</p>
 <p>First, we will look at a two class classification problem in two dimensions. We use the synthetic data generated by the <code class="docutils literal notranslate"><span class="pre">make_blobs</span></code> function.</p>
@@ -636,7 +340,7 @@ First 5 labels: [1 1 0 0 1]
 </div>
 </div>
 <div class="section" id="the-scikit-learn-estimator-api">
-<h3><span class="section-number">20.1.2. </span>The scikit-learn estimator API<a class="headerlink" href="#the-scikit-learn-estimator-api" title="Permalink to this headline">¶</a></h3>
+<h3>The scikit-learn estimator API<a class="headerlink" href="#the-scikit-learn-estimator-api" title="Permalink to this headline">¶</a></h3>
 <img src="../fig/supervised_workflow.svg" width="100%">
 <p>Every algorithm is exposed in scikit-learn via an ‘’Estimator’’ object. (All models in scikit-learn have a very consistent interface). For instance, we first import the logistic regression class.</p>
 <div class="cell docutils container">
@@ -777,7 +481,7 @@ that means it will create a decision that is linear in the input space. In 2d, t
 </div>
 </div>
 <div class="section" id="another-classifier-k-nearest-neighbors">
-<h2><span class="section-number">20.2. </span>Another classifier: K Nearest Neighbors<a class="headerlink" href="#another-classifier-k-nearest-neighbors" title="Permalink to this headline">¶</a></h2>
+<h2>Another classifier: K Nearest Neighbors<a class="headerlink" href="#another-classifier-k-nearest-neighbors" title="Permalink to this headline">¶</a></h2>
 <p>Another popular and easy to understand classifier is K nearest neighbors (kNN).  It has one of the simplest learning strategies: given a new, unknown observation, look up in your reference database which ones have the closest features and assign the predominant class.</p>
 <p>The interface is exactly the same as for <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span> <span class="pre">above</span></code>.</p>
 <div class="cell docutils container">
@@ -853,8 +557,6 @@ that means it will create a decision that is linear in the input space. In 2d, t
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="02-train-test-split.html" title="previous page"><span class="section-number">19. </span>Train Test Splits</a>
-    <a class='right-next' id="next-link" href="04-knn.html" title="next page"><span class="section-number">21. </span>KNN</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

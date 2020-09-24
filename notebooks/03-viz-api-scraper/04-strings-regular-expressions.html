@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>14. String Manipulation and Regular Expressions &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <title>String Manipulation and Regular Expressions &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -39,8 +39,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="15. Feature Extraction" href="05-features-dummies.html" />
-    <link rel="prev" title="13. Introduction to Seaborn" href="03-visualization-python-seaborn.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -80,304 +78,10 @@
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  OVERVIEW
- </span>
-</p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../content/schedule.html">
    Schedule
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/syllabus.html">
-   Syllabus
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/preparation.html">
-   Before Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/in_class.html">
-   In Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../content/assignments.html">
-   Assignments
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  SESSIONS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session1.html">
-   1. Course Overview &amp; Introduction to the Data Science Lifecycle (08/31)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session2.html">
-   2. Python Basics (09/03)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session3.html">
-   3. Python Basics  (First in Person Class, Tuesday follow Monday Schedule) (09/08)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session4.html">
-   4. Python conditionals, loops, functions, aggregating.  (09/10)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session5.html">
-   5. Python conditionals, loops, functions, aggregating (continued)  (09/14)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session6.html">
-   6. Python visualization, data manipulation , and feature creation. (09/17)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session7.html">
-   7. Python visualization, data manipulation , and feature creation (continued) (09/21)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session8.html">
-   8. Overview of Modeling (09/24)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../sessions/session9.html">
-   9. Overview of Modeling (09/28)
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  NOTEBOOKS
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/01-python-overview.html">
-   1. Overview of Python Features
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/02-datastructures.html">
-   2. Introduction Datastructures (Varibles, Lists, Dictionaries, and Sets)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/03-numpy.html">
-   3. Overview of Numpy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro-python/04-pandas.html">
-   4. Introduction to Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/01-conditionals-loops.html">
-   5. Conditional Statements and Loops
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/02-functions.html">
-   6. Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/03-null-values.html">
-   7. Null Values
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/04-groupby.html">
-   8. Groupby and Pivot Tables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/04-pivottable.html">
-   9. More Pivottables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-intro-python/05-kaggle-baseline.html">
-   10. Kaggle Baseline
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01-intro-api-twitter.html">
-   11. Introduction to APIs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-intro-python-webmining.html">
-   12. Web Mining
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-visualization-python-seaborn.html">
-   13. Introduction to Seaborn
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   14. String Manipulation and Regular Expressions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05-features-dummies.html">
-   15. Feature Extraction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06-matplotlib.html">
-   16. MatplotLab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04-intro-modeling/01-neural-networks.html">
-   17. Neural Networks and the Simplist XOR Problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04-intro-modeling/01-neural-networks.html#neural-networks">
-   18. Neural Networks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04-intro-modeling/02-train-test-split.html">
-   19. Train Test Splits
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04-intro-modeling/03-intro-logistic-knn.html">
-   20. Classification with Scikit-learn
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04-intro-modeling/04-knn.html">
-   21. KNN
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  ASSIGNMENT STARTERS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment1/01starter.html">
-   Assignment 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment2/hm.html">
-   Assignment 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment3/hm.html">
-   Assignment 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/assignment4/hm.html">
-   Assignment 4
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  BOOK NOTEBOOKS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/tools_numpy.html">
-   1. Tools - NumPy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/tools_pandas.html">
-   2. Tools - Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/02_end_to_end_machine_learning_project.html">
-   3. End-to-end Machine Learning project
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  IMPORTANT LINKS
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference external" href="https://lms.rpi.edu/">
-   RPI LMS
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://eurl.io/#KijTiY1Sa">
-   Webex Teams Discussion
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://eurl.io/#8TF4_qsE9">
-   Webex Teams Homework
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rensselaer.webex.com/meet/kuruzj">
-   Prof Kuruzovich Class Link
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rpi.box.com/s/g3wsswc1gvqxvamkuxee77eb4qugizvj">
-   Box File link (Sec01)
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rensselaer.webex.com/meet/morgat5">
-   Prof Morgan Class Link
-   <i class="fas fa-external-link-alt">
-   </i>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://rpi.box.com/s/qdd5wlo58f5ludkxmb4yd17mgnyc0sbh">
-   Box File link (Sec02)
-   <i class="fas fa-external-link-alt">
-   </i>
   </a>
  </li>
 </ul>
@@ -484,79 +188,79 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#simple-string-manipulation-in-python">
-   14.1. Simple String Manipulation in Python
+   Simple String Manipulation in Python
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#formatting-strings-adjusting-case">
-     14.1.1. Formatting strings: Adjusting case
+     Formatting strings: Adjusting case
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#formatting-strings-adding-and-removing-spaces">
-     14.1.2. Formatting strings: Adding and removing spaces
+     Formatting strings: Adding and removing spaces
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#finding-and-replacing-substrings">
-     14.1.3. Finding and replacing substrings
+     Finding and replacing substrings
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#splitting-and-partitioning-strings">
-     14.1.4. Splitting and partitioning strings
+     Splitting and partitioning strings
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#format-strings">
-   14.2. Format Strings
+   Format Strings
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#flexible-pattern-matching-with-regular-expressions">
-   14.3. Flexible Pattern Matching with Regular Expressions
+   Flexible Pattern Matching with Regular Expressions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#a-more-sophisticated-example">
-     14.3.1. A more sophisticated example
+     A more sophisticated example
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#basics-of-regular-expression-syntax">
-     14.3.2. Basics of regular expression syntax
+     Basics of regular expression syntax
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#simple-strings-are-matched-directly">
-       14.3.2.1. Simple strings are matched directly
+       Simple strings are matched directly
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#some-characters-have-special-meanings">
-       14.3.2.2. Some characters have special meanings
+       Some characters have special meanings
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#special-characters-can-match-character-groups">
-       14.3.2.3. Special characters can match character groups
+       Special characters can match character groups
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#square-brackets-match-custom-character-groups">
-       14.3.2.4. Square brackets match custom character groups
+       Square brackets match custom character groups
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#wildcards-match-repeated-characters">
-       14.3.2.5. Wildcards match repeated characters
+       Wildcards match repeated characters
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#parentheses-indicate-groups-to-extract">
-       14.3.2.6. Parentheses indicate
+       Parentheses indicate
        <em>
         groups
        </em>
@@ -567,7 +271,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#further-resources-on-regular-expressions">
-     14.3.3. Further Resources on Regular Expressions
+     Further Resources on Regular Expressions
     </a>
    </li>
   </ul>
@@ -586,7 +290,7 @@
 <center><h1>Strings and Regular Expressions</h1></center>
 <center><h3><a href = 'http://introml.analyticsdojo.com'>introml.analyticsdojo.com</a></h3></center>
 <div class="section" id="string-manipulation-and-regular-expressions">
-<h1><span class="section-number">14. </span>String Manipulation and Regular Expressions<a class="headerlink" href="#string-manipulation-and-regular-expressions" title="Permalink to this headline">¶</a></h1>
+<h1>String Manipulation and Regular Expressions<a class="headerlink" href="#string-manipulation-and-regular-expressions" title="Permalink to this headline">¶</a></h1>
 <p>One place where the Python language really shines is in the manipulation of strings.
 This section will cover some of Python’s built-in string methods and formatting operations, before moving on to a quick guide to the extremely useful subject of <em>regular expressions</em>.
 Such string manipulation patterns come up often in the context of data science work, and is one big perk of Python in this context.</p>
@@ -615,12 +319,12 @@ Such string manipulation patterns come up often in the context of data science w
 </div>
 <p>With this, let’s take a quick tour of some of Python’s string manipulation tools.</p>
 <div class="section" id="simple-string-manipulation-in-python">
-<h2><span class="section-number">14.1. </span>Simple String Manipulation in Python<a class="headerlink" href="#simple-string-manipulation-in-python" title="Permalink to this headline">¶</a></h2>
+<h2>Simple String Manipulation in Python<a class="headerlink" href="#simple-string-manipulation-in-python" title="Permalink to this headline">¶</a></h2>
 <p>For basic manipulation of strings, Python’s built-in string methods can be extremely convenient.
 If you have a background working in C or another low-level language, you will likely find the simplicity of Python’s methods extremely refreshing.
 We introduced Python’s string type and a few of these methods earlier; here we’ll dive a bit deeper</p>
 <div class="section" id="formatting-strings-adjusting-case">
-<h3><span class="section-number">14.1.1. </span>Formatting strings: Adjusting case<a class="headerlink" href="#formatting-strings-adjusting-case" title="Permalink to this headline">¶</a></h3>
+<h3>Formatting strings: Adjusting case<a class="headerlink" href="#formatting-strings-adjusting-case" title="Permalink to this headline">¶</a></h3>
 <p>Python makes it quite easy to adjust the case of a string.
 Here we’ll look at the <code class="docutils literal notranslate"><span class="pre">upper()</span></code>, <code class="docutils literal notranslate"><span class="pre">lower()</span></code>, <code class="docutils literal notranslate"><span class="pre">capitalize()</span></code>, <code class="docutils literal notranslate"><span class="pre">title()</span></code>, and <code class="docutils literal notranslate"><span class="pre">swapcase()</span></code> methods, using the following messy string as an example:</p>
 <div class="cell docutils container">
@@ -678,7 +382,7 @@ This can be done with the <code class="docutils literal notranslate"><span class
 </div>
 </div>
 <div class="section" id="formatting-strings-adding-and-removing-spaces">
-<h3><span class="section-number">14.1.2. </span>Formatting strings: Adding and removing spaces<a class="headerlink" href="#formatting-strings-adding-and-removing-spaces" title="Permalink to this headline">¶</a></h3>
+<h3>Formatting strings: Adding and removing spaces<a class="headerlink" href="#formatting-strings-adding-and-removing-spaces" title="Permalink to this headline">¶</a></h3>
 <p>Another common need is to remove spaces (or other characters) from the beginning or end of the string.
 The basic method of removing characters is the <code class="docutils literal notranslate"><span class="pre">strip()</span></code> method, which strips whitespace from the beginning and end of the line:</p>
 <div class="cell docutils container">
@@ -723,7 +427,7 @@ The basic method of removing characters is the <code class="docutils literal not
 </div>
 </div>
 <div class="section" id="finding-and-replacing-substrings">
-<h3><span class="section-number">14.1.3. </span>Finding and replacing substrings<a class="headerlink" href="#finding-and-replacing-substrings" title="Permalink to this headline">¶</a></h3>
+<h3>Finding and replacing substrings<a class="headerlink" href="#finding-and-replacing-substrings" title="Permalink to this headline">¶</a></h3>
 <p>If you want to find occurrences of a certain character in a string, the <code class="docutils literal notranslate"><span class="pre">find()</span></code>/<code class="docutils literal notranslate"><span class="pre">rfind()</span></code>, <code class="docutils literal notranslate"><span class="pre">index()</span></code>/<code class="docutils literal notranslate"><span class="pre">rindex()</span></code>, and <code class="docutils literal notranslate"><span class="pre">replace()</span></code> methods are the best built-in methods.</p>
 <p><code class="docutils literal notranslate"><span class="pre">find()</span></code> and <code class="docutils literal notranslate"><span class="pre">index()</span></code> are very similar, in that they search for the first occurrence of a character or substring within a string, and return the index of the substring:</p>
 <div class="cell docutils container">
@@ -806,7 +510,7 @@ Here, let’s replace <code class="docutils literal notranslate"><span class="pr
 <p>For a more flexible approach to this <code class="docutils literal notranslate"><span class="pre">replace()</span></code> functionality, see the discussion of regular expressions in <a class="reference external" href="#Flexible-Pattern-Matching-with-Regular-Expressions">Flexible Pattern Matching with Regular Expressions</a>.</p>
 </div>
 <div class="section" id="splitting-and-partitioning-strings">
-<h3><span class="section-number">14.1.4. </span>Splitting and partitioning strings<a class="headerlink" href="#splitting-and-partitioning-strings" title="Permalink to this headline">¶</a></h3>
+<h3>Splitting and partitioning strings<a class="headerlink" href="#splitting-and-partitioning-strings" title="Permalink to this headline">¶</a></h3>
 <p>If you would like to find a substring <em>and then</em> split the string based on its location, the <code class="docutils literal notranslate"><span class="pre">partition()</span></code> and/or <code class="docutils literal notranslate"><span class="pre">split()</span></code> methods are what you’re looking for.
 Both will return a sequence of substrings.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">partition()</span></code> method returns a tuple with three elements: the substring before the first instance of the split-point, the split-point itself, and the substring after:</p>
@@ -859,7 +563,7 @@ Let’s do this with a Haiku, popularly attributed to the 17th-century poet Mats
 </div>
 </div>
 <div class="section" id="format-strings">
-<h2><span class="section-number">14.2. </span>Format Strings<a class="headerlink" href="#format-strings" title="Permalink to this headline">¶</a></h2>
+<h2>Format Strings<a class="headerlink" href="#format-strings" title="Permalink to this headline">¶</a></h2>
 <p>In the preceding methods, we have learned how to extract values from strings, and to manipulate strings themselves into desired formats.
 Another use of string methods is to manipulate string <em>representations</em> of values of other types.
 Of course, string representations can always be found using the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function; for example:</p>
@@ -928,7 +632,7 @@ The “<code class="docutils literal notranslate"><span class="pre">.3f</span></
 For more information on the syntax of these format strings, see the <a class="reference external" href="https://docs.python.org/3/library/string.html#formatspec">Format Specification</a> section of Python’s online documentation.</p>
 </div>
 <div class="section" id="flexible-pattern-matching-with-regular-expressions">
-<h2><span class="section-number">14.3. </span>Flexible Pattern Matching with Regular Expressions<a class="headerlink" href="#flexible-pattern-matching-with-regular-expressions" title="Permalink to this headline">¶</a></h2>
+<h2>Flexible Pattern Matching with Regular Expressions<a class="headerlink" href="#flexible-pattern-matching-with-regular-expressions" title="Permalink to this headline">¶</a></h2>
 <p>The methods of Python’s <code class="docutils literal notranslate"><span class="pre">str</span></code> type give you a powerful set of tools for formatting, splitting, and manipulating string data.
 But even more powerful tools are available in Python’s built-in <em>regular expression</em> module.
 Regular expressions are a huge topic; there are there are entire books written on the topic (including Jeffrey E.F. Friedl’s <a class="reference external" href="http://shop.oreilly.com/product/9780596528126.do"><em>Mastering Regular Expressions, 3rd Edition</em></a>), so it will be hard to do justice within just a single subsection.</p>
@@ -1007,7 +711,7 @@ We’ll again use the line from before:</p>
 </div>
 <p>With a bit of thought, other native string operations can also be cast as regular expressions.</p>
 <div class="section" id="a-more-sophisticated-example">
-<h3><span class="section-number">14.3.1. </span>A more sophisticated example<a class="headerlink" href="#a-more-sophisticated-example" title="Permalink to this headline">¶</a></h3>
+<h3>A more sophisticated example<a class="headerlink" href="#a-more-sophisticated-example" title="Permalink to this headline">¶</a></h3>
 <p>But, you might ask, why would you want to use the more complicated and verbose syntax of regular expressions rather than the more intuitive and simple string methods?
 The advantage is that regular expressions offer <em>far</em> more flexibility.</p>
 <p>Here we’ll consider a more complicated example: the common task of matching email addresses.
@@ -1059,12 +763,12 @@ So, for example, the period used here means that we only find part of the addres
 If you search around online, you can find some suggestions for regular expressions that will match <em>all</em> valid emails, but beware: they are much more involved than the simple expression used here!</p>
 </div>
 <div class="section" id="basics-of-regular-expression-syntax">
-<h3><span class="section-number">14.3.2. </span>Basics of regular expression syntax<a class="headerlink" href="#basics-of-regular-expression-syntax" title="Permalink to this headline">¶</a></h3>
+<h3>Basics of regular expression syntax<a class="headerlink" href="#basics-of-regular-expression-syntax" title="Permalink to this headline">¶</a></h3>
 <p>The syntax of regular expressions is much too large a topic for this short section.
 Still, a bit of familiarity can go a long way: I will walk through some of the basic constructs here, and then list some more complete resources from which you can learn more.
 My hope is that the following quick primer will enable you to use these resources effectively.</p>
 <div class="section" id="simple-strings-are-matched-directly">
-<h4><span class="section-number">14.3.2.1. </span>Simple strings are matched directly<a class="headerlink" href="#simple-strings-are-matched-directly" title="Permalink to this headline">¶</a></h4>
+<h4>Simple strings are matched directly<a class="headerlink" href="#simple-strings-are-matched-directly" title="Permalink to this headline">¶</a></h4>
 <p>If you build a regular expression on a simple string of characters or digits, it will match that exact string:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1076,7 +780,7 @@ My hope is that the following quick primer will enable you to use these resource
 </div>
 </div>
 <div class="section" id="some-characters-have-special-meanings">
-<h4><span class="section-number">14.3.2.2. </span>Some characters have special meanings<a class="headerlink" href="#some-characters-have-special-meanings" title="Permalink to this headline">¶</a></h4>
+<h4>Some characters have special meanings<a class="headerlink" href="#some-characters-have-special-meanings" title="Permalink to this headline">¶</a></h4>
 <p>While simple letters or numbers are direct matches, there are a handful of characters that have special meanings within regular expressions. They are:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>. ^ $ * + ? { } [ ] \ | ( )
 </pre></div>
@@ -1111,7 +815,7 @@ For example, a tab is indicated by <code class="docutils literal notranslate"><s
 <p>For this reason, whenever you use backslashes in a regular expression, it is good practice to use a raw string.</p>
 </div>
 <div class="section" id="special-characters-can-match-character-groups">
-<h4><span class="section-number">14.3.2.3. </span>Special characters can match character groups<a class="headerlink" href="#special-characters-can-match-character-groups" title="Permalink to this headline">¶</a></h4>
+<h4>Special characters can match character groups<a class="headerlink" href="#special-characters-can-match-character-groups" title="Permalink to this headline">¶</a></h4>
 <p>Just as the <code class="docutils literal notranslate"><span class="pre">&quot;\&quot;</span></code> character within regular expressions can escape special characters, turning them into normal characters, it can also be used to give normal characters special meaning.
 These special characters match specified groups of characters, and we’ve seen them before.
 In the email address regexp from before, we used the character <code class="docutils literal notranslate"><span class="pre">&quot;\w&quot;</span></code>, which is a special marker matching <em>any alphanumeric character</em>. Similarly, in the simple <code class="docutils literal notranslate"><span class="pre">split()</span></code> example, we also saw <code class="docutils literal notranslate"><span class="pre">&quot;\s&quot;</span></code>, a special marker indicating <em>any whitespace character</em>.</p>
@@ -1134,7 +838,7 @@ In the email address regexp from before, we used the character <code class="docu
 <p>This is <em>not</em> a comprehensive list or description; for more details, see Python’s <a class="reference external" href="https://docs.python.org/3/library/re.html#re-syntax">regular expression syntax documentation</a>.</p>
 </div>
 <div class="section" id="square-brackets-match-custom-character-groups">
-<h4><span class="section-number">14.3.2.4. </span>Square brackets match custom character groups<a class="headerlink" href="#square-brackets-match-custom-character-groups" title="Permalink to this headline">¶</a></h4>
+<h4>Square brackets match custom character groups<a class="headerlink" href="#square-brackets-match-custom-character-groups" title="Permalink to this headline">¶</a></h4>
 <p>If the built-in character groups aren’t specific enough for you, you can use square brackets to specify any set of characters you’re interested in.
 For example, the following will match any lower-case vowel:</p>
 <div class="cell docutils container">
@@ -1157,7 +861,7 @@ For instance, you may need to extract from a document specific numerical codes t
 </div>
 </div>
 <div class="section" id="wildcards-match-repeated-characters">
-<h4><span class="section-number">14.3.2.5. </span>Wildcards match repeated characters<a class="headerlink" href="#wildcards-match-repeated-characters" title="Permalink to this headline">¶</a></h4>
+<h4>Wildcards match repeated characters<a class="headerlink" href="#wildcards-match-repeated-characters" title="Permalink to this headline">¶</a></h4>
 <p>If you would like to match a string with, say, three alphanumeric characters in a row, it is possible to write, for example, <code class="docutils literal notranslate"><span class="pre">&quot;\w\w\w&quot;</span></code>.
 Because this is such a common need, there is a specific syntax to match repetitions – curly braces with a number:</p>
 <div class="cell docutils container">
@@ -1230,7 +934,7 @@ Because this is such a common need, there is a specific syntax to match repetiti
 With this more flexible expression, we can match a wider range of email addresses (though still not all – can you identify other shortcomings of this expression?).</p>
 </div>
 <div class="section" id="parentheses-indicate-groups-to-extract">
-<h4><span class="section-number">14.3.2.6. </span>Parentheses indicate <em>groups</em> to extract<a class="headerlink" href="#parentheses-indicate-groups-to-extract" title="Permalink to this headline">¶</a></h4>
+<h4>Parentheses indicate <em>groups</em> to extract<a class="headerlink" href="#parentheses-indicate-groups-to-extract" title="Permalink to this headline">¶</a></h4>
 <p>For compound regular expressions like our email matcher, we often want to extract their components rather than the full match. This can be done using parentheses to <em>group</em> the results:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1262,7 +966,7 @@ With this more flexible expression, we can match a wider range of email addresse
 </div>
 </div>
 <div class="section" id="further-resources-on-regular-expressions">
-<h3><span class="section-number">14.3.3. </span>Further Resources on Regular Expressions<a class="headerlink" href="#further-resources-on-regular-expressions" title="Permalink to this headline">¶</a></h3>
+<h3>Further Resources on Regular Expressions<a class="headerlink" href="#further-resources-on-regular-expressions" title="Permalink to this headline">¶</a></h3>
 <p>The above discussion is just a quick (and far from complete) treatment of this large topic.
 If you’d like to learn more, I recommend the following resources:</p>
 <ul class="simple">
@@ -1307,8 +1011,6 @@ If you’d like to learn more, I recommend the following resources:</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03-visualization-python-seaborn.html" title="previous page"><span class="section-number">13. </span>Introduction to Seaborn</a>
-    <a class='right-next' id="next-link" href="05-features-dummies.html" title="next page"><span class="section-number">15. </span>Feature Extraction</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
