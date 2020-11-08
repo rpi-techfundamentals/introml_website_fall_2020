@@ -201,6 +201,41 @@
    Learning Objective
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pca">
+   PCA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eigenvectors">
+   Eigenvectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-data">
+   Generating Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-pca">
+   Running PCA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#high-dimensional-data">
+   High-Dimensional Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimension-reduction-with-pca">
+   Dimension Reduction with PCA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#homework">
+   Homework
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -241,14 +276,13 @@
 <li><p>Understand how PCA deals with the covariance matrix by applying eigenvectors.</p></li>
 </ol>
 </div>
-</div>
 <div class="section" id="pca">
-<h1>PCA<a class="headerlink" href="#pca" title="Permalink to this headline">¶</a></h1>
+<h2>PCA<a class="headerlink" href="#pca" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
 <p>PCA can always be used to simplify the data with high dimensions (larger than 2) into 2-dimensional data by eliminating the least influntial features on the data. However, we should know the elimination of data makes the independent variable less interpretable. Before we start to deal with the PCA, we need to first learn how PCA utilizes eigenvectors to gain a diagonalization covariance matrix.</p>
 </div>
 <div class="section" id="eigenvectors">
-<h1>Eigenvectors<a class="headerlink" href="#eigenvectors" title="Permalink to this headline">¶</a></h1>
+<h2>Eigenvectors<a class="headerlink" href="#eigenvectors" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
 <p>Eigenvectors and eigenvalues are the main tools used by PCA to obtain a diagnolization covariance matrix. The eigenvector is a vector whos direction will not be affected by the linear transformation, hence eigenvectors represents the direction of largest variance of data while the eigenvalue decides the magnitude of this variance in those directions.</p>
 <p>Here we using a simple (2x2) matrix <span class="math notranslate nohighlight">\(A\)</span> to explain it.
@@ -413,7 +447,7 @@ $\)</span>
 Luckily, PCA can do all of this by applyng the function <code class="docutils literal notranslate"><span class="pre">pca.fit_transform(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">np.cov()</span></code></p>
 </div>
 <div class="section" id="generating-data">
-<h1>Generating Data<a class="headerlink" href="#generating-data" title="Permalink to this headline">¶</a></h1>
+<h2>Generating Data<a class="headerlink" href="#generating-data" title="Permalink to this headline">¶</a></h2>
 <p>To talking about PCA, we first create 200 random two-dimensional data points and have a look at the raw data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -688,7 +722,7 @@ Luckily, PCA can do all of this by applyng the function <code class="docutils li
 </div>
 </div>
 <div class="section" id="running-pca">
-<h1>Running PCA<a class="headerlink" href="#running-pca" title="Permalink to this headline">¶</a></h1>
+<h2>Running PCA<a class="headerlink" href="#running-pca" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
 <p>We would now like to analyze the directions in which the data varies most. For that, we</p>
 <ol class="simple">
@@ -766,7 +800,7 @@ Luckily, PCA can do all of this by applyng the function <code class="docutils li
 </div>
 </div>
 <div class="section" id="high-dimensional-data">
-<h1>High-Dimensional Data<a class="headerlink" href="#high-dimensional-data" title="Permalink to this headline">¶</a></h1>
+<h2>High-Dimensional Data<a class="headerlink" href="#high-dimensional-data" title="Permalink to this headline">¶</a></h2>
 <p>Our small example above was very easy, since we could get insight into the data by simply plotting it. This approach will not work once you have more than 3 dimensions, Let’s use the famous iris dataset, which has the following 4 dimensions:</p>
 <ul class="simple">
 <li><p>Sepal Length</p></li>
@@ -788,8 +822,6 @@ HTTP request sent, awaiting response... 200 OK
 Length: 4551 (4.4K) [text/plain]
 Saving to: ‘bezdekIris.data.1’
 
-
-bezdekIris.data.1     0%[                    ]       0  --.-KB/s               
 bezdekIris.data.1   100%[===================&gt;]   4.44K  --.-KB/s    in 0s      
 
 2019-03-11 14:43:40 (75.4 MB/s) - ‘bezdekIris.data.1’ saved [4551/4551]
@@ -1106,7 +1138,7 @@ bezdekIris.data.1   100%[===================&gt;]   4.44K  --.-KB/s    in 0s
 <p>It is easy to see that the correlation between other dimensions (other than first two) was ambiguous and highly concentrated in either horizontal or vertical line. This fact suggests that there are large difference between the dimension we select so that <strong>the weak dimension cant change too much on the shape of graph</strong>.</p>
 </div>
 <div class="section" id="dimension-reduction-with-pca">
-<h1>Dimension Reduction with PCA<a class="headerlink" href="#dimension-reduction-with-pca" title="Permalink to this headline">¶</a></h1>
+<h2>Dimension Reduction with PCA<a class="headerlink" href="#dimension-reduction-with-pca" title="Permalink to this headline">¶</a></h2>
 <p>We can see that there are actually only two dimensions in the dataset.</p>
 <p>Let’s throw away even more data – the second dimension – and reconstruct the original data in <code class="docutils literal notranslate"><span class="pre">D</span></code>.</p>
 <div class="cell docutils container">
@@ -1148,6 +1180,7 @@ bezdekIris.data.1   100%[===================&gt;]   4.44K  --.-KB/s    in 0s
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/01-introduction-pca_59_0.png" src="../../_images/01-introduction-pca_59_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="homework">
@@ -1212,13 +1245,13 @@ bezdekIris.data.1   100%[===================&gt;]   4.44K  --.-KB/s    in 0s
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python2",
+            kernelName: "python3",
             path: "./notebooks/06-unsupervised"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python2'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

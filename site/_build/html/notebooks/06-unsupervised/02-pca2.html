@@ -242,9 +242,6 @@
 <img align="left" style="padding-right:10px;" src="figures/PDSH-cover-small.png">
 <p><em>This notebook contains an excerpt from the <a class="reference external" href="http://shop.oreilly.com/product/0636920034919.do">Python Data Science Handbook</a> by Jake VanderPlas; the content is available <a class="reference external" href="https://github.com/jakevdp/PythonDataScienceHandbook">on GitHub</a>.</em></p>
 <p><em>The text is released under the <a class="reference external" href="https://creativecommons.org/licenses/by-nc-nd/3.0/us/legalcode">CC-BY-NC-ND license</a>, and code is released under the <a class="reference external" href="https://opensource.org/licenses/MIT">MIT license</a>. If you find this content useful, please consider supporting the work by <a class="reference external" href="http://shop.oreilly.com/product/0636920034919.do">buying the book</a>!</em></p>
-<!--NAVIGATION-->
-<p>&lt; <span class="xref myst">In-Depth: Decision Trees and Random Forests</span> | <span class="xref myst">Contents</span> | <span class="xref myst">In-Depth: Manifold Learning</span> &gt;</p>
-<p><a href="https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.09-Principal-Component-Analysis.ipynb"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a></p>
 <div class="section" id="in-depth-principal-component-analysis">
 <h1>In Depth: Principal Component Analysis<a class="headerlink" href="#in-depth-principal-component-analysis" title="Permalink to this headline">¶</a></h1>
 <p>Up until now, we have been looking in depth at supervised learning estimators: those estimators that predict labels based on labeled training data.
@@ -278,7 +275,7 @@ Consider the following 200 points:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/02-pca2_6_0.png" src="../../_images/02-pca2_6_0.png" />
+<img alt="../../_images/02-pca2_5_0.png" src="../../_images/02-pca2_5_0.png" />
 </div>
 </div>
 <p>By eye, it is clear that there is a nearly linear relationship between the x and y variables.
@@ -345,7 +342,7 @@ Using Scikit-Learn’s <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/02-pca2_13_0.png" src="../../_images/02-pca2_13_0.png" />
+<img alt="../../_images/02-pca2_12_0.png" src="../../_images/02-pca2_12_0.png" />
 </div>
 </div>
 <p>These vectors represent the <em>principal axes</em> of the data, and the length of the vector is an indication of how “important” that axis is in describing the distribution of the data—more precisely, it is a measure of the variance of the data when projected onto that axis.
@@ -388,7 +385,7 @@ To understand the effect of this dimensionality reduction, we can perform the in
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/02-pca2_20_0.png" src="../../_images/02-pca2_20_0.png" />
+<img alt="../../_images/02-pca2_19_0.png" src="../../_images/02-pca2_19_0.png" />
 </div>
 </div>
 <p>The light points are the original data, while the dark points are the projected version.
@@ -446,7 +443,7 @@ To gain some intuition into the relationships between these points, we can use P
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/02-pca2_27_0.png" src="../../_images/02-pca2_27_0.png" />
+<img alt="../../_images/02-pca2_26_0.png" src="../../_images/02-pca2_26_0.png" />
 </div>
 </div>
 <p>Recall what these components mean: the full data is a 64-dimensional point cloud, and these points are the projection of each data point along the directions with the largest variance.
@@ -502,7 +499,7 @@ This can be determined by looking at the cumulative <em>explained variance ratio
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/02-pca2_36_0.png" src="../../_images/02-pca2_36_0.png" />
+<img alt="../../_images/02-pca2_35_0.png" src="../../_images/02-pca2_35_0.png" />
 </div>
 </div>
 <p>This curve quantifies how much of the total, 64-dimensional variance is contained within the first <span class="math notranslate nohighlight">\(N\)</span> components.
@@ -532,7 +529,7 @@ First we will plot several of the input noise-free data:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/02-pca2_39_0.png" src="../../_images/02-pca2_39_0.png" />
+<img alt="../../_images/02-pca2_38_0.png" src="../../_images/02-pca2_38_0.png" />
 </div>
 </div>
 <p>Now lets add some random noise to create a noisy dataset, and re-plot it:</p>
@@ -545,7 +542,7 @@ First we will plot several of the input noise-free data:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/02-pca2_41_0.png" src="../../_images/02-pca2_41_0.png" />
+<img alt="../../_images/02-pca2_40_0.png" src="../../_images/02-pca2_40_0.png" />
 </div>
 </div>
 <p>It’s clear by eye that the images are noisy, and contain spurious pixels.
@@ -574,7 +571,7 @@ Now we compute these components, and then use the inverse of the transform to re
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/02-pca2_45_0.png" src="../../_images/02-pca2_45_0.png" />
+<img alt="../../_images/02-pca2_44_0.png" src="../../_images/02-pca2_44_0.png" />
 </div>
 </div>
 <p>This signal preserving/noise filtering property makes PCA a very useful feature selection routine—for example, rather than training a classifier on very high-dimensional data, you might instead train the classifier on the lower-dimensional representation, which will automatically serve to filter out random noise in the inputs.</p>
@@ -633,7 +630,7 @@ As you can see in this figure, they are as creepy as they sound:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/02-pca2_52_0.png" src="../../_images/02-pca2_52_0.png" />
+<img alt="../../_images/02-pca2_51_0.png" src="../../_images/02-pca2_51_0.png" />
 </div>
 </div>
 <p>The results are very interesting, and give us insight into how the images vary: for example, the first few eigenfaces (from the top left) seem to be associated with the angle of lighting on the face, and later principal vectors seem to be picking out certain features, such as eyes, noses, and lips.
@@ -647,7 +644,7 @@ Let’s take a look at the cumulative variance of these components to see how mu
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/02-pca2_54_0.png" src="../../_images/02-pca2_54_0.png" />
+<img alt="../../_images/02-pca2_53_0.png" src="../../_images/02-pca2_53_0.png" />
 </div>
 </div>
 <p>We see that these 150 components account for just over 90% of the variance.
@@ -679,7 +676,7 @@ To make this more concrete, we can compare the input images with the images reco
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/02-pca2_57_0.png" src="../../_images/02-pca2_57_0.png" />
+<img alt="../../_images/02-pca2_56_0.png" src="../../_images/02-pca2_56_0.png" />
 </div>
 </div>
 <p>The top row here shows the input images, while the bottom row shows the reconstruction of the images from just 150 of the ~3,000 initial features.
@@ -697,9 +694,6 @@ For this reason, many robust variants of PCA have been developed, many of which 
 Scikit-Learn contains a couple interesting variants on PCA, including <code class="docutils literal notranslate"><span class="pre">RandomizedPCA</span></code> and <code class="docutils literal notranslate"><span class="pre">SparsePCA</span></code>, both also in the <code class="docutils literal notranslate"><span class="pre">sklearn.decomposition</span></code> submodule.
 <code class="docutils literal notranslate"><span class="pre">RandomizedPCA</span></code>, which we saw earlier, uses a non-deterministic method to quickly approximate the first few principal components in very high-dimensional data, while <code class="docutils literal notranslate"><span class="pre">SparsePCA</span></code> introduces a regularization term (see <span class="xref myst">In Depth: Linear Regression</span>) that serves to enforce sparsity of the components.</p>
 <p>In the following sections, we will look at other unsupervised learning methods that build on some of the ideas of PCA.</p>
-<!--NAVIGATION-->
-<p>&lt; <span class="xref myst">In-Depth: Decision Trees and Random Forests</span> | <span class="xref myst">Contents</span> | <span class="xref myst">In-Depth: Manifold Learning</span> &gt;</p>
-<p><a href="https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.09-Principal-Component-Analysis.ipynb"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a></p>
 </div>
 </div>
 
