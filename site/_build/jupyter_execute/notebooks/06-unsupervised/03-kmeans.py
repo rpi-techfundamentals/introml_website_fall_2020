@@ -11,7 +11,7 @@
 <a href="https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.11-K-Means.ipynb"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a>
 
 
-# In Depth: k-Means Clustering
+# k-Means Clustering
 
 In the previous few sections, we have explored one category of unsupervised machine learning models: dimensionality reduction.
 Here we will move on to another class of unsupervised machine learning models: clustering algorithms.

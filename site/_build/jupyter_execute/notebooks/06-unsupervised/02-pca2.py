@@ -5,12 +5,6 @@
 
 *The text is released under the [CC-BY-NC-ND license](https://creativecommons.org/licenses/by-nc-nd/3.0/us/legalcode), and code is released under the [MIT license](https://opensource.org/licenses/MIT). If you find this content useful, please consider supporting the work by [buying the book](http://shop.oreilly.com/product/0636920034919.do)!*
 
-<!--NAVIGATION-->
-< [In-Depth: Decision Trees and Random Forests](05.08-Random-Forests.ipynb) | [Contents](Index.ipynb) | [In-Depth: Manifold Learning](05.10-Manifold-Learning.ipynb) >
-
-<a href="https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.09-Principal-Component-Analysis.ipynb"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a>
-
-
 #  In Depth: Principal Component Analysis
 
 Up until now, we have been looking in depth at supervised learning estimators: those estimators that predict labels based on labeled training data.
@@ -312,7 +306,3 @@ Scikit-Learn contains a couple interesting variants on PCA, including ``Randomiz
 
 In the following sections, we will look at other unsupervised learning methods that build on some of the ideas of PCA.
 
-<!--NAVIGATION-->
-< [In-Depth: Decision Trees and Random Forests](05.08-Random-Forests.ipynb) | [Contents](Index.ipynb) | [In-Depth: Manifold Learning](05.10-Manifold-Learning.ipynb) >
-
-<a href="https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.09-Principal-Component-Analysis.ipynb"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a>

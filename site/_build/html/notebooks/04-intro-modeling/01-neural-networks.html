@@ -185,7 +185,41 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neural-networks">
+   Neural Networks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-fake-data">
+     Generate Fake Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-simple-neural-network">
+     A Simple Neural Network
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#but-hidden-layers-aren-t-hidden">
+     But “Hidden Layers” Aren’t Hidden
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-the-weights-using-gradient-decent">
+     Update the Weights using Gradient Decent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verify-the-predictions">
+     Verify the Predictions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -201,9 +235,8 @@
 <li><p>Simple supervised machine learning.</p></li>
 <li><p>http://pytorch.org/tutorials/beginner/pytorch_with_examples.html</p></li>
 </ul>
-</div>
 <div class="section" id="neural-networks">
-<h1>Neural Networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h1>
+<h2>Neural Networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Neural networks are the foundation of deep learning, which has revolutionized the</p></li>
 </ul>
@@ -213,7 +246,7 @@
 <li><p>The XOR problem involves an output being 1 if either of two inputs is 1, but not both.</p></li>
 </ul>
 <div class="section" id="generate-fake-data">
-<h2>Generate Fake Data<a class="headerlink" href="#generate-fake-data" title="Permalink to this headline">¶</a></h2>
+<h3>Generate Fake Data<a class="headerlink" href="#generate-fake-data" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">D_in</span></code> is the number of dimensions of an input varaible.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">D_out</span></code> is the number of dimentions of an output variable.</p></li>
@@ -249,7 +282,7 @@
 </div>
 </div>
 <div class="section" id="a-simple-neural-network">
-<h2>A Simple Neural Network<a class="headerlink" href="#a-simple-neural-network" title="Permalink to this headline">¶</a></h2>
+<h3>A Simple Neural Network<a class="headerlink" href="#a-simple-neural-network" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Here we are going to build a neural network.</p></li>
 <li><p>First layer (<code class="docutils literal notranslate"><span class="pre">D_in</span></code>)has to be the length of the input.</p></li>
@@ -274,7 +307,7 @@
 </div>
 </div>
 <div class="section" id="but-hidden-layers-aren-t-hidden">
-<h2>But “Hidden Layers” Aren’t Hidden<a class="headerlink" href="#but-hidden-layers-aren-t-hidden" title="Permalink to this headline">¶</a></h2>
+<h3>But “Hidden Layers” Aren’t Hidden<a class="headerlink" href="#but-hidden-layers-aren-t-hidden" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Let’s take a look</p></li>
 <li><p>These are just random numbers.</p></li>
@@ -296,7 +329,7 @@
 </div>
 </div>
 <div class="section" id="update-the-weights-using-gradient-decent">
-<h2>Update the Weights using Gradient Decent<a class="headerlink" href="#update-the-weights-using-gradient-decent" title="Permalink to this headline">¶</a></h2>
+<h3>Update the Weights using Gradient Decent<a class="headerlink" href="#update-the-weights-using-gradient-decent" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Calculate the predited value</p></li>
 <li><p>Calculate the loss function</p></li>
@@ -840,7 +873,7 @@
 <p>Fully connected</p>
 </div>
 <div class="section" id="verify-the-predictions">
-<h2>Verify the Predictions<a class="headerlink" href="#verify-the-predictions" title="Permalink to this headline">¶</a></h2>
+<h3>Verify the Predictions<a class="headerlink" href="#verify-the-predictions" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Obtained a predicted value from our model and compare to origional.</p></li>
 </ul>
@@ -922,6 +955,7 @@
        [0.        , 1.01392433],
        [0.        , 0.        ]])
 </pre></div>
+</div>
 </div>
 </div>
 </div>

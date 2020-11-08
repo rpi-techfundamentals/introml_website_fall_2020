@@ -1,9 +1,9 @@
-## Neural Networks and the Simplist XOR Problem
+# Neural Networks and the Simplist XOR Problem
 - This was adopted from the PyTorch Tutorials. 
 - Simple supervised machine learning.
 - http://pytorch.org/tutorials/beginner/pytorch_with_examples.html
 
-# Neural Networks 
+## Neural Networks 
 - Neural networks are the foundation of deep learning, which has revolutionized the 
 
 ```In the mathematical theory of artificial neural networks, the universal approximation theorem states[1] that a feed-forward network with a single hidden layer containing a finite number of neurons (i.e., a multilayer perceptron), can approximate continuous functions on compact subsets of Rn, under mild assumptions on the activation function.```
