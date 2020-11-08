@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Homework 05 - Instructions &#8212; MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MGMT 4100/6560 Introduction to Machine Learning Applications @Rensselaer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Introduction to Machine Learning Applications
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/schedule.html">
+   Schedule
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/assignments/assignment5/hm.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rpi-techfundamentals/introml_website_fall_2020/issues/new?title=Issue%20on%20page%20%2Fassignments/assignment5/hm.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rpi-techfundamentals/introml_website_fall_2020/blob/master/site/assignments/assignment5/hm.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-is-a-30-point-assignment-graded-from-answers-to-questions-and-automated-tests-that-should-be-run-at-the-bottom-be-sure-to-clearly-label-all-of-your-answers-and-commit-final-tests-at-the-end">
+   This is a 30 point assignment graded from answers to questions and automated tests that should be run at the bottom. Be sure to clearly label all of your answers and commit final tests at the end.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-data">
+   Load Data
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="homework-05-instructions">
+<h1>Homework 05 - Instructions<a class="headerlink" href="#homework-05-instructions" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="https://github.com/rpi-techfundamentals/hm-01-starter/blob/master/notsaved.png?raw=1" /></p>
+<p><strong>WARNING!!!  If you see this icon on the top of your COLAB sesssion, your work is not saved automatically.</strong></p>
+<p><strong>When you are working on homeworks, make sure that you save often. You may find it easier to save intermident copies in Google drive. If you save your working file in Google drive all changes will be saved as you work. MAKE SURE that your final version is saved to GitHub.</strong></p>
+<p>Before you turn this problem in, make sure everything runs as expected. First, restart the kernel (in the menubar, select Kernel → Restart) and then run all cells (in the menubar, select Cell → Run All).  You can speak with others regarding the assignment but all work must be your own.</p>
+<div class="section" id="this-is-a-30-point-assignment-graded-from-answers-to-questions-and-automated-tests-that-should-be-run-at-the-bottom-be-sure-to-clearly-label-all-of-your-answers-and-commit-final-tests-at-the-end">
+<h2>This is a 30 point assignment graded from answers to questions and automated tests that should be run at the bottom. Be sure to clearly label all of your answers and commit final tests at the end.<a class="headerlink" href="#this-is-a-30-point-assignment-graded-from-answers-to-questions-and-automated-tests-that-should-be-run-at-the-bottom-be-sure-to-clearly-label-all-of-your-answers-and-commit-final-tests-at-the-end" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>files = &quot;https://github.com/rpi-techfundamentals/introml_website_fall_2020/raw/master/files/assignment5.zip&quot; 
+!pip install otter-grader &amp;&amp; wget $files &amp;&amp; unzip -o assignment5.zip
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run this. It initiates autograding. </span>
+<span class="kn">import</span> <span class="nn">otter</span>
+<span class="n">grader</span> <span class="o">=</span> <span class="n">otter</span><span class="o">.</span><span class="n">Notebook</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-data">
+<h2>Load Data<a class="headerlink" href="#load-data" title="Permalink to this headline">¶</a></h2>
+<p>We have our titanic dataset that is a bit different from what we have had previously. Load the train-new.csv and test-new.csv into dataframes train and test.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the data here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-1">
+<h1>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h1>
+<p>(1) Investigate the data a little bit. What is different from some of the titanic datasets we have used in the past? (For example, compare against the data in the Kaggle Baseline notebook).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man1</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="generating-dummy-variables">
+<h1>Generating Dummy Variables<a class="headerlink" href="#generating-dummy-variables" title="Permalink to this headline">¶</a></h1>
+<p>Before we do analysis of the titanic dataset, we have to select out our features, for the train and the test set, which we shall label <code class="docutils literal notranslate"><span class="pre">X_train</span></code>, and <code class="docutils literal notranslate"><span class="pre">X_test</span></code>.</p>
+<p>As a part of this we need to generate <code class="docutils literal notranslate"><span class="pre">n-1</span></code> dummy variables for each one of our categorical columns.  The resulting dataframes should be all numeric and have all of these columns below (in the correct order).</p>
+<p>Follow the example above to generate a new value for <code class="docutils literal notranslate"><span class="pre">X_train</span></code> and <code class="docutils literal notranslate"><span class="pre">X_test</span></code> utilizing all the data.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;SibSp&#39;</span><span class="p">,</span> <span class="s1">&#39;Parch&#39;</span><span class="p">,</span> <span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="s1">&#39;family_size&#39;</span><span class="p">,</span> <span class="s1">&#39;Pclass_2&#39;</span><span class="p">,</span> <span class="s1">&#39;Pclass_3&#39;</span><span class="p">,</span> <span class="s1">&#39;Sex_male&#39;</span><span class="p">,</span> <span class="s1">&#39;Cabin_B&#39;</span><span class="p">,</span> <span class="s1">&#39;Cabin_C&#39;</span><span class="p">,</span> <span class="s1">&#39;Cabin_D&#39;</span><span class="p">,</span> <span class="s1">&#39;Cabin_E&#39;</span><span class="p">,</span> <span class="s1">&#39;Cabin_F&#39;</span><span class="p">,</span> <span class="s1">&#39;Cabin_G&#39;</span><span class="p">,</span> <span class="s1">&#39;Cabin_H&#39;</span><span class="p">,</span> <span class="s1">&#39;Embarked_Q&#39;</span><span class="p">,</span> <span class="s1">&#39;Embarked_S&#39;</span><span class="p">]</span>
+
+</pre></div>
+</div>
+<p><em>Hint, try:
+<code class="docutils literal notranslate"><span class="pre">help(pd.get_dummies)</span></code></em></p>
+<p>You should also set <code class="docutils literal notranslate"><span class="pre">y</span></code> to the Survived column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer Here </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q01&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="split-training-set-for-cross-validation">
+<h2>Split Training Set For Cross Validation<a class="headerlink" href="#split-training-set-for-cross-validation" title="Permalink to this headline">¶</a></h2>
+<p>(2.) We want to split up our training set <code class="docutils literal notranslate"><span class="pre">X</span></code> so that we can do some cross validation. Specifically, we will start to use the term validation set for the set we will use to validate our model.</p>
+<p>In doing so below, use the sklearn methods to do a train test (i.e., validation) split.</p>
+<p>From X y dataframe, generate the following dataframes by drawing the data <strong>randomly</strong>  from the train dataframe 80% of the data in train and 20% of the data in test.  So that you get repeatable results, set the <code class="docutils literal notranslate"><span class="pre">random_state=100</span></code>. This will set a “seed” so that your random selection will be the same as mine and you will pass the internal tests.</p>
+<p>train_X, val_X, train_y, val_y</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer Here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q02&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="perform-nearest-neighbor-classification-kneighborsclassifier">
+<h3>Perform Nearest Neighbor Classification (KNeighborsClassifier)<a class="headerlink" href="#perform-nearest-neighbor-classification-kneighborsclassifier" title="Permalink to this headline">¶</a></h3>
+<p>(3.) Using the default options (i.e., all default hyperparameters), perform nearest neighbor classification. Calculate the accuracy measure using <code class="docutils literal notranslate"><span class="pre">metrics.accuracy_score</span></code>.</p>
+<p>Train your model using the training data and access the accuracy of both the training and validation data.</p>
+<p><em>Note: You only train the model once…on the training data. You then assess the performance on both the training and validation data.</em></p>
+<p>Assign the following variables:</p>
+<p><code class="docutils literal notranslate"><span class="pre">knn0_train_y</span></code> = The KNN prediction for the <code class="docutils literal notranslate"><span class="pre">train_X</span></code> data.</p>
+<p><code class="docutils literal notranslate"><span class="pre">knn0_val_y</span></code>   = The KNN prediction for the <code class="docutils literal notranslate"><span class="pre">val_X</span></code> data.</p>
+<p><code class="docutils literal notranslate"><span class="pre">knn0_train_accuracy</span></code> = The accuracy for the <code class="docutils literal notranslate"><span class="pre">knn0_train_y</span></code> prediction.</p>
+<p><code class="docutils literal notranslate"><span class="pre">knn0_val_accuracy</span></code> = The accuracy for the <code class="docutils literal notranslate"><span class="pre">knn0_val_y</span></code> prediction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer Here </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q03&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="confusion-matrix">
+<h3>Confusion Matrix<a class="headerlink" href="#confusion-matrix" title="Permalink to this headline">¶</a></h3>
+<p>We can utilize a confusion matrix to be able to understand misclassifications a bit more. This will give us a full idea of the true positives, true negatives, false positives, and false negatives.</p>
+<p>See the documentation <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html">here</a>.</p>
+<p>You can utilize the syntax below to generate knn_mat1_train and knn_mat1_test.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>**(4.)  Explain what each of the four quadrants of the confusion matrix means. **</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer here</span>
+<span class="n">man4</span><span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-confusion-matrix-for-the-training-and-validation-predictions">
+<h3>Create Confusion Matrix for the Training and Validation Predictions<a class="headerlink" href="#create-confusion-matrix-for-the-training-and-validation-predictions" title="Permalink to this headline">¶</a></h3>
+<p>(5) Create a confusion matrix for each of the training and valiation predictions.
+<code class="docutils literal notranslate"><span class="pre">knn0_con_train</span></code> A confusion matrix for the training data.<br />
+<code class="docutils literal notranslate"><span class="pre">knn0_con_val</span></code> A confusion matrix for the validation data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answers </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q05&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="hyperparameter-tuning">
+<h2>Hyperparameter Tuning<a class="headerlink" href="#hyperparameter-tuning" title="Permalink to this headline">¶</a></h2>
+<p>(6) You created a single model using the default parameters.  However, we want to adjust the parameters to try and improve the model.</p>
+<p>Examine the documentation on KNN and see some of the different parameters that you can adjust.</p>
+<p><a class="reference external" href="http://scikit-learn.org/stable/supervised_learning.html#supervised-learning">Scikit Learn Documentation</a>.</p>
+<p>Assign the following variables:</p>
+<p><code class="docutils literal notranslate"><span class="pre">knn1_train_y</span></code> = The KNN prediction for the <code class="docutils literal notranslate"><span class="pre">train_X</span></code> datafor your improved model.</p>
+<p><code class="docutils literal notranslate"><span class="pre">knn1_val_y</span></code>   = The KNN prediction for the <code class="docutils literal notranslate"><span class="pre">val_X</span></code> data for your improved model.</p>
+<p><code class="docutils literal notranslate"><span class="pre">knn1_train_accuracy</span></code> = The accuracy for the <code class="docutils literal notranslate"><span class="pre">knn1_train_y</span></code> prediction.</p>
+<p><code class="docutils literal notranslate"><span class="pre">knn1_val_accuracy</span></code> = The accuracy for the <code class="docutils literal notranslate"><span class="pre">knn1_val_y</span></code> prediction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answers</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q06&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="other-models">
+<h3>Other Models<a class="headerlink" href="#other-models" title="Permalink to this headline">¶</a></h3>
+<p>(7.) Test Logistic regression and 1 other algorithms/models (your choice).  Provide a summary of the best performance below.</p>
+<p>Use any of the available classification models. You should show and comment code</p>
+<p><a class="reference external" href="http://scikit-learn.org/stable/supervised_learning.html#supervised-learning">Scikit Learn Documentation</a>.</p>
+<p><em>Make sure your clearly indicate the accuracy of the Logistic regression model your other model. Assess which model worked best considering all your efforts.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Answer here</span>
+<span class="n">man7</span><span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+
+
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#This runs all tests. </span>
+<span class="n">grader</span><span class="o">.</span><span class="n">check_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./assignments/assignment5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jason Kuruzovich<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-32817743-6', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
